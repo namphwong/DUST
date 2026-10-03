@@ -122,6 +122,15 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv-phase1/
+node_modules/
+web/test-results/
+artifacts/phase3/runs/**/*.pth
+artifacts/phase3/runs/**/*.partial
+artifacts/phase3/**/*.npz
+artifacts/phase3/kaggle/**/*.pth
+artifacts/phase3/kaggle/**/*.zip
+notebooks/.ipynb_checkpoints/
 env/
 venv/
 ENV/

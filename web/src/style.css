@@ -1,0 +1,21 @@
+:root { font-family: Inter, system-ui, sans-serif; color: #e6edf5; background: #0b1220; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1050px; padding: 64px 28px; margin: auto; }
+.eyebrow { color: #75debb; font-size: 12px; letter-spacing: 2px; }
+h1 { font-size: clamp(32px, 5vw, 52px); letter-spacing: -1.8px; line-height: 1.15; }
+h1 span { color: #96a8c1; }
+.intro { font-size: 18px; max-width: 720px; line-height: 1.65; }
+aside { padding: 20px; margin: 28px 0; background: #252318; border: 1px solid #776335; border-radius: 12px; color: #f0db9e; line-height: 1.6; }
+.contract, .metrics { display: flex; flex-wrap: wrap; gap: 32px; margin: 28px 0; }
+.contract div, .metrics div { font-size: 11px; color: #9aaec5; letter-spacing: 1px; }
+strong { color: inherit; }
+.contract strong, .metrics strong { display: block; color: #e6edf5; font-size: 22px; letter-spacing: 0; margin-top: 10px; }
+button { background: #75debb; color: #0b1220; padding: 14px 22px; border: 0; border-radius: 8px; font: inherit; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .6; cursor: progress; }
+[role=status] { min-height: 28px; color: #75debb; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td, th { text-align: left; padding: 14px 8px; border-bottom: 1px solid #24354b; }
+details { margin-top: 24px; }
+pre { overflow: auto; max-height: 440px; padding: 20px; background: #121f32; }
+footer { margin-top: 44px; font-size: 13px; color: #9aaec5; line-height: 1.6; }

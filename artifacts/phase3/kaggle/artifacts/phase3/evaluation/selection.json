@@ -1,0 +1,59 @@
+{
+  "rule": "Best validation macro-F1 per family; tie uses smallest seed. Deployment family fixed to Swin.",
+  "test_used_for_selection": false,
+  "candidates": [
+    {
+      "run": "cnn-seed42",
+      "model": "cnn",
+      "seed": 42,
+      "validation_macro_f1": 0.9338292644203747,
+      "best_epoch": 30,
+      "checkpoint_sha256": "287af100339d1d6c82105eadef25e10c84544d999725a65f93ef1c4b5fafdcfa"
+    },
+    {
+      "run": "cnn-seed43",
+      "model": "cnn",
+      "seed": 43,
+      "validation_macro_f1": 0.9542580116423339,
+      "best_epoch": 21,
+      "checkpoint_sha256": "a4f851fd7a820ef09c72673f37991666133c60f264366ce1ea2fbce2d9363d52"
+    },
+    {
+      "run": "cnn-seed44",
+      "model": "cnn",
+      "seed": 44,
+      "validation_macro_f1": 0.9485867363933771,
+      "best_epoch": 14,
+      "checkpoint_sha256": "a095f79dcb181a23ed68f0342212b77578deda0f3a0edb76b357304a59c2e06b"
+    },
+    {
+      "run": "swin-seed42",
+      "model": "swin",
+      "seed": 42,
+      "validation_macro_f1": 0.906424363462059,
+      "best_epoch": 17,
+      "checkpoint_sha256": "fcce99d8383575a9708eb2bb19a31eae0af9a083c00d075382e4f4f4d72b4f5f"
+    },
+    {
+      "run": "swin-seed43",
+      "model": "swin",
+      "seed": 43,
+      "validation_macro_f1": 0.8797408457679877,
+      "best_epoch": 7,
+      "checkpoint_sha256": "e0265b23c61feaf404b5015f206ed4222a27f0d145b2bea511883fc73e610688"
+    },
+    {
+      "run": "swin-seed44",
+      "model": "swin",
+      "seed": 44,
+      "validation_macro_f1": 0.9116918664813344,
+      "best_epoch": 31,
+      "checkpoint_sha256": "f45501770c7a66b0cb5e29a5b3f7a84bd5ad204eb63dab80fdcad865fe9bc749"
+    }
+  ],
+  "selected": {
+    "cnn": "cnn-seed43",
+    "swin": "swin-seed44"
+  },
+  "deployment_run": "swin-seed44"
+}

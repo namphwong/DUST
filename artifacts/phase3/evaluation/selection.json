@@ -1,0 +1,27 @@
+{
+  "rule": "Best validation macro-F1 per family; tie uses smallest seed. Deployment family fixed to Swin.",
+  "test_used_for_selection": false,
+  "candidates": [
+    {
+      "run": "cnn-seed42",
+      "model": "cnn",
+      "seed": 42,
+      "validation_macro_f1": 0.9361122976170074,
+      "best_epoch": 16,
+      "checkpoint_sha256": "43dd19e89d22ea213e32c640f86f3fe66260ae76043f24f433e2021c23c590c6"
+    },
+    {
+      "run": "swin-seed42",
+      "model": "swin",
+      "seed": 42,
+      "validation_macro_f1": 0.9124159966957203,
+      "best_epoch": 12,
+      "checkpoint_sha256": "c17e391eb61639af322ac7e61fa936affe256094c3fdfaec5c36de652f81ac6a"
+    }
+  ],
+  "selected": {
+    "cnn": "cnn-seed42",
+    "swin": "swin-seed42"
+  },
+  "deployment_run": "swin-seed42"
+}

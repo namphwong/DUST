@@ -1,0 +1,11 @@
+{
+  "experiment": "swin-small-v1", "model": "swin", "seed": 42,
+  "epochs": 60, "patience": 12, "batch_size": 64, "lr": 0.0003,
+  "weight_decay": 0.02, "warmup_epochs": 3, "clip_grad_norm": 1.0,
+  "model_kwargs": {
+    "seq_len": 128, "in_chans": 3, "num_classes": 6,
+    "patch_size": 2, "window_size": 8, "embed_dim": 32,
+    "depths": [2, 2, 2, 2], "num_heads": [2, 4, 8, 16],
+    "drop_rate": 0.1, "drop_path_rate": 0.1
+  }
+}

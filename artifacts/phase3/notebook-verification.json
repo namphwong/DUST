@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "execution_environment": "local CPU Jupyter kernel, not Kaggle",
+  "kaggle_gpu_verified": false,
+  "notebook_sha256": "4ba2dfb5385e75197d085c74aa237732d82927d2418a48f253d31873107f0ea2",
+  "code_cells_executed": 7,
+  "reused_completed_runs": true,
+  "seconds": 14.931998000000021,
+  "evaluation_matches_cli": true,
+  "artifact_zip_created": true,
+  "zip_bytes": 8807933
+}

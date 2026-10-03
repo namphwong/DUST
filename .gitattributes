@@ -1,0 +1,7 @@
+# Reproducible text checkouts on Windows and Linux.
+* text=auto eol=lf
+
+# These shipped assets/CSV fixtures have byte-level SHA-256 manifests.
+# Never normalize their line endings, including JSON metadata and demo CSVs.
+/web/public/** -text whitespace=cr-at-eol
+/artifacts/phase6/fixtures/*.csv -text whitespace=cr-at-eol,-blank-at-eof

@@ -1,0 +1,42 @@
+{
+  "contract_version": "1",
+  "artifact_version": "uci-har-3ch-v1",
+  "classes": [
+    {
+      "id": 0,
+      "uci_id": 1,
+      "code": "WALKING",
+      "name_vi": "Đi bộ"
+    },
+    {
+      "id": 1,
+      "uci_id": 2,
+      "code": "WALKING_UPSTAIRS",
+      "name_vi": "Lên cầu thang"
+    },
+    {
+      "id": 2,
+      "uci_id": 3,
+      "code": "WALKING_DOWNSTAIRS",
+      "name_vi": "Xuống cầu thang"
+    },
+    {
+      "id": 3,
+      "uci_id": 4,
+      "code": "SITTING",
+      "name_vi": "Ngồi"
+    },
+    {
+      "id": 4,
+      "uci_id": 5,
+      "code": "STANDING",
+      "name_vi": "Đứng"
+    },
+    {
+      "id": 5,
+      "uci_id": 6,
+      "code": "LAYING",
+      "name_vi": "Nằm"
+    }
+  ]
+}

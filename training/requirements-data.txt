@@ -1,0 +1,2 @@
+# Phase 2 runs on CPU without PyTorch, pandas, or a GPU.
+numpy==1.26.4

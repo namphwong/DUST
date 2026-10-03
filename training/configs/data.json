@@ -1,0 +1,16 @@
+{
+  "dataset": "UCI HAR",
+  "dataset_version": "uci-har-original",
+  "contract_version": "1",
+  "artifact_version": "uci-har-3ch-v1",
+  "source_url": "https://archive.ics.uci.edu/static/public/240/human%2Bactivity%2Brecognition%2Busing%2Bsmartphones.zip",
+  "seed": 42,
+  "validation_subject_count": 5,
+  "channels": ["total_acc_x", "total_acc_y", "total_acc_z"],
+  "input_unit": "g",
+  "includes_gravity": true,
+  "sample_rate_hz": 50,
+  "window_size": 128,
+  "stride": 64,
+  "epsilon": 1e-8
+}

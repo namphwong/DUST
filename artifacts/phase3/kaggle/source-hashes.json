@@ -1,0 +1,12 @@
+{
+  "models/SwinTransformer_cls.py": "2c590a9b9de9d504a04443ea7b9d705848e73a7e2e72039442a9c4575fc5d3f2",
+  "training/har_models.py": "915c0690082c93d55d39ada2af3346f577f532602e2295d6055ead6408b5d025",
+  "training/har_metrics.py": "519a4b2374c704d0aa19a641487d533504db6dad5e4cd0aa4fd46a66b344cd4d",
+  "training/train_har.py": "dfaae4f2fff20bc00f8948b14ecd4b9d94ba4c22009603dc68909639b397f042",
+  "training/evaluate_har.py": "a9afa036c461318414fa811fe8a086ff4291a9a24a1e01df4378bc3d7cb3d038",
+  "training/prepare_uci_har.py": "09fb0de4793ec311082ba01e3a78e77a486da9a760862705199629ffbec862fd",
+  "training/verify_phase2.py": "d04120d9b83690367c7b92e4d9a4ee93bd8499b793734c19fad53280516242d2",
+  "training/configs/data.json": "8675e5f7f07f789fe83c5cdd8eb6d40214e3358a80b9414b52e57415a9897fc7",
+  "training/configs/train-cnn.json": "d8742962712214a2a9ca687be18f3891a891fc40764da210f334109ef14affad",
+  "training/configs/train-swin.json": "cdf2d6124fd57d9d550de6edaf90ea6f4d55e664721700e922b59f31839fc35c"
+}

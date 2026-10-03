@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "measuredAt": "2026-10-03T12:57:38.607Z",
+  "noNetworkWrites": true,
+  "confirmationRequired": true,
+  "unitChangeClearsResults": true,
+  "allWindowsExported": true,
+  "mobileNoHorizontalOverflow": true,
+  "desktopNoHorizontalOverflow": true
+}

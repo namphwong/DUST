@@ -1,0 +1,230 @@
+{
+  "run": "cnn-seed42",
+  "model": "cnn",
+  "seed": 42,
+  "checkpoint_sha256": "43dd19e89d22ea213e32c640f86f3fe66260ae76043f24f433e2021c23c590c6",
+  "best_epoch": 16,
+  "validation": {
+    "accuracy": 0.9331632653061225,
+    "macro_f1": 0.9361122976170074,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 0.9588607594936709,
+        "recall": 0.9742765273311897,
+        "f1": 0.9665071770334929,
+        "support": 311
+      },
+      {
+        "id": 1,
+        "precision": 0.971830985915493,
+        "recall": 0.9857142857142858,
+        "f1": 0.9787234042553192,
+        "support": 280
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 0.896551724137931,
+        "f1": 0.9454545454545454,
+        "support": 261
+      },
+      {
+        "id": 3,
+        "precision": 0.8186528497409327,
+        "recall": 0.8926553672316384,
+        "f1": 0.8540540540540541,
+        "support": 354
+      },
+      {
+        "id": 4,
+        "precision": 0.8888888888888888,
+        "recall": 0.8556149732620321,
+        "f1": 0.8719346049046323,
+        "support": 374
+      },
+      {
+        "id": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 380
+      }
+    ],
+    "confusion_matrix": [
+      [
+        303,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        276,
+        0,
+        2,
+        2,
+        0
+      ],
+      [
+        13,
+        0,
+        234,
+        14,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        316,
+        38,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        54,
+        320,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        380
+      ]
+    ],
+    "samples": 1960,
+    "loss": 0.257923177984182
+  },
+  "test": {
+    "accuracy": 0.9195792331184255,
+    "macro_f1": 0.9200237590748062,
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 0.9011406844106464,
+        "recall": 0.9556451612903226,
+        "f1": 0.9275929549902153,
+        "support": 496,
+        "code": "WALKING",
+        "name_vi": "Đi bộ"
+      },
+      {
+        "id": 1,
+        "precision": 0.8995726495726496,
+        "recall": 0.8938428874734607,
+        "f1": 0.8966986155484559,
+        "support": 471,
+        "code": "WALKING_UPSTAIRS",
+        "name_vi": "Lên cầu thang"
+      },
+      {
+        "id": 2,
+        "precision": 0.9807692307692307,
+        "recall": 0.9714285714285714,
+        "f1": 0.9760765550239234,
+        "support": 420,
+        "code": "WALKING_DOWNSTAIRS",
+        "name_vi": "Xuống cầu thang"
+      },
+      {
+        "id": 3,
+        "precision": 0.8369781312127237,
+        "recall": 0.8574338085539714,
+        "f1": 0.8470824949698189,
+        "support": 491,
+        "code": "SITTING",
+        "name_vi": "Ngồi"
+      },
+      {
+        "id": 4,
+        "precision": 0.903420523138833,
+        "recall": 0.8439849624060151,
+        "f1": 0.8726919339164239,
+        "support": 532,
+        "code": "STANDING",
+        "name_vi": "Đứng"
+      },
+      {
+        "id": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 537,
+        "code": "LAYING",
+        "name_vi": "Nằm"
+      }
+    ],
+    "confusion_matrix": [
+      [
+        474,
+        22,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        41,
+        421,
+        8,
+        0,
+        1,
+        0
+      ],
+      [
+        11,
+        1,
+        408,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        23,
+        0,
+        421,
+        47,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        82,
+        449,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        537
+      ]
+    ],
+    "samples": 2947,
+    "loss": 0.28007687233808104
+  },
+  "test_sha256": "f72522bb2bb7d0b92c0c1a903149f61de751d023c71d5477e0bf1213a72ed52e",
+  "environment": {
+    "device": "cpu",
+    "hardware": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+    "python": "3.11.9",
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "threads": 4
+  },
+  "trained": true,
+  "test_used_for_selection": false
+}

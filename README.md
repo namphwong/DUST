@@ -1,4 +1,50 @@
 # DUST
+## Web project: Swin Transformer 1D
+
+Phase 0 specification is complete. Start with [project scope](docs/project-scope.md),
+[data contract](docs/data-contract.md), [acceptance criteria](docs/acceptance-criteria.md),
+and [phase status](docs/phase-status.md). Format examples are in
+[examples/phase0](examples/phase0/README.md).
+
+Phase 1 browser feasibility has passed: the untrained Swin 1D exports to ONNX
+and matches PyTorch in browser WASM on eight fixtures. See
+[the feasibility report and run instructions](docs/browser-feasibility.md).
+The historical untrained check remains available at `/?phase=1`.
+
+Phase 2 data preparation is complete: official UCI HAR total acceleration,
+subject-disjoint train/validation/test, train-only normalization and six sourced demo CSVs.
+See [the data report and Kaggle usage](docs/data-report.md). Reproduce with
+`python training/prepare_uci_har.py --download` and verify with
+`python training/verify_phase2.py` (NumPy requirements: `training/requirements-data.txt`).
+
+Phase 3 is complete on Kaggle GPU: six runs (CNN/Swin, seeds 42/43/44),
+downloaded checkpoint hashes and test metrics independently verified.
+Validation-selected Swin seed 44 has test accuracy 0.871734 / macro-F1 0.870489;
+Swin three-seed macro-F1 is 0.868143 ± 0.008016 (sample std).
+The 0.90 target is not met; this remains a clearly limited research demo.
+See [the Kaggle report](docs/kaggle-training-report.md), [historical CPU report](docs/training-report.md),
+[GPU notebook](notebooks/kaggle_train_har_gpu.ipynb) and [Kaggle/resume instructions](notebooks/README.md).
+Phase 4 is complete: the default browser page uses the trained Kaggle checkpoint,
+exported as float32 ONNX (8.62 MiB). All 2947 test predictions match the checkpoint;
+macro-F1 degradation is zero. Browser WASM parity passes 14 fixtures with a measured
+benchmark. See [artifact report and commands](docs/phase4-artifact-report.md),
+[model card](docs/model-card.md) and [release manifest](web/public/models/har-swin-kaggle-v1/release.json).
+Phase 5 UI is complete: the default page is MotionSense, with six sourced UCI train
+demos, real ONNX inference, XYZ chart, six scores and demo result CSV downloads.
+See the historical [UI report](docs/phase5-ui-report.md).
+Phase 6 completes actual user CSV inference in a Web Worker: explicit g/m/s²/gravity,
+segment-aware 50 Hz resampling, 128/64 windows, confirmation, progress/cancel,
+source isolation and all-window result CSV exports. No CSV upload or paid backend.
+17 synthetic CSV fixtures / 18 windows match independent NumPy + PyTorch golden
+tensors/predictions. A 100,000-row session runs all 1,561 windows with a responsive UI.
+See [pipeline report and reproduction commands](docs/phase6-pipeline-report.md).
+The pre-Phase-7 [UI/UX redesign](docs/ui-ux-redesign.md) makes input/output the main
+dashboard: file selection/drag-drop/pasted CSV, step guidance, whole-file window
+distribution, selected-window timestamps/scores and full CSV export. Responsive
+desktop/mobile layouts and all 32 browser tests are verified locally.
+Technical checks remain at `/?phase=4` and `/?phase=1`. Tests use port 4174;
+the user preview stays on 4173. Vercel deployment/release acceptance remain pending (Phase 7–8).
+
 **Dual Swin Transformer for Video-Time-Series Fusion**
 
 This project involves the use of a Dual Swin Transformer model to effectively fuse video and time-series data. Below are the steps for preparation, data generation, and training.

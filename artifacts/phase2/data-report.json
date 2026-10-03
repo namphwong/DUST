@@ -1,0 +1,229 @@
+{
+  "status": "passed",
+  "artifact_version": "uci-har-3ch-v1",
+  "source_url": "https://archive.ics.uci.edu/static/public/240/human%2Bactivity%2Brecognition%2Busing%2Bsmartphones.zip",
+  "source_archive_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+  "seed": 42,
+  "validation_subjects": [
+    17,
+    21,
+    25,
+    26,
+    30
+  ],
+  "checks": {
+    "expected_official_counts": true,
+    "subject_disjoint": true,
+    "all_classes_present": true,
+    "finite_inputs": true,
+    "original_order_preserved": true,
+    "fit_train_only": true
+  },
+  "splits": {
+    "train": {
+      "shape": [
+        5392,
+        3,
+        128
+      ],
+      "dtype": "float32",
+      "label_dtype": "int64",
+      "windows": 5392,
+      "subjects": [
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        11,
+        14,
+        15,
+        16,
+        19,
+        22,
+        23,
+        27,
+        28,
+        29
+      ],
+      "finite": true,
+      "class_counts": {
+        "WALKING": 915,
+        "WALKING_UPSTAIRS": 793,
+        "WALKING_DOWNSTAIRS": 725,
+        "SITTING": 932,
+        "STANDING": 1000,
+        "LAYING": 1027
+      },
+      "normalized_mean": [
+        3.601759424834057e-08,
+        -6.615873095651949e-09,
+        8.820750992793558e-09
+      ],
+      "normalized_std": [
+        0.999999988684572,
+        1.0000000012517982,
+        1.0000000362419652
+      ],
+      "raw_min": [
+        -0.46655580401420593,
+        -1.5820790529251099,
+        -1.6396089792251587
+      ],
+      "raw_max": [
+        2.197618007659912,
+        1.2173500061035156,
+        1.2813630104064941
+      ],
+      "content_sha256": "eaa2519aa4856c0bf2f8a5bee87cbcc6aa58167c9aa8ac61c85925b64730fdd9"
+    },
+    "val": {
+      "shape": [
+        1960,
+        3,
+        128
+      ],
+      "dtype": "float32",
+      "label_dtype": "int64",
+      "windows": 1960,
+      "subjects": [
+        17,
+        21,
+        25,
+        26,
+        30
+      ],
+      "finite": true,
+      "class_counts": {
+        "WALKING": 311,
+        "WALKING_UPSTAIRS": 280,
+        "WALKING_DOWNSTAIRS": 261,
+        "SITTING": 354,
+        "STANDING": 374,
+        "LAYING": 380
+      },
+      "normalized_mean": [
+        0.002918041681737875,
+        0.04317693431635562,
+        0.15706372189654938
+      ],
+      "normalized_std": [
+        0.9683113565454075,
+        0.9998658280340175,
+        0.9378084872287343
+      ],
+      "raw_min": [
+        -0.44541049003601074,
+        -1.3097130060195923,
+        -0.9703567028045654
+      ],
+      "raw_max": [
+        2.1464149951934814,
+        1.0699379444122314,
+        1.011152982711792
+      ],
+      "content_sha256": "078a44f27288eaf3ca69a1242b4df27987f5f255e71e999b0606e054b7fd59ea"
+    },
+    "test": {
+      "shape": [
+        2947,
+        3,
+        128
+      ],
+      "dtype": "float32",
+      "label_dtype": "int64",
+      "windows": 2947,
+      "subjects": [
+        2,
+        4,
+        9,
+        10,
+        12,
+        13,
+        18,
+        20,
+        24
+      ],
+      "finite": true,
+      "class_counts": {
+        "WALKING": 496,
+        "WALKING_UPSTAIRS": 471,
+        "WALKING_DOWNSTAIRS": 420,
+        "SITTING": 491,
+        "STANDING": 532,
+        "LAYING": 537
+      },
+      "normalized_mean": [
+        0.03074462502417902,
+        -0.05091894499370279,
+        0.025807827224278962
+      ],
+      "normalized_std": [
+        0.9734540837010849,
+        1.0539787485841188,
+        0.8488501732603109
+      ],
+      "raw_min": [
+        -0.2777351140975952,
+        -1.5882110595703125,
+        -1.3475010395050049
+      ],
+      "raw_max": [
+        2.1126821041107178,
+        1.1343129873275757,
+        1.043383002281189
+      ],
+      "content_sha256": "47fa98a9340bf97b3b725b2d33b3afce686a0e659825c1078e532fb65fea107d"
+    }
+  },
+  "preprocessing": {
+    "contract_version": "1",
+    "artifact_version": "uci-har-3ch-v1",
+    "channels": [
+      "total_acc_x",
+      "total_acc_y",
+      "total_acc_z"
+    ],
+    "input_unit": "g",
+    "includes_gravity": true,
+    "sample_rate_hz": 50,
+    "window_size": 128,
+    "stride": 64,
+    "epsilon": 1e-08,
+    "mean": [
+      0.8044244050979614,
+      0.024255506694316864,
+      0.07130861282348633
+    ],
+    "std": [
+      0.4175981283187866,
+      0.3909381628036499,
+      0.3627556562423706
+    ],
+    "input_layout": "NCT",
+    "fitted_on": "train only after subject split",
+    "fit_subject_ids": [
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      11,
+      14,
+      15,
+      16,
+      19,
+      22,
+      23,
+      27,
+      28,
+      29
+    ],
+    "std_ddof": 0,
+    "statistics_weighting": "All time points across training windows, including original overlapping windows",
+    "transformed_dtype": "float32"
+  },
+  "demo_selection": "First official train row per class"
+}
