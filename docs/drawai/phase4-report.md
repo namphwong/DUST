@@ -1,5 +1,7 @@
 # DrawAI — Báo cáo P4: thu chính thức, rà soát và khóa dataset
 
+**Ghi chú sau P3 ảnh (18/10/2026):** Báo cáo này là lịch sử của protocol nét bút v1. Hiện NPZ7.000 ảnh đã được chuẩn bị theo xác nhận chủ dữ liệu,6.000 ảnh main staging có sẵn; lock image-protocol chưa triển khai. Xem [P3 mới](phase3-report.md). Các số0 mẫu bên dưới mô tả mốc trước file NPZ.
+
 Ngày18/10/2026. **P4 hoàn thành phần công cụ kỹ thuật; chưa hoàn thành thu dữ liệu thực hoặc khóa dataset thật.** Trạng thái `TECHNICAL_READY_WAITING_FOR_HUMAN_DATA`, `phase_complete=false`. Pilot P3 hiện0/250 mẫu, main0/6.000 mẫu; không có hồ sơ pilot approval hoặc dataset-lock thật.
 
 ## 1. Công việc đã thực hiện

@@ -7,8 +7,8 @@
 | P0 — kiểm kê, phục hồi, baseline | DONE local | [Báo cáo P0](phase0-report.md): 551 file phục hồi khớp hash, build, 32 Python tests, 9 browser tests và 10 demo PyTorch/ONNX/WASM đạt |
 | P1 — chỉ giữ DrawAI | DONE local | [Báo cáo P1](phase1-report.md): 309 file lưu ngoài project; 34 Python + 59 browser tests; design pixel-identical; export 3.498 mẫu không khác dự đoán |
 | P2 — DINOv3/raster/feasibility | DONE local | [Báo cáo P2](phase2-report.md): pretrained timm thật; 46 Python + 21 browser tests; 19 fixture parity; backend CPU đạt budget; design giữ nguyên |
-| P3 — chuẩn bị thu dữ liệu riêng | TECHNICAL READY · WAITING FOR HUMAN PILOT | [Báo cáo P3](phase3-report.md): /collect, schema/validator, plan/split/manifest có hash, protocol/consent; 56 Python +17 browser tests; 0/250 mẫu người thật, phase_complete=false |
-| P4 — thu chính thức, rà soát và khóa | TECHNICAL READY · WAITING FOR HUMAN DATA | [Báo cáo P4](phase4-report.md): source-bound review/pilot approval, lock/verify, held-out ZIP và loader hai representation;68 Python +12 browser tests; main0/6.000, chưa khóa dataset thật |
+| P3 — chuẩn bị dữ liệu ảnh Paint | DONE local · protocol ảnh | [P3 hiện tại](phase3-report.md):7.000 ảnh/35 mã người theo xác nhận chủ dữ liệu;250 pilot QC+750 reserved+6.000 main;78 Python+12 browser tests; input Swin ảnh mới, giữ design/release cũ |
+| P4 — review/khóa ảnh | TODO image adaptation | Đã có6.000 ảnh main staging;534 near-groups cần review. Lock CLI nét bút v1 cũ không áp dụng trực tiếp; chưa dataset lock ảnh |
 | P5–P8 | TODO | [Roadmap hai mô hình](two-model-roadmap.md); chưa full-train/đánh giá private/deploy/công bố Kaggle |
 
 P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch sử bên dưới.

@@ -1,0 +1,16 @@
+{
+  "attestation_source": "Explicit human user confirmation in this project chat",
+  "capture_tool": "Paint",
+  "confirmed_date": "2026-10-18",
+  "metadata_description_is_incorrect": true,
+  "original_strokes_available": false,
+  "permissions": {
+    "evaluation": true,
+    "kaggle_publication": true,
+    "training": true
+  },
+  "person_ids_are_distinct_people": true,
+  "source_kind": "human-user-attested",
+  "source_sha256": "c594927b59509bb62cb185cf5e64034ee641b046798f0f192d6155fd91f71a64",
+  "version": "drawai-paint-provenance-v1"
+}

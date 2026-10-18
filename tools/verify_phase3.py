@@ -57,4 +57,10 @@ def main():
     (OUT/'current-pilot-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f"P3 technical PASS:56 Python,17 browser tests; design/model preserved. Pilot {report['accepted_samples']}/250 claimed samples; human pilot still requires coordinator review.")
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    # Current image protocol supersedes the legacy stroke-session P3 audit.
+    # Keep the old acceptance function/report as historical evidence.
+    if (ROOT/'data/private/prepared/paint-image64-v1/dataset.json').is_file():
+        import runpy
+        runpy.run_path(str(ROOT/'tools/verify_phase3_image64.py'),run_name='__main__')
+    else:main()

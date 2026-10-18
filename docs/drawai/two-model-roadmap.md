@@ -1,6 +1,10 @@
 # DrawAI — Kế hoạch chuyển sang hai mô hình
 
-Ngày lập: 17/10/2026; cập nhật 18/10/2026. **P0–P2 hoàn thành local; P3 sẵn sàng kỹ thuật, chờ pilot người thật (0/250)**; P4 sẵn sàng kỹ thuật nhưng chưa có dữ liệu main (0/6.000), P5–P8 chưa bắt đầu. P2 đã load pretrained DINOv3 từ publisher timm, export toàn bộ graph và chốt backend CPU theo số đo; giữ nguyên DrawAI/Swin. Xem [P0](phase0-report.md), [P1](phase1-report.md), [P2](phase2-report.md).
+Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P3 hoàn thành local với P3 đổi sang ảnh Paint** theo dữ liệu mới và xác nhận của người dùng. P4 image review/lock chưa chạy, P5–P8 chưa hoàn tất.
+
+## Điều chỉnh P3 theo dữ liệu thực (18/10/2026)
+
+NPZ có7.000 ảnh64×64,35 mã người theo xác nhận người dùng, không có nét bút. Protocol ảnh mới tại [paint-image64-guide.md](collection/paint-image64-guide.md) thay phần chuẩn bị dữ liệu P3 cũ:250 pilot QC+750 reserved từ người1–5, train4.000 người6–25, val1.000 người26–30, test1.000 người31–35. Split hồi cứu chốt trước training. Swin1D mới dùng hàng pixel[64,64], DINOv3 RGB224; cần train/export riêng, không đổi release/design đang chạy. Nội dung thu nét bút v1 dưới đây giữ làm lịch sử/phương án thu bổ sung, không phải provenance của NPZ.
 
 ## Phạm vi chốt
 
@@ -71,7 +75,7 @@ Ngày lập: 17/10/2026; cập nhật 18/10/2026. **P0–P2 hoàn thành local; 
 
 ## Phase 3 — Chuẩn bị thu dữ liệu riêng
 
-Triển khai kỹ thuật đã có tại `/collect`, `training/drawai/private_data.py` và `docs/drawai/collection/`. [Báo cáo P3](phase3-report.md) ghi 56 Python/17 browser tests đạt, nhưng pilot5 người/250 mẫu chưa thực hiện nên chưa đóng toàn bộ P3.
+P3 hiện dùng ảnh Paint theo điều chỉnh phía trên. [Báo cáo P3](phase3-report.md):7.000 ảnh đã chuẩn bị,250 ảnh pilot QC đã xem,78 Python+12 browser tests đạt. `/collect` và `private_data.py` vẫn là pipeline nét bút v1 độc lập.
 
 ### Quy mô đề xuất
 
@@ -96,7 +100,7 @@ Triển khai kỹ thuật đã có tại `/collect`, `training/drawai/private_da
 
 ## Phase 4 — Thu chính thức, kiểm tra và khóa dataset
 
-Đã triển khai CLI review/pilot approval/lock/verify và loader tại `training/drawai/private_dataset.py`. [Báo cáo P4](phase4-report.md):68 Python +12 browser tests đạt, nhưng0/6.000 mẫu main và pilot chưa duyệt, nên chưa có dataset lock thật và chưa đóng P4.
+CLI `private_dataset.py` và [báo cáo P4 cũ](phase4-report.md) dành cho JSON nét bút v1. Hiện đã có6.000 ảnh main staging; P4 cần nhánh ảnh riêng để review534 near-groups và lock theo policy Paint, chưa được dùng lock cũ để tuyên bố đã khóa ảnh.
 
 ### Công việc
 

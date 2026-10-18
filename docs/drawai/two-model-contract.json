@@ -1,7 +1,4 @@
 {
-  "version": "drawai-two-model-contract-v3",
-  "phase": "P2_DONE_LOCAL",
-  "task": "Single complete handwritten digit classification from canvas strokes",
   "classes": [
     0,
     1,
@@ -14,126 +11,16 @@
     8,
     9
   ],
-  "source_schema": "drawai-strokes-v1",
-  "source_coordinates": "canvas-y-down",
-  "source_limits": {
-    "max_strokes": 16,
-    "max_points": 8192
-  },
-  "output": {
-    "shape": [
-      1,
-      10
-    ],
-    "dtype": "float32",
-    "meaning": "logits in class order 0..9",
-    "display": "softmax scores are not guaranteed accuracy"
-  },
-  "models": [
-    {
-      "id": "swin1d",
-      "role": "baseline",
-      "implementation_status": "existing trained PenDigits checkpoint and ONNX verified in P0",
-      "input": {
-        "shape": [
-          1,
-          3,
-          128
-        ],
-        "dtype": "float32",
-        "layout": "NCT",
-        "channels": [
-          "x",
-          "y",
-          "stroke_start"
-        ]
-      },
-      "preprocessing": "drawai-geometry-v1",
-      "existing_release": "drawai-swin-v1",
-      "existing_filename": "web/public/models/drawai-swin-v1/model.onnx",
-      "planned_pendigits_export_name": "drawai_swin1d_pendigits_l128_fp32_v1.onnx",
-      "planned_private_export_name": "drawai_swin1d_private-v1_l128_fp32_v1.onnx"
-    },
-    {
-      "id": "dinov3_vits16",
-      "role": "pretrained image backbone plus trainable 10-class classifier",
-      "implementation_status": "Real public timm DINOv3 pretrained backbone strictly loaded; full ONNX + CPU backend verified; digit head untrained",
-      "input": {
-        "shape": [
-          1,
-          3,
-          224,
-          224
-        ],
-        "dtype": "float32",
-        "layout": "NCHW",
-        "channels": [
-          "R",
-          "G",
-          "B"
-        ],
-        "status": "Verified 224px stroke-raster adaptation; publisher default256, variable size >=128"
-      },
-      "preprocessing": "drawai-raster-v1; normalization verified against pinned timm config",
-      "renderer_requirements": [
-        "preserve aspect ratio",
-        "preserve y-down orientation",
-        "no connector between strokes",
-        "fixed padding/background/stroke width",
-        "training and deployed preprocessing parity"
-      ],
-      "normalization": {
-        "mean": [
-          0.485,
-          0.456,
-          0.406
-        ],
-        "std": [
-          0.229,
-          0.224,
-          0.225
-        ],
-        "rescale_factor": 0.00392156862745098,
-        "extra_resize": false,
-        "extra_crop": false,
-        "official_hf_processor_verified": false,
-        "publisher_timm_config_verified": true,
-        "official_hf_processor_note": "Not used by selected native timm backend; no pending gated processor requirement"
-      },
-      "initial_training": "Freeze pretrained backbone and train classifier; partial fine-tuning only under recorded validation protocol",
-      "export_scope": "Full backbone and classifier, not head alone",
-      "planned_private_export_name": "drawai_dinov3-vits16_private-v1_rgb224_fp32_v1.onnx",
-      "pooling": "CLS concatenated with mean patch tokens, excluding 4 register tokens; head 768 -> 10",
-      "official_model_id": "facebook/dinov3-vits16-pretrain-lvd1689m",
-      "official_revision": "114c1379950215c8b35dfcd4e90a5c251dde0d32",
-      "official_weights_sha256": "4610ad75edef83e75afdebf162d148dc628045ea6cbb83d67d4708c709c4f91d",
-      "pretrained_loaded": true,
-      "smoke_artifact": "artifacts/drawai/phase2/technical/drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx",
-      "smoke_artifact_is_release": false,
-      "selected_model_id": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
-      "selected_revision": "2c7705788ac282557562465d6443606664a55f05",
-      "selected_weights_sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
-      "selected_library": "timm==1.0.22",
-      "parameters": 21603850,
-      "backbone_parameters": 21596160,
-      "digit_head_trained": false,
-      "release_ready": false,
-      "runtime": "Local ONNX Runtime CPU backend, 4 threads; browser WASM exceeds unchanged 500ms p95 budget",
-      "original_meta_snapshot_loaded": false,
-      "license": "DINOv3 custom license; public downloadable weights are not an OSI license"
-    }
-  ],
   "comparison": {
+    "augmentation_train_only": true,
+    "fusion": false,
+    "pretraining_and_compute_differences_disclosed": true,
     "same_sample_ids": true,
     "same_writer_disjoint_private_splits": true,
-    "augmentation_train_only": true,
     "select_by_validation_only": true,
-    "test_not_used_for_tuning": true,
-    "pretraining_and_compute_differences_disclosed": true,
-    "fusion": false
+    "test_not_used_for_tuning": true
   },
   "default_model_selection": {
-    "timing": "After validation and runtime feasibility, before private test evaluation",
     "eligible": "Only trained, verified exports with supported runtime and acceptable UX on target hardware",
     "ranking": [
       "highest validation macro-F1",
@@ -142,17 +29,149 @@
       "swin1d if still tied"
     ],
     "runtime_budget": "docs/drawai/phase2-runtime-budget.json and phase2-backend-budget.json; P2 backend measured; release revalidation in P6/P7",
-    "test_result_must_not_change_selection": true
+    "test_result_must_not_change_selection": true,
+    "timing": "After validation and runtime feasibility, before private test evaluation"
   },
+  "legacy_stroke_contract": "Retained for existing browser Swin release; not used to invent trajectories from Paint images",
+  "models": [
+    {
+      "existing_filename": "web/public/models/drawai-swin-v1/model.onnx",
+      "existing_release": "drawai-swin-v1",
+      "id": "swin1d",
+      "implementation_status": "existing trained PenDigits checkpoint and ONNX verified in P0",
+      "input": {
+        "channels": [
+          "x",
+          "y",
+          "stroke_start"
+        ],
+        "dtype": "float32",
+        "layout": "NCT",
+        "shape": [
+          1,
+          3,
+          128
+        ]
+      },
+      "planned_pendigits_export_name": "drawai_swin1d_pendigits_l128_fp32_v1.onnx",
+      "planned_private_export_name": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+      "preprocessing": "drawai-geometry-v1",
+      "private_training_input": {
+        "initialization": "from scratch; legacy x/y/stroke checkpoint input layer incompatible",
+        "layout": "NCL",
+        "meaning": "64 column features per row token;64 spatial row tokens",
+        "normalization": "(255-image)/255 transpose",
+        "shape": [
+          1,
+          64,
+          64
+        ]
+      },
+      "role": "baseline"
+    },
+    {
+      "backbone_parameters": 21596160,
+      "digit_head_trained": false,
+      "export_scope": "Full backbone and classifier, not head alone",
+      "id": "dinov3_vits16",
+      "implementation_status": "Real public timm DINOv3 pretrained backbone strictly loaded; full ONNX + CPU backend verified; digit head untrained",
+      "initial_training": "Freeze pretrained backbone and train classifier; partial fine-tuning only under recorded validation protocol",
+      "input": {
+        "channels": [
+          "R",
+          "G",
+          "B"
+        ],
+        "dtype": "float32",
+        "layout": "NCHW",
+        "shape": [
+          1,
+          3,
+          224,
+          224
+        ],
+        "status": "Verified 224px stroke-raster adaptation; publisher default256, variable size >=128"
+      },
+      "license": "DINOv3 custom license; public downloadable weights are not an OSI license",
+      "normalization": {
+        "extra_crop": false,
+        "extra_resize": false,
+        "mean": [
+          0.485,
+          0.456,
+          0.406
+        ],
+        "official_hf_processor_note": "Not used by selected native timm backend; no pending gated processor requirement",
+        "official_hf_processor_verified": false,
+        "publisher_timm_config_verified": true,
+        "rescale_factor": 0.00392156862745098,
+        "std": [
+          0.229,
+          0.224,
+          0.225
+        ]
+      },
+      "official_model_id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+      "official_revision": "114c1379950215c8b35dfcd4e90a5c251dde0d32",
+      "official_weights_sha256": "4610ad75edef83e75afdebf162d148dc628045ea6cbb83d67d4708c709c4f91d",
+      "original_meta_snapshot_loaded": false,
+      "parameters": 21603850,
+      "planned_private_export_name": "drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.onnx",
+      "pooling": "CLS concatenated with mean patch tokens, excluding 4 register tokens; head 768 -> 10",
+      "preprocessing": "drawai-raster-v1; normalization verified against pinned timm config",
+      "pretrained_loaded": true,
+      "private_training_preprocessing": "grayscale64 repeated RGB, Pillow bilinear224, ImageNet normalization; separate from stroke-raster-v1",
+      "release_ready": false,
+      "renderer_requirements": [
+        "preserve aspect ratio",
+        "preserve y-down orientation",
+        "no connector between strokes",
+        "fixed padding/background/stroke width",
+        "training and deployed preprocessing parity"
+      ],
+      "role": "pretrained image backbone plus trainable 10-class classifier",
+      "runtime": "Local ONNX Runtime CPU backend, 4 threads; browser WASM exceeds unchanged 500ms p95 budget",
+      "selected_library": "timm==1.0.22",
+      "selected_model_id": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+      "selected_revision": "2c7705788ac282557562465d6443606664a55f05",
+      "selected_weights_sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
+      "smoke_artifact": "artifacts/drawai/phase2/technical/drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx",
+      "smoke_artifact_is_release": false
+    }
+  ],
+  "new_image_contract": "docs/drawai/collection/paint-image64-contract.json",
+  "new_image_plan": "docs/drawai/collection/paint-image64-plan.json",
+  "output": {
+    "display": "softmax scores are not guaranteed accuracy",
+    "dtype": "float32",
+    "meaning": "logits in class order 0..9",
+    "shape": [
+      1,
+      10
+    ]
+  },
+  "phase": "P3_IMAGE_DATA_PREPARED",
+  "source_coordinates": "canvas-y-down",
+  "source_limits": {
+    "max_points": 8192,
+    "max_strokes": 16
+  },
+  "source_schema": "drawai-strokes-v1",
+  "task": "Single complete handwritten digit classification from canvas strokes",
+  "training_data_protocol": "drawai-paint-image64-v1",
+  "training_partition": "Retrospective by person ID before model selection; pilot250,reserved750,train4000,val1000,test1000",
+  "training_source": "Owner-confirmed Paint images,7000x64x64; 35 distinct person IDs and scopes confirmed in chat",
   "ui": {
-    "preserve_current_design": true,
-    "no_new_model_selector_on_main_page": true,
-    "main_page_models": "one selected default",
     "both_models_available_via": "separate verification route or comparison script",
+    "main_page_models": "one selected default",
+    "no_new_model_selector_on_main_page": true,
+    "planned_image_model_integration": "P7 must render canvas to image contract before replacing default; main UI/legacy Swin unchanged in P3",
+    "preserve_current_design": true,
+    "route_change_phase": "P1",
     "target_routes": [
       "/",
       "/drawai"
-    ],
-    "route_change_phase": "P1"
-  }
+    ]
+  },
+  "version": "drawai-two-model-contract-v4"
 }

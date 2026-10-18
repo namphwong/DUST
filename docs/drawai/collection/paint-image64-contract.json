@@ -1,0 +1,53 @@
+{
+  "augmentation_applied": false,
+  "dinov3": {
+    "channels": "repeat grayscale into RGB",
+    "dtype": "float32",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "rescale_factor": 0.00392156862745098,
+    "resize": "Pillow bilinear 64->224; no crop, no bbox normalization",
+    "shape": [
+      3,
+      224,
+      224
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "image_contract_not_stroke_raster": true,
+  "original_strokes_available": false,
+  "source": {
+    "background": "white",
+    "dtype": "uint8",
+    "ink": "black",
+    "range": [
+      0,
+      255
+    ],
+    "shape": [
+      64,
+      64
+    ]
+  },
+  "swin": {
+    "channels": "64 column pixel features",
+    "dtype": "float32",
+    "existing_stroke_checkpoint_compatible": false,
+    "layout": "CL",
+    "length": "64 row positions in top-to-bottom order",
+    "normalization": "(255-image)/255 in float32, then transpose; no learned statistics",
+    "representation": "spatial row sequence, NOT temporal writing trajectory",
+    "shape": [
+      64,
+      64
+    ]
+  },
+  "version": "drawai-paint-image64-v1"
+}

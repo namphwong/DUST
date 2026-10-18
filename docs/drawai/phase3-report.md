@@ -1,108 +1,115 @@
-# DrawAI — Báo cáo P3: chuẩn bị thu dữ liệu riêng
+# DrawAI — Báo cáo P3 làm lại với dữ liệu ảnh Paint
 
-Ngày18/10/2026. **Hoàn thành phần kỹ thuật P3; chưa hoàn thành toàn bộ P3 vì pilot người thật chưa thực hiện.** Trạng thái máy: `TECHNICAL_READY_WAITING_FOR_HUMAN_PILOT`, `technical_complete=true`, `phase_complete=false`. Inbox pilot có **0 mẫu/0 phiên người thật**, mục tiêu250 mẫu từ5 người.
+Ngày18/10/2026. **P3 hoàn thành local trong phạm vi protocol ảnh `drawai-paint-image64-v1`**: đã nhận và kiểm toán7.000 ảnh, ghi xác nhận nguồn từ người dùng, chốt split theo người, xem250 ảnh pilot QC và chuẩn bị input có hash cho hai mô hình. Trạng thái `DONE_LOCAL_IMAGE_DATA_PREPARATION`, `phase_complete=true`. Chưa khóa dataset P4 hoặc train model P5.
 
-## 1. Phạm vi đã triển khai
+Báo cáo P3 trước file NPZ được lưu tại `artifacts/drawai/phase3-image64/pre-rerun/phase3-report.md`; kết quả nét bút v1 không dùng để mô tả provenance/đầu vào của bộ ảnh này.
 
-P3 chuẩn bị protocol, trang thu, schema và pipeline audit/build cho hai mô hình. Giữ nguyên DrawAI/Swin trên `/`, `/drawai`, `/drawai/`; không full-train, không khóa dataset và chưa công bố Kaggle. Không dùng demo PenDigits, dữ liệu sinh hoặc chuột tự động để báo đã thu pilot.
+## 1. Nguồn dữ liệu và xác nhận của chủ dữ liệu
 
-## 2. Quy mô và split đã khóa trước thu
+File nhận: `C:/Users/admin/Downloads/So_viet_tay_35_nguoi.npz`; bản sao giữ nguyên tại `data/private/external/paint35/So_viet_tay_35_nguoi.npz`.
 
-| Đợt | Mã người | Mẫu/người | Số người | Tổng | Vai trò |
-|---|---|---:|---:|---:|---|
-| Pilot | P001–P005 | 10 chữ số ×5 vòng=50 |5|250|pilot-dev, kiểm tra công cụ/protocol |
-| Chính/train | M001–M020 |10×20=200|20|4.000|huấn luyện |
-| Chính/validation | M021–M025 |200|5|1.000|chọn cấu hình/checkpoint |
-| Chính/test | M026–M030 |200|5|1.000|đánh giá cuối sau khóa lựa chọn |
+- Dung lượng **2.828.016 bytes**; SHA-256 `c594927b59509bb62cb185cf5e64034ee641b046798f0f192d6155fd91f71a64`.
+- Người dùng xác nhận ảnh do người thật viết bằng Paint, chỉ còn ảnh NPZ; mỗi person_id1–35 là một người khác nhau.
+- Người dùng xác nhận đồng ý sử dụng cho training, evaluation và công bố Kaggle; dòng “Synthetic” trong metadata gốc là thông tin đóng gói sai.
+- Nguyên văn description gốc được giữ trong audit, không chỉnh file nguồn: `Synthetic handwritten digits: 35 people, each wrote every digit 0-9 twenty times. Shape of images: (7000, 64, 64), uint8, white bg (255), black ink (0).`.
+- Provenance riêng gắn source SHA ghi đính chính/xác nhận trong chat ngày18/10/2026. Phần mềm không độc lập xác minh danh tính hoặc hồ sơ consent; không bịa chữ ký/thời gian thu/thiết bị.
+- NPZ đã public ở [Kaggle](https://www.kaggle.com/datasets/namphwong/drawai-handwritten-digits-placeholder), version2. Việc upload trước đây không tự chứng minh đã hoàn thành P4/P5.
 
-Đã chọn phương án6.000 mẫu trong roadmap. Phương án2.000 mẫu chỉ là phương án dự phòng, chưa kích hoạt. Pilot và đợt chính phải là người khác nhau. Mỗi mã có một người, không đổi split theo nét hoặc kết quả model; điều phối cân đối thiết bị khi cấp mã trước thu. Phần mềm kiểm tra mã/plan, không xác minh được danh tính thật.
+## 2. Cấu trúc và số liệu thực đo
 
-Policy public: `docs/drawai/collection/split-policy.json`; plan local: `data/private/plans/private-v1/plan.json`. SHA-256 nội dung plan: `1931d5d095a82295d5d3d9271fd0f1ffe46b08d0404620b4c92c3bd427bccd78`.35 mã trong plan là dự kiến, không phải35 người đã tham gia.
+| Trường | Shape / dtype | Ý nghĩa |
+|---|---|---|
+| images |7000×64×64, uint8|Ảnh grayscale64; nền trắng/nét đen |
+| labels |7000, int8|Nhãn0–9, mỗi nhãn700 ảnh |
+| person_ids |7000, int8|35 mã1–35, mỗi mã200 ảnh |
+| sample_ids |7000, int8|Lần viết1–20 trong mỗi người/nhãn; không duy nhất toàn cục |
+| description |Unicode scalar|Metadata gốc có dòng lỗi đã được chủ dữ liệu xác nhận |
 
-## 3. Trang thu `/collect`
+Mỗi cặp người/chữ số đủ20 ảnh; composite `(person_id,label,repetition)` duy nhất7.000/7.000. Range pixel0..255, đúng uint8. Không original stroke coordinates, thứ tự nét, pen-lift hoặc timestamp từng điểm.
 
-Code: `web/src/drawai/collect-app.tsx`, `collection.ts`, `collect.css`; thêm route riêng trong `web/src/main.tsx`.
+## 3. Điều chỉnh phạm vi input và kế hoạch
 
-- Đăng ký pilot/main, mã người, loại thiết bị, mã hồ sơ consent. Chặn mã không thuộc đợt và thiếu một trong ba xác nhận.
-- Ba phạm vi đồng ý hiển thị riêng, không tích sẵn: training; evaluation/reporting; Kaggle public. Người điều phối phải có hồ sơ thật bên ngoài; checkbox/JSON không tự chứng minh đồng ý.
-- Lịch mỗi vòng là hoán vị0–9, sinh xác định theo participant/stage/repetition; Python và TypeScript dùng cùng thuật toán. Không lấy nhãn từ model, không hiển thị prediction hoặc mẫu để tô lại.
-- Dùng lại DrawingCanvas hiện tại: tọa độ canonical400×400, nhiều nét, undo/xóa bản nháp. Kiểm tra nét di chuyển, tối đa16 nét/8.192 điểm; kiểm tra pointer thực so với mouse/touch/pen đã đăng ký.
-- Mỗi mẫu có UUID riêng, nhãn/vòng, mã người/phiên, thiết bị, pointer type thực và thời gian thu thực. Không tạo timestamp cho từng điểm khi không có.
-- Tải JSON toàn phiên, tên có đợt/mã người/session/đếm mẫu. Upload file để tiếp tục đúng vị trí; chặn metadata/nhãn/PII bổ sung/ID trùng hoặc lệch lịch. Bản nháp không thành mẫu khi chỉ chạm một điểm.
-- Nét ở bộ nhớ browser, không upload server, không localStorage, không tải model inference. Nhắc tải sau mỗi10 mẫu/trước nghỉ; cảnh báo rời trang khi có mẫu chưa tải. Không có autosave bền vững, nên vẫn có rủi ro mất dữ liệu chưa tải.
+Bộ dữ liệu thực là ảnh nên không thể dùng input x/y/stroke_start của Swin PenDigits cũ như thể còn nét bút gốc. P3 mới tạo **hai biểu diễn ảnh của cùng mẫu**:
 
-Không thêm nút/form/bộ chọn model vào trang DrawAI chính. CSS của trang thu được scope `.drawai-collect`; ảnh root/alias desktop/mobile giữ nguyên từng pixel.
+| Nhánh | Input | Tiền xử lý | Hệ quả |
+|---|---|---|---|
+| Swin Transformer1D ảnh |float32[64,64] CL|`(255-image)/255`, transpose;64 đặc trưng cột cho64 token hàng|Chuỗi không gian theo hàng, không phải thời gian viết; phải train từ đầu |
+| DINOv3 ViT-S/16 |float32[3,224,224] NCHW|Repeat grayscale→RGB, bilinear64→224, chia255/mean-std ImageNet|Backbone pretrained P2 dùng tiếp; head sẽ train ở P5 |
 
-## 4. Schema, validator và builder
+Không phục dựng nét bút giả. Khóa contract riêng [paint-image64-contract.json](collection/paint-image64-contract.json), không gắn nhãn ảnh resize là `drawai-raster-v1`. Model Swin1D cấu hình seq_len64/in_chans64/patch2/window8/embed32/depths[2,2,2]/heads[2,4,8] đã forward/backward ra[2,10] hữu hạn. Đây là kiểm tra khả thi input, không phải training đầy đủ/export release.
 
-Code CLI: `training/drawai/private_data.py`; schema strict Draft2020-12 tại `docs/drawai/collection/session.schema.json`.
+Design, routes nhận dạng và checkpoint/ONNX Swin nét bút đang phục vụ giữ nguyên. Model ảnh tương lai có tên riêng `drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx`; DINOv3 `drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.onnx`. P6/P7 cần export/benchmark và chuyển canvas sang input ảnh đúng contract trước khi đổi model mặc định.
 
-Audit kiểm tra:
+## 4. Split theo người, chốt trước huấn luyện
 
-- Trường/schema/protocol, UUID, nguồn khai báo, consent, mã người trong plan; không chấp nhận trường PII phát sinh.
-- Nhãn integer0–9, label trong drawing và prompt/vòng khớp lịch, độ dài không vượt quota.
-- Metadata phiên/mẫu và device/pointer khớp; tọa độ0..400 hữu hạn, shape/geometry hợp lệ. Time có timezone, consent≤start≤sample, mẫu theo thời gian, không ở tương lai.
-- Không trộn pilot/main; không nhiều phiên cho một mã, không nhiều snapshot cùng phiên, không lặp sample ID hoặc exact strokes kể cả giữa các split.
-- Exact raster hash và dHash/Hamming≤2 gắn cờ cần rà soát; không tự loại mẫu bằng prediction. Cặp gần trùng lưu tối đa5.000 trong report cùng tổng số/truncated để giới hạn bộ nhớ; P4 phải rà toàn bộ nếu vượt giới hạn.
-- Quota người×lớp; thống kê người/lớp/thiết bị/split, số còn thiếu và các lỗi/cảnh báo. Inbox trống báo0 và quota_complete=false.
+| Person ID nguồn | Repetition | Split | Mẫu |
+|---|---|---|---:|
+|1–5|1–5|pilot-qc|250|
+|1–5|6–20|pilot-reserved|750|
+|6–25|1–20|train|4.000|
+|26–30|1–20|validation|1.000|
+|31–35|1–20|test|1.000|
 
-Builder từ chối input có errors, dataset trống hoặc thiếu quota khi bật `--require-complete`. Tạo staging gồm:
+Mỗi nhóm chính có20/5/5 người, train400 ảnh/lớp, val100/lớp, test100/lớp. Không overlap người giữa pilot và main hoặc giữa train/val/test.750 ảnh pilot-reserved để riêng, không bổ sung vào main. Đây là **partition hồi cứu sau thu**, được chốt trước training/model selection, không tuyên bố gán split trước khi người dùng viết trong Paint.
+
+Policy [paint-image64-plan.json](collection/paint-image64-plan.json), SHA `cef746927eb0588ad1bc42feafbe565e81d38bff6b613f8fe6452746924f3fa0`. Chưa augmentation, chưa dùng prediction/test metric chọn split/cấu hình, chưa full-train.
+
+## 5. Kiểm tra dữ liệu và pilot QC
+
+- Quota/schema/dtype/nhãn/range/composite IDs đạt trên toàn bộ7.000 mẫu.
+- **0 exact duplicate ảnh**, không có blank/low-contrast candidate theo tiêu chí ink<192 ít hơn4 pixels hoặc dynamic range<16.
+- Đã xem đủ250 ảnh pilot qua5 contact sheets, mỗi người50 ảnh/10 nhãn/5 lần. Không thấy ảnh trống, render mất/cắt chữ số rõ rệt; đây là QC thị giác, không phải accuracy/model benchmark và không phải pilot live của `/collect`.
+- Kiểm tra gần trùng trên ink ROI trong cùng nhãn: dHash Hamming≤2 và cosine≥0,995 của ink32×32. Có **1,063 cặp / 534 nhóm**, **98 nhóm** xuất hiện qua các split.
+- Near-duplicate là cờ cho review P4: các lần viết cùng chữ số có thể gần nhau hợp lệ. Không tự coi các nhóm là copy/leakage hoặc loại mẫu theo model. Chưa có quyết định giữ/loại nguồn ảnh trong P3.
+
+Toàn bộ nhóm nằm trong `data/private/prepared/paint-image64-v1/audit.json`. Không công bố tên/định danh người từ các mã số và không tự suy tuổi/thiết bị/thời điểm thu.
+
+## 6. Artifact và khả năng tái tạo
 
 ```text
-raw/sample_<uuid>.json
-images/sample_<uuid>.png            RGB224 cho DINOv3
-swin-l128/sample_<uuid>.npy         float32[3,128] cho Swin1D
-manifest.csv                       cùng sample_id, label, participant/split; file paths và SHA-256
-plan.json                          policy/hash đã khóa
-audit.json                        kết quả kiểm tra, không phải khóa dataset
-dataset.json                      manifest hash; preliminary=true, release_ready=false
+data/private/prepared/paint-image64-v1/
+  images.npy / labels.npy / person_ids.npy / sample_ids.npy
+  images64/                          7.000 PNG giữ nguyên pixel nguồn
+  manifest.csv                       sample_id/source_index/label/person/repetition/split/hash
+  audit.json / provenance.json
+  plan.json / preprocessing.json / dataset.json
+  pilot-qc/person-001.png ... person-005.png
 ```
 
-Hai representation lấy từ cùng JSON, không augmentation, không fusion, pilot luôn pilot-dev. Không ghi đè output cũ/không xuất vào public/dist. Mã hồ sơ consent không vào raw per-sample/manifest; raw staging còn thời gian thu và mã phiên, nên **không phải gói đã rà soát privacy để public**. P8 cần bỏ trường không cần thiết, kiểm tra consent/license và dataset card trước Kaggle. Mọi build P3 luôn `dataset_locked=false`, kể cả đủ quota; P4 mới khóa dataset sau rà soát.
+Mỗi dòng manifest có hash PNG, pixel nguồn, Swin row tensor, RGB DINO224 và DINO normalized tensor. Auditor đã tái tạo/đối chiếu **7.000/7.000 dòng** và so arrays/PNG với NPZ gốc. Không xuất tọa độ JSON/timestamp không có trong nguồn. Dữ liệu raw/prepared ở `data/private/`, bị Git ignore; không copy vào public/dist.
 
-## 5. Tài liệu bàn giao
+`training/drawai/paint_data.py` safe-load NPZ bằng `allow_pickle=False`, giới hạn nội dung archive và pin source hash; xác minh provenance, quota và dữ liệu trước build. Hai iterator lấy cùng sample IDs/labels; chỉ cho pilot-qc/train/validation, từ chối test/pilot-reserved. Staging còn toàn bộ source/manifest, chưa là gói test niêm phong P4 và không tự áp ACL.
 
-| File tại `docs/drawai/collection/` | Nội dung |
-|---|---|
-| `protocol.md` | Hướng dẫn viết, nghỉ/tải/tiếp tục, thiết bị thật, quota/split và xử lý sự cố |
-| `consent-template.md` | Phiếu đồng ý ba mục, liên hệ điều phối và giữ hồ sơ riêng |
-| `operator-guide.md` | Quy trình cấp mã, inbox/quarantine, lệnh CLI và điều kiện đóng pilot |
-| `session.schema.json` | Schema strict của JSON phiên và mẫu |
-| `split-policy.json` |35 mã dự kiến, split/quotas và hash |
-| `manifest-template.csv` | Header mapping chung JSON/PNG/NPY/hash |
-| `registry-template.csv` | Mẫu sổ private cho điều phối chống trùng người/consent |
-| `rejection-log-template.csv` | Mẫu ghi cách ly/thu lại và hash nguồn; không loại bằng model |
-| `pilot-report-template.md` | Báo cáo thực thu250 mẫu, sự cố, duplicate review, quyết định protocol |
-| `dataset-card.md` | Dự thảo nguồn/metadata/split/giới hạn; chưa có dữ liệu/license/link Kaggle cuối |
+Tái tạo theo [paint-image64-guide.md](collection/paint-image64-guide.md); [dataset card](collection/paint-image64-dataset-card.md) ghi nguồn, xác nhận đính chính và giới hạn. Output tồn tại sẽ không bị ghi đè. Bản build khảo sát dHash toàn ảnh trước khi chốt QC được giữ riêng dưới `_archive/`, không phải bản đang dùng.
 
-Protocol cho người viết được copy sang `web/public/collection-protocol.md`, có link trên trang thu. Không public registry đã điền/consent/JSON phiên. README/status/roadmap chỉ rõ phần đã làm và phần pilot còn chờ.
-
-## 6. Kiểm chứng thực chạy
+## 7. Kiểm chứng đã chạy
 
 | Hạng mục | Kết quả |
 |---|---|
-| TypeScript/Vite build | PASS |
-| Python DrawAI toàn bộ | **56/56 PASS**, gồm10 tests private-data mới |
-| Browser collection | **5/5 PASS** |
-| Browser sản phẩm/root/alias | **12/12 PASS** |
-| Route thu không inference/upload và không localStorage | PASS |
-| Xuất JSON canvas rồi Python schema/prompt validation | PASS |
-| Resume đúng lịch, reject tamper/PII/thiết bị sai/tap | PASS |
-| CLI preliminary build/hashes, duplicate/cross-split/quota guards | PASS |
-| Hash code/model/data được bảo vệ | **58 files giữ nguyên** |
-| Ảnh desktop/mobile root và alias | Pixel-identical với P0 |
-| Pilot người thật / thiết bị touch/pen thật | **NOT RUN** |
+| Python toàn DrawAI |**78/78 PASS**, gồm10 tests ảnh mới |
+| Build TypeScript/Vite |PASS |
+| Browser DrawAI/root/alias |**12/12 PASS** |
+| Source SHA/NPZ schema/quota/metadata confirmation |PASS |
+| Arrays/PNG/two-model tensors |7.000/7.000 hash rows khớp |
+| Pilot QC |250 ảnh/5 contact sheets đã xem |
+| Row-pixel Swin1D forward/backward |PASS, chưa train/export |
+| Guard test/manifest/PNG tamper |PASS |
+| Model/design cũ |Hash giữ nguyên, desktop/mobile root/alias pixel-identical P0 |
+| P4 image lock / P5 training / private test evaluation |Chưa thực hiện |
 
-Lần chạy regression đầu dùng cổng mới trong khi test cũ hard-code4186 nên2 ca thất bại; đã sửa config P3 dùng4186, rerun toàn suite12/12 đạt. Không thay assertions để bỏ qua lỗi; log đầu giữ tại `initial-port-test-failure.log`.
+Bằng chứng: `artifacts/drawai/phase3-image64/verification.json`, `data-audit-summary.json`, `pilot-visual-review.json`, logs/suite JSON và `ui/`. Không dùng fixture unit tests làm mẫu người thật; số7.000 được lấy từ NPZ nguồn do người dùng xác nhận, không từ giả lập.
 
-Bằng chứng: `artifacts/drawai/phase3/verification.json`, `python-tests.log`, `browser-tests.json`, `product-regression.json`, `build.log`, `current-pilot-audit.json`, ảnh `ui/` và `collector-desktop/mobile.png`. Fixture browser nằm riêng `technical-only/`, có README gắn nhãn synthetic; không được tính vào quota. Test Python dùng temporary directories và fixture lập trình, không đưa dữ liệu đó vào inbox.
+## 8. Code/tài liệu đã thay
 
-## 7. Cách bắt đầu thu pilot ngay
+- `training/drawai/paint_data.py`: audit, plan, preprocessing và build/iterators ảnh.
+- `training/tests/test_drawai_paint_data.py`: shape/axis, RGB/norm, safe NPZ, metadata scope, writer split, tamper/test guards, Swin forward/backward.
+- `tools/verify_phase3_image64.py`: audit nguồn đầy đủ và report P3 mới.
+- `web/playwright.drawai-p3-image64.config.ts`: regression report riêng; không sửa code trang chính.
+- `docs/drawai/collection/paint-image64-*`: protocol, input contract, split policy và dataset card; `two-model-contract.json`v4 ghi hai nhánh dữ liệu ảnh.
+- `README.md`, `status.md`, `two-model-roadmap.md`, ghi chú lịch sử P4 được cập nhật: hiện đã có6.000 main staging, không còn ghi “chưa có dữ liệu” cho trạng thái hiện tại.
 
-1. Trong web chạy `npm run dev -- --port 4183 --strictPort`; mở `http://127.0.0.1:4183/collect`.
-2. Điều phối mời5 người thật, đọc/giải thích protocol và phiếu đồng ý, cấp P001–P005 và mã hồ sơ riêng, kiểm tra không trùng người.
-3. Mỗi người viết50 mẫu; tải JSON mỗi vòng, tiếp tục bằng file mới nhất. Bàn giao vào `data/private/inbox/pilot/`, chỉ giữ snapshot mới nhất/phiên.
-4. Chạy audit/build theo [operator-guide.md](collection/operator-guide.md). Rà soát lỗi/duplicate/consent và điền báo cáo pilot bằng số liệu thực.
-5. Đủ250 mẫu đúng quota cùng xác nhận người/consent và báo cáo pilot mới có thể đóng P3, xem xét giữ protocol-v1 hay tạo v2 trước P4. Chưa full-train hoặc mở test ở bước này.
+## 9. P4 tiếp theo
 
-Trạng thái kết thúc lượt triển khai: **TECHNICAL_READY_WAITING_FOR_HUMAN_PILOT**,0/250 mẫu người thật. Không đánh dấu hoàn thành toàn bộ P3 dựa trên kiểm thử tự động.
+Cần triển khai image-protocol review/lock trên manifest mới, rà534 near-groups (98 cross-split), đối chiếu provenance/xác nhận nguồn, khóa dataset/manifest hash và tách test trước training. CLI `private_dataset.py` hiện có dành cho JSON nét bút v1, không dùng trực tiếp để khóa file ảnh này. Không chạy P5 bằng checkpoint/loader nét bút cũ như thể input tương thích.
+
+P3 mới kết thúc ở **chuẩn bị dữ liệu ảnh đã kiểm toán**, không đồng nghĩa P4 khóa/P5 train/P6 export/P7 deploy/P8 hoàn tất dataset public.

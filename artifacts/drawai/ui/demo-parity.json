@@ -35,9 +35,9 @@
       ],
       "predicted_id": 0,
       "timing_ms": {
-        "preprocessing": 0.7999999523162842,
-        "inference": 25.700000047683716,
-        "total": 578.3999999761581
+        "preprocessing": 0.699999988079071,
+        "inference": 28.69999998807907,
+        "total": 845
       }
     },
     {
@@ -74,9 +74,9 @@
       ],
       "predicted_id": 1,
       "timing_ms": {
-        "preprocessing": 0.3999999761581421,
-        "inference": 3.800000011920929,
-        "total": 4.300000011920929
+        "preprocessing": 0.30000001192092896,
+        "inference": 3.600000023841858,
+        "total": 4.100000023841858
       }
     },
     {
@@ -113,9 +113,9 @@
       ],
       "predicted_id": 2,
       "timing_ms": {
-        "preprocessing": 0.19999998807907104,
-        "inference": 4,
-        "total": 4.399999976158142
+        "preprocessing": 0.09999996423721313,
+        "inference": 5.300000011920929,
+        "total": 5.600000023841858
       }
     },
     {
@@ -153,8 +153,8 @@
       "predicted_id": 3,
       "timing_ms": {
         "preprocessing": 0.19999998807907104,
-        "inference": 3.199999988079071,
-        "total": 3.700000047683716
+        "inference": 4.400000035762787,
+        "total": 4.799999952316284
       }
     },
     {
@@ -191,9 +191,9 @@
       ],
       "predicted_id": 4,
       "timing_ms": {
-        "preprocessing": 0,
-        "inference": 2.299999952316284,
-        "total": 2.399999976158142
+        "preprocessing": 0.10000002384185791,
+        "inference": 3.799999952316284,
+        "total": 4
       }
     },
     {
@@ -231,8 +231,8 @@
       "predicted_id": 5,
       "timing_ms": {
         "preprocessing": 0.10000002384185791,
-        "inference": 2,
-        "total": 2.100000023841858
+        "inference": 3.699999988079071,
+        "total": 3.899999976158142
       }
     },
     {
@@ -269,9 +269,9 @@
       ],
       "predicted_id": 6,
       "timing_ms": {
-        "preprocessing": 0,
-        "inference": 2.100000023841858,
-        "total": 2.100000023841858
+        "preprocessing": 0.10000002384185791,
+        "inference": 4.599999964237213,
+        "total": 4.699999988079071
       }
     },
     {
@@ -308,9 +308,9 @@
       ],
       "predicted_id": 7,
       "timing_ms": {
-        "preprocessing": 0.10000002384185791,
-        "inference": 2,
-        "total": 2.100000023841858
+        "preprocessing": 0.30000001192092896,
+        "inference": 4.100000023841858,
+        "total": 4.5
       }
     },
     {
@@ -347,9 +347,9 @@
       ],
       "predicted_id": 8,
       "timing_ms": {
-        "preprocessing": 0.10000002384185791,
-        "inference": 2.199999988079071,
-        "total": 2.400000035762787
+        "preprocessing": 0.19999998807907104,
+        "inference": 3.699999988079071,
+        "total": 4.100000023841858
       }
     },
     {
@@ -386,9 +386,9 @@
       ],
       "predicted_id": 9,
       "timing_ms": {
-        "preprocessing": 0,
-        "inference": 2.199999988079071,
-        "total": 2.399999976158142
+        "preprocessing": 0.19999998807907104,
+        "inference": 4,
+        "total": 4.300000011920929
       }
     }
   ],
