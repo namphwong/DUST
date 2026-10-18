@@ -1,3 +1,9 @@
+# Protocol ảnh Paint35 hiện tại
+
+Dùng `training.drawai.paint_dataset` và [hướng dẫn khóa ảnh](paint-image64-locking-guide.md). CLI và approval nét bút bên dưới là protocol v1 lịch sử; không áp trực tiếp cho snapshot `paint35-main-v1`.
+
+---
+
 # DrawAI P4 — Khóa dataset và bàn giao cho P5
 
 Hiện phần kỹ thuật đã có, nhưng chưa có dataset người thật để khóa. Mục tiêu không đổi:250 mẫu pilot đã duyệt và6.000 mẫu main/30 người mới. [Hướng dẫn review](review-guide.md) là điều kiện trước lệnh lock.

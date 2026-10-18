@@ -1,0 +1,58 @@
+{
+  "phase": "P4",
+  "status": "DONE_LOCAL_IMAGE_SNAPSHOT_WITH_DISCLOSED_SIMILARITY",
+  "phase_complete": true,
+  "completion_scope": "Reproducible integrity-checked snapshot and train/validation loader; NOT certification of independent source drawings",
+  "dataset_locked": true,
+  "dataset": "paint35-main-v1",
+  "lock_sha256": "2c3a86c5be2b2e0f952a9c3390d56785473a82634338cec805903cbb1b3ef47a",
+  "dataset_path": "data/private/locked/paint35-main-v1",
+  "sample_count": 6000,
+  "split_counts": {
+    "test": 1000,
+    "train": 4000,
+    "validation": 1000
+  },
+  "writers": {
+    "train": 20,
+    "validation": 5,
+    "test": 5
+  },
+  "samples_per_class": {
+    "train": 400,
+    "validation": 100,
+    "test": 100
+  },
+  "pilot_excluded": 1000,
+  "near_groups_audited": 534,
+  "cross_split_groups_visual_qc": 98,
+  "near_groups_retained": 534,
+  "exclusions": 0,
+  "similarity_independence_verified": false,
+  "test_labels_inspected_for_packaging_qc": true,
+  "test_used_for_model_selection": false,
+  "test_used_for_tuning": false,
+  "training_started": false,
+  "development_loader_does_not_open_test_zip": true,
+  "test_archive_members": 1002,
+  "python_tests_passed": 95,
+  "browser_tests_passed": 12,
+  "protected_files_verified": 58,
+  "design": {
+    "desktop": true,
+    "mobile": true,
+    "root-desktop": true,
+    "root-mobile": true
+  },
+  "source_already_public": true,
+  "source_kind": "human-user-attested",
+  "independent_identity_verification": false,
+  "limitations": [
+    "Retrospective fixed writer split; group similarity remains across splits; no clean generalization claim",
+    "No exact pixel duplicates does not prove independent handwriting or eliminate near-copy leakage",
+    "Owner attestation corrects original Synthetic metadata; no independent identity/source proof",
+    "Test ZIP is not encrypted/access-controlled; original NPZ already public",
+    "P4 inspected test images/labels only for source integrity and similarity QC, not model inference",
+    "Snapshot is unaugmented; no new trained/exported classifier; P5 remains separate"
+  ]
+}

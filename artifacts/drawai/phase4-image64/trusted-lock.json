@@ -1,0 +1,5 @@
+{
+  "dataset": "paint35-main-v1",
+  "lock_sha256": "2c3a86c5be2b2e0f952a9c3390d56785473a82634338cec805903cbb1b3ef47a",
+  "purpose": "External integrity anchor captured after actual P4 lock; not a signature"
+}

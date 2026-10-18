@@ -150,7 +150,7 @@
       10
     ]
   },
-  "phase": "P3_IMAGE_DATA_PREPARED",
+  "phase": "P4_IMAGE_SNAPSHOT_LOCKED_WITH_SIMILARITY_LIMITATIONS",
   "source_coordinates": "canvas-y-down",
   "source_limits": {
     "max_points": 8192,
@@ -173,5 +173,14 @@
       "/drawai"
     ]
   },
-  "version": "drawai-two-model-contract-v4"
+  "version": "drawai-two-model-contract-v5",
+  "private_dataset_lock": {
+    "dataset": "paint35-main-v1",
+    "path": "data/private/locked/paint35-main-v1",
+    "lock_sha256": "2c3a86c5be2b2e0f952a9c3390d56785473a82634338cec805903cbb1b3ef47a",
+    "near_groups_retained": 534,
+    "main_cross_split_groups": 37,
+    "similarity_independence_verified": false,
+    "test_custody": "Integrity ZIP only, original source already public; no test-based tuning"
+  }
 }

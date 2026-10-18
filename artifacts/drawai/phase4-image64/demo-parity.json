@@ -1,0 +1,523 @@
+{
+  "status": "passed",
+  "observations": [
+    {
+      "reference": 0,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 1,
+      "drawing_revision": 1,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        17.298803329467773,
+        -9.118205070495605,
+        0.18142563104629517,
+        -4.171089172363281,
+        -2.0046846866607666,
+        1.0279062986373901,
+        3.0173399448394775,
+        -5.1484599113464355,
+        0.8825902342796326,
+        2.9215517044067383
+      ],
+      "scores": [
+        0.9999986005919733,
+        3.3669635570593428e-12,
+        3.681431408017946e-8,
+        4.739620307996966e-10,
+        4.13619557208622e-9,
+        8.582989794620745e-8,
+        6.275360081773385e-7,
+        1.7835152737818234e-10,
+        7.422131271973068e-8,
+        5.702146178333153e-7
+      ],
+      "predicted_id": 0,
+      "timing_ms": {
+        "preprocessing": 0.5,
+        "inference": 19.899999976158142,
+        "total": 557.3000000119209
+      }
+    },
+    {
+      "reference": 1,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 2,
+      "drawing_revision": 2,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -6.195058822631836,
+        15.619659423828125,
+        -0.38520219922065735,
+        -4.3577704429626465,
+        2.1086061000823975,
+        -7.839931011199951,
+        -1.863196611404419,
+        0.23391848802566528,
+        -0.25401389598846436,
+        -1.2296119928359985
+      ],
+      "scores": [
+        3.3572789303940516e-10,
+        0.9999981202524556,
+        1.1198918836143176e-7,
+        2.108199130509723e-9,
+        0.0000013558863244386635,
+        6.480798370875954e-11,
+        2.5544139637987874e-8,
+        2.079968678957932e-7,
+        1.2768810840719038e-7,
+        4.81341806194562e-8
+      ],
+      "predicted_id": 1,
+      "timing_ms": {
+        "preprocessing": 0.19999998807907104,
+        "inference": 3.199999988079071,
+        "total": 3.699999988079071
+      }
+    },
+    {
+      "reference": 2,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 3,
+      "drawing_revision": 3,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -1.6439896821975708,
+        0.20739826560020447,
+        14.289666175842285,
+        4.805810451507568,
+        -3.498918056488037,
+        -2.079986095428467,
+        1.2581870555877686,
+        -2.288235664367676,
+        -7.538211345672607,
+        -6.890685558319092
+      ],
+      "scores": [
+        1.202449214593904e-7,
+        7.657981495711029e-7,
+        0.9999206991460056,
+        0.00007606403335051915,
+        1.881401932326456e-8,
+        7.77527765501131e-8,
+        0.000002190110794646016,
+        6.313559358842178e-8,
+        3.3131324600631495e-10,
+        6.330757465419817e-10
+      ],
+      "predicted_id": 2,
+      "timing_ms": {
+        "preprocessing": 0.19999998807907104,
+        "inference": 3.600000023841858,
+        "total": 3.899999976158142
+      }
+    },
+    {
+      "reference": 3,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 4,
+      "drawing_revision": 4,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -6.151984214782715,
+        -0.8906790018081665,
+        0.1388380229473114,
+        14.468121528625488,
+        -5.270466327667236,
+        4.49373197555542,
+        -4.834145545959473,
+        -0.8652434349060059,
+        -1.615235447883606,
+        -0.4074586033821106
+      ],
+      "scores": [
+        1.1086155981610949e-9,
+        2.13666682215208e-7,
+        5.982054553589904e-7,
+        0.9999519356650126,
+        2.676821050205487e-9,
+        0.000046575420244229065,
+        4.141055457918391e-9,
+        2.1917112292720426e-7,
+        1.0352993469010587e-7,
+        3.4641505582739026e-7
+      ],
+      "predicted_id": 3,
+      "timing_ms": {
+        "preprocessing": 0.10000002384185791,
+        "inference": 2.399999976158142,
+        "total": 2.5
+      }
+    },
+    {
+      "reference": 4,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 5,
+      "drawing_revision": 5,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -5.570217132568359,
+        4.103911876678467,
+        -3.6922707557678223,
+        -4.529099941253662,
+        18.266904830932617,
+        -1.3957159519195557,
+        3.0110416412353516,
+        1.168756127357483,
+        -10.264230728149414,
+        -3.9881820678710938
+      ],
+      "scores": [
+        4.442925585157509e-11,
+        7.064637547701613e-7,
+        2.905700097936377e-10,
+        1.2584051601921736e-10,
+        0.9999990155975527,
+        2.8882306121390912e-9,
+        2.3684399201509902e-7,
+        3.7529081870608416e-8,
+        4.0652273310662827e-13,
+        2.1614148852821153e-10
+      ],
+      "predicted_id": 4,
+      "timing_ms": {
+        "preprocessing": 0.09999996423721313,
+        "inference": 1.9000000357627869,
+        "total": 2.099999964237213
+      }
+    },
+    {
+      "reference": 5,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 6,
+      "drawing_revision": 6,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -1.2817387580871582,
+        -2.8284482955932617,
+        -1.929203987121582,
+        1.1512603759765625,
+        1.3910531997680664,
+        12.166694641113281,
+        4.2485151290893555,
+        -1.7599263191223145,
+        -1.0313425064086914,
+        -7.076242446899414
+      ],
+      "scores": [
+        0.0000014429224969217856,
+        3.0726676453730395e-7,
+        7.551833886364643e-7,
+        0.00001643921604602494,
+        0.00002089401024020024,
+        0.9995934925451238,
+        0.00036391650368347887,
+        8.944761920012593e-7,
+        0.0000018534834607969645,
+        4.392603742205876e-9
+      ],
+      "predicted_id": 5,
+      "timing_ms": {
+        "preprocessing": 0.10000002384185791,
+        "inference": 2.300000011920929,
+        "total": 2.599999964237213
+      }
+    },
+    {
+      "reference": 6,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 7,
+      "drawing_revision": 7,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        3.3257548809051514,
+        0.4236627221107483,
+        2.3463990688323975,
+        -1.7826781272888184,
+        2.5386765003204346,
+        -1.2143763303756714,
+        14.77790355682373,
+        -8.721799850463867,
+        -3.4718143939971924,
+        -9.064221382141113
+      ],
+      "scores": [
+        0.00001062640195401887,
+        5.834768490352151e-7,
+        0.000003990776576425716,
+        6.424243190707e-8,
+        0.000004836848025269618,
+        1.1340502726125926e-7,
+        0.9999797728784445,
+        6.225864998755947e-11,
+        1.1864226058379351e-8,
+        4.420668180148319e-11
+      ],
+      "predicted_id": 6,
+      "timing_ms": {
+        "preprocessing": 0,
+        "inference": 2.099999964237213,
+        "total": 2.199999988079071
+      }
+    },
+    {
+      "reference": 7,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 8,
+      "drawing_revision": 8,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -2.9300930500030518,
+        -3.654756784439087,
+        2.2233920097351074,
+        3.930422067642212,
+        0.7641593217849731,
+        -5.402530670166016,
+        -4.53046178817749,
+        15.484512329101562,
+        -1.577959418296814,
+        -4.668419361114502
+      ],
+      "scores": [
+        1.0060819848654901e-8,
+        4.87434103402308e-9,
+        0.000001740858596867186,
+        0.00000959659641882748,
+        4.0460085139886016e-7,
+        8.489211568180156e-10,
+        2.0304956363027822e-9,
+        0.9999881994689626,
+        3.889175556454657e-8,
+        1.7688371373515682e-9
+      ],
+      "predicted_id": 7,
+      "timing_ms": {
+        "preprocessing": 0.19999998807907104,
+        "inference": 2.800000011920929,
+        "total": 3
+      }
+    },
+    {
+      "reference": 8,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 9,
+      "drawing_revision": 9,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        -0.9688546061515808,
+        -0.5169289112091064,
+        -5.1956377029418945,
+        -5.152815341949463,
+        -4.919890880584717,
+        3.142646551132202,
+        -4.4971089363098145,
+        0.08918667584657669,
+        15.149060249328613,
+        5.340856075286865
+      ],
+      "scores": [
+        1.0001191478704506e-7,
+        1.571522407329473e-7,
+        1.4601019031617276e-9,
+        1.523984963830936e-9,
+        1.9237050735689604e-9,
+        0.000006104554946460309,
+        2.9359614971095215e-9,
+        2.88106616773227e-7,
+        0.9999383471953934,
+        0.00005499513513433248
+      ],
+      "predicted_id": 8,
+      "timing_ms": {
+        "preprocessing": 0.19999998807907104,
+        "inference": 2.800000011920929,
+        "total": 3.100000023841858
+      }
+    },
+    {
+      "reference": 9,
+      "protocol_version": "drawai-worker-v1",
+      "request_id": 10,
+      "drawing_revision": 10,
+      "type": "result",
+      "model_version": "drawai-swin-v1",
+      "preprocessing_version": "drawai-geometry-v1",
+      "logits": [
+        2.1754324436187744,
+        -2.7489848136901855,
+        -7.0618720054626465,
+        0.3039575517177582,
+        -1.4622501134872437,
+        6.9095330238342285,
+        -7.916914939880371,
+        -4.9013237953186035,
+        1.9956434965133667,
+        14.560019493103027
+      ],
+      "scores": [
+        0.00000418053549837218,
+        3.037978346717858e-8,
+        4.069317401967288e-10,
+        6.433698382860943e-7,
+        1.1000348750336241e-7,
+        0.00047558229059732355,
+        1.7305379889993404e-10,
+        3.5304960601768553e-9,
+        0.0000034926138180127997,
+        0.9995159566964955
+      ],
+      "predicted_id": 9,
+      "timing_ms": {
+        "preprocessing": 0.09999996423721313,
+        "inference": 1.9000000357627869,
+        "total": 2
+      }
+    }
+  ],
+  "modelRequests": 1,
+  "workers": 1,
+  "requests": [
+    {
+      "url": "http://127.0.0.1:4186/drawai",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/assets/index-k75XTbST.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/assets/index-DTqynwl_.css",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-0.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/assets/inference-worker-BJRco-X_.js",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/models/drawai-swin-v1/release.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/models/drawai-swin-v1/labels.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/models/drawai-swin-v1/report.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/assets/ort-wasm-simd-threaded-Rz2TxrO3.mjs",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/assets/ort-wasm-simd-threaded-BQQNiIPt.wasm",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-1.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-2.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-3.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-4.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-5.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-6.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-7.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-8.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/manifest.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:4186/samples/drawai/digit-9.json",
+      "method": "GET"
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+# Protocol ảnh Paint35 hiện tại
+
+P4 ảnh đã có snapshot riêng; xem [hướng dẫn hiện tại](paint-image64-locking-guide.md) và [báo cáo P4](../phase4-report.md). Nội dung nét bút dưới đây là protocol v1 lịch sử, không dùng để xác nhận NPZ ảnh hay thay cho provenance của chủ dữ liệu.
+
+---
+
 # DrawAI P4 — Rà soát nguồn dữ liệu trước khóa
 
 P4 không tự xác nhận người thật hoặc đồng ý. Điều phối phải thực sự kiểm tra hồ sơ riêng và điền review; tuyệt đối không tích tất cả chỉ để lệnh chạy qua. Hiện chưa có250 mẫu pilot/6.000 mẫu chính.

@@ -63,4 +63,8 @@ def main():
         (OUT/f'{name}.json').write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(f"P4 technical PASS:68 Python and12 browser tests; model/design preserved. Actual pilot {pilot['accepted_samples']}/250; main {main_data['accepted_samples']}/6000; no real dataset lock.")
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    if (ROOT/'data/private/prepared/paint-image64-v1/dataset.json').exists():
+        from verify_phase4_image64 import main as image_main
+        image_main()
+    else:main()

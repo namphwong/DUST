@@ -130,9 +130,14 @@ Từ root:
 
 Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ để thu nét bút mới nếu cần; không biến ảnh NPZ thành JSON nét bút. [Báo cáo P3 cũ](artifacts/drawai/phase3-image64/pre-rerun/phase3-report.md) chỉ là lịch sử trước khi có file NPZ.
 
-## P4 tiếp theo cho protocol ảnh
+## P4 — đã khóa snapshot ảnh Paint35
 
-Hiện đã có6.000 ảnh main chuẩn bị, nhưng P4 image lock **chưa thực hiện**. Bộ CLI `private_dataset.py` trước đây dành cho JSON phiên nét bút v1, không đọc trực tiếp NPZ/manifest ảnh mới. P4 cần thêm image review/lock, xử lý534 near-groups (98 nhóm qua các split) và giữ test riêng theo plan ảnh. Không dùng draft inbox nét bút trống trước đây để xác nhận dataset ảnh.
+- Đã khóa **6.000 ảnh**: train4.000/validation1.000/test1.000; 30 mã người main tách theo plan, 1.000 pilot/reserved nằm ngoài main.
+- Code mới `training/drawai/paint_dataset.py`: source-bound review, khóa qua staging, external trusted hash, development loader hai input dùng chung ID; test ZIP riêng.
+- **534 nhóm kiểm tra pixel;98 nhóm qua split đã xem ảnh.** Giữ nguyên dữ liệu và cờ chưa xác minh độc lập; trong main có37 nhóm qua split (34 train–test,3 train–validation). Chưa chứng minh benchmark sạch rò rỉ; báo cáo metric phải nêu giới hạn này.
+- **95 Python +12 browser tests đạt**, build đạt;58 file bảo vệ và4 screenshot giống mốc P0. Giữ nguyên design và model đang chạy; chưa train classifier mới.
+- [Báo cáo P4](docs/drawai/phase4-report.md) · [Lệnh verify/rebuild và loader P5](docs/drawai/dataset/paint-image64-locking-guide.md) · [Bằng chứng](artifacts/drawai/phase4-image64/verification.json).
+- Dataset local: `data/private/locked/paint35-main-v1/` bị Git ignore. [External anchor](artifacts/drawai/phase4-image64/trusted-lock.json) lưu riêng; ZIP không mã hóa và nguồn đã public Kaggle nên test isolation là quy trình.
 
 ## Đã cập nhật ở đâu
 
@@ -162,6 +167,7 @@ Hiện đã có6.000 ảnh main chuẩn bị, nhưng P4 image lock **chưa thự
 | P4: `training/drawai/private_data.py` | Reject duplicate JSON keys; nhóm near-duplicate đầy đủ kể cả khi danh sách cặp bị cắt |
 | P4: `training/drawai/private_dataset.py`, tests | Review/approval/source binding, quota/human gates, atomic final lock, held-out ZIP, verify và loader hai representation |
 | P4: `tools/verify_phase4.py`, `docs/drawai/dataset/` | Audit tình trạng thật, hướng dẫn rà soát/khóa và trusted hash/test custody |
+| P4 ảnh: `paint_dataset.py`, `test_drawai_paint_lock.py`, `verify_phase4_image64.py` | Khóa main6.000 ảnh thực, review giữ cờ tương đồng, loaders/hash/test guards, báo cáo/evidence riêng |
 
 ## Cấu trúc hiện hành
 

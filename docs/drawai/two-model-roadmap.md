@@ -1,6 +1,6 @@
 # DrawAI — Kế hoạch chuyển sang hai mô hình
 
-Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P3 hoàn thành local với P3 đổi sang ảnh Paint** theo dữ liệu mới và xác nhận của người dùng. P4 image review/lock chưa chạy, P5–P8 chưa hoàn tất.
+Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P4 hoàn thành local với protocol ảnh Paint ở P3/P4**. [P4](phase4-report.md) khóa6.000 ảnh nhưng còn37 nhóm tương đồng qua split main; không chứng nhận benchmark sạch rò rỉ. P5–P8 chưa hoàn tất.
 
 ## Điều chỉnh P3 theo dữ liệu thực (18/10/2026)
 
@@ -11,7 +11,7 @@ NPZ có7.000 ảnh64×64,35 mã người theo xác nhận người dùng, không
 - Chỉ giữ sản phẩm DrawAI: nhận dạng một chữ số 0–9 từ nét vẽ trên canvas.
 - Hai mô hình chính: Swin Transformer 1D làm đối chứng; DINOv3 làm backbone ảnh, kèm head phân loại 10 lớp.
 - Giữ bố cục, màu, typography, canvas, các nút và luồng nhận dạng hiện có. Không tự thêm dashboard, tab hoặc bộ chọn model trên giao diện chính.
-- Cùng một nét vẽ tạo hai biểu diễn: chuỗi x/y/stroke_start cho Swin; ảnh raster RGB cho DINOv3. Không thêm chức năng OCR ảnh tải lên trong phạm vi này.
+- Protocol ảnh hiện tại tạo hai biểu diễn từ cùng ảnh64: chuỗi64 hàng pixel cho Swin1D và RGB224 cho DINOv3. Input x/y/stroke_start chỉ thuộc release nét bút cũ; P7 cần nối canvas với input ảnh mới mà giữ design. Không thêm chức năng OCR ảnh tải lên trong phạm vi này.
 - Không fusion hai mô hình. So sánh bằng script/báo cáo và trang kiểm chứng riêng. Chọn model mặc định bằng validation và khả năng chạy trên thiết bị mục tiêu trước khi đánh giá test.
 - Dữ liệu “private” được hiểu là tự thu thập, chưa công khai lúc thu; sau đó công bố bản đã ẩn danh lên Kaggle theo yêu cầu đầu bài.
 
