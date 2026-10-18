@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "fixture_sha256": "50373838f3db15ca9f82b77217980488c503f035705730d8da052ca77e799e71",
+  "valid_cases": 17,
+  "invalid_cases": 7,
+  "human_data": false,
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324",
+  "model_sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366"
+}

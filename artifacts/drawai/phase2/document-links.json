@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "links": 34,
+  "files": [
+    "README.md",
+    "NOTICE.md",
+    "docs/drawai/phase2-report.md",
+    "docs/drawai/dinov3-guide.md",
+    "docs/drawai/status.md",
+    "docs/drawai/two-model-roadmap.md"
+  ]
+}

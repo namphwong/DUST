@@ -1,0 +1,305 @@
+{
+  "version": "drawai-train-demos-v1",
+  "samples": [
+    {
+      "label": 0,
+      "file": "digit-0.json",
+      "sample_id": "pendigits-orig.tra:00009",
+      "split": "train",
+      "sha256": "30acf2dc51260fd7ab4dce8e92b3092d2db8cbe838e224eff69604ad78e9d6f0",
+      "bytes": 2220,
+      "provenance": {
+        "id": "pendigits-orig.tra:00009",
+        "label": 0,
+        "source_line": 428,
+        "source": "pendigits-orig.tra",
+        "source_index": 9,
+        "segment_range": [
+          12,
+          12
+        ],
+        "trajectory_sha256": "11f6ea117d8230e360585551585f51b5384222a444b11f0bb82a2614c4455694",
+        "writer_id": null,
+        "comment": [
+          0,
+          12,
+          128
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 1,
+      "file": "digit-1.json",
+      "sample_id": "pendigits-orig.tra:00002",
+      "split": "train",
+      "sha256": "fcd2fc8494367e1428616a3b99c0384ecde48a85c4da24f29546bd3440b357be",
+      "bytes": 1782,
+      "provenance": {
+        "id": "pendigits-orig.tra:00002",
+        "label": 1,
+        "source_line": 135,
+        "source": "pendigits-orig.tra",
+        "source_index": 2,
+        "segment_range": [
+          2,
+          2
+        ],
+        "trajectory_sha256": "1bb05fece34f5970010e088ee954e6533d2c9e4131a861575dbef959cca43acb",
+        "writer_id": null,
+        "comment": [
+          1,
+          11,
+          151
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 2,
+      "file": "digit-2.json",
+      "sample_id": "pendigits-orig.tra:00001",
+      "split": "train",
+      "sha256": "eeb3079a196bcb3b314e8fd4e10b56cd8d4f3e14c83f611754b5e8b813718c17",
+      "bytes": 2440,
+      "provenance": {
+        "id": "pendigits-orig.tra:00001",
+        "label": 2,
+        "source_line": 90,
+        "source": "pendigits-orig.tra",
+        "source_index": 1,
+        "segment_range": [
+          1,
+          1
+        ],
+        "trajectory_sha256": "1be2fac4f8310c2e78bb2f6ef2e14a972f5edab1bce08a39d1a3686c518cfc54",
+        "writer_id": null,
+        "comment": [
+          2,
+          26,
+          54
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 3,
+      "file": "digit-3.json",
+      "sample_id": "pendigits-orig.tra:00016",
+      "split": "train",
+      "sha256": "929a553b47d0261a08074d22c0a8227316ff9989ce6d40561b49664d07b678fb",
+      "bytes": 2654,
+      "provenance": {
+        "id": "pendigits-orig.tra:00016",
+        "label": 3,
+        "source_line": 809,
+        "source": "pendigits-orig.tra",
+        "source_index": 16,
+        "segment_range": [
+          20,
+          20
+        ],
+        "trajectory_sha256": "d9b563ede720a957acdc45e637b522a67a0aaece88358cbe0fe98a6a31d74e9a",
+        "writer_id": null,
+        "comment": [
+          3,
+          19,
+          32
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 4,
+      "file": "digit-4.json",
+      "sample_id": "pendigits-orig.tra:00003",
+      "split": "train",
+      "sha256": "ba1878ff6e68f6c2e9991e7711dae36312e17d286fbad03f5f57cedbd8127e9e",
+      "bytes": 2538,
+      "provenance": {
+        "id": "pendigits-orig.tra:00003",
+        "label": 4,
+        "source_line": 168,
+        "source": "pendigits-orig.tra",
+        "source_index": 3,
+        "segment_range": [
+          3,
+          3
+        ],
+        "trajectory_sha256": "9892ab4a42ef75a19b76d8fb417e0e76495d79acb46b3ed16b7b84de733b84d0",
+        "writer_id": null,
+        "comment": [
+          4,
+          14,
+          100
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 5,
+      "file": "digit-5.json",
+      "sample_id": "pendigits-orig.tra:00008",
+      "split": "train",
+      "sha256": "5af4379d6cf2f041ee92aedacfc0f8d05506c7be390fb65615e61a7d52ec11ab",
+      "bytes": 3233,
+      "provenance": {
+        "id": "pendigits-orig.tra:00008",
+        "label": 5,
+        "source_line": 366,
+        "source": "pendigits-orig.tra",
+        "source_index": 8,
+        "segment_range": [
+          10,
+          11
+        ],
+        "trajectory_sha256": "704d24e3130fe88ffb92a37f265b7c92583793fb364157864910365459aa8599",
+        "writer_id": null,
+        "comment": [
+          5,
+          5,
+          196
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 6,
+      "file": "digit-6.json",
+      "sample_id": "pendigits-orig.tra:00005",
+      "split": "train",
+      "sha256": "a1254492dcd39827939fe9c0d31f7683207904daf683baa22e28c48934d554f4",
+      "bytes": 1838,
+      "provenance": {
+        "id": "pendigits-orig.tra:00005",
+        "label": 6,
+        "source_line": 250,
+        "source": "pendigits-orig.tra",
+        "source_index": 5,
+        "segment_range": [
+          5,
+          5
+        ],
+        "trajectory_sha256": "3cc5c9c5b2025cfb4f0d9dfb5fcbea9b817a04f596173d1e3fce386832e8656d",
+        "writer_id": null,
+        "comment": [
+          6,
+          27,
+          149
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 7,
+      "file": "digit-7.json",
+      "sample_id": "pendigits-orig.tra:00014",
+      "split": "train",
+      "sha256": "3c7d0fa771b264ab44a31401e350ce20e993f093d4863324ca8bc29f69b6d40f",
+      "bytes": 2415,
+      "provenance": {
+        "id": "pendigits-orig.tra:00014",
+        "label": 7,
+        "source_line": 711,
+        "source": "pendigits-orig.tra",
+        "source_index": 14,
+        "segment_range": [
+          17,
+          18
+        ],
+        "trajectory_sha256": "c5ecd78e0a29befaa39cae3fccbd190ae23e9a3b60923d9338f8c12401c232d9",
+        "writer_id": null,
+        "comment": [
+          7,
+          5,
+          194
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 8,
+      "file": "digit-8.json",
+      "sample_id": "pendigits-orig.tra:00000",
+      "split": "train",
+      "sha256": "7f71451b2721cc394ccdb42354f064696ff479a1059bfaf49e4e57ecef08ead3",
+      "bytes": 4556,
+      "provenance": {
+        "id": "pendigits-orig.tra:00000",
+        "label": 8,
+        "source_line": 6,
+        "source": "pendigits-orig.tra",
+        "source_index": 0,
+        "segment_range": [
+          0,
+          0
+        ],
+        "trajectory_sha256": "87970ddfcdd11685d03c689cfe2e75c7bb002b977bf44113ce03e4addc0b76dc",
+        "writer_id": null,
+        "comment": [
+          8,
+          12,
+          224
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    },
+    {
+      "label": 9,
+      "file": "digit-9.json",
+      "sample_id": "pendigits-orig.tra:00013",
+      "split": "train",
+      "sha256": "f7bd1de27821de9cb91adbb8aac7e85f69dceb6071be7ba5f6cd60d102b7fd62",
+      "bytes": 2834,
+      "provenance": {
+        "id": "pendigits-orig.tra:00013",
+        "label": 9,
+        "source_line": 659,
+        "source": "pendigits-orig.tra",
+        "source_index": 13,
+        "segment_range": [
+          16,
+          16
+        ],
+        "trajectory_sha256": "d74809b0bc5f1e67df5bf4dd9c2e613408450cdcfe5bb6cef2f3f4217ca8305f",
+        "writer_id": null,
+        "comment": [
+          9,
+          5,
+          227
+        ],
+        "source_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+        "selection": "Lowest source sample ID in train for each class",
+        "coordinate_transform": "x-min(x), max(y)-y",
+        "original_y_axis": "up"
+      }
+    }
+  ]
+}

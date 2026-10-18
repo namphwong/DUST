@@ -1,0 +1,139 @@
+{
+  "phase": "P1",
+  "status": "DONE_LOCAL",
+  "archived_files_verified": 309,
+  "backup_directory": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455",
+  "model_sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324",
+  "private_data_or_dinov3_implemented": false,
+  "protected_pendigits_files_verified": 23,
+  "unchanged_product_sources": {
+    "models/SwinTransformer_cls.py": "64d453d72e006430fe81cbc13e6516d2eb6a50ce956eaaf82329989b12998cc3",
+    "web/src/drawai/drawai-app.tsx": "e6f1636a10bd5da69dbab9cee83a4dcc90f0cb650f2652635a7eab36380b5f0e",
+    "web/src/drawai/drawai.css": "af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2",
+    "web/src/drawai/drawing-canvas.tsx": "8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c",
+    "web/src/drawai/feasibility-app.tsx": "8b60110972c7e94225d51c78fe24f224f79be3fd54f434e06dca89a7beaa5f2f",
+    "web/src/drawai/feasibility-worker.ts": "e1b024511a5f6f8c3761e0ceb72479049b71703993ab0d8a01df0b6465e4ae5a",
+    "web/src/drawai/infer-drawing.ts": "3ec7e2c293d4775331b7e7d9850ec0466fdb20937a6438c03d914dfb8dae82f3",
+    "web/src/drawai/inference-client.ts": "0135cfaf307002924cd6408c36aa85b0a6f33b9107f550ce78d438bf2c5adacc",
+    "web/src/drawai/inference-worker.ts": "997cd6cf8336841c6c7dda4d1a0e0cc896e66c5bfded89ab949efba0c09a4e9b",
+    "web/src/drawai/integration-check.tsx": "fea177e01d997a6029f83d376050dcc88790b859b857810423e85df926e74c0d",
+    "web/src/drawai/integration-worker.ts": "5604f036b0706440a37b488382e3fa76bdcf59303ef8aa94a426e036204da1e9",
+    "web/src/drawai/preprocessing.ts": "cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d",
+    "web/src/drawai/release-loader.ts": "3730f36a0fc35f5e00cba10bad9313067dc766e9dfdd9048ef9983fcfe621a7f",
+    "web/src/drawai/types.ts": "548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3"
+  },
+  "design": {
+    "desktop": {
+      "pixel_identical": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "root-desktop": {
+      "pixel_identical": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "mobile": {
+      "pixel_identical": true,
+      "size": [
+        390,
+        1165
+      ]
+    },
+    "root-mobile": {
+      "pixel_identical": true,
+      "size": [
+        390,
+        1165
+      ]
+    }
+  },
+  "browser_tests": {
+    "app": {
+      "startTime": "2026-10-17T04:38:22.755Z",
+      "duration": 12430.028,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "routes": {
+      "startTime": "2026-10-17T04:39:14.590Z",
+      "duration": 3847.5919999999996,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "release": {
+      "startTime": "2026-10-17T04:39:14.257Z",
+      "duration": 12189.866999999998,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "chrome_edge": {
+      "startTime": "2026-10-17T04:41:23.489Z",
+      "duration": 51587.833,
+      "expected": 34,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "python_tests_passed": 34,
+  "modules_imported": [
+    "training.drawai.__init__",
+    "training.drawai.build_notebook",
+    "training.drawai.evaluate",
+    "training.drawai.evaluate_canvas",
+    "training.drawai.experiment",
+    "training.drawai.export_onnx",
+    "training.drawai.metrics",
+    "training.drawai.models",
+    "training.drawai.prepare_data",
+    "training.drawai.prepare_integration",
+    "training.drawai.preprocessing",
+    "training.drawai.report_experiment",
+    "training.drawai.train",
+    "training.drawai.verify_data",
+    "training.drawai.verify_export",
+    "training.drawai.verify_feasibility",
+    "training.drawai.verify_integration",
+    "training.drawai.verify_notebook",
+    "training.drawai.verify_training",
+    "training.drawai.verify_ui"
+  ],
+  "full_test_export_samples": 3498,
+  "argmax_disagreements": 0,
+  "macro_f1_degradation": 0,
+  "notebook_cpu_smoke": {
+    "status": "passed",
+    "source_sha256": "906ee5c8437a13b90f1ee5370115f62b63c4598fcaa2fabb1c28d86b5080b451",
+    "executed_sha256": "9878d0a5018f3187c1d0d4b1fa5e3d1a05e3600d11258ca2f307052b9837971a",
+    "code_cells_executed": 4,
+    "mode": "smoke",
+    "device": "cpu",
+    "full_branch_executed": false,
+    "kaggle_gpu_executed": false,
+    "test_opened": false,
+    "interpreter": "D:\\ChuyenDe\\DUST\\.venv-phase1\\Scripts\\python.exe"
+  },
+  "main_routes": [
+    "/",
+    "/drawai",
+    "/drawai/"
+  ],
+  "runtime_legacy_scan": "passed",
+  "exported_onnx_identical_to_P0": true,
+  "limitations": [
+    "No clean install, private data, DINOv3, GPU full run or real touch-device evaluation in P1",
+    "Legacy files were moved to an external recovery archive after permanent delete commands were rejected"
+  ]
+}

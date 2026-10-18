@@ -1,0 +1,443 @@
+{
+  "backup": {
+    "phase": "P1",
+    "status": "DONE_LOCAL",
+    "created_at": "2026-10-17T11:46:18.905328+07:00",
+    "archive": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\drawai-after-phase1.zip",
+    "bytes": 116112073,
+    "sha256": "f49d4ccdde1b60e318b1190a98c876195c71bbe3647a94805963a3dc56c1672c",
+    "verified_files": 329,
+    "excluded": [
+      ".git",
+      ".ipynb_checkpoints",
+      ".pytest_cache",
+      ".venv",
+      ".venv-drawai",
+      ".venv-phase1",
+      ".vite",
+      "__pycache__",
+      "dist",
+      "node_modules",
+      "test-results"
+    ],
+    "history_bundle": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\history.bundle",
+    "archive_manifest": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\after-phase1-manifest.json"
+  },
+  "protected_files": [
+    {
+      "path": "data/.gitignore",
+      "bytes": 115,
+      "sha256": "1e222528940a6f0ad22a4547e13e61410b4feba09e2551a5a68dc8f9f9c42a05"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/fixtures.json",
+      "bytes": 127794,
+      "sha256": "78197ab3e8f07bbfd191315fc4a55d5239fb9133f1c4a00bdb3d02c47f7021bf"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/labels.json",
+      "bytes": 526,
+      "sha256": "2143dac5a63fc2543b8bd60bafc3d026bdc24dff0643e812f43523147e7708c1"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/manifest.json",
+      "bytes": 5467024,
+      "sha256": "c294d57927514e5ea7b41a521addfe1e5b244f6292920b2bb5222a410416a949"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/preprocessing.json",
+      "bytes": 525,
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/test.npz",
+      "bytes": 3217790,
+      "sha256": "a2c07465d997b3d64cf9cd32a9de9bd05cc3f715da9f4d6baaa65c1f065c5ab8"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/train.npz",
+      "bytes": 5538640,
+      "sha256": "a60299fcdb05fa83229f666feaca348a079d7f677e3eee0ac8e6d0274e055fa2"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l128/validation.npz",
+      "bytes": 1381872,
+      "sha256": "55fb536c5af652cb61d24e8eb10cb65901c0c7c0129e0666ea753fc66f226399"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/fixtures.json",
+      "bytes": 80459,
+      "sha256": "b561295b53ace212680738db520f30c9d4042786f6fcbb143c341acf61f2fa54"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/labels.json",
+      "bytes": 526,
+      "sha256": "2143dac5a63fc2543b8bd60bafc3d026bdc24dff0643e812f43523147e7708c1"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/manifest.json",
+      "bytes": 5467024,
+      "sha256": "78cf8d1e23e0df2dacbdec5812737edb3ed3b01d47e20a5903ea765c4e791f0b"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/preprocessing.json",
+      "bytes": 524,
+      "sha256": "89c31d4062c0baf9661a126c595d0886ecc325fa958830613fbbfd1418dc3c49"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/test.npz",
+      "bytes": 1632583,
+      "sha256": "65538f2c177744a283ce5b5a2e51503f61023e122dee2c550af5c428acd598eb"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/train.npz",
+      "bytes": 2809731,
+      "sha256": "0bfd4d2750f36166bf809e2ce24ce880ee415c9fd8482457b9a984618304d098"
+    },
+    {
+      "path": "data/processed/pendigits-drawai-v1/l64/validation.npz",
+      "bytes": 701510,
+      "sha256": "70ec8093bd7d89a05115b339ea8bf83c2115be25bdad523a50ce9849b548b32b"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits-orig.names",
+      "bytes": 3839,
+      "sha256": "e61cb219660347353c584606a1d4a6d62d16bb902660d10372c9766480a9fb63"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits-orig.tes",
+      "bytes": 1661044,
+      "sha256": "ddb1c19e277a56c7ffe682cc024d6ab73696f9adcc1643ef9ed5aa753007e081"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits-orig.tes.Z",
+      "bytes": 456041,
+      "sha256": "55ff1032e789eae273d0a4a1831dd61a2418f36ec5c0647457aa767b36d65960"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits-orig.tra",
+      "bytes": 3641673,
+      "sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits-orig.tra.Z",
+      "bytes": 1011395,
+      "sha256": "ceae25d05f1ccfed4d27ca2e5766370fb32ddd685a647567e84cf7685aa7ac8b"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits.names",
+      "bytes": 4953,
+      "sha256": "a90a76e1edac6f1b50f4b44db80587d7b92601fcbb153c83c2c3210c21b34f60"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits.tes",
+      "bytes": 234366,
+      "sha256": "8bd03229c5c5291fefe43e45465dd948d2645bf23328b9d993e0b777666b2015"
+    },
+    {
+      "path": "data/raw/pendigits/pendigits.tra",
+      "bytes": 502098,
+      "sha256": "e2b9eb9f0d0467e2b64a4816a3420edf2b8043447576f4b84337aba44a9f97d3"
+    },
+    {
+      "path": "data/raw/pendigits/source.zip",
+      "bytes": 1668118,
+      "sha256": "1e02bea023613c2b11c9492f6f34caf975420455934f3527d270cee9a1f03b64"
+    },
+    {
+      "path": "models/SwinTransformer_cls.py",
+      "bytes": 30440,
+      "sha256": "64d453d72e006430fe81cbc13e6516d2eb6a50ce956eaaf82329989b12998cc3"
+    },
+    {
+      "path": "training/drawai/__init__.py",
+      "bytes": 79,
+      "sha256": "cab47f1629b573257c055e903c07371daa6ffdbd0ca20ac53e3650c45bf3992b"
+    },
+    {
+      "path": "training/drawai/build_notebook.py",
+      "bytes": 7755,
+      "sha256": "503e3d08a4eebe26991179dcd11df6498db4648c6b611ca3922f8536ec008183"
+    },
+    {
+      "path": "training/drawai/evaluate.py",
+      "bytes": 9423,
+      "sha256": "cfc58e4ec46d64529fa68e0a33b7d274ba6a06b85c452588e2488bc18271b85e"
+    },
+    {
+      "path": "training/drawai/evaluate_canvas.py",
+      "bytes": 6819,
+      "sha256": "6d9846a42fd6cdfcc2c11af780f24cab98554bfea8fb66513a6398f7d4d59b4d"
+    },
+    {
+      "path": "training/drawai/experiment.py",
+      "bytes": 6604,
+      "sha256": "f8c665baa9c205e6f2a25d6ba7303f5c36cd756a31dc350467bbf03cd698bcf0"
+    },
+    {
+      "path": "training/drawai/export_onnx.py",
+      "bytes": 11099,
+      "sha256": "a308684e5c9806b71ee3b849ff66b614a355902b4f6f20bb32e700798780a638"
+    },
+    {
+      "path": "training/drawai/metrics.py",
+      "bytes": 1309,
+      "sha256": "890e0b112e8b875b0cce4e670616a2452560cd7e6a4e0b2f4f73bef66dafd816"
+    },
+    {
+      "path": "training/drawai/models.py",
+      "bytes": 661,
+      "sha256": "94a6b1cd9acbde139d20694a56136653f1e2e37e0d6deb0c308559e1b0306886"
+    },
+    {
+      "path": "training/drawai/prepare_data.py",
+      "bytes": 16206,
+      "sha256": "bc3aff913c02d460a22741b70bef682125029bdff5ca76dbc9a702f8085a100d"
+    },
+    {
+      "path": "training/drawai/prepare_integration.py",
+      "bytes": 3826,
+      "sha256": "9a67d5357ed863c952ecceef6009f33251eb374438a404d4bad30b260db60606"
+    },
+    {
+      "path": "training/drawai/preprocessing.py",
+      "bytes": 4888,
+      "sha256": "50c03478eaf8a31b237211cf24fd75198bb69c5aecd34afe9583838e48a2dcae"
+    },
+    {
+      "path": "training/drawai/report_experiment.py",
+      "bytes": 1960,
+      "sha256": "571db6002a2ea3b2eba97f2fdc2c7c8f64dfa5132ac48abd4f165e9154594d7f"
+    },
+    {
+      "path": "training/drawai/requirements-notebook.txt",
+      "bytes": 156,
+      "sha256": "2ff6e4293a632ad5ca2e5f92e1aa01c800a80ba61ecd511261515f4b9bfa04fa"
+    },
+    {
+      "path": "training/drawai/requirements-verification.txt",
+      "bytes": 89,
+      "sha256": "e0df73ac9934e6b47e0580b25033d6d88d99ab01857e5821e3ab36d70ea86f5c"
+    },
+    {
+      "path": "training/drawai/requirements.txt",
+      "bytes": 92,
+      "sha256": "4950e379ba9de888fb149b5895d2d0366c1e0dcd78c2f431f838105dc9b9774b"
+    },
+    {
+      "path": "training/drawai/train.py",
+      "bytes": 12330,
+      "sha256": "5752d807781375281924b13f389dd11c1d4ddc222086237dd22827296f9e2946"
+    },
+    {
+      "path": "training/drawai/verify_data.py",
+      "bytes": 7185,
+      "sha256": "4c56760b37bc3dda865c826ea82aef60aaba66e2bc01774a61b856c109a60da5"
+    },
+    {
+      "path": "training/drawai/verify_export.py",
+      "bytes": 14419,
+      "sha256": "45e719a68a7b541652e78e98323af0ffcb497eadb4cbd595bb803dd3f1cfcd20"
+    },
+    {
+      "path": "training/drawai/verify_feasibility.py",
+      "bytes": 11192,
+      "sha256": "cdfc1de1f95207b09e52b433f5b299a63134a67e0461f034ab0083abfece8dcc"
+    },
+    {
+      "path": "training/drawai/verify_integration.py",
+      "bytes": 12429,
+      "sha256": "15203b538b7fe02a76578e3716561e92d9bcc726126c857f5cf217b177e35b33"
+    },
+    {
+      "path": "training/drawai/verify_notebook.py",
+      "bytes": 2523,
+      "sha256": "375c46807cecab5b55c0a9d3f30685d8109e35aa8c95ac6b5e7d1d4245a19be7"
+    },
+    {
+      "path": "training/drawai/verify_training.py",
+      "bytes": 11725,
+      "sha256": "bc6984876be8c2cdb3e9236009e276ae39583c88855d108e4fe1074eb8f95d2c"
+    },
+    {
+      "path": "training/drawai/verify_ui.py",
+      "bytes": 9608,
+      "sha256": "7cfc7857a0e257727433bef63917142aee9ee3351f8d86df485da8a23c9d7f02"
+    },
+    {
+      "path": "training/drawai/configs/smoke-swin.json",
+      "bytes": 361,
+      "sha256": "ea4ebe2e58616693288572aa809acc7823e130643baa2598cc46a0aa56a2c436"
+    },
+    {
+      "path": "training/drawai/configs/swin.json",
+      "bytes": 429,
+      "sha256": "c233996b27abf0687d242575af64231a7ee98f28866bd76ab803b1c15c4af9fe"
+    },
+    {
+      "path": "training/drawai/configs/train-swin.json",
+      "bytes": 363,
+      "sha256": "bbaddf6598f27b49920b313dfa965946869cf962520af01fef7618358c255d0d"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l128/fixtures.json",
+      "bytes": 216447,
+      "sha256": "9f4972e8efcf4272a7163b685c98331934f5df6dfde1b6ebe96610437f192cc8"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l128/model.onnx",
+      "bytes": 2368204,
+      "sha256": "9d3fec6d5e72de8bf3fe84c5e36c3d77ec4c4113f72f4ea680d449548b1ace7f"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l128/preprocessing.json",
+      "bytes": 525,
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l128/release.json",
+      "bytes": 642,
+      "sha256": "e29b59b60ce389552cc89689047367b8ec7d291ff1d9da3d2d0bca4c42bb1cb3"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l128/report.json",
+      "bytes": 1247,
+      "sha256": "654a097cd830100e332c994dd7469f923720515a459bceaa06d705880d0dff26"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l64/fixtures.json",
+      "bytes": 129384,
+      "sha256": "619c5b43c5b71fd60b41ce6f776c3266189a5b6ff07375ba58bd6aa89937596b"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l64/model.onnx",
+      "bytes": 2359213,
+      "sha256": "c0e9c5918e7c2a885148c02e1b36b0a618dfc531285d9e74a098f263656cd8a5"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l64/preprocessing.json",
+      "bytes": 524,
+      "sha256": "89c31d4062c0baf9661a126c595d0886ecc325fa958830613fbbfd1418dc3c49"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l64/release.json",
+      "bytes": 641,
+      "sha256": "473b876d4285b50d65f29850a84a6e8876ef466347ce1a2a18e3e6340d53fbe4"
+    },
+    {
+      "path": "web/public/models/drawai-feasibility-l64/report.json",
+      "bytes": 1246,
+      "sha256": "f968abb1d25877fa1be8fa074b6ef3820ed7c5b075362490633d35070e1d5f97"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/fixtures.json",
+      "bytes": 216186,
+      "sha256": "1d2e3713d68f3fc3aae18b5476a52218bbebafe74859f818cd6e4c1e936caa2b"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/labels.json",
+      "bytes": 526,
+      "sha256": "2143dac5a63fc2543b8bd60bafc3d026bdc24dff0643e812f43523147e7708c1"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/model.onnx",
+      "bytes": 2384716,
+      "sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/preprocessing.json",
+      "bytes": 525,
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/release.json",
+      "bytes": 767,
+      "sha256": "dc4688d4c2f3c17f21e8c849d6cf27db5454e5c16f9a98a0f785b9d81246c021"
+    },
+    {
+      "path": "web/public/models/drawai-swin-v1/report.json",
+      "bytes": 8294,
+      "sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35"
+    },
+    {
+      "path": "web/src/main.tsx",
+      "bytes": 707,
+      "sha256": "c9aae5aea0104843285548b2474d68a4f1fec43e748c4354acd76a68dd2f583b"
+    },
+    {
+      "path": "web/src/vite-env.d.ts",
+      "bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "web/src/drawai/base.css",
+      "bytes": 1523,
+      "sha256": "f2225b56ecba87bb5163cf4af3b44dd010463913d6a9cdf423e1a2c973e0c30e"
+    },
+    {
+      "path": "web/src/drawai/drawai-app.tsx",
+      "bytes": 9647,
+      "sha256": "e6f1636a10bd5da69dbab9cee83a4dcc90f0cb650f2652635a7eab36380b5f0e"
+    },
+    {
+      "path": "web/src/drawai/drawai.css",
+      "bytes": 9539,
+      "sha256": "af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2"
+    },
+    {
+      "path": "web/src/drawai/drawing-canvas.tsx",
+      "bytes": 2859,
+      "sha256": "8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c"
+    },
+    {
+      "path": "web/src/drawai/feasibility-app.tsx",
+      "bytes": 3628,
+      "sha256": "8b60110972c7e94225d51c78fe24f224f79be3fd54f434e06dca89a7beaa5f2f"
+    },
+    {
+      "path": "web/src/drawai/feasibility-worker.ts",
+      "bytes": 9292,
+      "sha256": "e1b024511a5f6f8c3761e0ceb72479049b71703993ab0d8a01df0b6465e4ae5a"
+    },
+    {
+      "path": "web/src/drawai/infer-drawing.ts",
+      "bytes": 1102,
+      "sha256": "3ec7e2c293d4775331b7e7d9850ec0466fdb20937a6438c03d914dfb8dae82f3"
+    },
+    {
+      "path": "web/src/drawai/inference-client.ts",
+      "bytes": 2563,
+      "sha256": "0135cfaf307002924cd6408c36aa85b0a6f33b9107f550ce78d438bf2c5adacc"
+    },
+    {
+      "path": "web/src/drawai/inference-worker.ts",
+      "bytes": 2113,
+      "sha256": "997cd6cf8336841c6c7dda4d1a0e0cc896e66c5bfded89ab949efba0c09a4e9b"
+    },
+    {
+      "path": "web/src/drawai/integration-check.tsx",
+      "bytes": 1226,
+      "sha256": "fea177e01d997a6029f83d376050dcc88790b859b857810423e85df926e74c0d"
+    },
+    {
+      "path": "web/src/drawai/integration-worker.ts",
+      "bytes": 2657,
+      "sha256": "5604f036b0706440a37b488382e3fa76bdcf59303ef8aa94a426e036204da1e9"
+    },
+    {
+      "path": "web/src/drawai/preprocessing.ts",
+      "bytes": 3814,
+      "sha256": "cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d"
+    },
+    {
+      "path": "web/src/drawai/release-loader.ts",
+      "bytes": 3516,
+      "sha256": "3730f36a0fc35f5e00cba10bad9313067dc766e9dfdd9048ef9983fcfe621a7f"
+    },
+    {
+      "path": "web/src/drawai/types.ts",
+      "bytes": 2869,
+      "sha256": "548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3"
+    }
+  ]
+}

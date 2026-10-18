@@ -1,0 +1,91 @@
+{
+  "version": "drawai-private-audit-v1",
+  "protocol_version": "drawai-private-protocol-v1",
+  "plan_sha256": "1931d5d095a82295d5d3d9271fd0f1ffe46b08d0404620b4c92c3bd427bccd78",
+  "stage": "pilot",
+  "input_files": 0,
+  "accepted_samples": 0,
+  "parsed_samples": 0,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "NO_HUMAN_DATA",
+      "message": "No session JSON found; pilot has not been performed"
+    }
+  ],
+  "near_duplicates": [],
+  "near_duplicate_pairs_total": 0,
+  "near_duplicate_report_truncated": false,
+  "near_duplicate_policy": "Review original strokes without prediction; record reasons; never auto-remove by model output; P4 must resolve all flags, including truncated reports",
+  "counts_by_participant_and_class": {},
+  "counts_by_device": {},
+  "counts_by_split": {},
+  "missing_by_participant_and_class": {
+    "P001": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5
+    },
+    "P002": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5
+    },
+    "P003": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5
+    },
+    "P004": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5
+    },
+    "P005": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5,
+      "6": 5,
+      "7": 5,
+      "8": 5,
+      "9": 5
+    }
+  },
+  "quota_complete": false,
+  "dataset_locked": false,
+  "release_ready": false,
+  "human_origin": "self-declared by collection session; coordinator must verify identities/consent outside public files",
+  "verified_human_origin_by_software": false,
+  "test_used_for_tuning": false
+}

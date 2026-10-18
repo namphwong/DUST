@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "examples": 10,
+  "source": "one PenDigits train demo per class",
+  "pretrained_loaded": true,
+  "test_opened": false,
+  "feature_conditioning": "mean/std from these ten training examples only; min scale 0.001",
+  "exported_head_modified": false,
+  "initial_loss": 2.4834342002868652,
+  "history": [
+    {
+      "step": 1,
+      "loss": 4.797695510205813e-05,
+      "train_accuracy": 1.0
+    }
+  ],
+  "backbone_gradients_absent": true,
+  "note": "Tiny probe overfit is an optimization check, not recognition accuracy or a trained release"
+}

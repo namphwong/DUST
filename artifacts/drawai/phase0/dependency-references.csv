@@ -1,0 +1,1270 @@
+﻿source,line,kind,reference
+gen_data.py,1,python-import,pickle
+gen_data.py,2,python-import,numpy
+step_fusion.py,1,python-import,torch
+step_fusion.py,2,python-import,torch.nn
+step_fusion.py,3,python-import,models.SwinTransformer_cls
+step_fusion.py,4,python-import,models.SwinTransformer_fusion
+step_fusion.py,5,python-import,torch.utils.data
+step_fusion.py,7,python-import,cv2
+step_fusion.py,8,python-import,numpy
+step_fusion.py,9,python-import,pandas
+step_fusion.py,10,python-import,random
+step_fusion.py,12,python-import,torch.optim
+step_fusion.py,13,python-import,torch.nn
+step_fusion.py,15,python-import,logging
+step_fusion.py,17,python-import,torch.optim.lr_scheduler
+step_fusion.py,18,python-import,math
+step_fusion.py,19,python-import,argparse
+step_fusion_1d.py,1,python-import,torch
+step_fusion_1d.py,2,python-import,torch.nn
+step_fusion_1d.py,3,python-import,models.SwinTransformer_cls
+step_fusion_1d.py,4,python-import,torch.utils.data
+step_fusion_1d.py,6,python-import,cv2
+step_fusion_1d.py,7,python-import,numpy
+step_fusion_1d.py,8,python-import,pandas
+step_fusion_1d.py,9,python-import,random
+step_fusion_1d.py,11,python-import,torch.optim
+step_fusion_1d.py,12,python-import,torch.nn
+step_fusion_1d.py,14,python-import,logging
+step_fusion_1d.py,16,python-import,torch.optim.lr_scheduler
+step_fusion_1d.py,17,python-import,math
+step_fusion_1d.py,18,python-import,argparse
+step_fusion_3d.py,1,python-import,torch
+step_fusion_3d.py,2,python-import,torch.nn
+step_fusion_3d.py,3,python-import,models.video_swin_transformer
+step_fusion_3d.py,4,python-import,torch.utils.data
+step_fusion_3d.py,6,python-import,cv2
+step_fusion_3d.py,7,python-import,numpy
+step_fusion_3d.py,8,python-import,pandas
+step_fusion_3d.py,9,python-import,random
+step_fusion_3d.py,11,python-import,torch.optim
+step_fusion_3d.py,12,python-import,torch.nn
+step_fusion_3d.py,14,python-import,logging
+step_fusion_3d.py,16,python-import,torch.optim.lr_scheduler
+step_fusion_3d.py,17,python-import,math
+step_fusion_3d.py,18,python-import,argparse
+step_fusion_3d_get_feature.py,1,python-import,torch
+step_fusion_3d_get_feature.py,2,python-import,torch.nn
+step_fusion_3d_get_feature.py,3,python-import,models.video_swin_transformer
+step_fusion_3d_get_feature.py,4,python-import,torch.utils.data
+step_fusion_3d_get_feature.py,6,python-import,cv2
+step_fusion_3d_get_feature.py,7,python-import,numpy
+step_fusion_3d_get_feature.py,8,python-import,pandas
+step_fusion_3d_get_feature.py,9,python-import,random
+step_fusion_3d_get_feature.py,11,python-import,torch.optim
+step_fusion_3d_get_feature.py,12,python-import,torch.nn
+step_fusion_3d_get_feature.py,14,python-import,logging
+step_fusion_3d_get_feature.py,15,python-import,pickle
+step_fusion_3d_get_feature.py,16,python-import,argparse
+artifacts/drawai/d0/verification.json,19,config-or-notebook,"""file"": ""examples/drawai/strokes-valid.json"","
+artifacts/drawai/d0/verification.json,23,config-or-notebook,"""file"": ""examples/drawai/strokes-no-time.json"","
+artifacts/drawai/d0/verification.json,94,config-or-notebook,"""docs/drawai/scope.md"": {"
+artifacts/drawai/d0/verification.json,98,config-or-notebook,"""docs/drawai/data-contract.md"": {"
+artifacts/drawai/d0/verification.json,102,config-or-notebook,"""docs/drawai/architecture.md"": {"
+artifacts/drawai/d0/verification.json,106,config-or-notebook,"""docs/drawai/environment.md"": {"
+artifacts/drawai/d0/verification.json,110,config-or-notebook,"""docs/drawai/acceptance-criteria.md"": {"
+artifacts/drawai/d0/verification.json,114,config-or-notebook,"""docs/drawai/d0-report.md"": {"
+artifacts/drawai/d0/verification.json,118,config-or-notebook,"""docs/drawai/phases.md"": {"
+artifacts/drawai/d0/verification.json,122,config-or-notebook,"""docs/drawai/status.md"": {"
+artifacts/drawai/d0/verification.json,126,config-or-notebook,"""docs/drawai-project-plan.md"": {"
+artifacts/drawai/d0/verification.json,130,config-or-notebook,"""examples/drawai/README.md"": {"
+artifacts/drawai/d0/verification.json,134,config-or-notebook,"""docs/drawai/strokes.schema.json"": {"
+artifacts/drawai/d0/verification.json,138,config-or-notebook,"""examples/drawai/strokes-valid.json"": {"
+artifacts/drawai/d0/verification.json,142,config-or-notebook,"""examples/drawai/strokes-no-time.json"": {"
+artifacts/drawai/d0/verification.json,146,config-or-notebook,"""training/drawai/requirements.txt"": {"
+artifacts/drawai/d3-local-v1/configuration-lock.json,33,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,152,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,271,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,390,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,509,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,641,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,773,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/configuration-lock.json,905,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/d3-review.json,39,config-or-notebook,"""training\\drawai\\__init__.py"": ""cab47f1629b573257c055e903c07371daa6ffdbd0ca20ac53e3650c45bf3992b"","
+artifacts/drawai/d3-local-v1/d3-review.json,40,config-or-notebook,"""training\\drawai\\build_notebook.py"": ""c1cd2460a48d10b046479585ab66d0955d9b11de1a1a03f79183b74b28de7b66"","
+artifacts/drawai/d3-local-v1/d3-review.json,41,config-or-notebook,"""training\\drawai\\evaluate.py"": ""a8242ed344c489e25fce99f79edb99fd1ee92a47221b4395b84bf55e69dfe283"","
+artifacts/drawai/d3-local-v1/d3-review.json,42,config-or-notebook,"""training\\drawai\\experiment.py"": ""83bc7916b691e629486fe9259a91c212e853271079140db1abc44b3a57da7394"","
+artifacts/drawai/d3-local-v1/d3-review.json,43,config-or-notebook,"""training\\drawai\\metrics.py"": ""890e0b112e8b875b0cce4e670616a2452560cd7e6a4e0b2f4f73bef66dafd816"","
+artifacts/drawai/d3-local-v1/d3-review.json,44,config-or-notebook,"""training\\drawai\\models.py"": ""694b3174cc47b9cb31b51d1939ac1a81a4f4c291ddb9d537ff793b9afca69f13"","
+artifacts/drawai/d3-local-v1/d3-review.json,45,config-or-notebook,"""training\\drawai\\prepare_data.py"": ""bc3aff913c02d460a22741b70bef682125029bdff5ca76dbc9a702f8085a100d"","
+artifacts/drawai/d3-local-v1/d3-review.json,46,config-or-notebook,"""training\\drawai\\preprocessing.py"": ""50c03478eaf8a31b237211cf24fd75198bb69c5aecd34afe9583838e48a2dcae"","
+artifacts/drawai/d3-local-v1/d3-review.json,47,config-or-notebook,"""training\\drawai\\report_experiment.py"": ""b96d86997e2954a7488d3dc948664a825d1f5788a294be176f5fc877cdf3eeda"","
+artifacts/drawai/d3-local-v1/d3-review.json,48,config-or-notebook,"""training\\drawai\\train.py"": ""b177459319a4a8834afe0f54c1e29d81016a39aaa25a29709f7b2a80086d675f"","
+artifacts/drawai/d3-local-v1/d3-review.json,49,config-or-notebook,"""training\\drawai\\verify_data.py"": ""4c56760b37bc3dda865c826ea82aef60aaba66e2bc01774a61b856c109a60da5"","
+artifacts/drawai/d3-local-v1/d3-review.json,50,config-or-notebook,"""training\\drawai\\verify_feasibility.py"": ""cdfc1de1f95207b09e52b433f5b299a63134a67e0461f034ab0083abfece8dcc"","
+artifacts/drawai/d3-local-v1/d3-review.json,51,config-or-notebook,"""training\\drawai\\verify_notebook.py"": ""cb54e418ae4c9906eae63b734b9e871b392e2a73a7cba6efe4b206cbfd997d58"","
+artifacts/drawai/d3-local-v1/d3-review.json,52,config-or-notebook,"""training\\drawai\\verify_training.py"": ""3a0ebd5f70e0ac0e1a170a3fc108850a94a71a008a580c9f61ceba7f2d9a08ca"""
+artifacts/drawai/d3-local-v1/experiment-plan.json,2,config-or-notebook,"""version"": ""drawai-experiment-v1"","
+artifacts/drawai/d3-local-v1/selection.json,36,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/selection.json,155,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/selection.json,274,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/selection.json,393,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/selection.json,525,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/selection.json,657,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-cnn-l64-aug0-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-cnn-l64-aug0-seed43/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-cnn-l64-aug0-seed44/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-swin-l128-aug1-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-swin-l128-aug1-seed43/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/official-swin-l128-aug1-seed44/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-cnn-l128-aug0-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-cnn-l128-aug1-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-cnn-l64-aug0-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-cnn-l64-aug1-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-swin-l128-aug0-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-swin-l128-aug1-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-swin-l64-aug0-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-local-v1/runs/pilot-swin-l64-aug1-seed42/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-notebook-smoke/cnn/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-notebook-smoke/swin/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-smoke/cnn/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/d3-smoke/swin/summary.json,28,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/data/d1-review.json,16,config-or-notebook,"""command"": ""python -m unittest training.tests.test_drawai_data -v"","
+artifacts/drawai/data/d1-review.json,52,config-or-notebook,"""training/drawai/prepare_data.py"": {"
+artifacts/drawai/data/d1-review.json,56,config-or-notebook,"""training/drawai/preprocessing.py"": {"
+artifacts/drawai/data/d1-review.json,60,config-or-notebook,"""training/drawai/verify_data.py"": {"
+artifacts/drawai/data/d1-review.json,64,config-or-notebook,"""training/tests/test_drawai_data.py"": {"
+artifacts/drawai/data/d1-review.json,68,config-or-notebook,"""docs/drawai/data-contract.md"": {"
+artifacts/drawai/data/d1-review.json,72,config-or-notebook,"""docs/drawai/data-report.md"": {"
+artifacts/drawai/data/d1-review.json,76,config-or-notebook,"""artifacts/drawai/data/verification.json"": {"
+artifacts/drawai/data/d1-review.json,80,config-or-notebook,"""artifacts/drawai/data/l64-report.json"": {"
+artifacts/drawai/data/d1-review.json,84,config-or-notebook,"""artifacts/drawai/data/l64-samples.png"": {"
+artifacts/drawai/data/d1-review.json,88,config-or-notebook,"""artifacts/drawai/data/l64-samples-resampled.png"": {"
+artifacts/drawai/data/d1-review.json,92,config-or-notebook,"""artifacts/drawai/data/l128-report.json"": {"
+artifacts/drawai/data/d1-review.json,96,config-or-notebook,"""artifacts/drawai/data/l128-samples.png"": {"
+artifacts/drawai/data/d1-review.json,100,config-or-notebook,"""artifacts/drawai/data/l128-samples-resampled.png"": {"
+artifacts/drawai/data/l128-report.json,23,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/data/l64-report.json,23,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+artifacts/drawai/export/browser-report.json,15,config-or-notebook,"""version"": ""drawai-swin-v1"","
+artifacts/drawai/export/browser-report.json,449,config-or-notebook,"""preprocessingVersion"": ""drawai-geometry-v1"","
+artifacts/drawai/export/d4-review.json,29,config-or-notebook,"""training\\drawai\\export_onnx.py"": ""a0dc6de71aecd996e1eb9632f6fe4c429331453bfd62456eabc6dbbcc4f131e2"","
+artifacts/drawai/export/d4-review.json,30,config-or-notebook,"""training\\drawai\\verify_export.py"": ""45e719a68a7b541652e78e98323af0ffcb497eadb4cbd595bb803dd3f1cfcd20"","
+artifacts/drawai/export/d4-review.json,31,config-or-notebook,"""web\\src\\drawai\\feasibility-worker.ts"": ""e1b024511a5f6f8c3761e0ceb72479049b71703993ab0d8a01df0b6465e4ae5a"","
+artifacts/drawai/export/d4-review.json,32,config-or-notebook,"""web\\src\\drawai\\feasibility-app.tsx"": ""8b60110972c7e94225d51c78fe24f224f79be3fd54f434e06dca89a7beaa5f2f"","
+artifacts/drawai/export/d4-review.json,33,config-or-notebook,"""web\\tests\\drawai-release.spec.ts"": ""161564ecf353c5e7a2b85305e96eb29a48afc5d4ce19f1e984938edd34c7368b"","
+artifacts/drawai/export/d4-review.json,34,config-or-notebook,"""web\\playwright.drawai-release.config.ts"": ""75e6487692989b50465f604fbef1a37fd012a9d10afe2e8a66be74a0cc12522f"""
+artifacts/drawai/export/playwright-report.json,8,config-or-notebook,"""playwright.drawai-release.config.ts"""
+artifacts/drawai/export/playwright-report.json,10,config-or-notebook,"""configFile"": ""D:\\ChuyenDe\\DUST\\web\\playwright.drawai-release.config.ts"","
+artifacts/drawai/export/playwright-report.json,38,config-or-notebook,"""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,39,config-or-notebook,"""drawai-feasibility.spec.ts"""
+artifacts/drawai/export/playwright-report.json,53,config-or-notebook,"""outputFile"": ""../artifacts/drawai/export/playwright-report.json"""
+artifacts/drawai/export/playwright-report.json,75,config-or-notebook,"""title"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,76,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,110,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,144,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,178,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,212,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,246,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,280,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/export/playwright-report.json,287,config-or-notebook,"""title"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,288,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,322,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,356,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,390,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,424,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,458,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,492,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/playwright-report.json,526,config-or-notebook,"""file"": ""drawai-release.spec.ts"","
+artifacts/drawai/export/python-report.json,4,config-or-notebook,"""version"": ""drawai-swin-v1"","
+artifacts/drawai/export/d2-regression/browser-report.json,14,config-or-notebook,"""version"": ""drawai-feasibility-l64"","
+artifacts/drawai/export/d2-regression/browser-report.json,448,config-or-notebook,"""preprocessingVersion"": ""drawai-geometry-v1"","
+artifacts/drawai/export/d2-regression/browser-report.json,455,config-or-notebook,"""version"": ""drawai-feasibility-l128"","
+artifacts/drawai/export/d2-regression/browser-report.json,889,config-or-notebook,"""preprocessingVersion"": ""drawai-geometry-v1"","
+artifacts/drawai/feasibility/browser-report.json,14,config-or-notebook,"""version"": ""drawai-feasibility-l64"","
+artifacts/drawai/feasibility/browser-report.json,448,config-or-notebook,"""preprocessingVersion"": ""drawai-geometry-v1"","
+artifacts/drawai/feasibility/browser-report.json,455,config-or-notebook,"""version"": ""drawai-feasibility-l128"","
+artifacts/drawai/feasibility/browser-report.json,889,config-or-notebook,"""preprocessingVersion"": ""drawai-geometry-v1"","
+artifacts/drawai/feasibility/d2-review.json,17,config-or-notebook,"""command"": ""python -m unittest training.tests.test_drawai_model -v"""
+artifacts/drawai/feasibility/d2-review.json,22,config-or-notebook,"""command"": ""npx playwright test --config playwright.drawai.config.ts"""
+artifacts/drawai/feasibility/d2-review.json,59,config-or-notebook,"""preview_url"": ""http://127.0.0.1:4183/drawai/check"","
+artifacts/drawai/feasibility/d2-review.json,69,config-or-notebook,"""training/drawai/verify_feasibility.py"": {"
+artifacts/drawai/feasibility/d2-review.json,73,config-or-notebook,"""training/drawai/models.py"": {"
+artifacts/drawai/feasibility/d2-review.json,77,config-or-notebook,"""training/drawai/configs/swin.json"": {"
+artifacts/drawai/feasibility/d2-review.json,81,config-or-notebook,"""training/tests/test_drawai_model.py"": {"
+artifacts/drawai/feasibility/d2-review.json,85,config-or-notebook,"""web/src/drawai/feasibility-worker.ts"": {"
+artifacts/drawai/feasibility/d2-review.json,89,config-or-notebook,"""web/src/drawai/feasibility-app.tsx"": {"
+artifacts/drawai/feasibility/d2-review.json,93,config-or-notebook,"""web/tests/drawai-feasibility.spec.ts"": {"
+artifacts/drawai/feasibility/d2-review.json,97,config-or-notebook,"""web/playwright.drawai.config.ts"": {"
+artifacts/drawai/feasibility/d2-review.json,101,config-or-notebook,"""docs/drawai/feasibility-report.md"": {"
+artifacts/drawai/feasibility/d2-review.json,105,config-or-notebook,"""docs/drawai/environment.md"": {"
+artifacts/drawai/feasibility/d2-review.json,109,config-or-notebook,"""artifacts/drawai/feasibility/python-report.json"": {"
+artifacts/drawai/feasibility/d2-review.json,113,config-or-notebook,"""artifacts/drawai/feasibility/browser-report.json"": {"
+artifacts/drawai/feasibility/d2-review.json,117,config-or-notebook,"""artifacts/drawai/feasibility/playwright-report.json"": {"
+artifacts/drawai/feasibility/d2-review.json,121,config-or-notebook,"""artifacts/drawai/feasibility/desktop.png"": {"
+artifacts/drawai/feasibility/d2-review.json,125,config-or-notebook,"""web/public/models/drawai-feasibility-l64/model.onnx"": {"
+artifacts/drawai/feasibility/d2-review.json,129,config-or-notebook,"""web/public/models/drawai-feasibility-l64/fixtures.json"": {"
+artifacts/drawai/feasibility/d2-review.json,133,config-or-notebook,"""web/public/models/drawai-feasibility-l64/preprocessing.json"": {"
+artifacts/drawai/feasibility/d2-review.json,137,config-or-notebook,"""web/public/models/drawai-feasibility-l64/report.json"": {"
+artifacts/drawai/feasibility/d2-review.json,141,config-or-notebook,"""web/public/models/drawai-feasibility-l64/release.json"": {"
+artifacts/drawai/feasibility/d2-review.json,145,config-or-notebook,"""web/public/models/drawai-feasibility-l128/model.onnx"": {"
+artifacts/drawai/feasibility/d2-review.json,149,config-or-notebook,"""web/public/models/drawai-feasibility-l128/fixtures.json"": {"
+artifacts/drawai/feasibility/d2-review.json,153,config-or-notebook,"""web/public/models/drawai-feasibility-l128/preprocessing.json"": {"
+artifacts/drawai/feasibility/d2-review.json,157,config-or-notebook,"""web/public/models/drawai-feasibility-l128/report.json"": {"
+artifacts/drawai/feasibility/d2-review.json,161,config-or-notebook,"""web/public/models/drawai-feasibility-l128/release.json"": {"
+artifacts/drawai/feasibility/playwright-report.json,8,config-or-notebook,"""playwright.drawai.config.ts"""
+artifacts/drawai/feasibility/playwright-report.json,10,config-or-notebook,"""configFile"": ""D:\\ChuyenDe\\DUST\\web\\playwright.drawai.config.ts"","
+artifacts/drawai/feasibility/playwright-report.json,38,config-or-notebook,"""drawai-feasibility.spec.ts"""
+artifacts/drawai/feasibility/playwright-report.json,52,config-or-notebook,"""outputFile"": ""../artifacts/drawai/feasibility/playwright-report.json"""
+artifacts/drawai/feasibility/playwright-report.json,74,config-or-notebook,"""title"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,75,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,109,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,143,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,177,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,211,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,245,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/feasibility/playwright-report.json,279,config-or-notebook,"""file"": ""drawai-feasibility.spec.ts"","
+artifacts/drawai/kaggle/bundle-manifest.json,2,config-or-notebook,"""notebook"": ""notebooks\\kaggle_train_drawai.ipynb"","
+artifacts/drawai/kaggle/bundle-manifest.json,6,config-or-notebook,"""artifacts/drawai/data/verification.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,7,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/fixtures.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,8,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/labels.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,9,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/manifest.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,10,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/preprocessing.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,11,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/test.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,12,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/train.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,13,config-or-notebook,"""data/processed/pendigits-drawai-v1/l128/validation.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,14,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/fixtures.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,15,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/labels.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,16,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/manifest.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,17,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/preprocessing.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,18,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/test.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,19,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/train.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,20,config-or-notebook,"""data/processed/pendigits-drawai-v1/l64/validation.npz"","
+artifacts/drawai/kaggle/bundle-manifest.json,23,config-or-notebook,"""training/drawai/__init__.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,24,config-or-notebook,"""training/drawai/build_notebook.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,25,config-or-notebook,"""training/drawai/configs/smoke-cnn.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,26,config-or-notebook,"""training/drawai/configs/smoke-swin.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,27,config-or-notebook,"""training/drawai/configs/swin.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,28,config-or-notebook,"""training/drawai/configs/train-cnn.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,29,config-or-notebook,"""training/drawai/configs/train-swin.json"","
+artifacts/drawai/kaggle/bundle-manifest.json,30,config-or-notebook,"""training/drawai/evaluate.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,31,config-or-notebook,"""training/drawai/experiment.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,32,config-or-notebook,"""training/drawai/metrics.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,33,config-or-notebook,"""training/drawai/models.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,34,config-or-notebook,"""training/drawai/prepare_data.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,35,config-or-notebook,"""training/drawai/preprocessing.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,36,config-or-notebook,"""training/drawai/report_experiment.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,37,config-or-notebook,"""training/drawai/requirements.txt"","
+artifacts/drawai/kaggle/bundle-manifest.json,38,config-or-notebook,"""training/drawai/train.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,39,config-or-notebook,"""training/drawai/verify_data.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,40,config-or-notebook,"""training/drawai/verify_feasibility.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,41,config-or-notebook,"""training/drawai/verify_notebook.py"","
+artifacts/drawai/kaggle/bundle-manifest.json,42,config-or-notebook,"""training/drawai/verify_training.py"""
+artifacts/drawai/notebook-smoke/executed.ipynb,8,config-or-notebook,"""# DrawAI — D3 training (CNN and 1D Swin)\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,10,config-or-notebook,"""Attach the generated `drawai-source.zip` as a Kaggle input dataset. Enable a GPU accelerator for the full experiment. Source and processed tensors are bundled; the tensor hashes are validated before training. No HAR checkpoints are used.\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,14,config-or-notebook,"""For local verification set `DRAWAI_NOTEBOOK_MODE=smoke`, `DRAWAI_REQUIRE_CUDA=0`, and `DRAWAI_SOURCE_ROOT` to the checkout. Smoke runs two epochs on full train/validation for each model without opening test. Versions are printed and saved; use a compatible PyTorch environment. The pinned local requirements are in `training/drawai/requirements.txt`; install dependencies in a separate setup cell only if needed. Do not install a CPU-only Torch wheel into a GPU Kaggle runtime."""
+artifacts/drawai/notebook-smoke/executed.ipynb,48,config-or-notebook,"""MODE = os.environ.get('DRAWAI_NOTEBOOK_MODE', 'full')\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,51,config-or-notebook,"""if os.environ.get('DRAWAI_SOURCE_ROOT'):\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,52,config-or-notebook,"""    ROOT = Path(os.environ['DRAWAI_SOURCE_ROOT']).resolve()\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,54,config-or-notebook,"""    inputs = list(Path('/kaggle/input').rglob('drawai-source.zip'))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,56,config-or-notebook,"""        raise RuntimeError('Attach exactly one drawai-source.zip dataset')\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,57,config-or-notebook,"""    ROOT = Path('/kaggle/working/drawai').resolve()\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,69,config-or-notebook,"""require_cuda = os.environ.get('DRAWAI_REQUIRE_CUDA', '1') == '1'\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,73,config-or-notebook,"""THREADS = int(os.environ.get('DRAWAI_THREADS', '4'))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,74,config-or-notebook,"""OUTPUT = Path(os.environ.get('DRAWAI_NOTEBOOK_OUTPUT', str(ROOT / 'artifacts/drawai' / ('d3-notebook-smoke' if MODE == 'smoke' else 'd3-gpu-v1'))))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,78,config-or-notebook,"""from training.drawai.prepare_data import write_json\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,98,config-or-notebook,"""from training.drawai.experiment import config_for\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,106,config-or-notebook,"""        args = ['training.drawai.train', '--config', str(path), '--output-dir', str(folder), '--device', DEVICE, '--threads', str(THREADS)]\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,111,config-or-notebook,"""    command('training.drawai.experiment', '--stage', 'pilots', '--output-dir', str(OUTPUT), '--device', DEVICE, '--threads', str(THREADS))\n"""
+artifacts/drawai/notebook-smoke/executed.ipynb,137,config-or-notebook,"""    command('training.drawai.experiment', '--stage', 'official', '--output-dir', str(OUTPUT), '--device', DEVICE, '--threads', str(THREADS))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,138,config-or-notebook,"""    command('training.drawai.evaluate', '--output-dir', str(OUTPUT), '--threads', str(THREADS))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,139,config-or-notebook,"""    command('training.drawai.verify_training', '--output-dir', str(OUTPUT))\n"","
+artifacts/drawai/notebook-smoke/executed.ipynb,166,config-or-notebook,"""Smoke evidence: D:\\ChuyenDe\\DUST\\artifacts\\drawai\\d3-notebook-smoke\\smoke-report.json\n"""
+artifacts/drawai/notebook-smoke/kernels/drawai-local/kernel.json,9,config-or-notebook,"""display_name"": ""DrawAI local CPU"","
+artifacts/drawai/ui/d5-review.json,19,config-or-notebook,"""web\\src\\drawai\\drawai-app.tsx"": ""f066c0d9c3de3a3950f6cdd36185e93b88942c947c33033c303c7065a62bbbb4"","
+artifacts/drawai/ui/d5-review.json,20,config-or-notebook,"""web\\src\\drawai\\drawing-canvas.tsx"": ""8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c"","
+artifacts/drawai/ui/d5-review.json,21,config-or-notebook,"""web\\src\\drawai\\drawai.css"": ""899b6ba92ee6f050525cd912ffa89816940f7e8856be22badc59b3a5b178dcbd"","
+artifacts/drawai/ui/d5-review.json,22,config-or-notebook,"""web\\src\\drawai\\inference-client.ts"": ""1013097e845f6af4bc0d6b2cbe8fa08e497e3b4cef228a3820c5f3aa51b0024d"","
+artifacts/drawai/ui/d5-review.json,23,config-or-notebook,"""web\\src\\drawai\\inference-worker.ts"": ""d9cbeb7e904d208f501ac442838267e2a4ca71a51fe7d44ec789d10195383adb"","
+artifacts/drawai/ui/d5-review.json,24,config-or-notebook,"""web\\src\\drawai\\release-loader.ts"": ""3cefe544aab79ac350f3956ab08b0ef3a671532ab0ec922abcfb8450bf616611"","
+artifacts/drawai/ui/d5-review.json,25,config-or-notebook,"""web\\src\\drawai\\types.ts"": ""548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3"","
+artifacts/drawai/ui/d5-review.json,26,config-or-notebook,"""web\\src\\drawai\\preprocessing.ts"": ""cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d"","
+artifacts/drawai/ui/d5-review.json,27,config-or-notebook,"""web\\tests\\drawai.spec.ts"": ""031581160a0c85a8fb684acca4764e9ee79bd61ab8351e7ac0938997d3169ac9"","
+artifacts/drawai/ui/d5-review.json,28,config-or-notebook,"""web\\playwright.drawai-app.config.ts"": ""f091bbc8b3f56a39631cc43d2e8e78612f4956bea80907c46a2168b3754f68ab"","
+artifacts/drawai/ui/d5-review.json,30,config-or-notebook,"""training\\drawai\\verify_ui.py"": ""356c7cc027129c2164aa62a078c97502e147272769fa2bf751380be0a306d528"""
+artifacts/drawai/ui/demo-parity.json,6,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,10,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,11,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,45,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,49,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,50,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,84,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,88,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,89,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,123,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,127,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,128,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,162,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,166,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,167,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,201,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,205,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,206,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,240,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,244,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,245,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,279,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,283,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,284,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,318,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,322,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,323,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,357,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/ui/demo-parity.json,361,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/ui/demo-parity.json,362,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/ui/demo-parity.json,399,config-or-notebook,"""url"": ""http://127.0.0.1:4186/drawai"","
+artifacts/drawai/ui/demo-parity.json,411,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,415,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-0.json"","
+artifacts/drawai/ui/demo-parity.json,423,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/release.json"","
+artifacts/drawai/ui/demo-parity.json,427,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx"","
+artifacts/drawai/ui/demo-parity.json,431,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json"","
+artifacts/drawai/ui/demo-parity.json,435,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/labels.json"","
+artifacts/drawai/ui/demo-parity.json,439,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/report.json"","
+artifacts/drawai/ui/demo-parity.json,451,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,455,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-1.json"","
+artifacts/drawai/ui/demo-parity.json,459,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,463,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-2.json"","
+artifacts/drawai/ui/demo-parity.json,467,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,471,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-3.json"","
+artifacts/drawai/ui/demo-parity.json,475,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,479,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-4.json"","
+artifacts/drawai/ui/demo-parity.json,483,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,487,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-5.json"","
+artifacts/drawai/ui/demo-parity.json,491,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,495,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-6.json"","
+artifacts/drawai/ui/demo-parity.json,499,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,503,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-7.json"","
+artifacts/drawai/ui/demo-parity.json,507,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,511,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-8.json"","
+artifacts/drawai/ui/demo-parity.json,515,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/manifest.json"","
+artifacts/drawai/ui/demo-parity.json,519,config-or-notebook,"""url"": ""http://127.0.0.1:4186/samples/drawai/digit-9.json"","
+artifacts/drawai/ui/minimal-ui-review.json,5,config-or-notebook,"""route"": ""/drawai"","
+artifacts/drawai/ui/minimal-ui-review.json,7,config-or-notebook,"""web/src/drawai/drawai-app.tsx"": ""e6f1636a10bd5da69dbab9cee83a4dcc90f0cb650f2652635a7eab36380b5f0e"","
+artifacts/drawai/ui/minimal-ui-review.json,8,config-or-notebook,"""web/src/drawai/drawai.css"": ""af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2"","
+artifacts/drawai/ui/minimal-ui-review.json,9,config-or-notebook,"""web/tests/drawai.spec.ts"": ""3dd7a0fac1fafa01f074ec5764975fb1f98bd9be30ca7e98b3ea0670ec80c289"","
+artifacts/drawai/ui/minimal-ui-review.json,10,config-or-notebook,"""docs/drawai/minimal-ui.md"": ""18ed7413dede11e3c65e9bc461809f6934a69d0f3217b3f4054ab8f9e4f206be"","
+artifacts/drawai/ui/minimal-ui-review.json,11,config-or-notebook,"""artifacts/drawai/ui/playwright-report.json"": ""16273b1c535ccb769f0102c31d89266b1f5b8f6cd92ec1b7b81fb64822f0b51f"","
+artifacts/drawai/ui/minimal-ui-review.json,12,config-or-notebook,"""artifacts/drawai/ui/desktop.png"": ""98ef6bf82384a96fa28b97ba75af0f24d099badbf5957e043d608fc0f6fed67f"","
+artifacts/drawai/ui/minimal-ui-review.json,13,config-or-notebook,"""artifacts/drawai/ui/mobile.png"": ""8c2ef7bc2710dd388b87cd2df55a0e6b52048da93bf1e9369205f07d4d651ca4"""
+artifacts/drawai/ui/playwright-report.json,8,config-or-notebook,"""playwright.drawai-app.config.ts"""
+artifacts/drawai/ui/playwright-report.json,10,config-or-notebook,"""configFile"": ""D:\\ChuyenDe\\DUST\\web\\playwright.drawai-app.config.ts"","
+artifacts/drawai/ui/playwright-report.json,38,config-or-notebook,"""drawai.spec.ts"""
+artifacts/drawai/ui/playwright-report.json,52,config-or-notebook,"""outputFile"": ""../artifacts/drawai/ui/playwright-report.json"""
+artifacts/drawai/ui/playwright-report.json,74,config-or-notebook,"""title"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,75,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,109,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,143,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,177,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,211,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,245,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,279,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,313,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,347,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/playwright-report.json,381,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/ui/user-strokes.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+artifacts/drawai/ui/verification.json,19,config-or-notebook,"""web\\src\\drawai\\drawai-app.tsx"": ""f066c0d9c3de3a3950f6cdd36185e93b88942c947c33033c303c7065a62bbbb4"","
+artifacts/drawai/ui/verification.json,20,config-or-notebook,"""web\\src\\drawai\\drawing-canvas.tsx"": ""8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c"","
+artifacts/drawai/ui/verification.json,21,config-or-notebook,"""web\\src\\drawai\\drawai.css"": ""899b6ba92ee6f050525cd912ffa89816940f7e8856be22badc59b3a5b178dcbd"","
+artifacts/drawai/ui/verification.json,22,config-or-notebook,"""web\\src\\drawai\\inference-client.ts"": ""1013097e845f6af4bc0d6b2cbe8fa08e497e3b4cef228a3820c5f3aa51b0024d"","
+artifacts/drawai/ui/verification.json,23,config-or-notebook,"""web\\src\\drawai\\inference-worker.ts"": ""d9cbeb7e904d208f501ac442838267e2a4ca71a51fe7d44ec789d10195383adb"","
+artifacts/drawai/ui/verification.json,24,config-or-notebook,"""web\\src\\drawai\\release-loader.ts"": ""3cefe544aab79ac350f3956ab08b0ef3a671532ab0ec922abcfb8450bf616611"","
+artifacts/drawai/ui/verification.json,25,config-or-notebook,"""web\\src\\drawai\\types.ts"": ""548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3"","
+artifacts/drawai/ui/verification.json,26,config-or-notebook,"""web\\src\\drawai\\preprocessing.ts"": ""cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d"","
+artifacts/drawai/ui/verification.json,27,config-or-notebook,"""web\\tests\\drawai.spec.ts"": ""031581160a0c85a8fb684acca4764e9ee79bd61ab8351e7ac0938997d3169ac9"","
+artifacts/drawai/ui/verification.json,28,config-or-notebook,"""web\\playwright.drawai-app.config.ts"": ""f091bbc8b3f56a39631cc43d2e8e78612f4956bea80907c46a2168b3754f68ab"","
+artifacts/drawai/ui/verification.json,30,config-or-notebook,"""training\\drawai\\verify_ui.py"": ""356c7cc027129c2164aa62a078c97502e147272769fa2bf751380be0a306d528"""
+artifacts/drawai/verification/canvas-gate-tests.json,5,config-or-notebook,"""output"": ""test_dataset_source_and_bad_timestamps_are_rejected (training.tests.test_drawai_canvas.CanvasGateTests.test_dataset_source_and_bad_timestamps_are_rejected) ... ok\ntest_empty_or_unattested_data_cannot_be_evaluated (training.tests.test_drawai_canvas.CanvasGateTests.test_empty_or_unattested_data_cannot_be_evaluated) ... ok\ntest_full_matrix_gate_and_missing_or_duplicate_repetition (training.tests.test_drawai_canvas.CanvasGateTests.test_full_matrix_gate_and_missing_or_duplicate_repetition) ... ok\ntest_paths_outside_root_are_rejected (training.tests.test_drawai_canvas.CanvasGateTests.test_paths_outside_root_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 7.689s\n\nOK\n"","
+artifacts/drawai/verification/chrome-parity.json,415,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,419,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,420,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,856,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,860,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,861,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,1297,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,1301,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,1302,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,1738,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,1742,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,1743,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,2179,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,2183,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,2184,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,2620,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,2624,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,2625,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,3061,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,3065,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,3066,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,3502,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,3506,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,3507,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,3943,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,3947,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,3948,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,4384,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,4388,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,4389,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,4825,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,4829,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,4830,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,5266,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,5270,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,5271,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,5707,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,5711,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,5712,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,6148,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,6152,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,6153,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,6589,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,6593,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,6594,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,7030,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,7034,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,7035,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,7471,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/chrome-parity.json,7475,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/chrome-parity.json,7476,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/chrome-parity.json,7973,config-or-notebook,"""url"": ""http://127.0.0.1:4186/drawai/integration-check"","
+artifacts/drawai/verification/chrome-parity.json,7989,config-or-notebook,"""url"": ""http://127.0.0.1:4186/verification/drawai/d6-fixtures.json"","
+artifacts/drawai/verification/chrome-parity.json,7993,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/release.json"","
+artifacts/drawai/verification/chrome-parity.json,7997,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx"","
+artifacts/drawai/verification/chrome-parity.json,8001,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json"","
+artifacts/drawai/verification/chrome-parity.json,8005,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/labels.json"","
+artifacts/drawai/verification/chrome-parity.json,8009,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/report.json"","
+artifacts/drawai/verification/chrome-parity.json,8025,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/release.json"","
+artifacts/drawai/verification/chrome-parity.json,8029,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx"","
+artifacts/drawai/verification/chrome-parity.json,8033,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json"","
+artifacts/drawai/verification/chrome-parity.json,8037,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/labels.json"","
+artifacts/drawai/verification/chrome-parity.json,8041,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/report.json"","
+artifacts/drawai/verification/d6-review.json,55,config-or-notebook,"""artifacts\\drawai\\verification\\playwright-report.json"": ""ad7df6ab57878f02207dfed3ced834750c32141faea57bf7350feed8cea7787e"","
+artifacts/drawai/verification/d6-review.json,56,config-or-notebook,"""artifacts\\drawai\\verification\\chrome-parity.json"": ""35b8d0ae36ba88db62368eab1745f491d566c5ee6b048a6425342c720d845a79"","
+artifacts/drawai/verification/d6-review.json,57,config-or-notebook,"""artifacts\\drawai\\verification\\edge-parity.json"": ""280a09dab15d68d9287e5d1bc6b51a37913796fe0e97b37450787a6204553960"","
+artifacts/drawai/verification/d6-review.json,58,config-or-notebook,"""artifacts\\drawai\\benchmark\\chrome.json"": ""969757aa3e0c94f3d7c46063dbcacc286c872637d60d69c69efe6819e7695f14"","
+artifacts/drawai/verification/d6-review.json,59,config-or-notebook,"""artifacts\\drawai\\benchmark\\edge.json"": ""953d4f8f988098a39fd6fc486bde3bcbab70da07ea66f276228019d186b2d101"","
+artifacts/drawai/verification/d6-review.json,60,config-or-notebook,"""artifacts\\drawai\\verification\\canvas-gate-tests.json"": ""17644afe681eea04fe3b56e6f849c7bc4aa6af5af05a6fb7dfe50d01867260da"""
+artifacts/drawai/verification/d6-review.json,63,config-or-notebook,"""web\\src\\drawai\\drawai-app.tsx"": ""f066c0d9c3de3a3950f6cdd36185e93b88942c947c33033c303c7065a62bbbb4"","
+artifacts/drawai/verification/d6-review.json,64,config-or-notebook,"""web\\src\\drawai\\drawai.css"": ""899b6ba92ee6f050525cd912ffa89816940f7e8856be22badc59b3a5b178dcbd"","
+artifacts/drawai/verification/d6-review.json,65,config-or-notebook,"""web\\src\\drawai\\drawing-canvas.tsx"": ""8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c"","
+artifacts/drawai/verification/d6-review.json,66,config-or-notebook,"""web\\src\\drawai\\feasibility-app.tsx"": ""8b60110972c7e94225d51c78fe24f224f79be3fd54f434e06dca89a7beaa5f2f"","
+artifacts/drawai/verification/d6-review.json,67,config-or-notebook,"""web\\src\\drawai\\feasibility-worker.ts"": ""e1b024511a5f6f8c3761e0ceb72479049b71703993ab0d8a01df0b6465e4ae5a"","
+artifacts/drawai/verification/d6-review.json,68,config-or-notebook,"""web\\src\\drawai\\infer-drawing.ts"": ""3ec7e2c293d4775331b7e7d9850ec0466fdb20937a6438c03d914dfb8dae82f3"","
+artifacts/drawai/verification/d6-review.json,69,config-or-notebook,"""web\\src\\drawai\\inference-client.ts"": ""0135cfaf307002924cd6408c36aa85b0a6f33b9107f550ce78d438bf2c5adacc"","
+artifacts/drawai/verification/d6-review.json,70,config-or-notebook,"""web\\src\\drawai\\inference-worker.ts"": ""997cd6cf8336841c6c7dda4d1a0e0cc896e66c5bfded89ab949efba0c09a4e9b"","
+artifacts/drawai/verification/d6-review.json,71,config-or-notebook,"""web\\src\\drawai\\integration-check.tsx"": ""fea177e01d997a6029f83d376050dcc88790b859b857810423e85df926e74c0d"","
+artifacts/drawai/verification/d6-review.json,72,config-or-notebook,"""web\\src\\drawai\\integration-worker.ts"": ""5604f036b0706440a37b488382e3fa76bdcf59303ef8aa94a426e036204da1e9"","
+artifacts/drawai/verification/d6-review.json,73,config-or-notebook,"""web\\src\\drawai\\preprocessing.ts"": ""cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d"","
+artifacts/drawai/verification/d6-review.json,74,config-or-notebook,"""web\\src\\drawai\\release-loader.ts"": ""3730f36a0fc35f5e00cba10bad9313067dc766e9dfdd9048ef9983fcfe621a7f"","
+artifacts/drawai/verification/d6-review.json,75,config-or-notebook,"""web\\src\\drawai\\types.ts"": ""548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3"","
+artifacts/drawai/verification/d6-review.json,76,config-or-notebook,"""training\\drawai\\prepare_integration.py"": ""9a67d5357ed863c952ecceef6009f33251eb374438a404d4bad30b260db60606"","
+artifacts/drawai/verification/d6-review.json,77,config-or-notebook,"""training\\drawai\\verify_integration.py"": ""15203b538b7fe02a76578e3716561e92d9bcc726126c857f5cf217b177e35b33"","
+artifacts/drawai/verification/d6-review.json,78,config-or-notebook,"""training\\drawai\\evaluate_canvas.py"": ""6d9846a42fd6cdfcc2c11af780f24cab98554bfea8fb66513a6398f7d4d59b4d"","
+artifacts/drawai/verification/d6-review.json,79,config-or-notebook,"""training\\tests\\test_drawai_canvas.py"": ""ef429ee405aec657d33e98a3802b37e13dd057486b75688d455cbd7c613e48f3"","
+artifacts/drawai/verification/d6-review.json,80,config-or-notebook,"""web\\tests\\drawai-integration.spec.ts"": ""e202119c026e688fb08218bebdfb9e36b9531c83b5db8752fe5733f0578d8258"","
+artifacts/drawai/verification/d6-review.json,81,config-or-notebook,"""web\\playwright.drawai-integration.config.ts"": ""757adb8e689156ce5bc6ffa4a4531beccf2da44854a13406842fc0b551336009"""
+artifacts/drawai/verification/edge-parity.json,415,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,419,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,420,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,856,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,860,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,861,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,1297,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,1301,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,1302,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,1738,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,1742,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,1743,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,2179,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,2183,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,2184,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,2620,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,2624,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,2625,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,3061,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,3065,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,3066,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,3502,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,3506,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,3507,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,3943,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,3947,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,3948,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,4384,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,4388,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,4389,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,4825,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,4829,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,4830,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,5266,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,5270,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,5271,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,5707,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,5711,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,5712,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,6148,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,6152,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,6153,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,6589,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,6593,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,6594,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,7030,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,7034,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,7035,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,7471,config-or-notebook,"""protocol_version"": ""drawai-worker-v1"","
+artifacts/drawai/verification/edge-parity.json,7475,config-or-notebook,"""model_version"": ""drawai-swin-v1"","
+artifacts/drawai/verification/edge-parity.json,7476,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+artifacts/drawai/verification/edge-parity.json,7973,config-or-notebook,"""url"": ""http://127.0.0.1:4186/drawai/integration-check"","
+artifacts/drawai/verification/edge-parity.json,7989,config-or-notebook,"""url"": ""http://127.0.0.1:4186/verification/drawai/d6-fixtures.json"","
+artifacts/drawai/verification/edge-parity.json,7993,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/release.json"","
+artifacts/drawai/verification/edge-parity.json,7997,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx"","
+artifacts/drawai/verification/edge-parity.json,8001,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json"","
+artifacts/drawai/verification/edge-parity.json,8005,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/labels.json"","
+artifacts/drawai/verification/edge-parity.json,8009,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/report.json"","
+artifacts/drawai/verification/edge-parity.json,8025,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/release.json"","
+artifacts/drawai/verification/edge-parity.json,8029,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/model.onnx"","
+artifacts/drawai/verification/edge-parity.json,8033,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/preprocessing.json"","
+artifacts/drawai/verification/edge-parity.json,8037,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/labels.json"","
+artifacts/drawai/verification/edge-parity.json,8041,config-or-notebook,"""url"": ""http://127.0.0.1:4186/models/drawai-swin-v1/report.json"","
+artifacts/drawai/verification/playwright-report.json,8,config-or-notebook,"""playwright.drawai-integration.config.ts"""
+artifacts/drawai/verification/playwright-report.json,10,config-or-notebook,"""configFile"": ""D:\\ChuyenDe\\DUST\\web\\playwright.drawai-integration.config.ts"","
+artifacts/drawai/verification/playwright-report.json,38,config-or-notebook,"""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,39,config-or-notebook,"""drawai.spec.ts"""
+artifacts/drawai/verification/playwright-report.json,55,config-or-notebook,"""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,56,config-or-notebook,"""drawai.spec.ts"""
+artifacts/drawai/verification/playwright-report.json,70,config-or-notebook,"""outputFile"": ""../artifacts/drawai/verification/playwright-report.json"""
+artifacts/drawai/verification/playwright-report.json,92,config-or-notebook,"""title"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,93,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,127,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,161,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,195,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,229,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,263,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,297,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,331,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,365,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,399,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,433,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,467,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,501,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,535,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,569,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,603,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,637,config-or-notebook,"""file"": ""drawai-integration.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,644,config-or-notebook,"""title"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,645,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,679,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,713,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,747,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,781,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,815,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,849,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,883,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,917,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,951,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,985,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1019,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1053,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1087,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1121,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1155,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1189,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1223,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/drawai/verification/playwright-report.json,1257,config-or-notebook,"""file"": ""drawai.spec.ts"","
+artifacts/phase2/data-report.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase2/data-report.json,182,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase2/labels.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase2/preprocessing.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase2/split-manifest.json,2,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase2/split-manifest.json,4,config-or-notebook,"""dataset"": ""UCI HAR"","
+artifacts/phase2/split-manifest.json,5,config-or-notebook,"""dataset_version"": ""uci-har-original"","
+artifacts/phase2/split-manifest.json,7,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/source-hashes.json,3,config-or-notebook,"""training/har_models.py"": ""915c0690082c93d55d39ada2af3346f577f532602e2295d6055ead6408b5d025"","
+artifacts/phase3/kaggle/source-hashes.json,7,config-or-notebook,"""training/prepare_uci_har.py"": ""09fb0de4793ec311082ba01e3a78e77a486da9a760862705199629ffbec862fd"","
+artifacts/phase3/kaggle/artifacts/phase2/data-report.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase2/data-report.json,182,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase2/labels.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase2/preprocessing.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase2/split-manifest.json,2,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase2/split-manifest.json,4,config-or-notebook,"""dataset"": ""UCI HAR"","
+artifacts/phase3/kaggle/artifacts/phase2/split-manifest.json,5,config-or-notebook,"""dataset_version"": ""uci-har-original"","
+artifacts/phase3/kaggle/artifacts/phase2/split-manifest.json,7,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed42/run-config.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed42/run-config.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed42/summary.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed42/summary.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed43/run-config.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed43/run-config.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed43/summary.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed43/summary.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed44/run-config.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed44/run-config.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed44/summary.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/cnn-seed44/summary.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed42/run-config.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed42/run-config.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed42/summary.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed42/summary.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed43/run-config.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed43/run-config.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed43/summary.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed43/summary.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed44/run-config.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed44/run-config.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed44/summary.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/kaggle/artifacts/phase3/runs/swin-seed44/summary.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/cnn-seed42/run-config.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/cnn-seed42/run-config.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/cnn-seed42/summary.json,25,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/cnn-seed42/summary.json,73,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/swin-seed42/run-config.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/swin-seed42/run-config.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/swin-seed42/summary.json,39,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase3/runs/swin-seed42/summary.json,87,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+artifacts/phase4/browser-verification.json,471,config-or-notebook,"""intended_use"": ""Limited UCI HAR research demo, not guaranteed real-world accuracy"","
+artifacts/phase4/export-verification.json,272,config-or-notebook,"""intended_use"": ""Limited UCI HAR research demo, not guaranteed real-world accuracy"","
+data/processed/pendigits-drawai-v1/l128/fixtures.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/pendigits-drawai-v1/l128/manifest.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/pendigits-drawai-v1/l128/preprocessing.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/pendigits-drawai-v1/l64/fixtures.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/pendigits-drawai-v1/l64/manifest.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/pendigits-drawai-v1/l64/preprocessing.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+data/processed/uci-har-3ch-v1/labels.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+data/processed/uci-har-3ch-v1/preprocessing.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+data/processed/uci-har-3ch-v1/split-manifest.json,2,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+data/processed/uci-har-3ch-v1/split-manifest.json,4,config-or-notebook,"""dataset"": ""UCI HAR"","
+data/processed/uci-har-3ch-v1/split-manifest.json,5,config-or-notebook,"""dataset_version"": ""uci-har-original"","
+data/processed/uci-har-3ch-v1/split-manifest.json,7,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+docs/drawai/strokes.schema.json,3,config-or-notebook,"""title"": ""DrawAI strokes v1"","
+docs/drawai/strokes.schema.json,9,config-or-notebook,"""schema_version"": { ""const"": ""drawai-strokes-v1"" },"
+examples/drawai/canvas-manifest.template.json,2,config-or-notebook,"""protocol_version"": ""drawai-canvas-eval-v1"","
+examples/drawai/canvas-manifest.template.json,3,config-or-notebook,"""release_version"": ""drawai-swin-v1"","
+examples/drawai/strokes-no-time.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+examples/drawai/strokes-valid.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+models/SwinTransformer_cls.py,10,python-import,math
+models/SwinTransformer_cls.py,12,python-import,torch
+models/SwinTransformer_cls.py,13,python-import,torch.nn
+models/SwinTransformer_cls.py,14,python-import,torch.nn.functional
+models/SwinTransformer_cls.py,15,python-import,torch.utils.checkpoint
+models/SwinTransformer_cls.py,16,python-import,torch.nn.init
+models/SwinTransformer_cls.py,17,python-import,numpy
+models/SwinTransformer_fusion.py,10,python-import,math
+models/SwinTransformer_fusion.py,12,python-import,torch
+models/SwinTransformer_fusion.py,13,python-import,torch.nn
+models/SwinTransformer_fusion.py,14,python-import,torch.nn.functional
+models/SwinTransformer_fusion.py,15,python-import,torch.utils.checkpoint
+models/SwinTransformer_fusion.py,16,python-import,torch.nn.init
+models/SwinTransformer_fusion.py,17,python-import,numpy
+models/video_swin_transformer.py,1,python-import,torch
+models/video_swin_transformer.py,2,python-import,torch.nn
+models/video_swin_transformer.py,3,python-import,torch.nn.functional
+models/video_swin_transformer.py,4,python-import,torch.utils.checkpoint
+models/video_swin_transformer.py,5,python-import,numpy
+models/video_swin_transformer.py,6,python-import,timm.models.layers
+models/video_swin_transformer.py,8,python-import,functools
+models/video_swin_transformer.py,9,python-import,operator
+models/video_swin_transformer.py,10,python-import,einops
+models/video_swin_transformer.py,12,python-import,logging
+notebooks/kaggle_train_drawai.ipynb,8,config-or-notebook,"""# DrawAI — D3 training (CNN and 1D Swin)\n"","
+notebooks/kaggle_train_drawai.ipynb,10,config-or-notebook,"""Attach the generated `drawai-source.zip` as a Kaggle input dataset. Enable a GPU accelerator for the full experiment. Source and processed tensors are bundled; the tensor hashes are validated before training. No HAR checkpoints are used.\n"","
+notebooks/kaggle_train_drawai.ipynb,14,config-or-notebook,"""For local verification set `DRAWAI_NOTEBOOK_MODE=smoke`, `DRAWAI_REQUIRE_CUDA=0`, and `DRAWAI_SOURCE_ROOT` to the checkout. Smoke runs two epochs on full train/validation for each model without opening test. Versions are printed and saved; use a compatible PyTorch environment. The pinned local requirements are in `training/drawai/requirements.txt`; install dependencies in a separate setup cell only if needed. Do not install a CPU-only Torch wheel into a GPU Kaggle runtime."""
+notebooks/kaggle_train_drawai.ipynb,28,config-or-notebook,"""MODE = os.environ.get('DRAWAI_NOTEBOOK_MODE', 'full')\n"","
+notebooks/kaggle_train_drawai.ipynb,31,config-or-notebook,"""if os.environ.get('DRAWAI_SOURCE_ROOT'):\n"","
+notebooks/kaggle_train_drawai.ipynb,32,config-or-notebook,"""    ROOT = Path(os.environ['DRAWAI_SOURCE_ROOT']).resolve()\n"","
+notebooks/kaggle_train_drawai.ipynb,34,config-or-notebook,"""    inputs = list(Path('/kaggle/input').rglob('drawai-source.zip'))\n"","
+notebooks/kaggle_train_drawai.ipynb,36,config-or-notebook,"""        raise RuntimeError('Attach exactly one drawai-source.zip dataset')\n"","
+notebooks/kaggle_train_drawai.ipynb,37,config-or-notebook,"""    ROOT = Path('/kaggle/working/drawai').resolve()\n"","
+notebooks/kaggle_train_drawai.ipynb,49,config-or-notebook,"""require_cuda = os.environ.get('DRAWAI_REQUIRE_CUDA', '1') == '1'\n"","
+notebooks/kaggle_train_drawai.ipynb,53,config-or-notebook,"""THREADS = int(os.environ.get('DRAWAI_THREADS', '4'))\n"","
+notebooks/kaggle_train_drawai.ipynb,54,config-or-notebook,"""OUTPUT = Path(os.environ.get('DRAWAI_NOTEBOOK_OUTPUT', str(ROOT / 'artifacts/drawai' / ('d3-notebook-smoke' if MODE == 'smoke' else 'd3-gpu-v1'))))\n"","
+notebooks/kaggle_train_drawai.ipynb,58,config-or-notebook,"""from training.drawai.prepare_data import write_json\n"","
+notebooks/kaggle_train_drawai.ipynb,71,config-or-notebook,"""from training.drawai.experiment import config_for\n"","
+notebooks/kaggle_train_drawai.ipynb,79,config-or-notebook,"""        args = ['training.drawai.train', '--config', str(path), '--output-dir', str(folder), '--device', DEVICE, '--threads', str(THREADS)]\n"","
+notebooks/kaggle_train_drawai.ipynb,84,config-or-notebook,"""    command('training.drawai.experiment', '--stage', 'pilots', '--output-dir', str(OUTPUT), '--device', DEVICE, '--threads', str(THREADS))\n"""
+notebooks/kaggle_train_drawai.ipynb,95,config-or-notebook,"""    command('training.drawai.experiment', '--stage', 'official', '--output-dir', str(OUTPUT), '--device', DEVICE, '--threads', str(THREADS))\n"","
+notebooks/kaggle_train_drawai.ipynb,96,config-or-notebook,"""    command('training.drawai.evaluate', '--output-dir', str(OUTPUT), '--threads', str(THREADS))\n"","
+notebooks/kaggle_train_drawai.ipynb,97,config-or-notebook,"""    command('training.drawai.verify_training', '--output-dir', str(OUTPUT))\n"","
+notebooks/kaggle_train_har.ipynb,8,config-or-notebook,"""# DuST — UCI HAR, CNN baseline + Swin Transformer 1D\n"","
+notebooks/kaggle_train_har.ipynb,15,config-or-notebook,"""Nguồn: [UCI HAR chính thức](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones).\n"","
+notebooks/kaggle_train_har.ipynb,32,config-or-notebook,"""DATA_SOURCE = os.environ.get('DUST_DATA_SOURCE') or None  # ZIP hoặc folder UCI HAR gốc\n"","
+notebooks/kaggle_train_har.ipynb,58,config-or-notebook,"""SOURCES = {'models/SwinTransformer_cls.py': '# -*- coding: utf-8 -*-\\n\""\""\""\\n@File    :  SWT_V2_1D.py\\n@Time    :  2022/8/14 16:15\\n@Author  :  HUANG Dong\\n@Version :  0.0.1\\n@Contact :  huang_dong@tju.edu.cn\\n@Desc    :  None\\n\""\""\""\\nimport math\\n\\nimport torch\\nimport torch.nn as nn\\nimport torch.nn.functional as F\\nimport torch.utils.checkpoint as checkpoint\\nfrom torch.nn.init import trunc_normal_\\nimport numpy as np\\n\\n\\ndef drop_path(x, drop_prob: float = 0., training: bool = False, scale_by_keep: bool = True):\\n    \""\""\""Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).\\n\\n    This is the same as the DropConnect impl I created for EfficientNet, etc networks, however,\\n    the original name is misleading as \\'Drop Connect\\' is a different form of dropout in a separate paper...\\n    See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I\\'ve opted for\\n    changing the layer and argument names to \\'drop path\\' rather than mix DropConnect as a layer name and use\\n    \\'survival rate\\' as the argument.\\n\\n    \""\""\""\\n    if drop_prob == 0. or not training:\\n        re"
+notebooks/kaggle_train_har.ipynb,116,config-or-notebook,"""data_dir = WORK_ROOT / 'data/processed/uci-har-3ch-v1'\n"","
+notebooks/kaggle_train_har.ipynb,119,config-or-notebook,"""run('training/prepare_uci_har.py', *source_args)\n"","
+notebooks/kaggle_train_har.ipynb,120,config-or-notebook,"""source_path = Path(DATA_SOURCE) if DATA_SOURCE else WORK_ROOT / 'data/raw/uci-har.zip'\n"","
+notebooks/kaggle_train_har_gpu.ipynb,8,config-or-notebook,"""# DuST — UCI HAR, CNN baseline + Swin Transformer 1D\n"","
+notebooks/kaggle_train_har_gpu.ipynb,15,config-or-notebook,"""Nguồn: [UCI HAR chính thức](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones).\n"","
+notebooks/kaggle_train_har_gpu.ipynb,32,config-or-notebook,"""DATA_SOURCE = os.environ.get('DUST_DATA_SOURCE') or None  # ZIP hoặc folder UCI HAR gốc\n"","
+notebooks/kaggle_train_har_gpu.ipynb,58,config-or-notebook,"""SOURCES = {'models/SwinTransformer_cls.py': '# -*- coding: utf-8 -*-\\n\""\""\""\\n@File    :  SWT_V2_1D.py\\n@Time    :  2022/8/14 16:15\\n@Author  :  HUANG Dong\\n@Version :  0.0.1\\n@Contact :  huang_dong@tju.edu.cn\\n@Desc    :  None\\n\""\""\""\\nimport math\\n\\nimport torch\\nimport torch.nn as nn\\nimport torch.nn.functional as F\\nimport torch.utils.checkpoint as checkpoint\\nfrom torch.nn.init import trunc_normal_\\nimport numpy as np\\n\\n\\ndef drop_path(x, drop_prob: float = 0., training: bool = False, scale_by_keep: bool = True):\\n    \""\""\""Drop paths (Stochastic Depth) per sample (when applied in main path of residual blocks).\\n\\n    This is the same as the DropConnect impl I created for EfficientNet, etc networks, however,\\n    the original name is misleading as \\'Drop Connect\\' is a different form of dropout in a separate paper...\\n    See discussion: https://github.com/tensorflow/tpu/issues/494#issuecomment-532968956 ... I\\'ve opted for\\n    changing the layer and argument names to \\'drop path\\' rather than mix DropConnect as a layer name and use\\n    \\'survival rate\\' as the argument.\\n\\n    \""\""\""\\n    if drop_prob == 0. or not training:\\n        re"
+notebooks/kaggle_train_har_gpu.ipynb,117,config-or-notebook,"""data_dir = WORK_ROOT / 'data/processed/uci-har-3ch-v1'\n"","
+notebooks/kaggle_train_har_gpu.ipynb,120,config-or-notebook,"""run('training/prepare_uci_har.py', *source_args)\n"","
+notebooks/kaggle_train_har_gpu.ipynb,121,config-or-notebook,"""source_path = Path(DATA_SOURCE) if DATA_SOURCE else WORK_ROOT / 'data/raw/uci-har.zip'\n"","
+tools/phase0_snapshot.py,2,python-import,ast
+tools/phase0_snapshot.py,3,python-import,csv
+tools/phase0_snapshot.py,4,python-import,hashlib
+tools/phase0_snapshot.py,5,python-import,json
+tools/phase0_snapshot.py,6,python-import,os
+tools/phase0_snapshot.py,7,python-import,pathlib
+tools/phase0_snapshot.py,8,python-import,re
+tools/phase0_snapshot.py,9,python-import,subprocess
+tools/phase0_snapshot.py,10,python-import,zipfile
+tools/phase0_snapshot.py,11,python-import,datetime
+tools/phase0_snapshot.py,133,python-import,collections
+training/build_kaggle_notebook.py,2,python-import,argparse
+training/build_kaggle_notebook.py,3,python-import,hashlib
+training/build_kaggle_notebook.py,4,python-import,json
+training/build_kaggle_notebook.py,5,python-import,pathlib
+training/csv_pipeline.py,5,python-import,csv
+training/csv_pipeline.py,6,python-import,io
+training/csv_pipeline.py,7,python-import,math
+training/csv_pipeline.py,8,python-import,re
+training/csv_pipeline.py,9,python-import,numpy
+training/evaluate_har.py,2,python-import,argparse
+training/evaluate_har.py,3,python-import,hashlib
+training/evaluate_har.py,4,python-import,json
+training/evaluate_har.py,5,python-import,pathlib
+training/evaluate_har.py,7,python-import,matplotlib
+training/evaluate_har.py,9,python-import,matplotlib.pyplot
+training/evaluate_har.py,10,python-import,numpy
+training/evaluate_har.py,11,python-import,torch
+training/evaluate_har.py,12,python-import,torch.utils.data
+training/evaluate_har.py,14,python-import,har_models
+training/evaluate_har.py,15,python-import,prepare_uci_har
+training/evaluate_har.py,16,python-import,train_har
+training/export_smoke_test.py,6,python-import,hashlib
+training/export_smoke_test.py,7,python-import,json
+training/export_smoke_test.py,8,python-import,os
+training/export_smoke_test.py,9,python-import,platform
+training/export_smoke_test.py,10,python-import,sys
+training/export_smoke_test.py,11,python-import,time
+training/export_smoke_test.py,12,python-import,pathlib
+training/export_smoke_test.py,20,python-import,numpy
+training/export_smoke_test.py,21,python-import,torch
+training/export_smoke_test.py,22,python-import,onnx
+training/export_smoke_test.py,23,python-import,onnxruntime
+training/export_smoke_test.py,27,python-import,models.SwinTransformer_cls
+training/export_trained_har.py,2,python-import,hashlib
+training/export_trained_har.py,3,python-import,json
+training/export_trained_har.py,4,python-import,os
+training/export_trained_har.py,5,python-import,platform
+training/export_trained_har.py,6,python-import,sys
+training/export_trained_har.py,7,python-import,time
+training/export_trained_har.py,8,python-import,pathlib
+training/export_trained_har.py,14,python-import,numpy
+training/export_trained_har.py,15,python-import,onnx
+training/export_trained_har.py,16,python-import,onnxruntime
+training/export_trained_har.py,17,python-import,torch
+training/export_trained_har.py,18,python-import,torch.torch_version
+training/export_trained_har.py,19,python-import,har_models
+training/export_trained_har.py,20,python-import,har_metrics
+training/export_trained_har.py,21,python-import,prepare_uci_har
+training/export_trained_har.py,22,python-import,train_har
+training/har_metrics.py,1,python-import,numpy
+training/har_models.py,2,python-import,sys
+training/har_models.py,3,python-import,pathlib
+training/har_models.py,5,python-import,torch.nn
+training/har_models.py,8,python-import,models.SwinTransformer_cls
+training/import_kaggle_results.py,2,python-import,argparse
+training/import_kaggle_results.py,3,python-import,ast
+training/import_kaggle_results.py,4,python-import,hashlib
+training/import_kaggle_results.py,5,python-import,io
+training/import_kaggle_results.py,6,python-import,json
+training/import_kaggle_results.py,7,python-import,math
+training/import_kaggle_results.py,8,python-import,shutil
+training/import_kaggle_results.py,9,python-import,zipfile
+training/import_kaggle_results.py,10,python-import,pathlib
+training/import_kaggle_results.py,12,python-import,numpy
+training/import_kaggle_results.py,14,python-import,har_metrics
+training/import_kaggle_results.py,15,python-import,evaluate_har
+training/import_kaggle_results.py,16,python-import,prepare_uci_har
+training/import_kaggle_results.py,17,python-import,train_har
+training/prepare_uci_har.py,6,python-import,argparse
+training/prepare_uci_har.py,7,python-import,csv
+training/prepare_uci_har.py,8,python-import,hashlib
+training/prepare_uci_har.py,9,python-import,io
+training/prepare_uci_har.py,10,python-import,json
+training/prepare_uci_har.py,11,python-import,urllib.request
+training/prepare_uci_har.py,12,python-import,zipfile
+training/prepare_uci_har.py,13,python-import,pathlib
+training/prepare_uci_har.py,15,python-import,numpy
+training/train_har.py,2,python-import,argparse
+training/train_har.py,3,python-import,hashlib
+training/train_har.py,4,python-import,json
+training/train_har.py,5,python-import,math
+training/train_har.py,6,python-import,platform
+training/train_har.py,7,python-import,random
+training/train_har.py,8,python-import,time
+training/train_har.py,9,python-import,pathlib
+training/train_har.py,11,python-import,numpy
+training/train_har.py,12,python-import,torch
+training/train_har.py,13,python-import,torch.utils.data
+training/train_har.py,15,python-import,har_metrics
+training/train_har.py,16,python-import,har_models
+training/train_har.py,17,python-import,prepare_uci_har
+training/verify_kaggle_notebook.py,2,python-import,argparse
+training/verify_kaggle_notebook.py,3,python-import,hashlib
+training/verify_kaggle_notebook.py,4,python-import,json
+training/verify_kaggle_notebook.py,5,python-import,os
+training/verify_kaggle_notebook.py,6,python-import,shutil
+training/verify_kaggle_notebook.py,7,python-import,sys
+training/verify_kaggle_notebook.py,8,python-import,tempfile
+training/verify_kaggle_notebook.py,9,python-import,time
+training/verify_kaggle_notebook.py,10,python-import,pathlib
+training/verify_kaggle_notebook.py,12,python-import,nbformat
+training/verify_kaggle_notebook.py,13,python-import,nbclient
+training/verify_kaggle_notebook.py,14,python-import,jupyter_client
+training/verify_phase2.py,2,python-import,argparse
+training/verify_phase2.py,3,python-import,csv
+training/verify_phase2.py,4,python-import,hashlib
+training/verify_phase2.py,5,python-import,json
+training/verify_phase2.py,6,python-import,tempfile
+training/verify_phase2.py,7,python-import,pathlib
+training/verify_phase2.py,9,python-import,numpy
+training/verify_phase2.py,11,python-import,prepare_uci_har
+training/verify_phase5_demos.py,2,python-import,csv
+training/verify_phase5_demos.py,3,python-import,hashlib
+training/verify_phase5_demos.py,4,python-import,json
+training/verify_phase5_demos.py,5,python-import,torch
+training/verify_phase5_demos.py,6,python-import,numpy
+training/verify_phase5_demos.py,7,python-import,torch.torch_version
+training/verify_phase5_demos.py,8,python-import,har_models
+training/verify_phase5_demos.py,9,python-import,prepare_uci_har
+training/verify_phase6_pipeline.py,2,python-import,hashlib
+training/verify_phase6_pipeline.py,3,python-import,json
+training/verify_phase6_pipeline.py,4,python-import,numpy
+training/verify_phase6_pipeline.py,5,python-import,torch
+training/verify_phase6_pipeline.py,6,python-import,torch.torch_version
+training/verify_phase6_pipeline.py,7,python-import,prepare_uci_har
+training/verify_phase6_pipeline.py,8,python-import,har_models
+training/verify_phase6_pipeline.py,9,python-import,csv_pipeline
+training/verify_phase6_results.py,2,python-import,hashlib
+training/verify_phase6_results.py,3,python-import,json
+training/verify_phase6_results.py,4,python-import,unittest
+training/verify_phase6_results.py,5,python-import,datetime
+training/verify_phase6_results.py,6,python-import,prepare_uci_har
+training/configs/data.json,2,config-or-notebook,"""dataset"": ""UCI HAR"","
+training/configs/data.json,3,config-or-notebook,"""dataset_version"": ""uci-har-original"","
+training/configs/data.json,5,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+training/drawai/build_notebook.py,2,python-import,ast
+training/drawai/build_notebook.py,3,python-import,hashlib
+training/drawai/build_notebook.py,4,python-import,json
+training/drawai/build_notebook.py,5,python-import,zipfile
+training/drawai/build_notebook.py,6,python-import,pathlib
+training/drawai/build_notebook.py,8,python-import,nbformat
+training/drawai/build_notebook.py,10,python-import,.prepare_data
+training/drawai/evaluate.py,2,python-import,argparse
+training/drawai/evaluate.py,3,python-import,json
+training/drawai/evaluate.py,4,python-import,platform
+training/drawai/evaluate.py,5,python-import,datetime
+training/drawai/evaluate.py,6,python-import,pathlib
+training/drawai/evaluate.py,8,python-import,numpy
+training/drawai/evaluate.py,9,python-import,torch
+training/drawai/evaluate.py,11,python-import,.experiment
+training/drawai/evaluate.py,12,python-import,.models
+training/drawai/evaluate.py,13,python-import,.prepare_data
+training/drawai/evaluate.py,14,python-import,.train
+training/drawai/evaluate.py,18,python-import,matplotlib
+training/drawai/evaluate.py,20,python-import,matplotlib.pyplot
+training/drawai/evaluate.py,127,python-import,matplotlib
+training/drawai/evaluate.py,129,python-import,matplotlib.pyplot
+training/drawai/evaluate_canvas.py,5,python-import,argparse
+training/drawai/evaluate_canvas.py,6,python-import,json
+training/drawai/evaluate_canvas.py,7,python-import,os
+training/drawai/evaluate_canvas.py,8,python-import,re
+training/drawai/evaluate_canvas.py,9,python-import,sys
+training/drawai/evaluate_canvas.py,10,python-import,collections
+training/drawai/evaluate_canvas.py,11,python-import,pathlib
+training/drawai/evaluate_canvas.py,17,python-import,jsonschema
+training/drawai/evaluate_canvas.py,18,python-import,numpy
+training/drawai/evaluate_canvas.py,20,python-import,.prepare_data
+training/drawai/evaluate_canvas.py,21,python-import,.preprocessing
+training/drawai/evaluate_canvas.py,22,python-import,.metrics
+training/drawai/evaluate_canvas.py,79,python-import,onnxruntime
+training/drawai/experiment.py,2,python-import,argparse
+training/drawai/experiment.py,3,python-import,json
+training/drawai/experiment.py,4,python-import,concurrent.futures
+training/drawai/experiment.py,5,python-import,pathlib
+training/drawai/experiment.py,7,python-import,.prepare_data
+training/drawai/experiment.py,8,python-import,.train
+training/drawai/export_onnx.py,2,python-import,argparse
+training/drawai/export_onnx.py,3,python-import,json
+training/drawai/export_onnx.py,4,python-import,os
+training/drawai/export_onnx.py,5,python-import,platform
+training/drawai/export_onnx.py,6,python-import,sys
+training/drawai/export_onnx.py,7,python-import,time
+training/drawai/export_onnx.py,13,python-import,numpy
+training/drawai/export_onnx.py,14,python-import,torch
+training/drawai/export_onnx.py,15,python-import,onnx
+training/drawai/export_onnx.py,16,python-import,onnxruntime
+training/drawai/export_onnx.py,18,python-import,.models
+training/drawai/export_onnx.py,19,python-import,.prepare_data
+training/drawai/export_onnx.py,20,python-import,.preprocessing
+training/drawai/export_onnx.py,21,python-import,.train
+training/drawai/export_onnx.py,22,python-import,.metrics
+training/drawai/export_onnx.py,23,python-import,.verify_training
+training/drawai/export_onnx.py,24,python-import,.verify_feasibility
+training/drawai/export_onnx.py,163,python-import,pathlib
+training/drawai/metrics.py,2,python-import,numpy
+training/drawai/models.py,2,python-import,models.SwinTransformer_cls
+training/drawai/models.py,3,python-import,torch.nn
+training/drawai/prepare_data.py,2,python-import,argparse
+training/drawai/prepare_data.py,3,python-import,hashlib
+training/drawai/prepare_data.py,4,python-import,json
+training/drawai/prepare_data.py,5,python-import,re
+training/drawai/prepare_data.py,6,python-import,urllib.request
+training/drawai/prepare_data.py,7,python-import,zipfile
+training/drawai/prepare_data.py,8,python-import,collections
+training/drawai/prepare_data.py,9,python-import,pathlib
+training/drawai/prepare_data.py,11,python-import,numpy
+training/drawai/prepare_data.py,12,python-import,unlzw3
+training/drawai/prepare_data.py,14,python-import,.preprocessing
+training/drawai/prepare_data.py,157,python-import,matplotlib
+training/drawai/prepare_data.py,159,python-import,matplotlib.pyplot
+training/drawai/prepare_integration.py,2,python-import,json
+training/drawai/prepare_integration.py,3,python-import,os
+training/drawai/prepare_integration.py,4,python-import,sys
+training/drawai/prepare_integration.py,9,python-import,numpy
+training/drawai/prepare_integration.py,10,python-import,torch
+training/drawai/prepare_integration.py,11,python-import,onnxruntime
+training/drawai/prepare_integration.py,13,python-import,.prepare_data
+training/drawai/prepare_integration.py,14,python-import,.preprocessing
+training/drawai/prepare_integration.py,15,python-import,.models
+training/drawai/prepare_integration.py,16,python-import,.verify_feasibility
+training/drawai/preprocessing.py,2,python-import,numpy
+training/drawai/preprocessing.py,3,python-import,numbers
+training/drawai/report_experiment.py,2,python-import,argparse
+training/drawai/report_experiment.py,3,python-import,json
+training/drawai/report_experiment.py,4,python-import,pathlib
+training/drawai/report_experiment.py,6,python-import,.prepare_data
+training/drawai/train.py,2,python-import,argparse
+training/drawai/train.py,3,python-import,hashlib
+training/drawai/train.py,4,python-import,json
+training/drawai/train.py,5,python-import,math
+training/drawai/train.py,6,python-import,os
+training/drawai/train.py,7,python-import,platform
+training/drawai/train.py,8,python-import,time
+training/drawai/train.py,9,python-import,pathlib
+training/drawai/train.py,12,python-import,numpy
+training/drawai/train.py,13,python-import,torch
+training/drawai/train.py,14,python-import,torch.utils.data
+training/drawai/train.py,16,python-import,.metrics
+training/drawai/train.py,17,python-import,.models
+training/drawai/train.py,18,python-import,.prepare_data
+training/drawai/train.py,19,python-import,.preprocessing
+training/drawai/verify_data.py,2,python-import,hashlib
+training/drawai/verify_data.py,3,python-import,json
+training/drawai/verify_data.py,4,python-import,platform
+training/drawai/verify_data.py,5,python-import,zipfile
+training/drawai/verify_data.py,7,python-import,numpy
+training/drawai/verify_data.py,8,python-import,unlzw3
+training/drawai/verify_data.py,10,python-import,.prepare_data
+training/drawai/verify_data.py,11,python-import,.preprocessing
+training/drawai/verify_export.py,2,python-import,json
+training/drawai/verify_export.py,4,python-import,numpy
+training/drawai/verify_export.py,5,python-import,jsonschema
+training/drawai/verify_export.py,7,python-import,.prepare_data
+training/drawai/verify_export.py,8,python-import,.preprocessing
+training/drawai/verify_export.py,9,python-import,.train
+training/drawai/verify_export.py,10,python-import,.verify_training
+training/drawai/verify_feasibility.py,6,python-import,hashlib
+training/drawai/verify_feasibility.py,7,python-import,importlib.metadata
+training/drawai/verify_feasibility.py,8,python-import,json
+training/drawai/verify_feasibility.py,9,python-import,os
+training/drawai/verify_feasibility.py,10,python-import,platform
+training/drawai/verify_feasibility.py,11,python-import,sys
+training/drawai/verify_feasibility.py,12,python-import,time
+training/drawai/verify_feasibility.py,13,python-import,pathlib
+training/drawai/verify_feasibility.py,19,python-import,numpy
+training/drawai/verify_feasibility.py,20,python-import,torch
+training/drawai/verify_feasibility.py,21,python-import,onnx
+training/drawai/verify_feasibility.py,22,python-import,onnxruntime
+training/drawai/verify_feasibility.py,24,python-import,.models
+training/drawai/verify_feasibility.py,25,python-import,.preprocessing
+training/drawai/verify_feasibility.py,26,python-import,.prepare_data
+training/drawai/verify_integration.py,2,python-import,json
+training/drawai/verify_integration.py,3,python-import,io
+training/drawai/verify_integration.py,4,python-import,unittest
+training/drawai/verify_integration.py,5,python-import,numpy
+training/drawai/verify_integration.py,7,python-import,.prepare_data
+training/drawai/verify_integration.py,8,python-import,.preprocessing
+training/drawai/verify_notebook.py,2,python-import,asyncio
+training/drawai/verify_notebook.py,3,python-import,os
+training/drawai/verify_notebook.py,4,python-import,sys
+training/drawai/verify_notebook.py,6,python-import,nbformat
+training/drawai/verify_notebook.py,7,python-import,nbclient
+training/drawai/verify_notebook.py,8,python-import,jupyter_client
+training/drawai/verify_notebook.py,9,python-import,jupyter_client.kernelspec
+training/drawai/verify_notebook.py,11,python-import,.prepare_data
+training/drawai/verify_training.py,2,python-import,argparse
+training/drawai/verify_training.py,3,python-import,json
+training/drawai/verify_training.py,4,python-import,pathlib
+training/drawai/verify_training.py,6,python-import,numpy
+training/drawai/verify_training.py,8,python-import,.experiment
+training/drawai/verify_training.py,9,python-import,.prepare_data
+training/drawai/verify_training.py,10,python-import,.train
+training/drawai/verify_ui.py,2,python-import,json
+training/drawai/verify_ui.py,4,python-import,jsonschema
+training/drawai/verify_ui.py,5,python-import,numpy
+training/drawai/verify_ui.py,7,python-import,.prepare_data
+training/drawai/configs/swin.json,2,config-or-notebook,"""experiment"": ""drawai-small-v1"","
+training/drawai/configs/swin.json,4,config-or-notebook,"""preprocessing_version"": ""drawai-geometry-v1"","
+training/tests/test_drawai_canvas.py,2,python-import,json
+training/tests/test_drawai_canvas.py,3,python-import,tempfile
+training/tests/test_drawai_canvas.py,4,python-import,unittest
+training/tests/test_drawai_canvas.py,5,python-import,pathlib
+training/tests/test_drawai_canvas.py,7,python-import,training.drawai.evaluate_canvas
+training/tests/test_drawai_data.py,2,python-import,unittest
+training/tests/test_drawai_data.py,3,python-import,copy
+training/tests/test_drawai_data.py,5,python-import,numpy
+training/tests/test_drawai_data.py,7,python-import,training.drawai.prepare_data
+training/tests/test_drawai_data.py,8,python-import,training.drawai.preprocessing
+training/tests/test_drawai_model.py,2,python-import,json
+training/tests/test_drawai_model.py,3,python-import,unittest
+training/tests/test_drawai_model.py,4,python-import,pathlib
+training/tests/test_drawai_model.py,6,python-import,torch
+training/tests/test_drawai_model.py,8,python-import,training.drawai.models
+training/tests/test_drawai_training.py,2,python-import,copy
+training/tests/test_drawai_training.py,3,python-import,json
+training/tests/test_drawai_training.py,4,python-import,tempfile
+training/tests/test_drawai_training.py,5,python-import,unittest
+training/tests/test_drawai_training.py,6,python-import,pathlib
+training/tests/test_drawai_training.py,7,python-import,unittest.mock
+training/tests/test_drawai_training.py,9,python-import,numpy
+training/tests/test_drawai_training.py,10,python-import,torch
+training/tests/test_drawai_training.py,12,python-import,training.drawai.experiment
+training/tests/test_drawai_training.py,13,python-import,training.drawai.metrics
+training/tests/test_drawai_training.py,14,python-import,training.drawai.prepare_data
+training/tests/test_drawai_training.py,15,python-import,training.drawai.prepare_data
+training/tests/test_drawai_training.py,16,python-import,training.drawai.preprocessing
+training/tests/test_drawai_training.py,17,python-import,training.drawai.train
+training/tests/test_drawai_training.py,109,python-import,training.drawai.evaluate
+training/tests/test_kaggle_import.py,2,python-import,sys
+training/tests/test_kaggle_import.py,3,python-import,tempfile
+training/tests/test_kaggle_import.py,4,python-import,unittest
+training/tests/test_kaggle_import.py,5,python-import,zipfile
+training/tests/test_kaggle_import.py,6,python-import,pathlib
+training/tests/test_kaggle_import.py,7,python-import,unittest.mock
+training/tests/test_kaggle_import.py,9,python-import,numpy
+training/tests/test_kaggle_import.py,12,python-import,import_kaggle_results
+training/tests/test_phase3.py,1,python-import,json
+training/tests/test_phase3.py,2,python-import,sys
+training/tests/test_phase3.py,3,python-import,tempfile
+training/tests/test_phase3.py,4,python-import,unittest
+training/tests/test_phase3.py,5,python-import,unittest.mock
+training/tests/test_phase3.py,6,python-import,pathlib
+training/tests/test_phase3.py,8,python-import,numpy
+training/tests/test_phase3.py,9,python-import,torch
+training/tests/test_phase3.py,12,python-import,har_metrics
+training/tests/test_phase3.py,13,python-import,har_models
+training/tests/test_phase3.py,14,python-import,train_har
+training/tests/test_phase3.py,15,python-import,train_har
+training/tests/test_phase3.py,16,python-import,evaluate_har
+training/tests/test_phase3.py,17,python-import,prepare_uci_har
+training/tests/test_phase3.py,123,python-import,hashlib
+training/tests/test_phase4.py,2,python-import,hashlib
+training/tests/test_phase4.py,3,python-import,json
+training/tests/test_phase4.py,4,python-import,unittest
+training/tests/test_phase4.py,5,python-import,pathlib
+training/tests/test_phase4.py,7,python-import,numpy
+training/tests/test_phase6.py,1,python-import,unittest
+training/tests/test_phase6.py,2,python-import,sys
+training/tests/test_phase6.py,3,python-import,pathlib
+training/tests/test_phase6.py,4,python-import,numpy
+training/tests/test_phase6.py,6,python-import,csv_pipeline
+training/tests/test_phase6.py,7,python-import,verify_phase6_pipeline
+training/tests/test_prepare_uci_har.py,1,python-import,json
+training/tests/test_prepare_uci_har.py,2,python-import,sys
+training/tests/test_prepare_uci_har.py,3,python-import,unittest
+training/tests/test_prepare_uci_har.py,4,python-import,pathlib
+training/tests/test_prepare_uci_har.py,6,python-import,numpy
+training/tests/test_prepare_uci_har.py,10,python-import,prepare_uci_har
+web/playwright.config.ts,1,web-reference,import { defineConfig } from '@playwright/test';
+web/playwright.drawai-app.config.ts,1,web-reference,import { defineConfig } from '@playwright/test';
+web/playwright.drawai-integration.config.ts,1,web-reference,import { defineConfig } from '@playwright/test';
+web/playwright.drawai-release.config.ts,1,web-reference,import { defineConfig } from '@playwright/test';
+web/playwright.drawai.config.ts,1,web-reference,import { defineConfig } from '@playwright/test';
+web/public/models/drawai-feasibility-l128/preprocessing.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+web/public/models/drawai-feasibility-l128/release.json,2,config-or-notebook,"""version"": ""drawai-feasibility-l128"","
+web/public/models/drawai-feasibility-l64/preprocessing.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+web/public/models/drawai-feasibility-l64/release.json,2,config-or-notebook,"""version"": ""drawai-feasibility-l64"","
+web/public/models/drawai-swin-v1/preprocessing.json,2,config-or-notebook,"""version"": ""drawai-geometry-v1"","
+web/public/models/drawai-swin-v1/release.json,2,config-or-notebook,"""version"": ""drawai-swin-v1"","
+web/public/models/drawai-swin-v1/report.json,4,config-or-notebook,"""version"": ""drawai-swin-v1"","
+web/public/models/har-swin-kaggle-v1/labels.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+web/public/models/har-swin-kaggle-v1/preprocessing.json,3,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+web/public/models/har-swin-kaggle-v1/report.json,272,config-or-notebook,"""intended_use"": ""Limited UCI HAR research demo, not guaranteed real-world accuracy"","
+web/public/samples/drawai/digit-0.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-1.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-2.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-3.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-4.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-5.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-6.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-7.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-8.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/digit-9.json,2,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/samples/drawai/manifest.json,2,config-or-notebook,"""version"": ""drawai-train-demos-v1"","
+web/public/samples/uci-har-3ch-v1/index.json,2,config-or-notebook,"""artifact_version"": ""uci-har-3ch-v1"","
+web/public/samples/uci-har-3ch-v1/index.json,8,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/samples/uci-har-3ch-v1/index.json,24,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/samples/uci-har-3ch-v1/index.json,40,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/samples/uci-har-3ch-v1/index.json,56,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/samples/uci-har-3ch-v1/index.json,72,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/samples/uci-har-3ch-v1/index.json,88,config-or-notebook,"""dataset"": ""UCI HAR"","
+web/public/verification/drawai/d6-fixtures.json,2,config-or-notebook,"""version"": ""drawai-d6-v1"","
+web/public/verification/drawai/d6-fixtures.json,12,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,449,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,886,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,1333,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,1782,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,2225,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,2682,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,3127,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,3698,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,4237,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,4824,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,5427,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,6022,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,6667,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,7210,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,7795,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,8538,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9155,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9171,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9194,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9212,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9240,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9269,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/public/verification/drawai/d6-fixtures.json,9296,config-or-notebook,"""schema_version"": ""drawai-strokes-v1"","
+web/src/csv-pipeline.ts,1,web-reference,"import { CsvError, MAX_ROWS, type CsvPreview, type SignalPoint, channelMajor } from './csv-preview';"
+web/src/csv-pipeline.ts,2,web-reference,import type { WindowPrediction } from './inference-artifact';
+web/src/inference-artifact.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/inference-artifact.ts,2,web-reference,import wasmUrl from '../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm?url';
+web/src/inference-artifact.ts,3,web-reference,import wasmModuleUrl from '../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
+web/src/inference-artifact.ts,4,web-reference,"import type { Result, CaseResult } from './inference-smoke-test';"
+web/src/inference-artifact.ts,38,web-reference,const base = `${import.meta.env.BASE_URL}models/${RELEASE}/`;
+web/src/inference-artifact.ts,41,web-reference,const manifestResponse = await fetch(base + 'release.json');
+web/src/inference-artifact.ts,47,web-reference,const response = await fetch(base + name);
+web/src/inference-smoke-test.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/inference-smoke-test.ts,2,web-reference,import wasmUrl from '../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm?url';
+web/src/inference-smoke-test.ts,3,web-reference,import wasmModuleUrl from '../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
+web/src/inference-smoke-test.ts,8,web-reference,const base = `${import.meta.env.BASE_URL}models/phase1/`;
+web/src/inference-smoke-test.ts,15,web-reference,"const responses = await Promise.all(['model.onnx', 'fixtures.json', 'report.json'].map(name => fetch(base + name)));"
+web/src/main.tsx,1,web-reference,import { useState } from 'react';
+web/src/main.tsx,2,web-reference,import { createRoot } from 'react-dom/client';
+web/src/main.tsx,3,web-reference,"import { runSmokeTest, type Result } from './inference-smoke-test';"
+web/src/main.tsx,4,web-reference,"import { runArtifactTest, type ArtifactResult } from './inference-artifact';"
+web/src/main.tsx,5,web-reference,import './style.css';
+web/src/main.tsx,6,web-reference,import { MotionApp } from './motion-app';
+web/src/main.tsx,7,web-reference,import './motion-style.css';
+web/src/main.tsx,8,web-reference,import { DrawAIFeasibility } from './drawai/feasibility-app';
+web/src/main.tsx,9,web-reference,import { DrawAIApp } from './drawai/drawai-app';
+web/src/main.tsx,10,web-reference,import { IntegrationCheck } from './drawai/integration-check';
+web/src/motion-app.tsx,1,web-reference,"import { useEffect, useRef, useState } from 'react';"
+web/src/motion-app.tsx,2,web-reference,import { MAX_BYTES } from './csv-preview';
+web/src/motion-app.tsx,3,web-reference,import { RELEASE } from './inference-artifact';
+web/src/motion-app.tsx,4,web-reference,import { PipelineClient } from './pipeline-client';
+web/src/motion-app.tsx,5,web-reference,"import { resultsCsv, type CompactPreview, type PreparationSummary, type CsvResult } from './csv-pipeline';"
+web/src/motion-app.tsx,6,web-reference,import { SignalChart } from './signal-chart';
+web/src/motion-app.tsx,12,web-reference,const sampleBase = `${import.meta.env.BASE_URL}samples/uci-har-3ch-v1/`;
+web/src/motion-app.tsx,67,web-reference,const response = await fetch(sampleBase+'index.json');
+web/src/motion-app.tsx,82,web-reference,const response = await fetch(sampleBase+demo.file);
+web/src/pipeline-client.ts,2,web-reference,"private worker = new Worker(new URL('./pipeline-worker.ts', import.meta.url), { type: 'module' });"
+web/src/pipeline-worker.ts,1,web-reference,"import { MAX_BYTES, parseCsvPreview, type CsvPreview } from './csv-preview';"
+web/src/pipeline-worker.ts,2,web-reference,"import { compactPreview, prepareCsv, summary, windows, type Unit, type Prepared, type CsvResult } from './csv-pipeline';"
+web/src/pipeline-worker.ts,3,web-reference,import { createClassifier } from './inference-artifact';
+web/src/signal-chart.tsx,1,web-reference,import type { SignalPoint } from './csv-preview';
+web/src/drawai/drawai-app.tsx,1,web-reference,"import { useEffect,useRef,useState } from 'react';"
+web/src/drawai/drawai-app.tsx,2,web-reference,import { DrawingCanvas } from './drawing-canvas';
+web/src/drawai/drawai-app.tsx,3,web-reference,import { InferenceClient } from './inference-client';
+web/src/drawai/drawai-app.tsx,4,web-reference,"import { preprocess, type Stroke } from './preprocessing';"
+web/src/drawai/drawai-app.tsx,5,web-reference,import { sha256 } from './release-loader';
+web/src/drawai/drawai-app.tsx,6,web-reference,"import { validateDrawing, type Drawing, type Prediction } from './types';"
+web/src/drawai/drawai-app.tsx,7,web-reference,import './drawai.css';
+web/src/drawai/drawai-app.tsx,41,web-reference,"const base=`${import.meta.env.BASE_URL}samples/drawai/`,response=await fetch(base+'manifest.json',{cache:'no-cache'});"
+web/src/drawai/drawai-app.tsx,45,web-reference,const res=await fetch(base+entry.file);if(!res.ok)throw new Error('Không tải được mẫu.');const bytes=await res.arrayBuffer();
+web/src/drawai/drawing-canvas.tsx,1,web-reference,"import { useEffect,useRef, type PointerEvent } from 'react';"
+web/src/drawai/drawing-canvas.tsx,2,web-reference,import { type Stroke } from './preprocessing';
+web/src/drawai/feasibility-app.tsx,1,web-reference,"import { useEffect, useRef, useState } from 'react';"
+web/src/drawai/feasibility-app.tsx,13,web-reference,"const worker = new Worker(new URL('./feasibility-worker.ts',import.meta.url),{type:'module'});"
+web/src/drawai/feasibility-worker.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/drawai/feasibility-worker.ts,2,web-reference,import wasmUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm?url';
+web/src/drawai/feasibility-worker.ts,3,web-reference,import wasmModuleUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
+web/src/drawai/feasibility-worker.ts,4,web-reference,"import { preprocess, GEOMETRY_VERSION, type Stroke } from './preprocessing';"
+web/src/drawai/feasibility-worker.ts,20,web-reference,const base = `${import.meta.env.BASE_URL}models/${version}/`;
+web/src/drawai/feasibility-worker.ts,23,web-reference,const manifestResponse = await fetch(base+'release.json');
+web/src/drawai/feasibility-worker.ts,29,web-reference,const response = await fetch(base+name);
+web/src/drawai/infer-drawing.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/drawai/infer-drawing.ts,2,web-reference,import { preprocess } from './preprocessing';
+web/src/drawai/infer-drawing.ts,3,web-reference,"import { validateDrawing, type Drawing } from './types';"
+web/src/drawai/inference-client.ts,1,web-reference,"import { PROTOCOL, RELEASE, type Drawing, type Prediction } from './types';"
+web/src/drawai/inference-client.ts,2,web-reference,import { GEOMETRY_VERSION } from './preprocessing';
+web/src/drawai/inference-client.ts,8,web-reference,"const worker=new Worker(new URL('./inference-worker.ts',import.meta.url),{type:'module'});this.worker=worker;"
+web/src/drawai/inference-worker.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/drawai/inference-worker.ts,2,web-reference,import { GEOMETRY_VERSION } from './preprocessing';
+web/src/drawai/inference-worker.ts,3,web-reference,import { inferDrawing } from './infer-drawing';
+web/src/drawai/inference-worker.ts,4,web-reference,import { loadRelease } from './release-loader';
+web/src/drawai/inference-worker.ts,5,web-reference,"import { PROTOCOL, RELEASE, validateDrawing } from './types';"
+web/src/drawai/integration-check.tsx,1,web-reference,"import { useEffect,useRef,useState } from 'react';"
+web/src/drawai/integration-check.tsx,6,web-reference,"const w=new Worker(new URL('./integration-worker.ts',import.meta.url),{type:'module'});worker.current=w;"
+web/src/drawai/integration-worker.ts,1,web-reference,import { loadRelease } from './release-loader';
+web/src/drawai/integration-worker.ts,2,web-reference,import { inferDrawing } from './infer-drawing';
+web/src/drawai/integration-worker.ts,3,web-reference,import { InferenceClient } from './inference-client';
+web/src/drawai/integration-worker.ts,8,web-reference,const fixtures=await(await fetch(`${import.meta.env.BASE_URL}verification/drawai/d6-fixtures.json`)).json();
+web/src/drawai/release-loader.ts,1,web-reference,import * as ort from 'onnxruntime-web/wasm';
+web/src/drawai/release-loader.ts,2,web-reference,import wasmUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm?url';
+web/src/drawai/release-loader.ts,3,web-reference,import wasmModuleUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
+web/src/drawai/release-loader.ts,4,web-reference,import { GEOMETRY_VERSION } from './preprocessing';
+web/src/drawai/release-loader.ts,5,web-reference,import { RELEASE } from './types';
+web/src/drawai/release-loader.ts,11,web-reference,const base=`${import.meta.env.BASE_URL}models/${RELEASE}/`;
+web/src/drawai/release-loader.ts,14,web-reference,"try {response=await fetch(base+name,{cache:'no-cache'});}"
+web/src/drawai/types.ts,1,web-reference,import { type Stroke } from './preprocessing';
+web/tests/browser.spec.ts,1,web-reference,"import { test, expect } from '@playwright/test';"
+web/tests/browser.spec.ts,2,web-reference,"import { mkdir, writeFile } from 'node:fs/promises';"
+web/tests/browser.spec.ts,27,web-reference,"await page.route('**/models/phase1/fixtures.json', async route => {"
+web/tests/browser.spec.ts,28,web-reference,const response = await route.fetch();
+web/tests/browser.spec.ts,39,web-reference,"await page.route('**/models/phase1/model.onnx', route => route.fulfill({ status: 404, body: 'missing' }));"
+web/tests/drawai-feasibility.spec.ts,1,web-reference,"import { test, expect, type Page } from '@playwright/test';"
+web/tests/drawai-feasibility.spec.ts,2,web-reference,import { createHash } from 'node:crypto';
+web/tests/drawai-feasibility.spec.ts,3,web-reference,"import { mkdir, writeFile } from 'node:fs/promises';"
+web/tests/drawai-feasibility.spec.ts,4,web-reference,"import { cpus, totalmem } from 'node:os';"
+web/tests/drawai-feasibility.spec.ts,9,web-reference,const base='/models/drawai-feasibility-l64/';
+web/tests/drawai-feasibility.spec.ts,49,web-reference,const pattern='**/models/drawai-feasibility-l64/model.onnx';
+web/tests/drawai-feasibility.spec.ts,60,web-reference,"await page.route('**/models/drawai-feasibility-l64/fixtures.json',route=>route.fulfill({status:200,body:'{}',contentType:'application/json'}));"
+web/tests/drawai-feasibility.spec.ts,68,web-reference,const manifest=await (await page.request.get('/models/drawai-feasibility-l64/release.json')).json();
+web/tests/drawai-feasibility.spec.ts,70,web-reference,"await page.route('**/models/drawai-feasibility-l64/release.json',route=>route.fulfill({status:200,body:JSON.stringify(manifest),contentType:'application/json'}));"
+web/tests/drawai-integration.spec.ts,1,web-reference,"import { test,expect,type Page } from '@playwright/test';"
+web/tests/drawai-integration.spec.ts,2,web-reference,"import { mkdir,writeFile } from 'node:fs/promises';"
+web/tests/drawai-integration.spec.ts,3,web-reference,import { createHash } from 'node:crypto';
+web/tests/drawai-integration.spec.ts,4,web-reference,"import { cpus,totalmem } from 'node:os';"
+web/tests/drawai-integration.spec.ts,22,web-reference,const release=await(await page.request.get('/models/drawai-swin-v1/release.json')).json();expect(release.files['model.onnx'].bytes).toBeLessThanOrEqual(10*1024*1024);
+web/tests/drawai-integration.spec.ts,26,web-reference,releaseSha256:createHash('sha256').update(await(await page.request.get('/models/drawai-swin-v1/release.json')).body()).digest('hex')};
+web/tests/drawai-integration.spec.ts,66,web-reference,const pattern='**/drawai-swin-v1/release.json';const manifest=await(await page.request.get('/models/drawai-swin-v1/release.json')).json();manifest.version='drawai-swin-old';
+web/tests/drawai-release.spec.ts,1,web-reference,"import { test, expect, type Page } from '@playwright/test';"
+web/tests/drawai-release.spec.ts,2,web-reference,import { createHash } from 'node:crypto';
+web/tests/drawai-release.spec.ts,3,web-reference,"import { mkdir, writeFile } from 'node:fs/promises';"
+web/tests/drawai-release.spec.ts,4,web-reference,"import { cpus, totalmem } from 'node:os';"
+web/tests/drawai-release.spec.ts,6,web-reference,const base='/models/drawai-swin-v1/';
+web/tests/drawai.spec.ts,1,web-reference,"import { test,expect,type Page } from '@playwright/test';"
+web/tests/drawai.spec.ts,2,web-reference,"import { mkdir,readFile,writeFile } from 'node:fs/promises';"
+web/tests/drawai.spec.ts,3,web-reference,import { createHash } from 'node:crypto';
+web/tests/drawai.spec.ts,22,web-reference,"const fixtures=JSON.parse(await readFile('public/models/drawai-swin-v1/fixtures.json','utf8')).cases;"
+web/tests/drawai.spec.ts,53,web-reference,"const base='/models/drawai-swin-v1/';const release=await(await page.request.get(base+'release.json')).json();const prep=await(await page.request.get(base+'preprocessing.json')).json();prep.channels=['y','x','stroke_start'];const body=JSON.stringify(prep);"
+web/tests/phase4.spec.ts,1,web-reference,"import { test, expect } from '@playwright/test';"
+web/tests/phase4.spec.ts,2,web-reference,"import { mkdir, writeFile } from 'node:fs/promises';"
+web/tests/phase4.spec.ts,3,web-reference,import { createHash } from 'node:crypto';
+web/tests/phase4.spec.ts,5,web-reference,const base = '**/models/har-swin-kaggle-v1/';
+web/tests/phase4.spec.ts,58,web-reference,const response = await route.fetch();
+web/tests/phase4.spec.ts,71,web-reference,const response = await route.fetch();
+web/tests/phase4.spec.ts,82,web-reference,const response = await page.request.get('/models/har-swin-kaggle-v1/fixtures.json');
+web/tests/phase4.spec.ts,88,web-reference,const response = await route.fetch();
+web/tests/phase5.spec.ts,1,web-reference,"import { test, expect } from '@playwright/test';"
+web/tests/phase5.spec.ts,2,web-reference,"import { mkdir, writeFile, readFile } from 'node:fs/promises';"
+web/tests/phase5.spec.ts,3,web-reference,import { resolve } from 'node:path';
+web/tests/phase5.spec.ts,86,web-reference,expect(requests.every(url=>/\/assets\/pipeline-worker-[^/]+\.js$/.test(new URL(url).pathname))).toBe(true);
+web/tests/phase5.spec.ts,134,web-reference,"await page.route('**/models/har-swin-kaggle-v1/model.onnx', route=>route.fulfill({ status:404, body:'missing' }));"
+web/tests/phase5.spec.ts,144,web-reference,await page.unroute('**/models/har-swin-kaggle-v1/model.onnx');
+web/tests/phase6.spec.ts,1,web-reference,"import { test, expect } from '@playwright/test';"
+web/tests/phase6.spec.ts,2,web-reference,"import { readFile, readdir, mkdir, writeFile } from 'node:fs/promises';"
+web/tests/phase6.spec.ts,3,web-reference,import { resolve } from 'node:path';
+web/tests/ux-redesign.spec.ts,1,web-reference,"import { test, expect } from '@playwright/test';"
+web/tests/ux-redesign.spec.ts,2,web-reference,"import { readFile, mkdir, writeFile } from 'node:fs/promises';"
+web/tests/ux-redesign.spec.ts,3,web-reference,import { resolve } from 'node:path';

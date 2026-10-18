@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "pilot_runs": 8,
+  "official_runs": 6,
+  "verified_test_predictions": 20988,
+  "selected_using_validation": true,
+  "selection_sha256": "140157ade7c7b315e0e150f98339a498981ad3a5d095b3167422720b2805e71f",
+  "evaluation_sha256": "c8f9e355938610fa88c8e86d10b438175820155e8e590ceb3187e0c318804658",
+  "checks": [
+    {
+      "run_id": "official-cnn-l64-aug0-seed42",
+      "test_samples": 3498,
+      "accuracy": 0.9882790165809033,
+      "macro_f1": 0.9882035315875269
+    },
+    {
+      "run_id": "official-cnn-l64-aug0-seed43",
+      "test_samples": 3498,
+      "accuracy": 0.9871355060034306,
+      "macro_f1": 0.9870396577950308
+    },
+    {
+      "run_id": "official-cnn-l64-aug0-seed44",
+      "test_samples": 3498,
+      "accuracy": 0.9888507718696398,
+      "macro_f1": 0.9887411006675189
+    },
+    {
+      "run_id": "official-swin-l128-aug1-seed42",
+      "test_samples": 3498,
+      "accuracy": 0.985134362492853,
+      "macro_f1": 0.9850013483050128
+    },
+    {
+      "run_id": "official-swin-l128-aug1-seed43",
+      "test_samples": 3498,
+      "accuracy": 0.9874213836477987,
+      "macro_f1": 0.987540971882116
+    },
+    {
+      "run_id": "official-swin-l128-aug1-seed44",
+      "test_samples": 3498,
+      "accuracy": 0.9877072612921669,
+      "macro_f1": 0.9878959469701531
+    }
+  ]
+}

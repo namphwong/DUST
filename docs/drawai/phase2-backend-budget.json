@@ -1,0 +1,14 @@
+{
+  "version": "drawai-p2-backend-budget-v1",
+  "locked_before_backend_measurement": true,
+  "backend": "Local ONNX Runtime CPU, 4 threads, same full pretrained graph",
+  "target": "Windows AMD Ryzen 7 H 255; localhost only",
+  "end_to_end_p95_max_ms": 500,
+  "cold_start_max_ms": 15000,
+  "process_rss_max_bytes": 1073741824,
+  "warmup": 5,
+  "iterations": 30,
+  "p95": "nearest rank",
+  "includes": "JSON HTTP transport, Python raster preprocessing, ONNX inference, response parse",
+  "privacy": "Bind 127.0.0.1 only; no data persistence; production hosting/consent/UI disclosure belongs to P7"
+}

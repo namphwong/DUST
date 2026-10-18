@@ -1,0 +1,52 @@
+{
+  "phase": "P0",
+  "status": "DONE_LOCAL",
+  "completed_at": "2026-10-17T11:28:32.203845+07:00",
+  "checks": {
+    "backup_restore_all_551_hashes_match": true,
+    "product_source_fingerprints_unchanged": true,
+    "no_original_payload_file_removed": true,
+    "source_drift_expected_only": true,
+    "build_passed": true,
+    "python_tests_passed": 32,
+    "browser_tests_passed": 9,
+    "train_demo_parity_passed": 10,
+    "model_manifest_all_files_verified": true,
+    "onnx_checker_passed": true,
+    "contracts_valid": true,
+    "screenshots_visually_reviewed": true,
+    "phase1_started": false
+  },
+  "expected_changed_original_payload_files": [
+    "README.md",
+    "artifacts/drawai/ui/demo-parity.json",
+    "artifacts/drawai/ui/playwright-report.json",
+    "docs/drawai/status.md",
+    "docs/drawai/two-model-roadmap.md",
+    "tools/phase0_snapshot.py"
+  ],
+  "limitations": [
+    "No clean dependency install; runtime dependencies excluded from snapshot",
+    "No new full-test accuracy evaluation, DINOv3 training, real touch device or private handwriting evaluation",
+    "Local external backup is on the same drive, not offsite storage"
+  ],
+  "evidence": {
+    "baseline-verification.log": "9a99531aedbfc5eb4a86b7f275f7eb75a4302f438370bbb7ec7c0a70c80f30cc",
+    "baseline.json": "ba23980ea17854ec200d700e0db1c58a0ddec2804a09b9642d1aeae349318ea6",
+    "browser-tests.log": "aedb6fd1d8571c3afa4f295d99b0a30bdff63950a16f2a1684bd5d4b4fc9e93d",
+    "build.log": "a7b92a6a28b754846c847cb170547e4c74e72e34a76900ead26b00fcd537991a",
+    "dependency-references.csv": "d1f5e83390c39dea57a48b454b3fe348a393d049374908eaf2529c97997f09dc",
+    "environment.json": "e05f16ddc84e559f7dcd6ccbe7ef7655397222ddc584f9849d22bcdee928ba87",
+    "file-inventory.csv": "c0dfc5ec33bc72667e592f0c2074836a21a133b50c64701d36e5129682725b31",
+    "phase1-file-decisions.csv": "e434301ec2f01ef9a710559b95d1ab1a416a533438d1a388fd47f1099bcd9765",
+    "python-environment-freeze.txt": "8f17aab491336dbe9606f4fdc8ce0847bf180ac13ff5891cc2e4b327ddb71087",
+    "python-packages.json": "239e7eba248bb1fc261eeb2c0e2f45ed512d4b2592b80c0558287253280a143c",
+    "python-tests.log": "95fd6c5e9d66b47762d8583c39b6fc9832bd886f473ff1ffeb11a3fdf3f2b78c",
+    "snapshot.json": "a05e22d7232758826ac8c3b8ee22f15b28f7cab254b41c9169f400db5a561174",
+    "ui/demo-parity.json": "3d36bedc9c9be6a25275dbf605ea825624d7a8954e198630c1587a492f2a0e3a",
+    "ui/desktop.png": "98ef6bf82384a96fa28b97ba75af0f24d099badbf5957e043d608fc0f6fed67f",
+    "ui/mobile.png": "8c2ef7bc2710dd388b87cd2df55a0e6b52048da93bf1e9369205f07d4d651ca4",
+    "ui/playwright-report.json": "277b1f2f303703cdb0d319ce1bb42063edf8703ed1f264b29a6af75e24a0bd07",
+    "ui/user-strokes.json": "24a1170b861c485834d6137766af37dc411ad3b3b199245182e6446472f67dbe"
+  }
+}

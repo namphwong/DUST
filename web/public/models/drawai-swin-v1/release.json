@@ -1,0 +1,26 @@
+{
+  "version": "drawai-swin-v1",
+  "trained": true,
+  "files": {
+    "model.onnx": {
+      "sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+      "bytes": 2384716
+    },
+    "fixtures.json": {
+      "sha256": "1d2e3713d68f3fc3aae18b5476a52218bbebafe74859f818cd6e4c1e936caa2b",
+      "bytes": 216186
+    },
+    "preprocessing.json": {
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898",
+      "bytes": 525
+    },
+    "labels.json": {
+      "sha256": "2143dac5a63fc2543b8bd60bafc3d026bdc24dff0643e812f43523147e7708c1",
+      "bytes": 526
+    },
+    "report.json": {
+      "sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35",
+      "bytes": 8294
+    }
+  }
+}

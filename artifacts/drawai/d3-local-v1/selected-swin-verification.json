@@ -1,0 +1,211 @@
+{
+  "status": "passed",
+  "scope": "selected-swin-only",
+  "historical_other_models_reaudited": false,
+  "deployment_run": "official-swin-l128-aug1-seed44",
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324",
+  "selection_sha256": "140157ade7c7b315e0e150f98339a498981ad3a5d095b3167422720b2805e71f",
+  "validation_samples": 1495,
+  "validation": {
+    "samples": 1495,
+    "accuracy": 0.9993311036789297,
+    "macro_f1": 0.9993320791263596,
+    "confusion_matrix": [
+      [
+        156,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        155,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        156,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        143,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        156,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        144,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        143,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        155,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        143,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        143
+      ]
+    ],
+    "per_class": [
+      {
+        "id": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 156
+      },
+      {
+        "id": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 155
+      },
+      {
+        "id": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 156
+      },
+      {
+        "id": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 143
+      },
+      {
+        "id": 4,
+        "precision": 0.9936305732484076,
+        "recall": 1.0,
+        "f1": 0.9968051118210862,
+        "support": 156
+      },
+      {
+        "id": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 144
+      },
+      {
+        "id": 6,
+        "precision": 1.0,
+        "recall": 0.9930555555555556,
+        "f1": 0.9965156794425087,
+        "support": 144
+      },
+      {
+        "id": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 155
+      },
+      {
+        "id": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 143
+      },
+      {
+        "id": 9,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 143
+      }
+    ],
+    "loss": 0.004831659435029811
+  },
+  "archived_checkpoints_required": false,
+  "test_opened": false
+}

@@ -1,0 +1,98 @@
+{
+  "_id": "68cae4696cd37356122f8a05",
+  "id": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+  "private": false,
+  "pipeline_tag": "image-feature-extraction",
+  "library_name": "timm",
+  "tags": [
+    "timm",
+    "pytorch",
+    "safetensors",
+    "image-feature-extraction",
+    "transformers",
+    "dataset:lvd-1689m",
+    "arxiv:2508.10104",
+    "arxiv:2010.11929",
+    "license:other",
+    "region:us"
+  ],
+  "downloads": 6263,
+  "likes": 0,
+  "modelId": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+  "author": "timm",
+  "sha": "2c7705788ac282557562465d6443606664a55f05",
+  "lastModified": "2025-09-24T22:44:58.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "tags": [
+      "image-feature-extraction",
+      "timm",
+      "transformers"
+    ],
+    "pipeline_tag": "image-feature-extraction",
+    "library_name": "timm",
+    "license": "other",
+    "license_name": "dinov3-license",
+    "license_link": "https://ai.meta.com/resources/models-and-libraries/dinov3-license",
+    "datasets": [
+      "lvd-1689m"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModel"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "LICENSE.md",
+      "blobId": "f531b1e6b5ab2318957bbf8ad1bda9f800a23e17",
+      "size": 7503
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "7bd0852113c95cfc5f5640a91a21c3cf451f2047",
+      "size": 7912
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "719caee8b50053d542aebd3bcb04d515ce89172e",
+      "size": 675
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "ae58e4add25c16a480e3e46f0edb13048e255633",
+      "size": 86401352,
+      "lfs": {
+        "sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
+        "size": 86401352,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "c660e062463997732b690cb712188098a39e1232",
+      "size": 86451314,
+      "lfs": {
+        "sha256": "d72e8da1a26a0f36a286bb1b3d5f597c33b98a7167405e141ff847ed7a08603c",
+        "size": 86451314,
+        "pointerSize": 133
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-09-17T16:40:09.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 21596160
+    },
+    "total": 21596160
+  },
+  "usedStorage": 172852666
+}

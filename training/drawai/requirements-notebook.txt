@@ -1,0 +1,5 @@
+# Optional development/runtime packages for building and executing the notebook.
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.29.5
+jupyter-client==8.10.0

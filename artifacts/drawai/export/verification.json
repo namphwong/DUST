@@ -1,0 +1,26 @@
+{
+  "phase": "D4",
+  "status": "passed-local-cpu-chromium",
+  "tasks": {
+    "D4-01": "passed-local",
+    "D4-02": "passed-local",
+    "D4-03": "passed-local",
+    "D4-04": "passed-local",
+    "D4-05": "passed-local",
+    "D4-06": "passed-local",
+    "D4-07": "passed-local"
+  },
+  "full_test_samples": 3498,
+  "demo_samples": 10,
+  "browser_fixtures": 20,
+  "browser_tests_passed": 13,
+  "release_sha256": "dc4688d4c2f3c17f21e8c849d6cf27db5454e5c16f9a98a0f785b9d81246c021",
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324",
+  "model_sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+  "parity_npz_sha256": "611fd3b9174f1ac521eb97987b47e0dfec4df2fd74956e1b9029df737cddc697",
+  "browser_report_sha256": "224c5d356ed38f8fbfdd973be349213d7495cf9d7ff7f2414cac38d47ceadc35",
+  "python_report_sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35",
+  "build": "npm run build passed",
+  "kaggle_gpu_executed": false,
+  "canvas_evaluated": false
+}

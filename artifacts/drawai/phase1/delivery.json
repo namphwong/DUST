@@ -1,0 +1,24 @@
+{
+  "phase": "P1",
+  "status": "DONE_LOCAL",
+  "created_at": "2026-10-17T11:46:18.905328+07:00",
+  "archive": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\drawai-after-phase1.zip",
+  "bytes": 116112073,
+  "sha256": "f49d4ccdde1b60e318b1190a98c876195c71bbe3647a94805963a3dc56c1672c",
+  "verified_files": 329,
+  "excluded": [
+    ".git",
+    ".ipynb_checkpoints",
+    ".pytest_cache",
+    ".venv",
+    ".venv-drawai",
+    ".venv-phase1",
+    ".vite",
+    "__pycache__",
+    "dist",
+    "node_modules",
+    "test-results"
+  ],
+  "history_bundle": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\history.bundle",
+  "archive_manifest": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\after-phase1-manifest.json"
+}

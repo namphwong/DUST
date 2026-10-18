@@ -1,0 +1,337 @@
+{
+  "passed": true,
+  "technicalOnly": true,
+  "pretrainedLoaded": true,
+  "trained": false,
+  "releaseReady": false,
+  "backend": "Local ONNX Runtime CPU 4 threads",
+  "modelSha256": "cf998559a0f9d06f102efaf41879d391369b0852883c37bf483060ef6802921e",
+  "p95EndToEndMs": 90.19999998807907,
+  "medianEndToEndMs": 83.59999999403954,
+  "iterations": 30,
+  "warmup": 5,
+  "timingSamplesMs": [
+    76.69999998807907,
+    88.80000001192093,
+    84.59999999403954,
+    80.2000000178814,
+    90.19999998807907,
+    88.59999999403954,
+    82.7000000178814,
+    87.5,
+    93.5,
+    89.89999997615814,
+    81.7000000178814,
+    70,
+    85.19999998807907,
+    82.80000001192093,
+    83.5,
+    80,
+    81,
+    83.19999998807907,
+    85,
+    79.7000000178814,
+    77.2999999821186,
+    83.40000000596046,
+    89,
+    85.90000000596046,
+    86.19999998807907,
+    83.7000000178814,
+    87.2999999821186,
+    83.59999999403954,
+    85.5,
+    82.10000002384186
+  ],
+  "serverTimes": [
+    {
+      "rasterMs": 6.6288000089116395,
+      "inferenceMs": 64.19450000976212,
+      "totalMs": 73.18440001108684
+    },
+    {
+      "rasterMs": 6.473999994341284,
+      "inferenceMs": 75.81979999667965,
+      "totalMs": 84.16960001341067
+    },
+    {
+      "rasterMs": 4.614899982698262,
+      "inferenceMs": 73.72980000218377,
+      "totalMs": 80.19939999212511
+    },
+    {
+      "rasterMs": 5.760300002293661,
+      "inferenceMs": 68.95909999730065,
+      "totalMs": 76.54849998652935
+    },
+    {
+      "rasterMs": 6.004299997584894,
+      "inferenceMs": 77.12180001544766,
+      "totalMs": 85.29240000643767
+    },
+    {
+      "rasterMs": 4.3719000241253525,
+      "inferenceMs": 76.42230001511052,
+      "totalMs": 83.06800000718795
+    },
+    {
+      "rasterMs": 5.589499982306734,
+      "inferenceMs": 71.44679999328218,
+      "totalMs": 78.99599999655038
+    },
+    {
+      "rasterMs": 8.277500019175932,
+      "inferenceMs": 72.85419999971054,
+      "totalMs": 83.2669000083115
+    },
+    {
+      "rasterMs": 5.8166999951936305,
+      "inferenceMs": 82.03009999124333,
+      "totalMs": 89.76329999859445
+    },
+    {
+      "rasterMs": 5.386300006648526,
+      "inferenceMs": 78.63520001410507,
+      "totalMs": 85.94550000270829
+    },
+    {
+      "rasterMs": 5.805299995699897,
+      "inferenceMs": 68.67140001850203,
+      "totalMs": 76.45869997213595
+    },
+    {
+      "rasterMs": 5.362199997762218,
+      "inferenceMs": 59.161299985134974,
+      "totalMs": 66.21040002210066
+    },
+    {
+      "rasterMs": 5.846299987751991,
+      "inferenceMs": 73.64950000192039,
+      "totalMs": 81.41289997729473
+    },
+    {
+      "rasterMs": 5.1629999943543226,
+      "inferenceMs": 71.95330000831746,
+      "totalMs": 78.79390000016429
+    },
+    {
+      "rasterMs": 4.140600009122863,
+      "inferenceMs": 73.84519997867756,
+      "totalMs": 79.82230000197887
+    },
+    {
+      "rasterMs": 5.126200005179271,
+      "inferenceMs": 67.53650002065115,
+      "totalMs": 74.22710000537336
+    },
+    {
+      "rasterMs": 4.4932999880984426,
+      "inferenceMs": 70.77299998491071,
+      "totalMs": 77.1713999856729
+    },
+    {
+      "rasterMs": 4.501599993091077,
+      "inferenceMs": 73.02650000201538,
+      "totalMs": 79.37659998424351
+    },
+    {
+      "rasterMs": 6.533300009323284,
+      "inferenceMs": 70.97790000261739,
+      "totalMs": 79.4031000114046
+    },
+    {
+      "rasterMs": 4.295599996112287,
+      "inferenceMs": 69.51179998577572,
+      "totalMs": 75.31320000998676
+    },
+    {
+      "rasterMs": 5.110600002808496,
+      "inferenceMs": 65.44249999569729,
+      "totalMs": 72.44380001793616
+    },
+    {
+      "rasterMs": 5.792200012365356,
+      "inferenceMs": 70.68520001485012,
+      "totalMs": 78.31489999080077
+    },
+    {
+      "rasterMs": 6.295900006080046,
+      "inferenceMs": 76.75639999797568,
+      "totalMs": 84.91259999573231
+    },
+    {
+      "rasterMs": 5.488099996000528,
+      "inferenceMs": 73.88050001463853,
+      "totalMs": 81.03960001608357
+    },
+    {
+      "rasterMs": 4.592900018906221,
+      "inferenceMs": 74.44280001800507,
+      "totalMs": 80.8530000213068
+    },
+    {
+      "rasterMs": 4.783199983648956,
+      "inferenceMs": 71.92759998724796,
+      "totalMs": 78.68770000641234
+    },
+    {
+      "rasterMs": 4.641700012143701,
+      "inferenceMs": 76.29260001704097,
+      "totalMs": 82.57970001432113
+    },
+    {
+      "rasterMs": 4.809500009287149,
+      "inferenceMs": 73.42559998505749,
+      "totalMs": 79.74300000932999
+    },
+    {
+      "rasterMs": 5.535000003874302,
+      "inferenceMs": 74.05029999790713,
+      "totalMs": 81.17049999418668
+    },
+    {
+      "rasterMs": 5.337400012649596,
+      "inferenceMs": 70.53190001170151,
+      "totalMs": 77.38199998857453
+    }
+  ],
+  "coldStartMs": 503.30499999108724,
+  "peakSampledRssBytes": 253677568,
+  "memoryMethod": "process RSS sampled every 20 ms; not guaranteed exact peak",
+  "cases": [
+    {
+      "name": "train-digit-0",
+      "rgbHash": "dd364f6322555fc1632f110ac6b541e3e0fc95302db40091064e82cf69ca6573",
+      "tensorHash": "8ac3c23257700c1db2d1034f544d475433610ced656b7dd68b16fdf3e7d2bba1",
+      "maxAbsError": 6.109476089477539e-7,
+      "predicted": 0
+    },
+    {
+      "name": "train-digit-1",
+      "rgbHash": "0ce0d3723ea15c3c9e8ed73969c0bcdc3e8f6a5984b719e542c5aac79469a4b3",
+      "tensorHash": "d2de63700e91e38720aa2f1d21b1fb24e709c1107d4693b03a56f6d39c5f7d3a",
+      "maxAbsError": 4.246830940246582e-7,
+      "predicted": 3
+    },
+    {
+      "name": "train-digit-2",
+      "rgbHash": "b53c6360875f804d3e6fbefa77be377abb844672f348ebe3ddcb9aa9651a276a",
+      "tensorHash": "cdfc32b053c8f1d0cc0f01cdd1d4a9fdac0f9e40ff89c59aed7d44ee18a6b31f",
+      "maxAbsError": 3.5762786865234375e-7,
+      "predicted": 4
+    },
+    {
+      "name": "train-digit-3",
+      "rgbHash": "d7291680402d13a0985ecdca617b2017f316c8c8e87c74668c573b4cd4673459",
+      "tensorHash": "09b5ab676ce95ac207065e3e6cb8bb603dfb387a7f6e0ff65c4549c1e2e99672",
+      "maxAbsError": 6.854534149169922e-7,
+      "predicted": 4
+    },
+    {
+      "name": "train-digit-4",
+      "rgbHash": "498b00c36aac521d40a9c8e877d6210b517bf780896da2a4e6ff8eadb5c3f698",
+      "tensorHash": "fa875100be2ae05ffac92b34e16d11790846573692f9abf4d030ad6280bcf420",
+      "maxAbsError": 9.238719940185547e-7,
+      "predicted": 3
+    },
+    {
+      "name": "train-digit-5",
+      "rgbHash": "836e9a997de462323a552f0b5ca33b7f045260b135151e806aa30525a4abf513",
+      "tensorHash": "76d33bc71b67f6258d1527f4ea0aff661fb90558968c1d81f97d224eaf6557ad",
+      "maxAbsError": 0.0000011026859283447266,
+      "predicted": 4
+    },
+    {
+      "name": "train-digit-6",
+      "rgbHash": "d3a01d0678f9363a728eec4be4ca2518cb6d6669fbb1e9840f940462f198a635",
+      "tensorHash": "e2d4fc7ba504564615c398e7fc57d4e307a85ac45ce35a1b7d33d3e406699eb9",
+      "maxAbsError": 6.854534149169922e-7,
+      "predicted": 3
+    },
+    {
+      "name": "train-digit-7",
+      "rgbHash": "2e778b23b0826335286e7d99da7c56ab56b4941875409d4a54f46358b24b043a",
+      "tensorHash": "a002a17733a6fa2fb62242aa21a372ff0921a1b6500e29f8d6be7e5709d99c12",
+      "maxAbsError": 5.662441253662109e-7,
+      "predicted": 3
+    },
+    {
+      "name": "train-digit-8",
+      "rgbHash": "a6bc797334271564da354721618ea188f497dd24ea2ab6c92b3150031fbb55c5",
+      "tensorHash": "00c58b20d939c044e0b65ae9cd46f788fb0b893fea1c8a073e56e78ab7e6b4d1",
+      "maxAbsError": 4.76837158203125e-7,
+      "predicted": 3
+    },
+    {
+      "name": "train-digit-9",
+      "rgbHash": "9f25af3832114608cceea1a7210c1960d6a7092544a800e43c10c38af30e9eb2",
+      "tensorHash": "8adc823566e5873b0ee788bd4545c35f708360ff56ec0cd7a723b3f77a02c68f",
+      "maxAbsError": 4.544854164123535e-7,
+      "predicted": 4
+    },
+    {
+      "name": "horizontal",
+      "rgbHash": "af33fbb5b1cd34bbc5f7a07d22ffa7970207e8219024feba22353d175b5da5fe",
+      "tensorHash": "fbec9f88e7feea764a55495be462d1b13eda9fa65417195bd2d89cf3bebbe352",
+      "maxAbsError": 6.556510925292969e-7,
+      "predicted": 7
+    },
+    {
+      "name": "vertical",
+      "rgbHash": "357c27638f438abe06cf9a0eb7ad5b7dcaa0080558993b193745fd8592f0b50f",
+      "tensorHash": "7ff4a4cb437235baa9930a45c55f98bad050a416ae47b791f41f1b94f10f2fae",
+      "maxAbsError": 5.364418029785156e-7,
+      "predicted": 5
+    },
+    {
+      "name": "diagonal",
+      "rgbHash": "a55ed413173d98f1bac5ce6d1846a638b63b5c97ad0a3c19d6bd5a159a3e7705",
+      "tensorHash": "825da4914564477f929d286ad07094edd9d9d6002b888a342a2bd5355f031de8",
+      "maxAbsError": 3.5762786865234375e-7,
+      "predicted": 7
+    },
+    {
+      "name": "gap",
+      "rgbHash": "985ba8deeee771eed346f1c88d31bc49e6f689c932decb1a0d114e9537cd0f7d",
+      "tensorHash": "47a08a4b3d53c6e4dcc8221f6b9c559576a9b6245c206cbb7d2f6d003cb3e4fb",
+      "maxAbsError": 4.76837158203125e-7,
+      "predicted": 7
+    },
+    {
+      "name": "singleton",
+      "rgbHash": "95018f3b6e0a006ce66d4c033f58d91bc6ef6a7b6fe6e13fbae80e2985271a98",
+      "tensorHash": "cd8d95c35ea01185f0e0b8092e5d3854106e7f70e681a2ee9b36fc2d643d9571",
+      "maxAbsError": 7.599592208862305e-7,
+      "predicted": 7
+    },
+    {
+      "name": "duplicate",
+      "rgbHash": "c2c1297c235b40ca3194d941e64dab5680310638d19ff3fbe2064bdb30997477",
+      "tensorHash": "e28889d22776258b3d41d5e889a5f6292fdc3cd83605d2fc6fe025d669d4478c",
+      "maxAbsError": 0.0000017881393432617188,
+      "predicted": 7
+    },
+    {
+      "name": "translated",
+      "rgbHash": "d3a01d0678f9363a728eec4be4ca2518cb6d6669fbb1e9840f940462f198a635",
+      "tensorHash": "e2d4fc7ba504564615c398e7fc57d4e307a85ac45ce35a1b7d33d3e406699eb9",
+      "maxAbsError": 6.854534149169922e-7,
+      "predicted": 3
+    },
+    {
+      "name": "scaled",
+      "rgbHash": "d3a01d0678f9363a728eec4be4ca2518cb6d6669fbb1e9840f940462f198a635",
+      "tensorHash": "e2d4fc7ba504564615c398e7fc57d4e307a85ac45ce35a1b7d33d3e406699eb9",
+      "maxAbsError": 6.854534149169922e-7,
+      "predicted": 3
+    },
+    {
+      "name": "y-up",
+      "rgbHash": "d3a01d0678f9363a728eec4be4ca2518cb6d6669fbb1e9840f940462f198a635",
+      "tensorHash": "e2d4fc7ba504564615c398e7fc57d4e307a85ac45ce35a1b7d33d3e406699eb9",
+      "maxAbsError": 6.854534149169922e-7,
+      "predicted": 3
+    }
+  ],
+  "parityPassed": true,
+  "dataPersisted": false
+}

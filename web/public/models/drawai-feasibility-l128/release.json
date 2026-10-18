@@ -1,0 +1,22 @@
+{
+  "version": "drawai-feasibility-l128",
+  "trained": false,
+  "files": {
+    "model.onnx": {
+      "sha256": "9d3fec6d5e72de8bf3fe84c5e36c3d77ec4c4113f72f4ea680d449548b1ace7f",
+      "bytes": 2368204
+    },
+    "fixtures.json": {
+      "sha256": "9f4972e8efcf4272a7163b685c98331934f5df6dfde1b6ebe96610437f192cc8",
+      "bytes": 216447
+    },
+    "preprocessing.json": {
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898",
+      "bytes": 525
+    },
+    "report.json": {
+      "sha256": "654a097cd830100e332c994dd7469f923720515a459bceaa06d705880d0dff26",
+      "bytes": 1247
+    }
+  }
+}

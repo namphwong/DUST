@@ -1,0 +1,58 @@
+{
+  "phase": "D5",
+  "status": "passed-local-chromium",
+  "tasks": {
+    "D5-01": "passed-local",
+    "D5-02": "passed-local",
+    "D5-03": "passed-local",
+    "D5-04": "passed-local",
+    "D5-05": "passed-local",
+    "D5-06": "passed-local",
+    "D5-07": "passed-local",
+    "D5-08": "passed-local"
+  },
+  "browser_tests_passed": 9,
+  "demo_parity_samples": 10,
+  "build": "passed",
+  "release_sha256": "dc4688d4c2f3c17f21e8c849d6cf27db5454e5c16f9a98a0f785b9d81246c021",
+  "source_files": {
+    "web\\src\\drawai\\drawai-app.tsx": "f066c0d9c3de3a3950f6cdd36185e93b88942c947c33033c303c7065a62bbbb4",
+    "web\\src\\drawai\\drawing-canvas.tsx": "8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c",
+    "web\\src\\drawai\\drawai.css": "899b6ba92ee6f050525cd912ffa89816940f7e8856be22badc59b3a5b178dcbd",
+    "web\\src\\drawai\\inference-client.ts": "1013097e845f6af4bc0d6b2cbe8fa08e497e3b4cef228a3820c5f3aa51b0024d",
+    "web\\src\\drawai\\inference-worker.ts": "d9cbeb7e904d208f501ac442838267e2a4ca71a51fe7d44ec789d10195383adb",
+    "web\\src\\drawai\\release-loader.ts": "3cefe544aab79ac350f3956ab08b0ef3a671532ab0ec922abcfb8450bf616611",
+    "web\\src\\drawai\\types.ts": "548dab900fd3fffb2210597dcd4efc4b5676e29daca63e7494aa271d7b26f3f3",
+    "web\\src\\drawai\\preprocessing.ts": "cd2097e3bc1e6e68f20330c5c419c7264800056eb79197b78db1df517e9ba77d",
+    "web\\tests\\drawai.spec.ts": "031581160a0c85a8fb684acca4764e9ee79bd61ab8351e7ac0938997d3169ac9",
+    "web\\playwright.drawai-app.config.ts": "f091bbc8b3f56a39631cc43d2e8e78612f4956bea80907c46a2168b3754f68ab",
+    "web\\src\\main.tsx": "c9f8cf8b39783082a629189d8df81f4dfbb2824508518633135e76c4887f7173",
+    "training\\drawai\\verify_ui.py": "356c7cc027129c2164aa62a078c97502e147272769fa2bf751380be0a306d528"
+  },
+  "evidence_files": {
+    "playwright-report.json": "eeb2e41e62ec5b9398adc772a2743636df0248aa54e0d8a8798d547ef1fe323a",
+    "demo-parity.json": "aab5fcd0571c03e5d3b18544f16bd4c8f1e967de28bb2a92698094da013ac657",
+    "user-strokes.json": "cf5ef9fd74b9eeade494d19b48c9931a212dc26dff96a7ca8ab9fe4c50ab3c30",
+    "desktop.png": "3ac1eabf249af601664b8bb86b8a75d88350e5d2370b371323c9a5a3f40f0045",
+    "mobile.png": "da91d15b5f5c1b8873b08b35a3d0c1f1abaa4d0f3cce3b3ce787b465c68bf0b4"
+  },
+  "tested_viewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "tested_device_pixel_ratios": [
+    1,
+    2
+  ],
+  "real_touch_device_tested": false,
+  "real_user_handwriting_evaluated": false,
+  "edge_tested": false,
+  "deployed": false,
+  "report_sha256": "7f0c7cc4d950c62f4daf34b9149f1794936b4211ea75163c8d295efb53583fb9"
+}

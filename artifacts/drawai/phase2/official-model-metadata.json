@@ -1,0 +1,38 @@
+{
+  "id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+  "sha": "114c1379950215c8b35dfcd4e90a5c251dde0d32",
+  "gated": "manual",
+  "library_name": "transformers",
+  "config": {
+    "architectures": [
+      "DINOv3ViTModel"
+    ],
+    "model_type": "dinov3_vit"
+  },
+  "safetensors": {
+    "parameters": {
+      "F32": 21596544
+    },
+    "total": 21596544
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "LICENSE.md"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "preprocessor_config.json"
+    }
+  ]
+}

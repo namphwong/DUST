@@ -1,0 +1,32 @@
+{
+  "desktop": {
+    "size": [
+      1366,
+      920
+    ],
+    "identical_pixels": true,
+    "changed_pixels": 0
+  },
+  "root-desktop": {
+    "size": [
+      1366,
+      920
+    ],
+    "identical_pixels": true
+  },
+  "mobile": {
+    "size": [
+      390,
+      1165
+    ],
+    "identical_pixels": true,
+    "changed_pixels": 0
+  },
+  "root-mobile": {
+    "size": [
+      390,
+      1165
+    ],
+    "identical_pixels": true
+  }
+}

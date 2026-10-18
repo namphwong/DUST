@@ -1,0 +1,46 @@
+{
+  "version": "drawai-raster-v1",
+  "size": 224,
+  "layout": "NCHW",
+  "dtype": "float32",
+  "channels": [
+    "R",
+    "G",
+    "B"
+  ],
+  "y_axis": "down",
+  "padding_pixels": 24,
+  "stroke_width_pixels": 8,
+  "background_rgb": [
+    255,
+    255,
+    255
+  ],
+  "ink_rgb": [
+    0,
+    0,
+    0
+  ],
+  "preserve_aspect_ratio": true,
+  "connect_strokes": false,
+  "pixel_centers": "integer coordinates 0..223; center 111.5",
+  "renderer": "union of round-capped segments; coverage=clip(4.5-distance,0,1)",
+  "byte_quantization": "floor(255*(1-coverage)+0.5)",
+  "rescale_factor": 0.00392156862745098,
+  "image_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "image_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "normalization_source": "Verified pinned timm DINOv3 qkvb publisher config: ImageNet mean/std; 224px stroke-raster adaptation",
+  "extra_resize": false,
+  "extra_crop": false,
+  "timestamps_used": false,
+  "max_strokes": 16,
+  "max_points": 8192
+}

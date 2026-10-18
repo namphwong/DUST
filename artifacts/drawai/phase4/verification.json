@@ -1,0 +1,83 @@
+{
+  "phase": "P4",
+  "status": "TECHNICAL_READY_WAITING_FOR_HUMAN_DATA",
+  "phase_complete": false,
+  "technical_complete": true,
+  "python_tests_passed": 68,
+  "p4_new_tests_passed": 12,
+  "browser_tests": {
+    "startTime": "2026-10-18T12:26:43.687Z",
+    "duration": 15537.554,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "design": {
+    "desktop": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "mobile": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        390,
+        1165
+      ]
+    },
+    "root-desktop": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "root-mobile": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        390,
+        1165
+      ]
+    }
+  },
+  "protected_files_verified": 58,
+  "plan_sha256": "1931d5d095a82295d5d3d9271fd0f1ffe46b08d0404620b4c92c3bd427bccd78",
+  "human_pilot_declared_samples": 0,
+  "human_main_declared_samples": 0,
+  "pilot_quota_complete": false,
+  "main_quota_complete": false,
+  "dataset_locked": false,
+  "locked_dataset_path": null,
+  "kaggle_published": false,
+  "training_started": false,
+  "negative_real_inbox_probes": [
+    {
+      "command": "approve-pilot",
+      "exit_code": 1,
+      "output": "ERROR: Full planned quota required; empty/partial dataset cannot be locked",
+      "no_output_created": true
+    },
+    {
+      "command": "lock",
+      "exit_code": 1,
+      "output": "ERROR: Full planned quota required; empty/partial dataset cannot be locked",
+      "no_output_created": true
+    }
+  ],
+  "synthetic_tests_are_not_human_data": true,
+  "test_custody": "Implemented hash-sealed ZIP; no real test archive exists yet; not encryption/access control",
+  "pending": [
+    "Actual consenting human pilot (250 samples) and coordinator approval",
+    "Actual main collection (6000 samples, 30 new writers) under fixed plan",
+    "Source-bound human/consent/identity/exclusion/near-duplicate review and actual final lock"
+  ],
+  "limitations": [
+    "Positive locking tests use a miniature synthetic contract with read_plan patched only inside temporary unit tests",
+    "Production policy remains 250 pilot /6000 main; no clean install or full-size6000 performance benchmark claimed",
+    "Manual attestations and checksums cannot independently prove identity or consent; keep external review evidence",
+    "Coordinator must hold test ZIP and trusted lock hash separately; no cryptographic signature or OS ACL enforcement"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "phase": "P2",
+  "status": "DONE_LOCAL",
+  "phase_complete": true,
+  "all_executable_checks_passed": true,
+  "pretrained_loaded": true,
+  "public_weights_metadata": {
+    "model_id": "timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+    "revision": "2c7705788ac282557562465d6443606664a55f05",
+    "sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
+    "config_git_blob": "719caee8b50053d542aebd3bcb04d515ce89172e"
+  },
+  "pending": [],
+  "runtime_decision": "local-onnx-cpu-backend",
+  "wasm_eligible": false,
+  "backend_fallback_required": true,
+  "production_model": "unchanged Swin PenDigits release",
+  "digit_head_trained": false,
+  "release_ready": false,
+  "design": {
+    "desktop": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "root-desktop": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        1366,
+        920
+      ]
+    },
+    "mobile": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        390,
+        1165
+      ]
+    },
+    "root-mobile": {
+      "pixel_identical_to_P0": true,
+      "size": [
+        390,
+        1165
+      ]
+    }
+  },
+  "python_tests_passed": 46,
+  "browser_tests": {
+    "dinov3": {
+      "startTime": "2026-10-18T06:48:56.141Z",
+      "duration": 39920.147,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "backend": {
+      "startTime": "2026-10-18T06:49:48.937Z",
+      "duration": 7683.383,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "product": {
+      "startTime": "2026-10-18T06:48:36.156Z",
+      "duration": 21392.201,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "parity": {
+    "fixtures": 19,
+    "invalid_inputs": 8,
+    "rgb_and_tensor_hashes_identical": true,
+    "python_max_abs_error": 1.7881393432617188e-06,
+    "browser_max_abs_error": 3.337860107421875e-06
+  },
+  "benchmark": {
+    "model_bytes": 86634209,
+    "python_p95_ms": 80.61219999217428,
+    "python_threads": 4,
+    "wasm_p95_ms": 661.5999999940395,
+    "wasm_threads": 1,
+    "cold_local_ms": 1241.4000000059605,
+    "browser_incremental_sampled_rss_bytes": 420753408,
+    "backend_p95_end_to_end_ms": 90.19999998807907,
+    "backend_cold_ms": 503.30499999108724,
+    "backend_peak_sampled_rss_bytes": 253677568
+  },
+  "baseline_environment_unchanged": true,
+  "private_or_test_data_used": false,
+  "tiny_overfit_is_quality_metric": false,
+  "smoke_artifact_not_in_public_or_dist": true,
+  "limitations": [
+    "No private data or digit quality evaluation in P2",
+    "Memory is sampled aggregate RSS, not exact peak or unique physical memory",
+    "No phone, clean install, GPU or trained-classifier performance claim without explicit evidence"
+  ]
+}

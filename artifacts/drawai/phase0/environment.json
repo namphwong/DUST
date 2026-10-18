@@ -1,0 +1,13 @@
+{
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cpu",
+  "numpy": "1.26.4",
+  "onnx": "1.16.2",
+  "onnxruntime": "1.20.1",
+  "jsonschema": "4.26.0",
+  "unlzw3": "0.2.3",
+  "node": "v24.18.0",
+  "web_lockfile": "web/package-lock.json",
+  "python_dependencies_excluded_from_backup": true
+}

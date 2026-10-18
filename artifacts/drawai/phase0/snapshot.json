@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-17T11:24:27.528377+07:00",
+  "root": "D:\\ChuyenDe\\DUST",
+  "backup_directory": "D:\\ChuyenDe\\DUST-backups\\phase0-20261017-112405",
+  "git_branch": "main",
+  "git_head": "ac092dc451ce0ae14adb587b5cbb209ddb44ce59",
+  "source_status_file": "D:\\ChuyenDe\\DUST-backups\\phase0-20261017-112405\\git-status-before.txt",
+  "files": 551,
+  "source_bytes": 347816890,
+  "git_states": {
+    "tracked": 220,
+    "untracked": 218,
+    "ignored": 113
+  },
+  "phase1_actions": {
+    "UPDATE": 8,
+    "KEEP": 302,
+    "REMOVE_PHASE1": 227,
+    "REVIEW": 1,
+    "KEEP_REFACTOR": 7,
+    "REVIEW_DEPENDENCY": 4,
+    "REVIEW_SHARED_CSS": 2
+  },
+  "excluded_directories": [
+    ".git",
+    ".venv-phase1",
+    "artifacts/drawai/phase0",
+    "models/__pycache__",
+    "training/__pycache__",
+    "training/drawai/__pycache__",
+    "training/tests/__pycache__",
+    "web/dist",
+    "web/node_modules",
+    "web/test-results"
+  ],
+  "archive": {
+    "path": "D:\\ChuyenDe\\DUST-backups\\phase0-20261017-112405\\working-tree.zip",
+    "bytes": 292117263,
+    "sha256": "6c620523734226504e87681554ce8931da2251468ca9f9f98923e48b503f3da5"
+  },
+  "history_bundle": {
+    "path": "D:\\ChuyenDe\\DUST-backups\\phase0-20261017-112405\\history.bundle",
+    "bytes": 34687662,
+    "sha256": "2cfa178424feec00b6f5bdd1cc97f4b95c3d320b4dccb411f334dfdf78458f97",
+    "verified": true
+  },
+  "restore_check": {
+    "path": "D:\\ChuyenDe\\DUST-backups\\phase0-20261017-112405\\restore-check",
+    "files_verified": 551,
+    "all_hashes_match": true
+  },
+  "dependencies": "static reference inventory; dynamic paths and CSS need manual review",
+  "exclusions_note": "Runtimes/dependencies/caches/generated dist/test-results excluded; no model/data payload excluded. Phase0 output excluded to avoid recursion. Git history preserved separately; working tree index staging is not recreated automatically."
+}

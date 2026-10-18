@@ -1,249 +1,183 @@
-# DUST
-## Web project: Swin Transformer 1D
+# DrawAI
 
-Phase 0 specification is complete. Start with [project scope](docs/project-scope.md),
-[data contract](docs/data-contract.md), [acceptance criteria](docs/acceptance-criteria.md),
-and [phase status](docs/phase-status.md). Format examples are in
-[examples/phase0](examples/phase0/README.md).
+Nhận dạng **một chữ số viết tay 0–9 từ nét vẽ trên canvas**. DrawAI đang chạy bằng Swin Transformer 1D đã train trên PenDigits; DINOv3 đã load pretrained weights công khai từ timm, export full ONNX và kiểm chứng backend CPU local.
 
-Phase 1 browser feasibility has passed: the untrained Swin 1D exports to ONNX
-and matches PyTorch in browser WASM on eight fixtures. See
-[the feasibility report and run instructions](docs/browser-feasibility.md).
-The historical untrained check remains available at `/?phase=1`.
+**Tiến độ 18/10/2026:** **P0–P2 hoàn thành local**; head chữ số DINOv3 sẽ train đầy đủ ở P5 sau khi thu/khóa dữ liệu riêng P3–P4. MotionSense/HAR và video/fusion đã được chuyển ra khỏi project. Giữ nguyên design DrawAI.
 
-Phase 2 data preparation is complete: official UCI HAR total acceleration,
-subject-disjoint train/validation/test, train-only normalization and six sourced demo CSVs.
-See [the data report and Kaggle usage](docs/data-report.md). Reproduce with
-`python training/prepare_uci_har.py --download` and verify with
-`python training/verify_phase2.py` (NumPy requirements: `training/requirements-data.txt`).
+- [Roadmap P0–P8](docs/drawai/two-model-roadmap.md)
+- [Báo cáo P0](docs/drawai/phase0-report.md) · [Báo cáo P1](docs/drawai/phase1-report.md)
+- [Báo cáo P2](docs/drawai/phase2-report.md) · [Setup DINOv3 và hướng dẫn weights](docs/drawai/dinov3-guide.md)
+- [Contract hai model](docs/drawai/two-model-contract.json) · [Tiến độ](docs/drawai/status.md)
 
-Phase 3 is complete on Kaggle GPU: six runs (CNN/Swin, seeds 42/43/44),
-downloaded checkpoint hashes and test metrics independently verified.
-Validation-selected Swin seed 44 has test accuracy 0.871734 / macro-F1 0.870489;
-Swin three-seed macro-F1 is 0.868143 ± 0.008016 (sample std).
-The 0.90 target is not met; this remains a clearly limited research demo.
-See [the Kaggle report](docs/kaggle-training-report.md), [historical CPU report](docs/training-report.md),
-[GPU notebook](notebooks/kaggle_train_har_gpu.ipynb) and [Kaggle/resume instructions](notebooks/README.md).
-Phase 4 is complete: the default browser page uses the trained Kaggle checkpoint,
-exported as float32 ONNX (8.62 MiB). All 2947 test predictions match the checkpoint;
-macro-F1 degradation is zero. Browser WASM parity passes 14 fixtures with a measured
-benchmark. See [artifact report and commands](docs/phase4-artifact-report.md),
-[model card](docs/model-card.md) and [release manifest](web/public/models/har-swin-kaggle-v1/release.json).
-Phase 5 UI is complete: the default page is MotionSense, with six sourced UCI train
-demos, real ONNX inference, XYZ chart, six scores and demo result CSV downloads.
-See the historical [UI report](docs/phase5-ui-report.md).
-Phase 6 completes actual user CSV inference in a Web Worker: explicit g/m/s²/gravity,
-segment-aware 50 Hz resampling, 128/64 windows, confirmation, progress/cancel,
-source isolation and all-window result CSV exports. No CSV upload or paid backend.
-17 synthetic CSV fixtures / 18 windows match independent NumPy + PyTorch golden
-tensors/predictions. A 100,000-row session runs all 1,561 windows with a responsive UI.
-See [pipeline report and reproduction commands](docs/phase6-pipeline-report.md).
-The pre-Phase-7 [UI/UX redesign](docs/ui-ux-redesign.md) makes input/output the main
-dashboard: file selection/drag-drop/pasted CSV, step guidance, whole-file window
-distribution, selected-window timestamps/scores and full CSV export. Responsive
-desktop/mobile layouts and all 32 browser tests are verified locally.
-Technical checks remain at `/?phase=4` and `/?phase=1`. Tests use port 4174;
-the user preview stays on 4173. Vercel deployment/release acceptance remain pending (Phase 7–8).
+## Hai mô hình
 
-**Dual Swin Transformer for Video-Time-Series Fusion**
+| Model | Vai trò | Input | Trạng thái |
+|---|---|---|---|
+| Swin Transformer 1D | Đối chứng | float32 [1,3,128], x/y/stroke_start | Đã train và export ONNX, chạy browser WASM |
+| DINOv3 ViT-S/16 + classifier | Backbone ảnh + head 10 lớp | float32 [1,3,224,224] RGB từ cùng nét | Pretrained timm đã load; full ONNX/backend CPU đạt; head chữ số chưa train đầy đủ |
 
-This project involves the use of a Dual Swin Transformer model to effectively fuse video and time-series data. Below are the steps for preparation, data generation, and training.
+Hai model sẽ dùng cùng sample ID và split theo người của dữ liệu tự thu. Không fusion. Trang chính giữ design hiện tại, dùng một model mặc định; so sánh hai model qua công cụ/trang kiểm chứng riêng.
 
-Related Paper:
+## Chạy giao diện
 
-[Shi, L., Chen, Y., Liu, M., & Guo, F. (2024). DuST: Dual Swin Transformer for Multi-modal Video and Time-Series Modeling. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 4537-4546).](https://openaccess.thecvf.com/content/CVPR2024W/WAD/html/Shi_DuST_Dual_Swin_Transformer_for_Multi-modal_Video_and_Time-Series_Modeling_CVPRW_2024_paper.html)
+Cần Node.js/npm; môi trường đã kiểm chứng là Node 24.18.0. Từ thư mục `web`:
 
-## Environment Setup
+```powershell
+npm ci
+npm run dev -- --port 4183 --strictPort
+```
 
-Follow these steps to set up the environment for the DUST project:
+Mở `http://127.0.0.1:4183/` hoặc `/drawai`. Các trang kỹ thuật:
 
-### Creating a Conda Environment
+- `/drawai/release-check`: kiểm chứng Swin đã train.
+- `/drawai/check`: phép thử kỹ thuật artifact chưa train, không dùng để đo chất lượng nhận dạng.
+- `/drawai/integration-check`: kiểm chứng pipeline/benchmark.
 
-1. Create a new conda environment with Python 3.8:
-   
-   ```bash
-   conda create -n dust python=3.8
-   ```
-2. Activate the newly created environment:
-   
-   ```bash
-   conda activate dust
-   ```
-3. Install PyTorch, torchvision, torchaudio, and CUDA support using conda:
+Không cần Python để chạy demo browser. Model được tải và chạy trên thiết bị bằng ONNX Runtime Web; không gửi nét tới server suy luận trong P1.
 
-   ```bash
-   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-   ```
-4. Install the necessary Python packages using pip:
+## Python, dữ liệu và training
 
-   ```bash
-   pip install timm
-   pip install einops
-   pip install opencv-python
-   pip install pandas
-   ```
-   
-## Generate Toy Data
-To generate toy data for training and testing, run the following command:
+Cần Python 3.11; có thể tạo môi trường riêng:
 
-`$ python gen_data.py`
+```powershell
+py -3.11 -m venv .venv-drawai
+./.venv-drawai/Scripts/python.exe -m pip install -r training/drawai/requirements.txt
+./.venv-drawai/Scripts/python.exe -m pip install -r training/drawai/requirements-verification.txt
+./.venv-drawai/Scripts/python.exe -m training.drawai.prepare_data --download --length 64
+./.venv-drawai/Scripts/python.exe -m training.drawai.prepare_data --length 128
+```
 
+Chọn wheel PyTorch CPU/CUDA phù hợp thiết bị. Môi trường local hiện hữu `.venv-phase1` dùng Torch 2.5.1+cpu và không có pip; không cần thay môi trường đó để chạy các lệnh kiểm chứng đã có. P1 chưa kiểm chứng clean install trên máy mới.
 
-## Training
-The training process is divided into several stages:
+[Training guide](docs/drawai/training-guide.md) có lệnh smoke, thí nghiệm Swin-only, evaluate, export và notebook Kaggle. P1 không train lại checkpoint release. Pipeline DINOv3 pretrained đã kiểm chứng ở P2; chưa train classifier đầy đủ hoặc thu dữ liệu riêng.
 
-1. **Stage 1: Train Video Model**
-   - Train the video model by executing:
-     ```
-     python step_fusion_3d.py
-     ```
+## Model đang có
 
-   - step_fusion_3d.py: Script Configuration
+| Artifact | Input → output | Nguồn | Tình trạng |
+|---|---|---|---|
+| `web/public/models/drawai-swin-v1/model.onnx` | [1,3,128] → [1,10] logits | Swin seed44, PenDigits | Trained; 2.27 MiB |
 
-   - The `step_fusion_3d.py` script is crucial for training the video model in the DUST framework. It includes several configuration options:
+SHA-256 ONNX: `28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366`.
 
-      - Training Parameters
-     
-         - `--batch_size`: Sets the batch size for training (default: 9).
-         - `--num_epochs`: Determines the number of training epochs (default: 100).
-         - `--lr`: Specifies the learning rate (default: 0.001).
-         - `--seed`: Sets a random seed for reproducibility (default: 93728645).
-         - `--print_every`: Defines the interval of epochs for validation and model saving (default: 3).
+Checkpoint nguồn local: `artifacts/drawai/d3-local-v1/runs/official-swin-l128-aug1-seed44/best.pth`. Checkpoint/raw data lớn bị ignore; artifact ONNX và metadata nằm trong web/public. Chưa có link public tải checkpoint nguồn; clone GitHub chưa tự có checkpoint local. Có thể chạy demo bằng ONNX hoặc tái tạo dữ liệu/train theo hướng dẫn.
 
-      - Model Configuration
-        
-         - `--num_frames`: Number of frames or time points (default: 77).
-         - `--height`: Height of each frame (default: 224).
-         - `--width`: Width of each frame (default: 224).
+Tên model rõ nghĩa sẽ được áp dụng đồng bộ ở P6:
 
-      - Input Paths
-    
-         - `--path_video_train`: Path to the video training data (default: './data/video_train.pkl').
-         - `--path_video_val`: Path to the video validation data (default: './data/video_val.pkl').
-         - `--path_label_train`: Location of the training label data (default: './data/label_train.pkl').
-         - `--path_label_val`: Location of the validation label data (default: './data/label_val.pkl').
+```text
+drawai_swin1d_pendigits_l128_fp32_v1.onnx
+drawai_swin1d_private-v1_l128_fp32_v1.onnx
+drawai_dinov3-vits16_private-v1_rgb224_fp32_v1.onnx
+```
 
-      - Output Paths
-         - `--outpath`: Directory to save the trained models (default: './saved_models/step_3d/').
-         - `--logpath`: Directory for saving logs (default: './logs/').
+Các tên trên là đích kế hoạch, không phải ba model đã tồn tại. [Model card](docs/drawai/model-card.md) và release.json ghi preprocessing, labels, hashes và giới hạn.
 
-   - These configurations allow for fine-tuning of the video model training process in the DUST project.
+Metric lịch sử PenDigits: accuracy 98,77%, macro-F1 98,79% trên 3.498 mẫu test. Không phải metric trên dữ liệu tự thu hoặc bảo đảm chất lượng nét người dùng. Dữ liệu tự thu và link Kaggle public sẽ được hoàn thành ở P3–P4/P8; hiện chưa có.
 
+## Kiểm chứng
 
-2. **Stage 2: Train Time-Series Model**
-   - Next, train the time-series model using:
-     ```
-     python step_fusion_1d.py
-     ```
-   - step_fusion_1d.py: Script Configuration
+Build trước khi chạy browser tests, từ `web`:
 
-   - The `step_fusion_1d.py` script, a key part of the DUST model's training, utilizes several arguments:
+```powershell
+npm run build
+npm test
+npm run test:release
+npm run test:integration
+npx playwright test --config playwright.drawai-phase1.config.ts
+```
 
-      - Training Parameters
-         - `--batch_size`: Input batch size (default: 2000).
-         - `--num_epochs`: Number of epochs (default: 200).
-         - `--lr`: Learning rate (default: 0.0003).
-         - `--seed`: Random seed (default: 93728645).
-         - `--print_every`: Epoch interval for validation/model saving (default: 1).
+`npm test` chạy 9 tests DrawAI; release suite gồm 13 tests; integration dùng Chrome/Edge cài local. P1 route suite kiểm tra trang gốc, alias, inference thật và ảnh design. Cài Chromium của Playwright nếu môi trường mới chưa có browser.
 
-      - Model Settings
-         - `--num_frames`: Number of frames (default: 51).
-         - `--num_channels`: Number of channels (default: 3).
+Từ root, dùng interpreter đã cài dependencies:
 
-      - Input/Output Paths
-         - `--path_kine_train`: Kinematic training data path (default: './data/kine_train.pkl').
-         - `--path_kine_val`: Kinematic validation data path (default: './data/kine_val.pkl').
-         - `--path_label_train`: Training labels path (default: './data/label_train.pkl').
-         - `--path_label_val`: Validation labels path (default: './data/label_val.pkl').
-         - `--outpath`: Model saving directory (default: './saved_models/step_1d/').
-         - `--logpath`: Log directory (default: './logs/').
+```powershell
+./.venv-phase1/Scripts/python.exe -m unittest discover -s training/tests -p "test_drawai*.py" -v
+./.venv-phase1/Scripts/python.exe -m training.drawai.verify_training
+```
 
-   - These configurations provide detailed control for the time-series model training in the DUST framework.
+Lệnh verify mặc định chỉ audit Swin được chọn trong thí nghiệm lịch sử, không cần checkpoint CNN đã lưu ngoài project. Không gọi kết quả đó là audit lại toàn bộ thí nghiệm CNN cũ.
 
+## DINOv3 P2 — hoàn thành local
 
-3. **Stage 3: Extract Video Features**
-   - After training the video model, extract features from videos with:
-     ```
-     python step_fusion_3d_get_feature.py
-     ```
+- Nguồn đã chọn: [timm DINOv3 ViT-S/16 QKV-bias](https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m), tải công khai không cần token; pin revision/hash, strict-load đủ 186 tensors và so sánh từng tensor với checkpoint.
+- Code timm là open source; **weights dùng DINOv3 custom license**. Hai nguồn khác và lý do chọn nằm trong [báo cáo P2](docs/drawai/phase2-report.md).
+- Backbone đóng băng + CLS/mean-patch pooling + head 10 lớp: **21.603.850 tham số**, 7.690 trainable. Raster Python/TypeScript khớp 19 fixtures.
+- Artifact full graph: `artifacts/drawai/phase2/technical/drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx`, **86,634,209 bytes** (~82,62 MiB).
+- **46 Python + 21 browser tests đạt**; build và audit đạt. WASM p95 661.6 ms vượt ngưỡng 500 ms; backend CPU local end-to-end p95 **90.2 ms** đạt. Chốt phương án backend DINOv3 cho tích hợp sau; Swin vẫn chạy browser.
+- `pretrained_loaded=true`, `trained=false`, `release_ready=false`: backbone pretrained thật, head export chưa train chữ số. Tiny overfit chỉ kiểm tra tối ưu; chưa phải model DINOv3 nhận dạng để nộp cuối kỳ.
+- Giữ nguyên design và model Swin trên trang chính. Trang kỹ thuật riêng `/drawai/dinov3-check` chỉ truy cập artifact/backend khi bật `DRAWAI_P2_LOCAL_SMOKE=1`; ONNX không nằm trong public/dist.
 
-   - step_fusion_3d_get_feature.py: Script Configuration
+Từ root:
 
-   - The `step_fusion_3d_get_feature.py` script is designed for extracting features from videos as part of the DUST model's training process. It utilizes several arguments for configuration:
+```powershell
+./.venv-dinov3/Scripts/python.exe -m training.drawai.dinov3_weights
+./.venv-dinov3/Scripts/python.exe -m training.drawai.dinov3_feasibility
+./.venv-dinov3/Scripts/python.exe tools/verify_phase2.py
+```
 
-      - Basic Settings
-        
-         - `--batch_size`: Sets the input batch size for training (default: 80).
-         - `--seed`: Specifies a random seed for reproducibility (default: 93728645).
+[Hướng dẫn tái tạo, backend và kiểm thử](docs/drawai/dinov3-guide.md). Audit cần các suite đã chạy; bộ bằng chứng ở `artifacts/drawai/phase2/verification.json`.
 
-      - Model Configuration
-         
-         - `--path_3d_model`: Path to the pre-trained swin 3d model (default: './saved_models/step_3d/final_3d.pth').
-         - `--num_frames`: Number of frames or time points (default: 77).
-         - `--height`: Height of each frame (default: 224).
-         - `--width`: Width of each frame (default: 224).
+## Thu dữ liệu riêng P3
 
-      - Input Paths
-         
-         - `--path_video_train`: Location of the video training data (default: './data/video_train.pkl').
-         - `--path_video_val`: Location of the video validation data (default: './data/video_val.pkl').
-         - `--path_label_train`: Path to training label data (default: './data/label_train.pkl').
-         - `--path_label_val`: Path to validation label data (default: './data/label_val.pkl').
+**P3 đã sẵn sàng về kỹ thuật; pilot người thật chưa thực hiện (0/250 mẫu).** Mở `/collect` trên cùng server web: trang thu riêng, không thay design/trang nhận dạng DrawAI, không prediction hoặc upload nét. Có xác nhận ba mục đồng ý, kiểm tra thiết bị, lịch chữ số theo vòng, tải JSON và tiếp tục phiên từ bản đã tải. Tải sau mỗi vòng để tránh mất dữ liệu trong bộ nhớ.
 
-      - Output Paths
-         
-         - `--outpath`: Directory to save extracted video features (default: './video_features/').
-         - `--logpath`: Directory for saving logs (default: './logs/').
+- Pilot: P001–P005, mỗi người50 mẫu; chính: M001–M030, mỗi người200 mẫu. Người pilot không tham gia chính; split chính20/5/5 người được khóa trước thu.
+- [Hướng dẫn điều phối và lệnh audit/build](docs/drawai/collection/operator-guide.md) · [Protocol cho người viết](docs/drawai/collection/protocol.md) · [Mẫu đồng ý](docs/drawai/collection/consent-template.md).
+- [Schema phiên](docs/drawai/collection/session.schema.json), [policy split có hash](docs/drawai/collection/split-policy.json), template manifest/registry/rejection log và dataset card dự thảo tại `docs/drawai/collection/`.
+- Code: `web/src/drawai/collect-app.tsx`, `collection.ts`, `training/drawai/private_data.py`. Validator kiểm tra schema/nhãn/prompt/thiết bị/time/duplicates/quota; build tạo raw JSON, RGB224 PNG, Swin NPY cùng sample ID/split và SHA-256. Output luôn staging, chưa khóa/công bố.
+- Dữ liệu/consent/mapping người ở `data/private/` hoặc kho private của điều phối, bị Git ignore; không đặt vào public/dist. Không upload nguyên JSON phiên có mã hồ sơ consent lên Kaggle.
+- **56 Python +17 browser tests đạt**, design/root/alias giữ nguyên. [Báo cáo P3](docs/drawai/phase3-report.md), evidence `artifacts/drawai/phase3/verification.json`. Fixture tự động không được tính vào số người/mẫu thật.
 
-   - These configurations enable the extraction of features from video data.
+## Thu chính thức và khóa dataset P4
 
+**P4 sẵn sàng về kỹ thuật; hiện chưa có dữ liệu người thật để khóa**: pilot0/250, main0/6.000. Không chuyển dữ liệu test tự động/PenDigits thành private data.
 
-4. **Stage 4: Update Time-Series Model**
-   - Finally, update the time-series model by running:
-     ```
-     python step_fusion.py
-     ```
-   - step_fusion.py: Script Configuration
+- Code mới `training/drawai/private_dataset.py`: draft review gắn hash source/audit/plan; phê duyệt pilot; khóa main khi đủ quota và xác nhận rà soát thật; verify theo trusted lock hash độc lập.
+- Chặn thiếu quota/pilot, thiếu consent hoặc withdrawn, trùng người/mẫu giữa pilot/main, source thay sau review và các nhóm gần trùng chưa rà soát. Lý do loại mẫu không được là dự đoán AI.
+- Package chung JSON/PNG/Swin NPY có manifest/hash; development chỉ train/validation, test nằm ZIP riêng có hash. ZIP **không mã hóa/không tự áp quyền truy cập**; điều phối phải giữ riêng.
+- Loader/iterator hai representation dùng chung sample ID/split, chỉ nhận train/validation; chưa train model hoặc công bố Kaggle ở P4. Design và Swin release giữ nguyên.
+- [Hướng dẫn rà soát](docs/drawai/dataset/review-guide.md) · [Khóa/verify và bàn giao P5](docs/drawai/dataset/locking-guide.md) · [Báo cáo P4](docs/drawai/phase4-report.md).
+- Kiểm chứng:68 Python tests (12 mới P4) và12 browser regression đạt. Evidence ở `artifacts/drawai/phase4/verification.json`; positive-lock tests dùng policy giả lập nhỏ trong thư mục tạm, production vẫn250/6.000 mẫu.
 
-   - The `step_fusion.py` script is an essential component for the final stage of the DUST model's training, focusing on the fusion of video and kinematic data. It is configured through the following arguments:
+## Đã cập nhật ở đâu
 
-      - Training Parameters
-         
-         - `--batch_size`: Sets the batch size for training (default: 2000).
-         - `--num_epochs`: Determines the number of training epochs (default: 200).
-         - `--lr`: Specifies the learning rate (default: 0.0003).
-         - `--seed`: Sets a random seed for reproducibility (default: 93728645).
-         - `--print_every`: Defines the interval of epochs for validation and model saving (default: 1).
+| Phase / file | Thay đổi |
+|---|---|
+| P0: `tools/phase0_*.py`, `artifacts/drawai/phase0/` | Snapshot phục hồi, inventory, contract và ảnh mốc |
+| P1: `web/src/main.tsx`, `web/index.html` | `/`, `/drawai`, `/drawai/` mở DrawAI; bỏ route/metadata MotionSense |
+| P1: `web/src/drawai/base.css` | Chuyển CSS nền từ file chung, giữ nguyên cascade/design |
+| P1: `web/package*.json`, `web/playwright*.ts` | Package DrawAI, default tests chỉ DrawAI |
+| P1: `training/drawai/models.py`, `train.py`, `experiment.py`, `evaluate.py` | Bỏ CNN runtime; thí nghiệm Swin-only version mới, output riêng |
+| P1: `verify_training.py`, `export_onnx.py` | Audit checkpoint Swin độc lập checkpoint CNN; giữ selection/provenance lịch sử |
+| P1: `build_notebook.py`, `notebooks/kaggle_train_drawai.ipynb` | Notebook/source bundle Swin-only, smoke riêng |
+| P1: `.gitignore`, `data/.gitignore`, `NOTICE.md` | Chính sách dữ liệu/checkpoint và giữ ghi công nguồn |
+| P1: `artifacts/drawai/phase1/deletion-plan.csv` | 309 file ngoài phạm vi đã chuyển ra ngoài DUST, có hash để khôi phục |
+| P1: `docs/drawai/phase1-report.md` | Báo cáo thay đổi và kết quả nghiệm thu thực tế |
+| P2: `training/drawai/dinov3_model.py`, `dinov3_weights.py`, `models.py` | Native timm pretrained backbone + head, factory hai họ, tải public snapshot pin revision/hash/config và strict-load |
+| P2: `training/drawai/raster.py`, `web/src/drawai/raster.ts` | Renderer và normalization chia sẻ Python/TypeScript |
+| P2: `dinov3_feasibility.py`, `requirements-dinov3.txt` | Gradient/freeze, tiny probe train-only, full ONNX export, dependency riêng |
+| P2: `training/drawai/dinov3_backend.py`, `web/src/drawai/dinov3-backend-worker.ts` | Backend CPU local, raw-stroke parity, đo HTTP/raster/inference end-to-end và RSS |
+| P2: `web/src/drawai/dinov3-*`, `web/vite.config.ts`, `main.tsx` | Trang kiểm chứng riêng, artifact chỉ local, giữ nguyên trang chính |
+| P2: `training/tests/test_drawai_dinov3.py`, `test_drawai_raster.py`, `web/tests/drawai-dinov3*.spec.ts` | Positive pretrained, renderer/gradients, tamper, parity, API errors, recovery, runtime và release guards |
+| P2: `tools/verify_phase2.py`, `docs/drawai/phase2-report.md` | Audit nguồn pretrained và runtime thật; P2 DONE_LOCAL, head chữ số chưa train |
+| P3: `web/src/drawai/collect*`, `web/src/main.tsx` | Thêm trang /collect riêng, consent/prompt/canvas/export/resume, không đổi trang chính |
+| P3: `training/drawai/private_data.py`, tests, `tools/verify_phase3.py` | Plan/hash, audit duplicates/quota, staging JSON/PNG/NPY/manifest, kiểm chứng P3 |
+| P3: `docs/drawai/collection/`, `web/public/collection-protocol.md` | Protocol, consent, schema, split policy, template log/manifest/registry và dataset card |
+| P4: `training/drawai/private_data.py` | Reject duplicate JSON keys; nhóm near-duplicate đầy đủ kể cả khi danh sách cặp bị cắt |
+| P4: `training/drawai/private_dataset.py`, tests | Review/approval/source binding, quota/human gates, atomic final lock, held-out ZIP, verify và loader hai representation |
+| P4: `tools/verify_phase4.py`, `docs/drawai/dataset/` | Audit tình trạng thật, hướng dẫn rà soát/khóa và trusted hash/test custody |
 
-      - Model Configuration
-         
-         - `--path_1d_model`: Path to the pre-trained swin 1d model (default: './saved_models/step_1d/final_1d.pth').
-         - `--num_frames`: Number of frames or time points (default: 51).
-         - `--num_channels`: Number of channels (default: 3).
+## Cấu trúc hiện hành
 
-      - Input Paths
-         
-         - `--path_kine_train`: Location of the kinematic training data (default: './data/kine_train.pkl').
-         - `--path_kine_val`: Location of the kinematic validation data (default: './data/kine_val.pkl').
-         - `--path_vidfeat_train`: Path to the training video features (default: './video_features/train_3d_features.pkl').
-         - `--path_vidfeat_val`: Path to the validation video features (default: './video_features/val_3d_features.pkl').
-         - `--path_label_train`: Path to training label data (default: './data/label_train.pkl').
-         - `--path_label_val`: Path to validation label data (default: './data/label_val.pkl').
+```text
+models/SwinTransformer_cls.py       backbone Swin giữ nguyên
+training/drawai/                    data, train, audit, export, notebook
+training/tests/test_drawai*.py      tests DrawAI
+web/src/drawai/                     canvas, design và inference workers
+web/public/models/drawai-*/         model/metadata DrawAI
+web/public/samples/drawai/          10 demo nguồn train
+notebooks/                         notebook Swin (DINOv3 bổ sung P2)
+docs/drawai/                       roadmap, báo cáo, protocol
+artifacts/drawai/                   bằng chứng, checkpoint và kết quả
+```
 
-      - Output Paths
-         
-         - `--outpath`: Directory to save the final fused models (default: './saved_models/step_fusion/').
-         - `--logpath`: Directory for saving logs (default: './logs/').
-
-This configuration caters to the intricate process of fusing video and kinematic data, representing the culmination of the DUST model's training protocol.
-
-## Acknowledgments
-
-This project has been greatly influenced and derives key components from the following repositories:
-
-1. **Video Swin Transformer in PyTorch**: Our work incorporates elements from the Video Swin Transformer implementation available at [haofanwang/video-swin-transformer-pytorch](https://github.com/haofanwang/video-swin-transformer-pytorch). We extend our gratitude to Haofan Wang and contributors for their pioneering work in the field of video processing with transformers.
-
-2. **Swin Transformer 1D**: Elements of our project are inspired by the Swin Transformer 1D, accessible at [meraks/Swin-Transformer-1D](https://github.com/meraks/Swin-Transformer-1D). We acknowledge the efforts of Merak and their contributors in adapting Swin Transformer architectures for 1D data processing, which has significantly informed our approach.
-
-We thank these contributors for their open-source work, which has been instrumental in shaping our project.
-
+Một số metadata/báo cáo D0–D6 nhắc CNN hoặc route cũ được giữ làm lịch sử của checkpoint Swin, không thuộc pipeline training hiện hành. Xem [NOTICE](NOTICE.md) và [LICENSE](LICENSE) để biết nguồn gốc/ghi công.

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checked_local_links": 29,
+  "files": [
+    "README.md",
+    "NOTICE.md",
+    "docs\\drawai\\phase1-report.md",
+    "docs\\drawai\\training-guide.md",
+    "docs\\drawai\\status.md",
+    "docs\\drawai\\two-model-roadmap.md",
+    "notebooks\\README.md"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "_id": "689e56b45f41fb9de2d7f772",
+  "id": "onnx-community/dinov3-vits16-pretrain-lvd1689m-ONNX",
+  "private": false,
+  "pipeline_tag": "image-feature-extraction",
+  "library_name": "transformers.js",
+  "tags": [
+    "transformers.js",
+    "onnx",
+    "dinov3_vit",
+    "image-feature-extraction",
+    "dino",
+    "dinov3",
+    "en",
+    "base_model:facebook/dinov3-vits16-pretrain-lvd1689m",
+    "base_model:quantized:facebook/dinov3-vits16-pretrain-lvd1689m",
+    "license:other",
+    "region:us"
+  ],
+  "downloads": 2150,
+  "likes": 19,
+  "modelId": "onnx-community/dinov3-vits16-pretrain-lvd1689m-ONNX",
+  "author": "onnx-community",
+  "sha": "48988dfe73065df8d6f5ccc0edc7c8bcf307de41",
+  "lastModified": "2025-08-15T01:28:56.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "DINOv3ViTModel"
+    ],
+    "model_type": "dinov3_vit"
+  },
+  "cardData": {
+    "language": [
+      "en"
+    ],
+    "tags": [
+      "dino",
+      "dinov3"
+    ],
+    "license": "other",
+    "license_name": "dinov3-license",
+    "license_link": "https://ai.meta.com/resources/models-and-libraries/dinov3-license",
+    "pipeline_tag": "image-feature-extraction",
+    "library_name": "transformers.js",
+    "base_model": [
+      "facebook/dinov3-vits16-pretrain-lvd1689m"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModel",
+    "pipeline_tag": "image-feature-extraction",
+    "processor": "AutoImageProcessor"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "4bc815e8a9f48293ea18e67b07c21c5100372dac",
+      "size": 1703
+    },
+    {
+      "rfilename": "LICENSE.md",
+      "blobId": "afe24e98abb85ecdc4a437680733898175a0304d",
+      "size": 7502
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "f0767b6589b0d1a349a1c0a9ceeea3f30b000267",
+      "size": 292
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "49bcf7decbd05a85db1d4cadb89b500f9954abb8",
+      "size": 835
+    },
+    {
+      "rfilename": "onnx/model.onnx",
+      "blobId": "5c677028bf07b8b7d71bf8583f6e64ffea95cc3f",
+      "size": 137969,
+      "lfs": {
+        "sha256": "bb75e9e30ff382ecdbd150266445ab41272be4acc85fd3563218dd89781e36da",
+        "size": 137969,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "onnx/model.onnx_data",
+      "blobId": "19d32f134d1b85ca9f87cc6e5c977dee2feb0876",
+      "size": 86347776,
+      "lfs": {
+        "sha256": "1eff0bb9f4fdef831ca61c8bc2b5c88d8cc21ef4756d3b483d9b9c15d8d5d27f",
+        "size": 86347776,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "onnx/model_q4.onnx",
+      "blobId": "9f70a42dda4870b6717ebb9051257e1cf67532a5",
+      "size": 152401,
+      "lfs": {
+        "sha256": "48272ed591191c5fb85d5c300192324205155079ff32ff8b3bb305445f64ea3c",
+        "size": 152401,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "onnx/model_q4.onnx_data",
+      "blobId": "df25f612433fe0845da25e1d105175322ab41040",
+      "size": 14684160,
+      "lfs": {
+        "sha256": "4a9337a591b7d4b7ede09b57fb455f9a7ebc8adc15c27c92031f57a2a870c29c",
+        "size": 14684160,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "onnx/model_quantized.onnx",
+      "blobId": "797864702661e7f17aac14329597cfa7bdd09315",
+      "size": 183889,
+      "lfs": {
+        "sha256": "7686e8c849202c4fdd67d1cd336449c29bdddbcca535d765d3014f50d04d516d",
+        "size": 183889,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "onnx/model_quantized.onnx_data",
+      "blobId": "762505446d082d5983a1913722e6da0b00e3b605",
+      "size": 21762048,
+      "lfs": {
+        "sha256": "51572f7fc3c272eb574a70509ea1eeb7e674e5ca2cd96fec1632edb38983d529",
+        "size": 21762048,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "0126173c1ab7b75bbd9102e37de8a56ffe0a012b",
+      "size": 585
+    }
+  ],
+  "spaces": [
+    "webml-community/dinov3-web",
+    "sshuair/dinov3-demo-multi",
+    "awacke1/Dinov3_Image_Heatmap",
+    "Shio-Koube/dinov3-web",
+    "tuyiopp560/dinov3-web",
+    "g33g33/dinov3-web",
+    "power0341/dinov3-web-multi",
+    "jeanp-ys/dinov3-web",
+    "ashish-reddy26/dinov3-web",
+    "summedup/creator_vision_demo"
+  ],
+  "createdAt": "2025-08-14T21:35:48.000Z",
+  "usedStorage": 123409895
+}

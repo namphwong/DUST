@@ -1,0 +1,22 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "executable": "D:\\ChuyenDe\\DUST\\.venv-dinov3\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "Pillow": "12.3.0",
+    "onnx": "1.16.2",
+    "onnxruntime": "1.20.1",
+    "transformers": "4.56.2",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "psutil": "7.2.2",
+    "timm": "1.0.22",
+    "torchvision": "0.20.1+cpu"
+  },
+  "baseline_reused_read_only": "D:\\ChuyenDe\\DUST\\.venv-phase1\\Lib\\site-packages",
+  "clean_install_tested": false,
+  "baseline_environment_modified": false
+}

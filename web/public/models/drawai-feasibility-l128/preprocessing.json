@@ -1,0 +1,23 @@
+{
+  "version": "drawai-geometry-v1",
+  "layout": "NCT",
+  "dtype": "float32",
+  "channels": [
+    "x",
+    "y",
+    "stroke_start"
+  ],
+  "length": 128,
+  "y_axis": "down",
+  "coordinate_range": [
+    -0.5,
+    0.5
+  ],
+  "normalization": "bbox-center/max-span; preserve aspect ratio",
+  "resampling": "per-stroke arc length; minimum endpoints; largest remainder allocation",
+  "max_strokes": 16,
+  "max_points": 8192,
+  "timestamps_used": false,
+  "padding": false,
+  "learned_normalization": false
+}

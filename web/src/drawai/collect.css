@@ -1,0 +1,8 @@
+.drawai-collect{max-width:800px;margin:24px auto;padding:20px;color:#162e3b;background:#f3f7fa;font-family:system-ui,sans-serif}
+.drawai-collect label{display:block;margin:14px 0}
+.drawai-collect input:not([type=checkbox]),.drawai-collect select{display:block;max-width:100%;padding:8px;margin-top:5px}
+.drawai-collect button{padding:10px;margin:5px 0;cursor:pointer}
+.drawai-collect .collection-consent{display:flex;gap:10px;align-items:start}
+.drawai-collect .collection-canvas{width:min(100%,400px);aspect-ratio:1;background:white;border:2px solid #5c747e}
+.drawai-collect canvas{display:block;width:100%;height:100%;touch-action:none}
+.drawai-collect [role=alert]{color:#a12626;overflow-wrap:anywhere}

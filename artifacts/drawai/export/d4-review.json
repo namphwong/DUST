@@ -1,0 +1,36 @@
+{
+  "phase": "D4",
+  "status": "passed-local-cpu-chromium",
+  "tasks": {
+    "D4-01": "passed-local",
+    "D4-02": "passed-local",
+    "D4-03": "passed-local",
+    "D4-04": "passed-local",
+    "D4-05": "passed-local",
+    "D4-06": "passed-local",
+    "D4-07": "passed-local"
+  },
+  "full_test_samples": 3498,
+  "demo_samples": 10,
+  "browser_fixtures": 20,
+  "browser_tests_passed": 13,
+  "release_sha256": "dc4688d4c2f3c17f21e8c849d6cf27db5454e5c16f9a98a0f785b9d81246c021",
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324",
+  "model_sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+  "parity_npz_sha256": "611fd3b9174f1ac521eb97987b47e0dfec4df2fd74956e1b9029df737cddc697",
+  "browser_report_sha256": "224c5d356ed38f8fbfdd973be349213d7495cf9d7ff7f2414cac38d47ceadc35",
+  "python_report_sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35",
+  "build": "npm run build passed",
+  "kaggle_gpu_executed": false,
+  "canvas_evaluated": false,
+  "report_sha256": "42f2fc4926df026902f67ec74cd33256511bed1e820316d924b6cf57f6832810",
+  "model_card_sha256": "39f8fb6d81f59fa537b65888027ee957279f521a1c75f7191f615075ff0587d3",
+  "source_files": {
+    "training\\drawai\\export_onnx.py": "a0dc6de71aecd996e1eb9632f6fe4c429331453bfd62456eabc6dbbcc4f131e2",
+    "training\\drawai\\verify_export.py": "45e719a68a7b541652e78e98323af0ffcb497eadb4cbd595bb803dd3f1cfcd20",
+    "web\\src\\drawai\\feasibility-worker.ts": "e1b024511a5f6f8c3761e0ceb72479049b71703993ab0d8a01df0b6465e4ae5a",
+    "web\\src\\drawai\\feasibility-app.tsx": "8b60110972c7e94225d51c78fe24f224f79be3fd54f434e06dca89a7beaa5f2f",
+    "web\\tests\\drawai-release.spec.ts": "161564ecf353c5e7a2b85305e96eb29a48afc5d4ce19f1e984938edd34c7368b",
+    "web\\playwright.drawai-release.config.ts": "75e6487692989b50465f604fbef1a37fd012a9d10afe2e8a66be74a0cc12522f"
+  }
+}

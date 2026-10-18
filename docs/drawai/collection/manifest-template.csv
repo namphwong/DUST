@@ -1,0 +1,1 @@
+sample_id,participant_id,session_id,stage,split,label,repetition,input_device,raw_json,raw_sha256,png,png_sha256,swin_npy,swin_sha256,geometry_sha256,raster_sha256

@@ -1,0 +1,8 @@
+{
+  "schema_version": "drawai-strokes-v1",
+  "coordinate_system": "canvas-y-down",
+  "canvas": { "width": 400, "height": 400 },
+  "strokes": [ [ { "x": 100, "y": 50 }, { "x": 100, "y": 350 } ] ],
+  "reference_label": null,
+  "source": { "kind": "synthetic", "sample_id": "d0-no-time" }
+}

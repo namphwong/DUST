@@ -1,0 +1,21 @@
+{
+  "model": "swin",
+  "length": 128,
+  "augmentation": true,
+  "seed": 42,
+  "augmentation_spec": {
+    "rotation_degrees": 8,
+    "scale": [
+      0.9,
+      1.1
+    ],
+    "translation": 0.03
+  },
+  "epochs": 50,
+  "patience": 10,
+  "batch_size": 128,
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "warmup_epochs": 3,
+  "clip_grad_norm": 1.0
+}

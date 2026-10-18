@@ -1,0 +1,573 @@
+{
+  "status": "passed",
+  "length": 64,
+  "source": "https://archive.ics.uci.edu/dataset/81/pen+based+recognition+of+handwritten+digits",
+  "sources": {
+    "pendigits-orig.tra": {
+      "compressed_sha256": "ceae25d05f1ccfed4d27ca2e5766370fb32ddd685a647567e84cf7685aa7ac8b",
+      "uncompressed_sha256": "a66225d68d7d68591e62944df1ad33b3f5aa608e2df2505844b41f5568a80da4",
+      "compressed_bytes": 1011395
+    },
+    "pendigits-orig.tes": {
+      "compressed_sha256": "55ff1032e789eae273d0a4a1831dd61a2418f36ec5c0647457aa767b36d65960",
+      "uncompressed_sha256": "ddb1c19e277a56c7ffe682cc024d6ab73696f9adcc1643ef9ed5aa753007e081",
+      "compressed_bytes": 456041
+    }
+  },
+  "archive_sha256": "1e02bea023613c2b11c9492f6f34caf975420455934f3527d270cee9a1f03b64",
+  "source_documents": {
+    "pendigits-orig.names": "e61cb219660347353c584606a1d4a6d62d16bb902660d10372c9766480a9fb63",
+    "pendigits.names": "a90a76e1edac6f1b50f4b44db80587d7b92601fcbb153c83c2c3210c21b34f60"
+  },
+  "preprocessing": {
+    "version": "drawai-geometry-v1",
+    "layout": "NCT",
+    "dtype": "float32",
+    "channels": [
+      "x",
+      "y",
+      "stroke_start"
+    ],
+    "length": 64,
+    "y_axis": "down",
+    "coordinate_range": [
+      -0.5,
+      0.5
+    ],
+    "normalization": "bbox-center/max-span; preserve aspect ratio",
+    "resampling": "per-stroke arc length; minimum endpoints; largest remainder allocation",
+    "max_strokes": 16,
+    "max_points": 8192,
+    "timestamps_used": false,
+    "padding": false,
+    "learned_normalization": false
+  },
+  "writer_id_verified": false,
+  "writer_limitation": "COMMENT field meanings undocumented; validation may share writers with train.",
+  "coordinate_axis_evidence": "Digit shapes inspected after converting source y-up to canvas y-down.",
+  "stats": {
+    "train": {
+      "samples": 5999,
+      "labels": {
+        "0": 624,
+        "1": 624,
+        "2": 624,
+        "3": 576,
+        "4": 624,
+        "5": 576,
+        "6": 576,
+        "7": 623,
+        "8": 576,
+        "9": 576
+      },
+      "points": {
+        "min": 9,
+        "max": 121,
+        "median": 39.0
+      },
+      "strokes": {
+        "min": 1,
+        "max": 3,
+        "distribution": {
+          "1": 4466,
+          "2": 1526,
+          "3": 7
+        }
+      },
+      "consecutive_duplicate_points": 1538,
+      "singleton_strokes": 1,
+      "comment_field_2_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "points_per_class": {
+        "0": {
+          "min": 17,
+          "max": 88,
+          "median": 31.0
+        },
+        "1": {
+          "min": 9,
+          "max": 97,
+          "median": 32.0
+        },
+        "2": {
+          "min": 15,
+          "max": 90,
+          "median": 38.0
+        },
+        "3": {
+          "min": 19,
+          "max": 106,
+          "median": 43.0
+        },
+        "4": {
+          "min": 25,
+          "max": 117,
+          "median": 39.0
+        },
+        "5": {
+          "min": 23,
+          "max": 99,
+          "median": 45.0
+        },
+        "6": {
+          "min": 15,
+          "max": 71,
+          "median": 31.0
+        },
+        "7": {
+          "min": 19,
+          "max": 121,
+          "median": 38.0
+        },
+        "8": {
+          "min": 23,
+          "max": 89,
+          "median": 44.0
+        },
+        "9": {
+          "min": 21,
+          "max": 102,
+          "median": 46.0
+        }
+      }
+    },
+    "validation": {
+      "samples": 1495,
+      "labels": {
+        "0": 156,
+        "1": 155,
+        "2": 156,
+        "3": 143,
+        "4": 156,
+        "5": 144,
+        "6": 144,
+        "7": 155,
+        "8": 143,
+        "9": 143
+      },
+      "points": {
+        "min": 10,
+        "max": 185,
+        "median": 40.0
+      },
+      "strokes": {
+        "min": 1,
+        "max": 3,
+        "distribution": {
+          "1": 1098,
+          "2": 395,
+          "3": 2
+        }
+      },
+      "consecutive_duplicate_points": 412,
+      "singleton_strokes": 0,
+      "comment_field_2_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "points_per_class": {
+        "0": {
+          "min": 20,
+          "max": 77,
+          "median": 31.0
+        },
+        "1": {
+          "min": 10,
+          "max": 76,
+          "median": 32.0
+        },
+        "2": {
+          "min": 16,
+          "max": 78,
+          "median": 41.0
+        },
+        "3": {
+          "min": 20,
+          "max": 80,
+          "median": 42.0
+        },
+        "4": {
+          "min": 22,
+          "max": 76,
+          "median": 40.5
+        },
+        "5": {
+          "min": 25,
+          "max": 69,
+          "median": 45.0
+        },
+        "6": {
+          "min": 16,
+          "max": 92,
+          "median": 31.0
+        },
+        "7": {
+          "min": 20,
+          "max": 64,
+          "median": 38.0
+        },
+        "8": {
+          "min": 25,
+          "max": 185,
+          "median": 43.0
+        },
+        "9": {
+          "min": 23,
+          "max": 89,
+          "median": 45.0
+        }
+      }
+    },
+    "test": {
+      "samples": 3498,
+      "labels": {
+        "0": 363,
+        "1": 364,
+        "2": 364,
+        "3": 336,
+        "4": 364,
+        "5": 335,
+        "6": 336,
+        "7": 364,
+        "8": 336,
+        "9": 336
+      },
+      "points": {
+        "min": 9,
+        "max": 231,
+        "median": 36.0
+      },
+      "strokes": {
+        "min": 1,
+        "max": 4,
+        "distribution": {
+          "1": 2744,
+          "2": 750,
+          "3": 3,
+          "4": 1
+        }
+      },
+      "consecutive_duplicate_points": 1575,
+      "singleton_strokes": 3,
+      "comment_field_2_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "points_per_class": {
+        "0": {
+          "min": 15,
+          "max": 231,
+          "median": 29.0
+        },
+        "1": {
+          "min": 9,
+          "max": 168,
+          "median": 27.0
+        },
+        "2": {
+          "min": 13,
+          "max": 177,
+          "median": 35.0
+        },
+        "3": {
+          "min": 20,
+          "max": 133,
+          "median": 40.0
+        },
+        "4": {
+          "min": 15,
+          "max": 196,
+          "median": 38.0
+        },
+        "5": {
+          "min": 21,
+          "max": 192,
+          "median": 45.0
+        },
+        "6": {
+          "min": 15,
+          "max": 215,
+          "median": 31.0
+        },
+        "7": {
+          "min": 18,
+          "max": 107,
+          "median": 37.0
+        },
+        "8": {
+          "min": 20,
+          "max": 165,
+          "median": 41.0
+        },
+        "9": {
+          "min": 18,
+          "max": 111,
+          "median": 48.0
+        }
+      }
+    }
+  },
+  "development_stats": {
+    "samples": 7494,
+    "labels": {
+      "0": 780,
+      "1": 779,
+      "2": 780,
+      "3": 719,
+      "4": 780,
+      "5": 720,
+      "6": 720,
+      "7": 778,
+      "8": 719,
+      "9": 719
+    },
+    "points": {
+      "min": 9,
+      "max": 185,
+      "median": 39.0
+    },
+    "strokes": {
+      "min": 1,
+      "max": 3,
+      "distribution": {
+        "1": 5564,
+        "2": 1921,
+        "3": 9
+      }
+    },
+    "consecutive_duplicate_points": 1950,
+    "singleton_strokes": 1,
+    "comment_field_2_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "points_per_class": {
+      "0": {
+        "min": 17,
+        "max": 88,
+        "median": 31.0
+      },
+      "1": {
+        "min": 9,
+        "max": 97,
+        "median": 32.0
+      },
+      "2": {
+        "min": 15,
+        "max": 90,
+        "median": 38.0
+      },
+      "3": {
+        "min": 19,
+        "max": 106,
+        "median": 43.0
+      },
+      "4": {
+        "min": 22,
+        "max": 117,
+        "median": 39.5
+      },
+      "5": {
+        "min": 23,
+        "max": 99,
+        "median": 45.0
+      },
+      "6": {
+        "min": 15,
+        "max": 92,
+        "median": 31.0
+      },
+      "7": {
+        "min": 19,
+        "max": 121,
+        "median": 38.0
+      },
+      "8": {
+        "min": 23,
+        "max": 185,
+        "median": 43.0
+      },
+      "9": {
+        "min": 21,
+        "max": 102,
+        "median": 45.0
+      }
+    }
+  },
+  "selected_plot_samples": [
+    {
+      "label": 0,
+      "sample_id": "pendigits-orig.tra:00009",
+      "source_line": 428,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 1,
+      "sample_id": "pendigits-orig.tra:00002",
+      "source_line": 135,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 2,
+      "sample_id": "pendigits-orig.tra:00001",
+      "source_line": 90,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 3,
+      "sample_id": "pendigits-orig.tra:00016",
+      "source_line": 809,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 4,
+      "sample_id": "pendigits-orig.tra:00003",
+      "source_line": 168,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 5,
+      "sample_id": "pendigits-orig.tra:00008",
+      "source_line": 366,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 6,
+      "sample_id": "pendigits-orig.tra:00005",
+      "source_line": 250,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 7,
+      "sample_id": "pendigits-orig.tra:00014",
+      "source_line": 711,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 8,
+      "sample_id": "pendigits-orig.tra:00000",
+      "source_line": 6,
+      "selection": "First train sample of class in source order"
+    },
+    {
+      "label": 9,
+      "sample_id": "pendigits-orig.tra:00013",
+      "source_line": 659,
+      "selection": "First train sample of class in source order"
+    }
+  ],
+  "duplicate_trajectories_within": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "duplicate_trajectories_across": {
+    "train-validation": 0,
+    "train-test": 0,
+    "validation-test": 0
+  },
+  "invalid_samples": [],
+  "tensor_hashes": {
+    "train": "4c3b97082883afdcd684f85b54b20ff5cc9d915973d2d8753186618bdf8a26dd",
+    "validation": "39c3cd035dac54f861980de5a1e16f889bedaf9e220bdc20e4cca44158391fd4",
+    "test": "ab73acb7b210892a76023331861c3a05fe9916324ca0127c876ebd9b901abb8e"
+  }
+}

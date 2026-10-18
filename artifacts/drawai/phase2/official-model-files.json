@@ -1,0 +1,48 @@
+{
+  "id": "facebook/dinov3-vits16-pretrain-lvd1689m",
+  "sha": "114c1379950215c8b35dfcd4e90a5c251dde0d32",
+  "gated": "manual",
+  "safetensors": {
+    "parameters": {
+      "F32": 21596544
+    },
+    "total": 21596544
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "LICENSE.md",
+      "blobId": "f531b1e6b5ab2318957bbf8ad1bda9f800a23e17",
+      "size": 7503
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "e1b5c4aff2cb20b55b90fc6c496d462358d0f620",
+      "size": 14519
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "fdff48569812f3cbadf253762565c4ce9dacddac",
+      "size": 743
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "9fa02654fee68b92a010d13bb2f7cc2405657ae7",
+      "size": 86406384,
+      "lfs": {
+        "sha256": "4610ad75edef83e75afdebf162d148dc628045ea6cbb83d67d4708c709c4f91d",
+        "size": 86406384,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "0126173c1ab7b75bbd9102e37de8a56ffe0a012b",
+      "size": 585
+    }
+  ]
+}

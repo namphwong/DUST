@@ -1,0 +1,224 @@
+{
+  "version": "drawai-private-plan-v1",
+  "protocol_version": "drawai-private-protocol-v1",
+  "dataset": "drawai-private-v1",
+  "participants": [
+    {
+      "participant_id": "P001",
+      "stage": "pilot",
+      "split": "pilot-dev",
+      "samples_per_class": 5
+    },
+    {
+      "participant_id": "P002",
+      "stage": "pilot",
+      "split": "pilot-dev",
+      "samples_per_class": 5
+    },
+    {
+      "participant_id": "P003",
+      "stage": "pilot",
+      "split": "pilot-dev",
+      "samples_per_class": 5
+    },
+    {
+      "participant_id": "P004",
+      "stage": "pilot",
+      "split": "pilot-dev",
+      "samples_per_class": 5
+    },
+    {
+      "participant_id": "P005",
+      "stage": "pilot",
+      "split": "pilot-dev",
+      "samples_per_class": 5
+    },
+    {
+      "participant_id": "M001",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M002",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M003",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M004",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M005",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M006",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M007",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M008",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M009",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M010",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M011",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M012",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M013",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M014",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M015",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M016",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M017",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M018",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M019",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M020",
+      "stage": "main",
+      "split": "train",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M021",
+      "stage": "main",
+      "split": "validation",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M022",
+      "stage": "main",
+      "split": "validation",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M023",
+      "stage": "main",
+      "split": "validation",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M024",
+      "stage": "main",
+      "split": "validation",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M025",
+      "stage": "main",
+      "split": "validation",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M026",
+      "stage": "main",
+      "split": "test",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M027",
+      "stage": "main",
+      "split": "test",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M028",
+      "stage": "main",
+      "split": "test",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M029",
+      "stage": "main",
+      "split": "test",
+      "samples_per_class": 20
+    },
+    {
+      "participant_id": "M030",
+      "stage": "main",
+      "split": "test",
+      "samples_per_class": 20
+    }
+  ],
+  "assignment": "Reserved codes assigned before collection; identity dedup by coordinator outside public files",
+  "pilot_excluded_from_main": true,
+  "augmentation": "train only; not applied by P3 builder",
+  "release_ready": false,
+  "target_pilot_samples": 250,
+  "target_main_samples": 6000,
+  "plan_sha256": "1931d5d095a82295d5d3d9271fd0f1ffe46b08d0404620b4c92c3bd427bccd78"
+}

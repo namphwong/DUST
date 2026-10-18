@@ -1,0 +1,166 @@
+{
+  "phase": "D2",
+  "status": "passed",
+  "review_date": "2026-10-11",
+  "tasks": {
+    "D2-01": "passed",
+    "D2-02": "passed",
+    "D2-03": "passed",
+    "D2-04": "passed",
+    "D2-05": "passed",
+    "D2-06": "passed",
+    "D2-07": "passed"
+  },
+  "model_unit_tests": {
+    "passed": 4,
+    "failed": 0,
+    "command": "python -m unittest training.tests.test_drawai_model -v"
+  },
+  "browser_tests": {
+    "passed": 6,
+    "failed": 0,
+    "command": "npx playwright test --config playwright.drawai.config.ts"
+  },
+  "production_build": "passed",
+  "runtime_import": "passed_with_process_local_DLL_search_path",
+  "tiny_train": {
+    "accuracy": 1.0,
+    "steps": 60,
+    "split": "train",
+    "not_test_accuracy": true
+  },
+  "exports": [
+    {
+      "length": 64,
+      "parameters": 545038,
+      "model_bytes": 2359213,
+      "pytorch_ort_max_abs_error": 3.5762786865234375e-07,
+      "pytorch_wasm_max_abs_error": 3.2782554626464844e-07,
+      "tensor_max_abs_error": 2.220446049250313e-16,
+      "browser_p95_ms": 1.7999999970197678,
+      "fixture_count": 20,
+      "invalid_input_count": 14,
+      "targets_met": true
+    },
+    {
+      "length": 128,
+      "parameters": 545038,
+      "model_bytes": 2368204,
+      "pytorch_ort_max_abs_error": 2.980232238769531e-07,
+      "pytorch_wasm_max_abs_error": 3.4086406230926514e-07,
+      "tensor_max_abs_error": 0,
+      "browser_p95_ms": 2.3999999910593033,
+      "fixture_count": 20,
+      "invalid_input_count": 14,
+      "targets_met": true
+    }
+  ],
+  "local_links_checked": 9,
+  "preview_url": "http://127.0.0.1:4183/drawai/check",
+  "preview_http_status": 200,
+  "trained_classifier": false,
+  "limitations": [
+    "Fixed batch/length ONNX only",
+    "Export fixtures activate post-norm weights for technical parity only",
+    "Not tested on Edge or real phone",
+    "No trained product classifier; proceed to D3"
+  ],
+  "files": {
+    "training/drawai/verify_feasibility.py": {
+      "sha256": "cdfc1de1f95207b09e52b433f5b299a63134a67e0461f034ab0083abfece8dcc",
+      "bytes": 11192
+    },
+    "training/drawai/models.py": {
+      "sha256": "694b3174cc47b9cb31b51d1939ac1a81a4f4c291ddb9d537ff793b9afca69f13",
+      "bytes": 1246
+    },
+    "training/drawai/configs/swin.json": {
+      "sha256": "c233996b27abf0687d242575af64231a7ee98f28866bd76ab803b1c15c4af9fe",
+      "bytes": 429
+    },
+    "training/tests/test_drawai_model.py": {
+      "sha256": "05c036b765c1dc07b60f8c1f39dc4a46a042115ba30ab01dab3093c230093b3b",
+      "bytes": 3137
+    },
+    "web/src/drawai/feasibility-worker.ts": {
+      "sha256": "7f9037da4d440a1d46ccfe414f3536427a10e19285089e7430cbbb333f035b78",
+      "bytes": 8280
+    },
+    "web/src/drawai/feasibility-app.tsx": {
+      "sha256": "ea001a1d24bf0ad2fe0c9e89b5ed8531cb4a8ee0ae22c44a69d123ec9dc44919",
+      "bytes": 3168
+    },
+    "web/tests/drawai-feasibility.spec.ts": {
+      "sha256": "33cd5cc226c48ab52140340c827ca6eb8a1fe3b1286bcde1fb3ae205643632ff",
+      "bytes": 5364
+    },
+    "web/playwright.drawai.config.ts": {
+      "sha256": "c948e3c4094dce5447ccd483b90c8aa8061ed2c93e4ee620a3c18d1e18054f4f",
+      "bytes": 457
+    },
+    "docs/drawai/feasibility-report.md": {
+      "sha256": "d593c3812ac2c3601906ae107f8fb68840172b7d5028f22763a29984a2499884",
+      "bytes": 6556
+    },
+    "docs/drawai/environment.md": {
+      "sha256": "c20f0ffb1d95df1d65f2d935561acb178ff3bfa237e8efb3234fc04bc86b7407",
+      "bytes": 4317
+    },
+    "artifacts/drawai/feasibility/python-report.json": {
+      "sha256": "d8a2409e93570ab2eaa077d29a34ee87d6eb7d13402002842b62a53bdd4de060",
+      "bytes": 9175
+    },
+    "artifacts/drawai/feasibility/browser-report.json": {
+      "sha256": "593442c366b5e5732598b3bead1ab04adc2c31ec1717ec1cd1ccf7ff0dee9d80",
+      "bytes": 24878
+    },
+    "artifacts/drawai/feasibility/playwright-report.json": {
+      "sha256": "1aa474c75da4b9ef0aae3088afc27e90e293ff595a2103fe075baba098eabf8b",
+      "bytes": 8347
+    },
+    "artifacts/drawai/feasibility/desktop.png": {
+      "sha256": "03e27ee73972e476b8dd61bff6745180a24d8e31143c6c9aa4b4796e1b3b4251",
+      "bytes": 91375
+    },
+    "web/public/models/drawai-feasibility-l64/model.onnx": {
+      "sha256": "c0e9c5918e7c2a885148c02e1b36b0a618dfc531285d9e74a098f263656cd8a5",
+      "bytes": 2359213
+    },
+    "web/public/models/drawai-feasibility-l64/fixtures.json": {
+      "sha256": "619c5b43c5b71fd60b41ce6f776c3266189a5b6ff07375ba58bd6aa89937596b",
+      "bytes": 129384
+    },
+    "web/public/models/drawai-feasibility-l64/preprocessing.json": {
+      "sha256": "89c31d4062c0baf9661a126c595d0886ecc325fa958830613fbbfd1418dc3c49",
+      "bytes": 524
+    },
+    "web/public/models/drawai-feasibility-l64/report.json": {
+      "sha256": "f968abb1d25877fa1be8fa074b6ef3820ed7c5b075362490633d35070e1d5f97",
+      "bytes": 1246
+    },
+    "web/public/models/drawai-feasibility-l64/release.json": {
+      "sha256": "473b876d4285b50d65f29850a84a6e8876ef466347ce1a2a18e3e6340d53fbe4",
+      "bytes": 641
+    },
+    "web/public/models/drawai-feasibility-l128/model.onnx": {
+      "sha256": "9d3fec6d5e72de8bf3fe84c5e36c3d77ec4c4113f72f4ea680d449548b1ace7f",
+      "bytes": 2368204
+    },
+    "web/public/models/drawai-feasibility-l128/fixtures.json": {
+      "sha256": "9f4972e8efcf4272a7163b685c98331934f5df6dfde1b6ebe96610437f192cc8",
+      "bytes": 216447
+    },
+    "web/public/models/drawai-feasibility-l128/preprocessing.json": {
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898",
+      "bytes": 525
+    },
+    "web/public/models/drawai-feasibility-l128/report.json": {
+      "sha256": "654a097cd830100e332c994dd7469f923720515a459bceaa06d705880d0dff26",
+      "bytes": 1247
+    },
+    "web/public/models/drawai-feasibility-l128/release.json": {
+      "sha256": "e29b59b60ce389552cc89689047367b8ec7d291ff1d9da3d2d0bca4c42bb1cb3",
+      "bytes": 642
+    }
+  }
+}

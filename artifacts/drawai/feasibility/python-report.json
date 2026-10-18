@@ -1,0 +1,335 @@
+{
+  "status": "passed",
+  "trained_classifier": false,
+  "backward": [
+    {
+      "length": 64,
+      "backward": "passed",
+      "steps": 8,
+      "losses": [
+        2.2929182052612305,
+        1.442488193511963,
+        1.0397684574127197,
+        0.7306333780288696,
+        0.5225095152854919,
+        0.3874903619289398,
+        0.26440125703811646,
+        0.18690186738967896
+      ],
+      "batch_shapes": {
+        "1": [
+          1,
+          10
+        ],
+        "4": [
+          4,
+          10
+        ]
+      },
+      "gradient_l1_by_step": [
+        {
+          "patch_embedding": 1.539646863937378,
+          "shifted_attention": 0.0,
+          "mlp": 0.0,
+          "head": 64.10462951660156
+        },
+        {
+          "patch_embedding": 1.4037283658981323,
+          "shifted_attention": 0.1034652516245842,
+          "mlp": 0.23631297051906586,
+          "head": 61.30199432373047
+        },
+        {
+          "patch_embedding": 1.442584753036499,
+          "shifted_attention": 0.20174096524715424,
+          "mlp": 0.3462018668651581,
+          "head": 53.74729919433594
+        },
+        {
+          "patch_embedding": 1.1748641729354858,
+          "shifted_attention": 0.21848970651626587,
+          "mlp": 0.2990601360797882,
+          "head": 48.93727493286133
+        },
+        {
+          "patch_embedding": 1.042984127998352,
+          "shifted_attention": 0.11126955598592758,
+          "mlp": 0.27052703499794006,
+          "head": 40.83222579956055
+        },
+        {
+          "patch_embedding": 0.928780198097229,
+          "shifted_attention": 0.14102604985237122,
+          "mlp": 0.2609136700630188,
+          "head": 34.60252380371094
+        },
+        {
+          "patch_embedding": 0.7457548379898071,
+          "shifted_attention": 0.1320565789937973,
+          "mlp": 0.24779659509658813,
+          "head": 26.78285789489746
+        },
+        {
+          "patch_embedding": 0.599427342414856,
+          "shifted_attention": 0.056398048996925354,
+          "mlp": 0.16198605298995972,
+          "head": 20.036251068115234
+        }
+      ],
+      "original_initialization": true
+    },
+    {
+      "length": 128,
+      "backward": "passed",
+      "steps": 8,
+      "losses": [
+        2.295815944671631,
+        1.6257858276367188,
+        1.33040189743042,
+        1.173201560974121,
+        0.9713354706764221,
+        0.7704615592956543,
+        0.6658319234848022,
+        0.5205711126327515
+      ],
+      "batch_shapes": {
+        "1": [
+          1,
+          10
+        ],
+        "4": [
+          4,
+          10
+        ]
+      },
+      "gradient_l1_by_step": [
+        {
+          "patch_embedding": 0.9907323718070984,
+          "shifted_attention": 0.0,
+          "mlp": 0.0,
+          "head": 50.210384368896484
+        },
+        {
+          "patch_embedding": 0.9762727618217468,
+          "shifted_attention": 0.14904534816741943,
+          "mlp": 0.2042076289653778,
+          "head": 55.23487091064453
+        },
+        {
+          "patch_embedding": 0.9251562356948853,
+          "shifted_attention": 0.11933556199073792,
+          "mlp": 0.19970229268074036,
+          "head": 41.888057708740234
+        },
+        {
+          "patch_embedding": 1.0547382831573486,
+          "shifted_attention": 0.2061304897069931,
+          "mlp": 0.244490385055542,
+          "head": 32.3519287109375
+        },
+        {
+          "patch_embedding": 1.2921404838562012,
+          "shifted_attention": 0.2922608256340027,
+          "mlp": 0.2641150653362274,
+          "head": 30.629886627197266
+        },
+        {
+          "patch_embedding": 1.1864001750946045,
+          "shifted_attention": 0.21486666798591614,
+          "mlp": 0.2630886733531952,
+          "head": 33.18710708618164
+        },
+        {
+          "patch_embedding": 1.3757619857788086,
+          "shifted_attention": 0.34458547830581665,
+          "mlp": 0.4059644937515259,
+          "head": 32.23201370239258
+        },
+        {
+          "patch_embedding": 1.2666431665420532,
+          "shifted_attention": 0.6670761704444885,
+          "mlp": 0.4236859381198883,
+          "head": 28.194530487060547
+        }
+      ],
+      "original_initialization": true
+    }
+  ],
+  "tiny_train": [
+    {
+      "step": 1,
+      "loss": 2.3033344745635986,
+      "accuracy": 0.10000000149011612
+    },
+    {
+      "step": 20,
+      "loss": 1.598783254623413,
+      "accuracy": 0.699999988079071
+    },
+    {
+      "step": 40,
+      "loss": 0.7539857029914856,
+      "accuracy": 0.8999999761581421
+    },
+    {
+      "step": 60,
+      "loss": 0.3991948962211609,
+      "accuracy": 1.0
+    }
+  ],
+  "exports": [
+    {
+      "status": "passed",
+      "trained": false,
+      "length": 64,
+      "config": {
+        "seq_len": 64,
+        "in_chans": 3,
+        "num_classes": 10,
+        "patch_size": 2,
+        "window_size": 8,
+        "embed_dim": 32,
+        "depths": [
+          2,
+          2,
+          2
+        ],
+        "num_heads": [
+          2,
+          4,
+          8
+        ],
+        "drop_rate": 0.1,
+        "drop_path_rate": 0.1
+      },
+      "input_shape": [
+        1,
+        3,
+        64
+      ],
+      "output_shape": [
+        1,
+        10
+      ],
+      "input_name": "drawing",
+      "output_name": "logits",
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "fixture_count": 20,
+      "max_abs_error": 3.5762786865234375e-07,
+      "model_bytes": 2359213,
+      "sha256": "c0e9c5918e7c2a885148c02e1b36b0a618dfc531285d9e74a098f263656cd8a5",
+      "parameters": 545038,
+      "benchmark": {
+        "warmup": 5,
+        "iterations": 100,
+        "input": "random",
+        "threads": 4,
+        "percentile_method": "numpy linear interpolation"
+      },
+      "checkpoint_source": "fresh seed-42 model; tiny-train weights not exported",
+      "opset": 17,
+      "graph_checker": "passed",
+      "python_ort_median_ms": 0.48705000517657027,
+      "python_ort_p95_ms": 0.6377100049576256,
+      "note": "Untrained technical fixture; residual post-norm weights set to one for parity only."
+    },
+    {
+      "status": "passed",
+      "trained": false,
+      "length": 128,
+      "config": {
+        "seq_len": 128,
+        "in_chans": 3,
+        "num_classes": 10,
+        "patch_size": 2,
+        "window_size": 8,
+        "embed_dim": 32,
+        "depths": [
+          2,
+          2,
+          2
+        ],
+        "num_heads": [
+          2,
+          4,
+          8
+        ],
+        "drop_rate": 0.1,
+        "drop_path_rate": 0.1
+      },
+      "input_shape": [
+        1,
+        3,
+        128
+      ],
+      "output_shape": [
+        1,
+        10
+      ],
+      "input_name": "drawing",
+      "output_name": "logits",
+      "atol": 1e-05,
+      "rtol": 0.0001,
+      "fixture_count": 20,
+      "max_abs_error": 2.980232238769531e-07,
+      "model_bytes": 2368204,
+      "sha256": "9d3fec6d5e72de8bf3fe84c5e36c3d77ec4c4113f72f4ea680d449548b1ace7f",
+      "parameters": 545038,
+      "benchmark": {
+        "warmup": 5,
+        "iterations": 100,
+        "input": "random",
+        "threads": 4,
+        "percentile_method": "numpy linear interpolation"
+      },
+      "checkpoint_source": "fresh seed-42 model; tiny-train weights not exported",
+      "opset": 17,
+      "graph_checker": "passed",
+      "python_ort_median_ms": 0.7053000008454546,
+      "python_ort_p95_ms": 1.0151500006031708,
+      "note": "Untrained technical fixture; residual post-norm weights set to one for parity only."
+    }
+  ],
+  "tiny_train_provenance": {
+    "split": "train",
+    "selection": "First source-ordered train sample per class",
+    "sample_ids": [
+      "pendigits-orig.tra:00009",
+      "pendigits-orig.tra:00002",
+      "pendigits-orig.tra:00001",
+      "pendigits-orig.tra:00016",
+      "pendigits-orig.tra:00003",
+      "pendigits-orig.tra:00008",
+      "pendigits-orig.tra:00005",
+      "pendigits-orig.tra:00014",
+      "pendigits-orig.tra:00000",
+      "pendigits-orig.tra:00013"
+    ],
+    "train_tensor_sha256": "4c3b97082883afdcd684f85b54b20ff5cc9d915973d2d8753186618bdf8a26dd",
+    "maximum_steps": 200,
+    "criterion": "accuracy >= 0.9",
+    "checkpoint_saved": false
+  },
+  "d1_verification_sha256": "80000765a1d606df647e0c7df351ee0be1d1423433cd590ab6f0c19e678ba046",
+  "runtime": {
+    "executable": "D:\\ChuyenDe\\DUST\\.venv-phase1\\Scripts\\python.exe",
+    "dll_search_directory": "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin",
+    "import_status": "passed",
+    "providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "device": "CPU"
+  },
+  "versions": {
+    "torch": "2.5.1+cpu",
+    "numpy": "1.26.4",
+    "onnx": "1.16.2",
+    "onnxruntime": "1.20.1",
+    "unlzw3": "0.2.3"
+  },
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch_threads": 4
+}

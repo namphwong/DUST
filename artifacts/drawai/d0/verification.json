@@ -1,0 +1,165 @@
+{
+  "phase": "D0",
+  "status": "passed",
+  "review_date": "2026-10-11",
+  "scope": "Specification/schema audit only; existing D1/D2 reports not rerun",
+  "tasks": {
+    "D0-01": "passed",
+    "D0-02": "passed",
+    "D0-03": "passed",
+    "D0-04": "passed",
+    "D0-05": "passed",
+    "D0-06": "passed"
+  },
+  "schema": {
+    "draft": "2020-12",
+    "status": "passed",
+    "valid_examples": [
+      {
+        "file": "examples/drawai/strokes-valid.json",
+        "status": "passed"
+      },
+      {
+        "file": "examples/drawai/strokes-no-time.json",
+        "status": "passed"
+      }
+    ],
+    "negative_cases": [
+      {
+        "case": "wrong_version",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "wrong_axis",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "invalid_label",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "empty_stroke",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "too_many_strokes",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "unknown_field",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "missing_canvas",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "zero_canvas",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "bool_coordinate",
+        "status": "rejected_as_expected"
+      },
+      {
+        "case": "string_coordinate",
+        "status": "rejected_as_expected"
+      }
+    ],
+    "runtime_semantic_validation": "specified_for_D5_not_implemented_by_schema"
+  },
+  "documentation": {
+    "local_links_checked": 18,
+    "unique_D0_tasks": 6,
+    "whitespace": "passed"
+  },
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "1.26.4",
+      "unlzw3": "0.2.3",
+      "matplotlib": "3.9.4",
+      "torch": "2.5.1+cpu",
+      "onnx": "1.16.2",
+      "onnxruntime": "1.20.1",
+      "jsonschema": "4.26.0"
+    },
+    "node": "24.18.0",
+    "npm": "11.16.0",
+    "metadata_only": true,
+    "clean_install_performed": false
+  },
+  "files": {
+    "docs/drawai/scope.md": {
+      "sha256": "2f408add60290fb3ff89be0e663d0765964b5d4011ef7b53fd45fb2c0767cb50",
+      "bytes": 5377
+    },
+    "docs/drawai/data-contract.md": {
+      "sha256": "54cbd989e6bfcfea325130900dd61184743916203f106fb5851acd78676cf8c9",
+      "bytes": 6826
+    },
+    "docs/drawai/architecture.md": {
+      "sha256": "6053e02a1cfcc8b734620198ccbc36923373e977a211cb99599407452005750c",
+      "bytes": 7141
+    },
+    "docs/drawai/environment.md": {
+      "sha256": "232d6887c96c791ebf390ec563f1ec8fe529a3952b8f94895b916b7eb7e36672",
+      "bytes": 4235
+    },
+    "docs/drawai/acceptance-criteria.md": {
+      "sha256": "2bbd0cf1c30677ed0d137c79cbbb1e7c3c31197a051f5f1a8ff6dd692c6a02c2",
+      "bytes": 4647
+    },
+    "docs/drawai/d0-report.md": {
+      "sha256": "b2206c886e452a26721917e58a6e71bd40a6f6df7dd84bcce593d6b7d1f2f5d7",
+      "bytes": 3352
+    },
+    "docs/drawai/phases.md": {
+      "sha256": "3ec6882692534e8b8dbf988eb79024237679b0a9fec5c25fbb4a7d705aa78c6e",
+      "bytes": 23177
+    },
+    "docs/drawai/status.md": {
+      "sha256": "f992167770721f68ad3f048bece96302333a31c4a94912fa0f4cf60a8b7dd1e0",
+      "bytes": 1784
+    },
+    "docs/drawai-project-plan.md": {
+      "sha256": "5ab469ed7101e941c6cef3e927829c3f5b794ee0e0c2bbd9ae207847c2e065d5",
+      "bytes": 16180
+    },
+    "examples/drawai/README.md": {
+      "sha256": "cea8720677774781bafb19df7844d77b930da0219b88902cc5f5a014fcc30672",
+      "bytes": 732
+    },
+    "docs/drawai/strokes.schema.json": {
+      "sha256": "cbf0fdde9b6fd3bc74872c74a6fdb67f2270353aff0f42aae9cbb5334a1139cd",
+      "bytes": 1875
+    },
+    "examples/drawai/strokes-valid.json": {
+      "sha256": "250ba5024d93eb21ba37794ca1446e542ed3b577fb0ef1cac81a0a7cbfb946ad",
+      "bytes": 392
+    },
+    "examples/drawai/strokes-no-time.json": {
+      "sha256": "e77066743e1c8d05e1d4d41ef1fbfcd2e1973ad360ef295adaad5e021ddb6ab6",
+      "bytes": 288
+    },
+    "training/drawai/requirements.txt": {
+      "sha256": "4950e379ba9de888fb149b5895d2d0366c1e0dcd78c2f431f838105dc9b9774b",
+      "bytes": 92
+    },
+    "web/package.json": {
+      "sha256": "c930872fa1303690df2fd9c011866d46b1b56c94e5aed72abcd13158df452588",
+      "bytes": 560
+    },
+    "web/package-lock.json": {
+      "sha256": "35ba264e61c130c3c9032689582a1a2574df97200052381b4eb078d0107cee23",
+      "bytes": 47799
+    }
+  },
+  "not_run": [
+    "D3 training",
+    "D5 product worker/canvas",
+    "D6 real users/devices",
+    "D7 deployment"
+  ]
+}

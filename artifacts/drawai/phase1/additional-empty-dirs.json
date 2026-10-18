@@ -1,0 +1,11 @@
+[
+  "artifacts\\drawai\\d3-local-v1\\runs\\official-cnn-l64-aug0-seed42",
+  "artifacts\\drawai\\d3-local-v1\\runs\\official-cnn-l64-aug0-seed43",
+  "artifacts\\drawai\\d3-local-v1\\runs\\official-cnn-l64-aug0-seed44",
+  "artifacts\\drawai\\d3-local-v1\\runs\\pilot-cnn-l128-aug0-seed42",
+  "artifacts\\drawai\\d3-local-v1\\runs\\pilot-cnn-l128-aug1-seed42",
+  "artifacts\\drawai\\d3-local-v1\\runs\\pilot-cnn-l64-aug0-seed42",
+  "artifacts\\drawai\\d3-local-v1\\runs\\pilot-cnn-l64-aug1-seed42",
+  "training\\configs",
+  "artifacts\\phase2"
+]

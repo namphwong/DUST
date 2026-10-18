@@ -1,0 +1,15 @@
+{
+  "status": "passed-local",
+  "build": "passed",
+  "browser_tests": 9,
+  "route": "/drawai",
+  "files": {
+    "web/src/drawai/drawai-app.tsx": "e6f1636a10bd5da69dbab9cee83a4dcc90f0cb650f2652635a7eab36380b5f0e",
+    "web/src/drawai/drawai.css": "af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2",
+    "web/tests/drawai.spec.ts": "3dd7a0fac1fafa01f074ec5764975fb1f98bd9be30ca7e98b3ea0670ec80c289",
+    "docs/drawai/minimal-ui.md": "18ed7413dede11e3c65e9bc461809f6934a69d0f3217b3f4054ab8f9e4f206be",
+    "artifacts/drawai/ui/playwright-report.json": "16273b1c535ccb769f0102c31d89266b1f5b8f6cd92ec1b7b81fb64822f0b51f",
+    "artifacts/drawai/ui/desktop.png": "98ef6bf82384a96fa28b97ba75af0f24d099badbf5957e043d608fc0f6fed67f",
+    "artifacts/drawai/ui/mobile.png": "8c2ef7bc2710dd388b87cd2df55a0e6b52048da93bf1e9369205f07d4d651ca4"
+  }
+}

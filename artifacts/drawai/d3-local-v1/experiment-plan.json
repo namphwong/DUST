@@ -1,0 +1,36 @@
+{
+  "version": "drawai-experiment-v1",
+  "pilot_seed": 42,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "lengths": [
+    64,
+    128
+  ],
+  "augmentation_candidates": [
+    false,
+    true
+  ],
+  "pilot_epochs": 12,
+  "official_epochs": 50,
+  "pilot_patience": 12,
+  "official_patience": 10,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "gradient_clip": 1.0,
+  "augmentation_spec": {
+    "rotation_degrees": 8,
+    "scale": [
+      0.9,
+      1.1
+    ],
+    "translation": 0.03
+  },
+  "selection_rule": "Highest validation macro-F1; lowest validation loss; shorter L; no augmentation; lowest seed; run ID",
+  "checkpoint_rule": "Highest validation macro-F1; lowest validation loss; earlier epoch",
+  "test_access": "evaluate module only after all six official checkpoints are locked"
+}

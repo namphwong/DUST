@@ -1,5 +1,5 @@
 {
-  "name": "dust-browser-feasibility",
+  "name": "drawai",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -7,7 +7,10 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:app": "playwright test --config playwright.drawai-app.config.ts",
+    "test:release": "playwright test --config playwright.drawai-release.config.ts",
+    "test:integration": "playwright test --config playwright.drawai-integration.config.ts"
   },
   "dependencies": {
     "onnxruntime-web": "1.20.1",

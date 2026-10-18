@@ -1,0 +1,18 @@
+{
+  "experiment": "drawai-small-v1",
+  "model": "swin",
+  "preprocessing_version": "drawai-geometry-v1",
+  "status": "technical-candidate; training hyperparameters pending D3",
+  "model_kwargs": {
+    "seq_len": 64,
+    "in_chans": 3,
+    "num_classes": 10,
+    "patch_size": 2,
+    "window_size": 8,
+    "embed_dim": 32,
+    "depths": [2, 2, 2],
+    "num_heads": [2, 4, 8],
+    "drop_rate": 0.1,
+    "drop_path_rate": 0.1
+  }
+}

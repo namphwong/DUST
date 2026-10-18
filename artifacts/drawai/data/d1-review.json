@@ -1,0 +1,106 @@
+{
+  "phase": "D1",
+  "status": "passed",
+  "review_date": "2026-10-11",
+  "tasks": {
+    "D1-01": "passed",
+    "D1-02": "passed",
+    "D1-03": "passed",
+    "D1-04": "passed",
+    "D1-05": "passed",
+    "D1-06": "passed",
+    "D1-07": "passed",
+    "D1-08": "passed"
+  },
+  "unit_tests": {
+    "command": "python -m unittest training.tests.test_drawai_data -v",
+    "passed": 17,
+    "failed": 0
+  },
+  "preparation_lengths": [
+    64,
+    128
+  ],
+  "sample_counts": {
+    "train": 5999,
+    "validation": 1495,
+    "test": 3498
+  },
+  "verified_tensor_count": 21984,
+  "content_hashes_unchanged_since_previous_preparation": true,
+  "no_invalid_source_samples_discarded": true,
+  "writer_id_verified": false,
+  "split_method": "stratified sample split, seed 42; validation may share writers with train",
+  "duplicate_definition": "exact ordered raw trajectory including stroke boundaries",
+  "duplicate_trajectories_within": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "duplicate_trajectories_across": {
+    "train-validation": 0,
+    "train-test": 0,
+    "validation-test": 0
+  },
+  "visual_review": {
+    "l64_raw": "inspected: labels 0-9 upright; stroke starts/direction marked",
+    "l64_resampled": "inspected: labels 0-9 retain shape and stroke separation"
+  },
+  "local_document_links_checked": 12,
+  "python": "3.11.9",
+  "files": {
+    "training/drawai/prepare_data.py": {
+      "sha256": "bc3aff913c02d460a22741b70bef682125029bdff5ca76dbc9a702f8085a100d",
+      "bytes": 16206
+    },
+    "training/drawai/preprocessing.py": {
+      "sha256": "50c03478eaf8a31b237211cf24fd75198bb69c5aecd34afe9583838e48a2dcae",
+      "bytes": 4888
+    },
+    "training/drawai/verify_data.py": {
+      "sha256": "4c56760b37bc3dda865c826ea82aef60aaba66e2bc01774a61b856c109a60da5",
+      "bytes": 7185
+    },
+    "training/tests/test_drawai_data.py": {
+      "sha256": "1df8ce01f0de409e4f3689afbdf9954a3fc966d8cc10d12a8b017929c0b3195b",
+      "bytes": 7282
+    },
+    "docs/drawai/data-contract.md": {
+      "sha256": "7dfdbcbafacdd0ea51f0f37c7f52dd50c9aa9684dc5e01035df1efa2529cd82b",
+      "bytes": 7560
+    },
+    "docs/drawai/data-report.md": {
+      "sha256": "0c51078a50400e254cc30b9f9e81bbeb677394385e92bafca95ae8150a6f1c37",
+      "bytes": 6849
+    },
+    "artifacts/drawai/data/verification.json": {
+      "sha256": "80000765a1d606df647e0c7df351ee0be1d1423433cd590ab6f0c19e678ba046",
+      "bytes": 1404
+    },
+    "artifacts/drawai/data/l64-report.json": {
+      "sha256": "3dd3f719cbdc4e6894a538b6ade51e9adea9d36d2e8bb931e9601b77a8cd4561",
+      "bytes": 11947
+    },
+    "artifacts/drawai/data/l64-samples.png": {
+      "sha256": "6d80435d8b7c1b5d4e48bfc29c45e3ed27054812ca912d08d97cd9d53de3a73a",
+      "bytes": 175353
+    },
+    "artifacts/drawai/data/l64-samples-resampled.png": {
+      "sha256": "75b2d560dc6d521800002f8082be73d05947c94704dc6f9631a6b4df0e9a6d60",
+      "bytes": 138018
+    },
+    "artifacts/drawai/data/l128-report.json": {
+      "sha256": "b1f5207025feca8c6c80ccfe4a01dda94a28536f72623f3522720f056f67b8dc",
+      "bytes": 11949
+    },
+    "artifacts/drawai/data/l128-samples.png": {
+      "sha256": "6d80435d8b7c1b5d4e48bfc29c45e3ed27054812ca912d08d97cd9d53de3a73a",
+      "bytes": 175353
+    },
+    "artifacts/drawai/data/l128-samples-resampled.png": {
+      "sha256": "4bc59219ef6d660f8e1cd3b88a9b9447d1a11b21962a9eecdd6d8ddc221b5ab2",
+      "bytes": 136618
+    }
+  },
+  "next_scope": "D2 feasibility exists; D3 training not performed in this D1 task"
+}

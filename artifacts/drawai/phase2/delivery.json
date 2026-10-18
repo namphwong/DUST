@@ -1,0 +1,13 @@
+{
+  "phase": "P2",
+  "status": "PARTIAL_WAITING_FOR_PRETRAINED_WEIGHTS",
+  "phase_complete": false,
+  "archive": "D:\\ChuyenDe\\DUST-backups\\phase2-partial-20261017-120502\\drawai-phase2-working-tree.zip",
+  "bytes": 196399173,
+  "sha256": "bbb56ee03adfe7958e045347042de8549edaf5714bc002e7be2cf5005c0feccd",
+  "verified_files": 383,
+  "includes_official_pretrained_weights": false,
+  "includes_random_architecture_smoke": true,
+  "excluded": "Git, local venvs, node_modules, caches, dist and test-results; runtime metadata is retained",
+  "prior_git_history_bundle": "D:\\ChuyenDe\\DUST-backups\\pre-phase1-20261017-113455\\history.bundle"
+}

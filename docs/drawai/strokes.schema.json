@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DrawAI strokes v1",
+  "description": "Nét gốc theo CSS pixel, x sang phải và y xuống. Các ràng buộc toàn bản vẽ được định nghĩa trong data-contract.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "coordinate_system", "canvas", "strokes"],
+  "properties": {
+    "schema_version": { "const": "drawai-strokes-v1" },
+    "coordinate_system": { "const": "canvas-y-down" },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 },
+        "height": { "type": "number", "exclusiveMinimum": 0, "maximum": 1000000 }
+      }
+    },
+    "strokes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 16,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 8192,
+        "items": { "$ref": "#/$defs/point" }
+      }
+    },
+    "reference_label": { "type": ["integer", "null"], "minimum": 0, "maximum": 9 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["user", "dataset", "synthetic"] },
+        "sample_id": { "type": "string", "minLength": 1, "maxLength": 256 },
+        "split": { "enum": ["train", "validation", "test", "canvas-evaluation"] }
+      }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "y": { "type": "number", "minimum": -1000000, "maximum": 1000000 },
+        "t": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}

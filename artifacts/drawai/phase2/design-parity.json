@@ -1,0 +1,30 @@
+{
+  "desktop": {
+    "pixel_identical_to_P0": true,
+    "size": [
+      1366,
+      920
+    ]
+  },
+  "root-desktop": {
+    "pixel_identical_to_P0": true,
+    "size": [
+      1366,
+      920
+    ]
+  },
+  "mobile": {
+    "pixel_identical_to_P0": true,
+    "size": [
+      390,
+      1165
+    ]
+  },
+  "root-mobile": {
+    "pixel_identical_to_P0": true,
+    "size": [
+      390,
+      1165
+    ]
+  }
+}

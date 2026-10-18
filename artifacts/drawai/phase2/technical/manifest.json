@@ -1,0 +1,26 @@
+{
+  "version": "drawai-dinov3-p2-technical-v1",
+  "trained": false,
+  "smoke_only": true,
+  "pretrained_loaded": true,
+  "release_ready": false,
+  "model_filename": "drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx",
+  "files": {
+    "drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx": {
+      "bytes": 86634209,
+      "sha256": "cf998559a0f9d06f102efaf41879d391369b0852883c37bf483060ef6802921e"
+    },
+    "fixtures.json": {
+      "bytes": 55043,
+      "sha256": "70f7533f1dbca883745b13331ab0f90b0d59b1459f50cd177f9e8d9f1b94c20a"
+    },
+    "preprocessing.json": {
+      "bytes": 1009,
+      "sha256": "a7e27901910feb590393aca7454831ff9b3f963ff5c6e3c662b966d9b68ce1df"
+    },
+    "python-report.json": {
+      "bytes": 2656,
+      "sha256": "0ccc9bb4d7110367cfb9b3924ef5a509f2893d443e7802ba9f557869f397316b"
+    }
+  }
+}

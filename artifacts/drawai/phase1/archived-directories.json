@@ -1,0 +1,21 @@
+[
+  "models\\__pycache__",
+  "training\\__pycache__",
+  "training\\tests\\__pycache__",
+  "training\\drawai\\__pycache__",
+  "saved_models",
+  "video_features",
+  "logs",
+  "examples\\phase0",
+  "data\\processed\\uci-har-3ch-v1",
+  "artifacts\\phase3",
+  "artifacts\\phase4",
+  "artifacts\\phase5",
+  "artifacts\\phase6",
+  "artifacts\\ui-redesign",
+  "web\\public\\models\\phase1",
+  "web\\public\\models\\har-swin-kaggle-v1",
+  "web\\public\\samples\\uci-har-3ch-v1",
+  "artifacts\\drawai\\d3-smoke",
+  "artifacts\\drawai\\d3-notebook-smoke"
+]

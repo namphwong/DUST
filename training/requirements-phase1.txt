@@ -1,5 +1,0 @@
-# Install torch from https://download.pytorch.org/whl/cpu for local CPU checks.
-torch==2.5.1
-numpy==1.26.4
-onnx==1.16.2
-onnxruntime==1.20.1

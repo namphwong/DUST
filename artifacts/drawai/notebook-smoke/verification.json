@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "source_sha256": "906ee5c8437a13b90f1ee5370115f62b63c4598fcaa2fabb1c28d86b5080b451",
+  "executed_sha256": "9878d0a5018f3187c1d0d4b1fa5e3d1a05e3600d11258ca2f307052b9837971a",
+  "code_cells_executed": 4,
+  "mode": "smoke",
+  "device": "cpu",
+  "full_branch_executed": false,
+  "kaggle_gpu_executed": false,
+  "test_opened": false,
+  "interpreter": "D:\\ChuyenDe\\DUST\\.venv-phase1\\Scripts\\python.exe"
+}

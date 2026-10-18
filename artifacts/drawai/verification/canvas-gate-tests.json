@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests": 4,
+  "source_sha256": "ef429ee405aec657d33e98a3802b37e13dd057486b75688d455cbd7c613e48f3",
+  "output": "test_dataset_source_and_bad_timestamps_are_rejected (training.tests.test_drawai_canvas.CanvasGateTests.test_dataset_source_and_bad_timestamps_are_rejected) ... ok\ntest_empty_or_unattested_data_cannot_be_evaluated (training.tests.test_drawai_canvas.CanvasGateTests.test_empty_or_unattested_data_cannot_be_evaluated) ... ok\ntest_full_matrix_gate_and_missing_or_duplicate_repetition (training.tests.test_drawai_canvas.CanvasGateTests.test_full_matrix_gate_and_missing_or_duplicate_repetition) ... ok\ntest_paths_outside_root_are_rejected (training.tests.test_drawai_canvas.CanvasGateTests.test_paths_outside_root_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 7.689s\n\nOK\n",
+  "synthetic_temporary_fixtures": true,
+  "human_samples_created": 0
+}

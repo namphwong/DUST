@@ -1,0 +1,131 @@
+{
+  "config": {
+    "model": "swin",
+    "length": 128,
+    "augmentation": true,
+    "seed": 44,
+    "augmentation_spec": {
+      "rotation_degrees": 8,
+      "scale": [
+        0.9,
+        1.1
+      ],
+      "translation": 0.03
+    },
+    "epochs": 50,
+    "patience": 10,
+    "batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "warmup_epochs": 3,
+    "clip_grad_norm": 1.0
+  },
+  "data_hashes": {
+    "train": "f3725fea85d88237fd9caf00aa041b35b708fa96dd0810bdd9e1259bbee265c3",
+    "validation": "ed2f591265058d3ca916881ba033e11aa8ea63828b99da59a8c4a4fa9acf744e"
+  },
+  "preprocessing": {
+    "version": "drawai-geometry-v1",
+    "layout": "NCT",
+    "dtype": "float32",
+    "channels": [
+      "x",
+      "y",
+      "stroke_start"
+    ],
+    "length": 128,
+    "y_axis": "down",
+    "coordinate_range": [
+      -0.5,
+      0.5
+    ],
+    "normalization": "bbox-center/max-span; preserve aspect ratio",
+    "resampling": "per-stroke arc length; minimum endpoints; largest remainder allocation",
+    "max_strokes": 16,
+    "max_points": 8192,
+    "timestamps_used": false,
+    "padding": false,
+    "learned_normalization": false
+  },
+  "labels": {
+    "classes": [
+      {
+        "id": 0,
+        "name": "0"
+      },
+      {
+        "id": 1,
+        "name": "1"
+      },
+      {
+        "id": 2,
+        "name": "2"
+      },
+      {
+        "id": 3,
+        "name": "3"
+      },
+      {
+        "id": 4,
+        "name": "4"
+      },
+      {
+        "id": 5,
+        "name": "5"
+      },
+      {
+        "id": 6,
+        "name": "6"
+      },
+      {
+        "id": 7,
+        "name": "7"
+      },
+      {
+        "id": 8,
+        "name": "8"
+      },
+      {
+        "id": 9,
+        "name": "9"
+      }
+    ]
+  },
+  "model_kwargs": {
+    "seq_len": 128,
+    "in_chans": 3,
+    "num_classes": 10,
+    "patch_size": 2,
+    "window_size": 8,
+    "embed_dim": 32,
+    "depths": [
+      2,
+      2,
+      2
+    ],
+    "num_heads": [
+      2,
+      4,
+      8
+    ],
+    "drop_rate": 0.1,
+    "drop_path_rate": 0.1
+  },
+  "parameters": 545038,
+  "trained": true,
+  "device": "cpu",
+  "torch_version": "2.5.1+cpu",
+  "python": "3.11.9",
+  "threads": 2,
+  "test_used_for_training": false,
+  "status": "completed",
+  "best": {
+    "macro_f1": 0.9993320791263596,
+    "loss": 0.004831659435029811,
+    "epoch": 49
+  },
+  "epochs_completed": 50,
+  "stopped_early": false,
+  "training_seconds": 718.9040266999946,
+  "checkpoint_sha256": "a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324"
+}

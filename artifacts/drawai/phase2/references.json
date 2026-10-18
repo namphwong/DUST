@@ -1,0 +1,22 @@
+{
+  "official_model": "https://huggingface.co/facebook/dinov3-vits16-pretrain-lvd1689m",
+  "official_api": "https://huggingface.co/api/models/facebook/dinov3-vits16-pretrain-lvd1689m?blobs=true",
+  "transformers_api": "https://huggingface.co/docs/transformers/v4.56.2/model_doc/dinov3",
+  "license": "https://github.com/facebookresearch/dinov3/blob/main/LICENSE.md",
+  "user_confirmed_weights_or_access_available": false,
+  "meta_repository_revision": "6876159a11b4df116f30f667f8c9888617df0751",
+  "architecture_recipe": "https://github.com/facebookresearch/dinov3/blob/6876159a11b4df116f30f667f8c9888617df0751/dinov3/hub/backbones.py",
+  "normalization": "https://github.com/facebookresearch/dinov3/blob/6876159a11b4df116f30f667f8c9888617df0751/dinov3/data/transforms.py",
+  "selected_source": "https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m",
+  "selected_revision": "2c7705788ac282557562465d6443606664a55f05",
+  "selected_weights_sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
+  "public_download_verified": "2026-10-18; anonymous HTTP 200; gated=false",
+  "source_kind": "public-maintainer-pretrained-release",
+  "selected_license": "DINOv3 custom license",
+  "alternatives": [
+    "https://huggingface.co/timm/vit_small_patch16_dinov3.lvd1689m",
+    "https://huggingface.co/onnx-community/dinov3-vits16-pretrain-lvd1689m-ONNX"
+  ],
+  "timm_code": "https://github.com/huggingface/pytorch-image-models",
+  "note": "Original Meta access remains unavailable; selected public timm release is independently pinned and strictly loaded."
+}

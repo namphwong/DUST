@@ -1,2 +1,5 @@
-*
-!.gitignore
+# Source data is kept local; publish only reviewed, anonymized releases.
+/raw/
+/processed/
+/canvas/
+/private/

@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "length": 64,
+      "split": "train",
+      "samples": 5999,
+      "tensor_sha256": "4c3b97082883afdcd684f85b54b20ff5cc9d915973d2d8753186618bdf8a26dd"
+    },
+    {
+      "length": 64,
+      "split": "validation",
+      "samples": 1495,
+      "tensor_sha256": "39c3cd035dac54f861980de5a1e16f889bedaf9e220bdc20e4cca44158391fd4"
+    },
+    {
+      "length": 64,
+      "split": "test",
+      "samples": 3498,
+      "tensor_sha256": "ab73acb7b210892a76023331861c3a05fe9916324ca0127c876ebd9b901abb8e"
+    },
+    {
+      "length": 128,
+      "split": "train",
+      "samples": 5999,
+      "tensor_sha256": "f3725fea85d88237fd9caf00aa041b35b708fa96dd0810bdd9e1259bbee265c3"
+    },
+    {
+      "length": 128,
+      "split": "validation",
+      "samples": 1495,
+      "tensor_sha256": "ed2f591265058d3ca916881ba033e11aa8ea63828b99da59a8c4a4fa9acf744e"
+    },
+    {
+      "length": 128,
+      "split": "test",
+      "samples": 3498,
+      "tensor_sha256": "54d68b674f0bb6d5328ed6ab2302fc387612f130043490882f0cbe2596f22430"
+    }
+  ],
+  "verified_tensor_count": 21984,
+  "writer_id_verified": false,
+  "independent_split_reconstruction": true,
+  "compressed_raw_archive_equivalence": true,
+  "provenance_and_fixture_verification": true,
+  "cross_length_split_equal": true,
+  "python": "3.11.9",
+  "numpy": "1.26.4"
+}
