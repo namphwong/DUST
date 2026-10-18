@@ -1,0 +1,21 @@
+[WebServer] (node:25332) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 12 tests using 1 worker
+
+(node:6976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\drawai-phase1.spec.ts:4:1 › root, alias and trailing slash all open DrawAI (828ms)
+  ok  2 tests\drawai-phase1.spec.ts:13:1 › root performs real inference with the existing design (2.0s)
+  ok  3 tests\drawai-phase1.spec.ts:29:1 › unknown route has an explicit return to DrawAI (321ms)
+  ok  4 tests\drawai.spec.ts:16:1 › all ten demos use real Swin, match D4 logits and reuse one worker/session (3.1s)
+  ok  5 tests\drawai.spec.ts:40:1 › worker validates timestamp/schema and product rejects metadata tamper with consistent hashes (1.6s)
+  ok  6 tests\drawai.spec.ts:61:1 › canvas inference, undo, clear and JSON keep reference independent of prediction (2.1s)
+  ok  7 tests\drawai.spec.ts:74:1 › clear during delayed model load discards stale result and allows a new request (1.4s)
+  ok  8 tests\drawai.spec.ts:85:1 › load failure preserves strokes and retry runs real model (1.3s)
+  ok  9 tests\drawai.spec.ts:94:1 › hash mismatch blocks product inference (516ms)
+  ok 10 tests\drawai.spec.ts:100:1 › single tap cannot trigger recognition; pointer cancel discards incomplete stroke (354ms)
+  ok 11 tests\drawai.spec.ts:109:1 › responsive resize retains drawing JSON; samples work by keyboard (1.6s)
+  ok 12 tests\drawai.spec.ts:121:1 › DPR 2 and competing pointer preserve coordinate scale and stroke boundary (782ms)
+
+  12 passed (19.7s)

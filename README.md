@@ -139,6 +139,15 @@ Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ đ
 - [Báo cáo P4](docs/drawai/phase4-report.md) · [Lệnh verify/rebuild và loader P5](docs/drawai/dataset/paint-image64-locking-guide.md) · [Bằng chứng](artifacts/drawai/phase4-image64/verification.json).
 - Dataset local: `data/private/locked/paint35-main-v1/` bị Git ignore. [External anchor](artifacts/drawai/phase4-image64/trusted-lock.json) lưu riêng; ZIP không mã hóa và nguồn đã public Kaggle nên test isolation là quy trình.
 
+## P5 — đã train và so sánh hai mô hình (CPU)
+
+- **Sáu run thật, seeds42/43/44** trên snapshot P4: Swin1D ảnh train từ đầu30 epoch; DINOv3 pretrained backbone đóng băng + linear head100 epoch. Không augmentation/PenDigits bổ trợ.
+- Checkpoint chọn theo validation trước test: **Swin seed43** test accuracy **84,40%**, macro-F1 **84,28%**; **DINOv3 seed42** test accuracy **98,80%**, macro-F1 **98,80%**.
+- Accuracy test trung bình ba seed: Swin **86,53% ±1,59 điểm phần trăm**; DINOv3 **98,80% ±0,00**.37 near-groups qua split vẫn còn; kết quả trên snapshot này chưa chứng minh benchmark sạch rò rỉ hay tổng quát hóa tới người viết mới hoàn toàn.
+- **113 Python +12 browser tests**, build và audit đạt. Replay logits validation sáu checkpoint; DINO backbone khớp từng tensor pretrained. Giữ nguyên design/model đang chạy.
+- Full-model PyTorch CPU p95 gồm preprocessing: Swin **3,16 ms**, DINO **84,00 ms**; không phải latency ONNX/HTTP/browser. Checkpoint đầy đủ được lưu local, `trained=true`, `release_ready=false`; export ONNX ở P6.
+- [Báo cáo P5](docs/drawai/phase5-report.md) · [Hướng dẫn training/resume/evaluate](docs/drawai/paint-training-guide.md) · [Bảng CSV](artifacts/drawai/phase5-image64/comparison.csv) · [Handoff checkpoint P6](artifacts/drawai/phase5-image64/handoff.json).
+
 ## Đã cập nhật ở đâu
 
 | Phase / file | Thay đổi |
@@ -168,6 +177,8 @@ Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ đ
 | P4: `training/drawai/private_dataset.py`, tests | Review/approval/source binding, quota/human gates, atomic final lock, held-out ZIP, verify và loader hai representation |
 | P4: `tools/verify_phase4.py`, `docs/drawai/dataset/` | Audit tình trạng thật, hướng dẫn rà soát/khóa và trusted hash/test custody |
 | P4 ảnh: `paint_dataset.py`, `test_drawai_paint_lock.py`, `verify_phase4_image64.py` | Khóa main6.000 ảnh thực, review giữ cờ tương đồng, loaders/hash/test guards, báo cáo/evidence riêng |
+| P5: `paint_train.py`, `models.py`, `test_drawai_paint_train.py` | Factory Swin row64, train/resume sáu run, pretrained feature cache, validation selection, final-test guards và checkpoint đầy đủ |
+| P5: `benchmark_phase5.py`, `verify_phase5.py`, `docs/drawai/phase5-report.md` | Metrics replay, kiểm tra frozen weights, benchmark CPU fresh process, report và handoff riêng |
 
 ## Cấu trúc hiện hành
 

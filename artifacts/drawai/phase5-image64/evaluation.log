@@ -1,0 +1,10 @@
+FINAL TEST swin1d-image seed42: acc=0.8820 F1=0.8820
+FINAL TEST swin1d-image seed43: acc=0.8440 F1=0.8428
+FINAL TEST swin1d-image seed44: acc=0.8700 F1=0.8696
+DINO final-test features 16/1000
+DINO final-test features 336/1000
+DINO final-test features 656/1000
+DINO final-test features 976/1000
+FINAL TEST dinov3-vits16 seed42: acc=0.9880 F1=0.9880
+FINAL TEST dinov3-vits16 seed43: acc=0.9880 F1=0.9880
+FINAL TEST dinov3-vits16 seed44: acc=0.9880 F1=0.9880

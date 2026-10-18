@@ -1,6 +1,6 @@
 # DrawAI — Kế hoạch chuyển sang hai mô hình
 
-Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P4 hoàn thành local với protocol ảnh Paint ở P3/P4**. [P4](phase4-report.md) khóa6.000 ảnh nhưng còn37 nhóm tương đồng qua split main; không chứng nhận benchmark sạch rò rỉ. P5–P8 chưa hoàn tất.
+Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P5 hoàn thành local, P5 chạy CPU với protocol ảnh Paint**. [P4](phase4-report.md) khóa6.000 ảnh còn37 nhóm tương đồng qua split main. [P5](phase5-report.md) chạy sáu run, checkpoint chọn theo validation: Swin43 test84,40%, DINO42 test98,80%; không chứng nhận benchmark sạch rò rỉ. P6–P8 chưa hoàn tất.
 
 ## Điều chỉnh P3 theo dữ liệu thực (18/10/2026)
 
@@ -120,7 +120,7 @@ CLI `private_dataset.py` và [báo cáo P4 cũ](phase4-report.md) dành cho JSON
 
 ### Công việc
 
-1. Dùng đúng split người và sample_id chung. Swin dùng chuỗi L128; DINOv3 dùng ảnh từ cùng nét.
+1. Dùng snapshot P4 ảnh đã khóa và sample_id chung: Swin1D chuỗi64 hàng pixel, DINOv3 RGB224 từ cùng PNG64. Chuỗi nét bút L128 chỉ thuộc release cũ.
 2. PenDigits dùng làm nguồn bổ trợ/pretrain nếu cần và ghi rõ. Giữ kết quả PenDigits tách biệt kết quả private-v1; kiểm tra hai model được dùng nguồn bổ trợ nào.
 3. Swin: train hoặc fine-tune theo protocol; phân biệt initialization từ checkpoint cũ với train from scratch.
 4. DINOv3: frozen backbone + linear/MLP head trước; chỉ fine-tune một phần nếu validation và tài nguyên cho phép. Thay đổi phải ghi vào config/run.

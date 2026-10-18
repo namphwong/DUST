@@ -9,7 +9,8 @@
 | P2 — DINOv3/raster/feasibility | DONE local | [Báo cáo P2](phase2-report.md): pretrained timm thật; 46 Python + 21 browser tests; 19 fixture parity; backend CPU đạt budget; design giữ nguyên |
 | P3 — chuẩn bị dữ liệu ảnh Paint | DONE local · protocol ảnh | [P3 hiện tại](phase3-report.md):7.000 ảnh/35 mã người theo xác nhận chủ dữ liệu;250 pilot QC+750 reserved+6.000 main;78 Python+12 browser tests; input Swin ảnh mới, giữ design/release cũ |
 | P4 — review/khóa ảnh | DONE local, có giới hạn tương đồng | [Báo cáo P4](phase4-report.md): khóa6.000 ảnh,95 Python+12 browser tests; giữ534 cờ tương đồng,37 nhóm qua split main; chưa chứng minh độc lập hình dạng |
-| P5–P8 | TODO | [Roadmap hai mô hình](two-model-roadmap.md); chưa full-train/đánh giá private/deploy/hoàn thiện gói Kaggle (NPZ nguồn đã public) |
+| P5 — train/so sánh ảnh | DONE local CPU | [P5](phase5-report.md): sáu run/ba seed,113 Python+12 browser tests; checkpoint chọn Swin43 test84,40%, DINO42 test98,80%; selection bằng validation, giữ giới hạn tương đồng |
+| P6–P8 | TODO | Export ONNX/parity, tích hợp input ảnh trên canvas và hoàn thiện gói nộp; NPZ nguồn đã public Kaggle |
 
 P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch sử bên dưới.
 

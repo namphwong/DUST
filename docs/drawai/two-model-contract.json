@@ -67,11 +67,28 @@
           64
         ]
       },
-      "role": "baseline"
+      "role": "baseline",
+      "private_training": {
+        "trained": true,
+        "release_ready": false,
+        "checkpoint": "artifacts/drawai/phase5-image64/runs/swin1d-image-seed43/drawai_swin1d-image_paint35-main-v1_rows64_fp32_seed43_best.pth",
+        "checkpoint_sha256": "3daa475f97e34c00d10380ea16157c9543de6495799ca3ee66cac642f2864619",
+        "selected_seed": 43,
+        "input_shape": [
+          1,
+          64,
+          64
+        ],
+        "dataset": "paint35-main-v1",
+        "test_accuracy": 0.844,
+        "test_macro_f1": 0.8428042486273298,
+        "selection": "validation only; no test tuning",
+        "main_cross_split_near_groups": 37
+      }
     },
     {
       "backbone_parameters": 21596160,
-      "digit_head_trained": false,
+      "digit_head_trained": true,
       "export_scope": "Full backbone and classifier, not head alone",
       "id": "dinov3_vits16",
       "implementation_status": "Real public timm DINOv3 pretrained backbone strictly loaded; full ONNX + CPU backend verified; digit head untrained",
@@ -136,7 +153,25 @@
       "selected_revision": "2c7705788ac282557562465d6443606664a55f05",
       "selected_weights_sha256": "71aedea5ea914657b8fd641beadbd97c012f87e3116d4d081eb143aa520ab53c",
       "smoke_artifact": "artifacts/drawai/phase2/technical/drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx",
-      "smoke_artifact_is_release": false
+      "smoke_artifact_is_release": false,
+      "private_training": {
+        "trained": true,
+        "release_ready": false,
+        "checkpoint": "artifacts/drawai/phase5-image64/runs/dinov3-vits16-seed42/drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_seed42_best.pth",
+        "checkpoint_sha256": "1b14dc81786010d10f4bb3c1d77c8ef3e1af44f52a2186881e616dd19906c4f3",
+        "selected_seed": 42,
+        "input_shape": [
+          1,
+          3,
+          224,
+          224
+        ],
+        "dataset": "paint35-main-v1",
+        "test_accuracy": 0.988,
+        "test_macro_f1": 0.9880170042585895,
+        "selection": "validation only; no test tuning",
+        "main_cross_split_near_groups": 37
+      }
     }
   ],
   "new_image_contract": "docs/drawai/collection/paint-image64-contract.json",
@@ -150,7 +185,7 @@
       10
     ]
   },
-  "phase": "P4_IMAGE_SNAPSHOT_LOCKED_WITH_SIMILARITY_LIMITATIONS",
+  "phase": "P5_TRAINED_AND_COMPARED_CPU",
   "source_coordinates": "canvas-y-down",
   "source_limits": {
     "max_points": 8192,
@@ -165,7 +200,7 @@
     "both_models_available_via": "separate verification route or comparison script",
     "main_page_models": "one selected default",
     "no_new_model_selector_on_main_page": true,
-    "planned_image_model_integration": "P7 must render canvas to image contract before replacing default; main UI/legacy Swin unchanged in P3",
+    "planned_image_model_integration": "P7 must render canvas to image contract before replacing default; main UI/legacy Swin unchanged through P5",
     "preserve_current_design": true,
     "route_change_phase": "P1",
     "target_routes": [
@@ -173,7 +208,7 @@
       "/drawai"
     ]
   },
-  "version": "drawai-two-model-contract-v5",
+  "version": "drawai-two-model-contract-v6",
   "private_dataset_lock": {
     "dataset": "paint35-main-v1",
     "path": "data/private/locked/paint35-main-v1",
@@ -182,5 +217,18 @@
     "main_cross_split_groups": 37,
     "similarity_independence_verified": false,
     "test_custody": "Integrity ZIP only, original source already public; no test-based tuning"
+  },
+  "phase5_experiment": {
+    "plan": "artifacts/drawai/phase5-image64/experiment-plan.json",
+    "handoff": "artifacts/drawai/phase5-image64/handoff.json",
+    "selection_sha256": "827f063bb6fc814d94406204f2c45ac91668988c0273329a59c3f5aaeccbec51",
+    "candidate_only": {
+      "family": "dinov3-vits16",
+      "seed": 42
+    },
+    "product_default_changed": false,
+    "augmentation_applied": false,
+    "onnx_exported": false,
+    "similarity_independence_verified": false
   }
 }

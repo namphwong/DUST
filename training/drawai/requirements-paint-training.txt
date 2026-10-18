@@ -1,0 +1,3 @@
+# Existing P2 CPU environment; psutil records process RSS in fresh benchmark processes.
+-r requirements-dinov3.txt
+psutil==7.2.2

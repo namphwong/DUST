@@ -10,9 +10,18 @@ def swin_config(length=64):
                 drop_rate=0.1, drop_path_rate=0.1)
 
 
+def swin_image_config():
+    """Paint64 spatial row tokens; incompatible with legacy trajectory weights."""
+    return dict(swin_config(64), in_chans=64)
+
+
 def build_model(kind='swin', length=64, *, weights_dir=None, smoke_only=False):
     if kind == 'swin':
         return SwinTransformer_1D(**swin_config(length))
+    if kind == 'swin1d_image':
+        if length != 64 or weights_dir is not None or smoke_only:
+            raise ValueError('Paint Swin requires row64 from-scratch initialization')
+        return SwinTransformer_1D(**swin_image_config())
     if kind == 'dinov3_vits16':
         from .dinov3_model import DinoDigitClassifier, WeightsUnavailableError
         if smoke_only:

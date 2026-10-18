@@ -1,0 +1,7 @@
+family,seed,best_epoch,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,train_seconds,parameters,trainable_parameters,checkpoint_bytes,checkpoint,selected_by_validation
+swin1d-image,42,27,0.939,0.9388921597533549,0.882,0.8819870052499889,121.64020309998887,548942,548942,2244074,drawai_swin1d-image_paint35-main-v1_rows64_fp32_seed42_best.pth,False
+swin1d-image,43,29,0.941,0.9417388435103545,0.844,0.8428042486273298,95.68567100004293,548942,548942,2244074,drawai_swin1d-image_paint35-main-v1_rows64_fp32_seed43_best.pth,True
+swin1d-image,44,29,0.919,0.918830375993571,0.87,0.8696130285372818,95.8631047999952,548942,548942,2244074,drawai_swin1d-image_paint35-main-v1_rows64_fp32_seed44_best.pth,False
+dinov3-vits16,42,98,1.0,1.0,0.988,0.9880170042585895,6.535290000028908,21603850,7690,86501690,drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_seed42_best.pth,True
+dinov3-vits16,43,97,1.0,1.0,0.988,0.9880170042585895,7.049755299987737,21603850,7690,86501690,drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_seed43_best.pth,False
+dinov3-vits16,44,100,1.0,1.0,0.988,0.9880170042585895,7.227606799977366,21603850,7690,86501690,drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_seed44_best.pth,False
