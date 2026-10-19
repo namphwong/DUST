@@ -32,7 +32,7 @@ test('trained Swin release matches 20 fixtures in real WASM worker',async({page}
     releaseSha256:createHash('sha256').update(await (await page.request.get(base+'release.json')).body()).digest('hex'),
     userAgent:await page.evaluate(()=>navigator.userAgent),
     machine:{cpu:cpus()[0].model,logicalCores:cpus().length,totalMemoryBytes:totalmem()},
-    modelSha256:release.files['model.onnx'].sha256,report},null,2));
+    modelSha256:release.files['drawai_swin1d_pendigits_l128_fp32_v1.onnx'].sha256,report},null,2));
   await page.screenshot({path:'../artifacts/drawai/export/browser-proof.png',fullPage:true});
 });
 
@@ -48,9 +48,9 @@ test('missing labels rejects release and retry succeeds',async({page})=> {
 });
 
 test('corrupt trained model rejected before inference',async({page})=> {
-  await page.route('**'+base+'model.onnx',r=>r.fulfill({status:200,body:'corrupt'}));
+  await page.route('**'+base+'drawai_swin1d_pendigits_l128_fp32_v1.onnx',r=>r.fulfill({status:200,body:'corrupt'}));
   await run(page);
-  await expect(page.getByTestId('drawai-status')).toContainText('Sai hash/bytes: model.onnx');
+  await expect(page.getByTestId('drawai-status')).toContainText('Sai hash/bytes: drawai_swin1d_pendigits_l128_fp32_v1.onnx');
   await expect(page.getByTestId('drawai-result')).toHaveCount(0);
 });
 

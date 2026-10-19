@@ -15,7 +15,7 @@ async function draw(page:Page){const canvas=page.getByRole('img',{name:'Vùng v�
 
 test('all ten demos use real Swin, match D4 logits and reuse one worker/session',async({page})=>{
   const requests:{url:string;method:string}[]=[];page.on('request',r=>requests.push({url:r.url(),method:r.method()}));
-  let modelRequests=0;page.on('request',r=>{if(r.url().endsWith('/drawai-swin-v1/model.onnx'))modelRequests++;});
+  let modelRequests=0;page.on('request',r=>{if(r.url().endsWith('/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx'))modelRequests++;});
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/drawai');
   await expect(page.getByRole('button',{name:'Nhận dạng →'})).toBeDisabled();
@@ -73,7 +73,7 @@ test('canvas inference, undo, clear and JSON keep reference independent of predi
 
 test('clear during delayed model load discards stale result and allows a new request',async({page})=>{
   let release!:()=>void;const gate=new Promise<void>(r=>release=r);
-  await page.route('**/drawai-swin-v1/model.onnx',async r=>{await gate;await r.continue();});
+  await page.route('**/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx',async r=>{await gate;await r.continue();});
   await page.goto('/drawai');await sample(page,3);await page.getByRole('button',{name:'Nhận dạng →'}).click();
   await expect(page.getByTestId('drawai-app-status')).toContainText('Đang tải');
   await page.getByRole('button',{name:'Xóa hết'}).click();release();
@@ -83,7 +83,7 @@ test('clear during delayed model load discards stale result and allows a new req
 });
 
 test('load failure preserves strokes and retry runs real model',async({page})=>{
-  const pattern='**/drawai-swin-v1/model.onnx';await page.route(pattern,r=>r.fulfill({status:404,body:'missing'}));
+  const pattern='**/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx';await page.route(pattern,r=>r.fulfill({status:404,body:'missing'}));
   await page.goto('/drawai');await sample(page,2);await page.getByRole('button',{name:'Nhận dạng →'}).click();
   await expect(page.getByRole('alert')).toContainText('FETCH');await expect(page.locator('.da-count')).not.toHaveText('0 nét');
   await page.unroute(pattern);await page.getByRole('button',{name:'Thử nhận dạng lại →'}).click();

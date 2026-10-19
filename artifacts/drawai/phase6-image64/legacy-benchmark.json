@@ -1,0 +1,431 @@
+{
+  "browser": "",
+  "version": "153.0.8010.12",
+  "modelBytes": 2384716,
+  "stages": [
+    {
+      "stage": "fetching",
+      "at": 0.30000001192092896
+    },
+    {
+      "stage": "verifying",
+      "at": 122.10000002384186
+    },
+    {
+      "stage": "initializing",
+      "at": 125.5
+    }
+  ],
+  "loadAndInitMs": 602,
+  "medianMs": 1.4000000357627869,
+  "p95Ms": 2.099999964237213,
+  "timings": [
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 2.400000035762787
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.800000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 25.599999964237213,
+      "inference": 1.7000000476837158
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 2.099999964237213
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.2999999523162842
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.699999988079071
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.800000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 2
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5999999642372131
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.600000023841858
+    },
+    {
+      "preprocessing": 0,
+      "inference": 2
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 2.100000023841858
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.2999999523162842
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.2999999523162842
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0.8999999761581421,
+      "inference": 2.199999988079071
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 2.5
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 3.699999988079071
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.600000023841858
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.600000023841858
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5999999642372131
+    },
+    {
+      "preprocessing": 0,
+      "inference": 2
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5999999642372131
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0.10000002384185791,
+      "inference": 1.2999999523162842
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    },
+    {
+      "preprocessing": 0.09999996423721313,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.300000011920929
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.5
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.399999976158142
+    },
+    {
+      "preprocessing": 0,
+      "inference": 1.4000000357627869
+    }
+  ],
+  "benchmark": {
+    "warmup": 5,
+    "iterations": 100,
+    "input": "train-digit-0",
+    "threads": 1,
+    "percentile": "nearest rank"
+  }
+}

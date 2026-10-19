@@ -2,6 +2,8 @@
 
 This program never generates human samples. Consent/source authenticity needs human attestation.
 """
+from .legacy_release import LEGACY_FILENAME
+
 import argparse
 import json
 import os
@@ -82,7 +84,7 @@ def evaluate(path,output):
     assert release['version']=='drawai-swin-v1' and release['trained'] is True
     for name,meta in release['files'].items():
         if digest(target/name)!=meta['sha256'] or (target/name).stat().st_size!=meta['bytes']:raise ValueError('Release file mismatch')
-    session=ort.InferenceSession(str(target/'model.onnx'),providers=['CPUExecutionProvider'])
+    session=ort.InferenceSession(str(target/LEGACY_FILENAME),providers=['CPUExecutionProvider'])
     predictions=[]
     for row in rows:
         logits=session.run(None,dict(drawing=row['tensor'][None]))[0][0]
@@ -91,7 +93,7 @@ def evaluate(path,output):
     def metrics(values):return classification_metrics([r['label'] for r in values],[r['predicted'] for r in values])
     report=dict(status='evaluated-human-source-attested',human_source_authenticity='operator attestation, not automatically verified',
                 protocol_version=manifest['protocol_version'],release_sha256=digest(target/'release.json'),
-                model_sha256=digest(target/'model.onnx'),manifest_sha256=digest(Path(path)),
+                model_sha256=digest(target/LEGACY_FILENAME),manifest_sha256=digest(Path(path)),
                 participants=len(manifest['participants']),samples=len(rows),metrics=metrics(predictions),
                 by_participant={p['id']:metrics([r for r in predictions if r['participant_id']==p['id']]) for p in manifest['participants']},
                 by_input_device={device:metrics([r for r in predictions if r['input_device']==device]) for device in sorted({r['input_device'] for r in rows})},

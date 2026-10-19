@@ -17,7 +17,7 @@ test('root performs real inference with the existing design',async({page})=>{
   await expect(page.getByTestId('drawai-reference')).toContainText('Nhãn mẫu: 6');
   await page.getByRole('button',{name:'Nhận dạng →',exact:true}).click();
   await expect(page.getByTestId('drawai-prediction')).toHaveAttribute('data-digit','6',{timeout:90000});
-  expect(requests.some(url=>url.endsWith('/drawai-swin-v1/model.onnx'))).toBe(true);
+  expect(requests.some(url=>url.endsWith('/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx'))).toBe(true);
   expect(requests.some(url=>/uci-har|har-swin|motionsense|csv-pipeline/i.test(url))).toBe(false);
   await mkdir('../artifacts/drawai/phase1/ui',{recursive:true});
   await page.screenshot({path:'../artifacts/drawai/phase1/ui/root-desktop.png',fullPage:true});

@@ -26,7 +26,7 @@ Mọi logits đạt `abs(ORT−PyTorch) ≤ 1e-5 + 1e-4 × abs(PyTorch)`. Max ab
 
 Chromium thực, WASM CPU 1 thread trong Web Worker: 20 fixture gồm 10 chữ số train, 7 hình học và 3 tensor; tensor TypeScript khớp Python với tolerance 2e-7, logits/argmax khớp checkpoint. 14 input lỗi trả mã đúng. Build và 13 browser tests đạt (7 release, 6 regression D2); thiếu labels rồi retry, model corrupt, nhãn/provenance/preprocessing sai dù hash đồng bộ, trained=false đều bị từ chối.
 
-Browser Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36; máy AMD Ryzen 7 H 255 w/ Radeon 780M Graphics. Median 1.60 ms, p95 2.20 ms; load 88.20 ms, init 408.60 ms. Benchmark 5 warm-up + 100 inference với tensor random, nearest-rank p95. ORT Python p95 0.92 ms, 4 threads, mẫu test đầu tiên; hai benchmark khác input/thread count nên không dùng như so tốc độ công bằng. Dung lượng ONNX không gồm WASM runtime. Chưa đo Edge/điện thoại hoặc production.
+Browser Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36; máy AMD Ryzen 7 H 255 w/ Radeon 780M Graphics. Median 1.50 ms, p95 2.10 ms; load 113.20 ms, init 388.90 ms. Benchmark 5 warm-up + 100 inference với tensor random, nearest-rank p95. ORT Python p95 0.92 ms, 4 threads, mẫu test đầu tiên; hai benchmark khác input/thread count nên không dùng như so tốc độ công bằng. Dung lượng ONNX không gồm WASM runtime. Chưa đo Edge/điện thoại hoặc production.
 
 ## Release và demo
 
@@ -51,3 +51,5 @@ Set-Location ..
 ```
 
 Trên Linux hoặc máy có VC runtime đúng, bỏ biến DLL Windows. Verifier cần `jsonschema` để kiểm tra demo theo schema; đây là dependency kiểm toán riêng. Kết quả tại `artifacts/drawai/export/`: full-test NPZ, Python/browser reports, Playwright report, ảnh và verification.json. [Model card](model-card.md) · [Báo cáo D3](experiment-report.md).
+
+P6 filename migration: canonical `drawai_swin1d_pendigits_l128_fp32_v1.onnx`; `model.onnx` remains a byte-identical compatibility alias. Weights, PenDigits metrics and product design are unchanged. Paint35 exports are documented separately in phase6-report.md.

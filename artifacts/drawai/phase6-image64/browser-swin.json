@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "name": "white",
+      "passed": true
+    },
+    {
+      "name": "black",
+      "passed": true
+    },
+    {
+      "name": "single-pixel",
+      "passed": true
+    },
+    {
+      "name": "vertical",
+      "passed": true
+    },
+    {
+      "name": "horizontal",
+      "passed": true
+    },
+    {
+      "name": "diagonal",
+      "passed": true
+    },
+    {
+      "name": "border",
+      "passed": true
+    },
+    {
+      "name": "checker",
+      "passed": true
+    },
+    {
+      "name": "noise",
+      "passed": true
+    }
+  ],
+  "max_abs_error": 0.000002384185791015625,
+  "model_sha256": "9bb8bf5478cb2d8131936a79888505dcbc4f05e331027ca4e2117db7715df59d",
+  "bytes": 2391351,
+  "init_ms": 604.8000000119209,
+  "warm_inference_p50_ms": 1.300000011920929,
+  "warm_inference_p95_ms": 2.099999964237213,
+  "warmup": 5,
+  "iterations": 30,
+  "timing_scope": "WASM inference only; procedural noise tensor"
+}

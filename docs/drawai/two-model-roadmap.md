@@ -1,6 +1,6 @@
 # DrawAI — Kế hoạch chuyển sang hai mô hình
 
-Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P5 hoàn thành local, P5 chạy CPU với protocol ảnh Paint**. [P4](phase4-report.md) khóa6.000 ảnh còn37 nhóm tương đồng qua split main. [P5](phase5-report.md) chạy sáu run, checkpoint chọn theo validation: Swin43 test84,40%, DINO42 test98,80%; không chứng nhận benchmark sạch rò rỉ. P6–P8 chưa hoàn tất.
+Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P6 đã thực hiện local; P6 hoàn thành hai artifact chạy đã kiểm chứng theo phương án mixed runtime**. [P6](phase6-report.md): Swin ONNX, DINO TorchScript. DINO ONNX vẫn diagnostic do2 mẫu vượt strict tolerance; không nới ngưỡng. P5 metric/cảnh báo37 near-groups giữ nguyên. P7–P8 chưa hoàn tất.
 
 ## Điều chỉnh P3 theo dữ liệu thực (18/10/2026)
 
@@ -134,6 +134,8 @@ CLI `private_dataset.py` và [báo cáo P4 cũ](phase4-report.md) dành cho JSON
 - Metric tính từ predictions lưu theo sample_id; hạn chế số người test và domain gap được ghi rõ.
 
 ## Phase 6 — Xuất model với tên rõ ràng
+
+Thực thi19/10/2026: [báo cáo P6](phase6-report.md) và [hướng dẫn](paint-export-guide.md). Tên thực tế: Swin `drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx`; DINO primary `drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt`. ONNX DINO full graph đã xuất nhưng chưa đạt logit tolerance2/1.000 mẫu; backend chọn TorchScript có parity đạt. Quy ước ONNX dưới đây là mục tiêu ban đầu, không phải tuyên bố ONNX DINO đã được duyệt.
 
 ### Quy ước
 

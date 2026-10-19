@@ -1,5 +1,6 @@
 import { type Stroke } from './preprocessing';
 export const RELEASE='drawai-swin-v1';
+export const LEGACY_MODEL_FILENAME='drawai_swin1d_pendigits_l128_fp32_v1.onnx';
 export const PROTOCOL='drawai-worker-v1';
 export type Drawing={schema_version:'drawai-strokes-v1';coordinate_system:'canvas-y-down';canvas:{width:number;height:number};strokes:Stroke[];reference_label?:number|null;source?:{kind:'user'|'dataset'|'synthetic';sample_id?:string;split?:string}};
 export type Prediction={protocol_version:typeof PROTOCOL;type:'result';request_id:number;drawing_revision:number;model_version:string;preprocessing_version:string;logits:number[];scores:number[];predicted_id:number;timing_ms:{preprocessing:number;inference:number;total:number}};

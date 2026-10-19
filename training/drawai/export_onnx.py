@@ -5,6 +5,7 @@ import os
 import platform
 import sys
 import time
+import shutil
 
 _dll_handle = None
 if sys.platform == 'win32' and os.environ.get('DUST_DLL_DIRECTORY'):
@@ -22,6 +23,7 @@ from .train import load_split, tensor_hash
 from .metrics import classification_metrics
 from .verify_training import verify_selected_swin
 from .verify_feasibility import geometry_cases
+from .legacy_release import LEGACY_FILENAME
 
 VERSION = 'drawai-swin-v1'
 ATOL, RTOL = 1e-5, 1e-4
@@ -54,9 +56,10 @@ def export(experiment, release_dir=None, report_dir=None, samples_dir=None):
     target = release_dir or ROOT/f'web/public/models/{VERSION}'
     out = report_dir or ROOT/'artifacts/drawai/export'
     target.mkdir(parents=True, exist_ok=True); out.mkdir(parents=True, exist_ok=True)
-    path = target/'model.onnx'
+    path = target/LEGACY_FILENAME
     torch.onnx.export(model, torch.zeros(1,3,length), str(path), input_names=['drawing'],
                       output_names=['logits'], opset_version=17, dynamo=False)
+    shutil.copyfile(path,target/'model.onnx') # Historical URL remains byte-identical.
     graph = onnx.load(str(path)); onnx.checker.check_model(graph, full_check=True)
     options = ort.SessionOptions(); options.intra_op_num_threads = 4
     session = ort.InferenceSession(str(path), sess_options=options, providers=['CPUExecutionProvider'])
@@ -152,9 +155,9 @@ def export(experiment, release_dir=None, report_dir=None, samples_dir=None):
                              onnxruntime=ort.__version__,device='cpu'),
                 demo_manifest_sha256=digest(sample_dir/'manifest.json'))
     write_json(target/'report.json',report)
-    write_json(target/'release.json',dict(version=VERSION,trained=True,
+    write_json(target/'release.json',dict(version=VERSION,trained=True,model_filename=LEGACY_FILENAME,legacy_alias='model.onnx',
                files={n:dict(sha256=digest(target/n),bytes=(target/n).stat().st_size) for n in
-                      ['model.onnx','fixtures.json','preprocessing.json','labels.json','report.json']}))
+                      [LEGACY_FILENAME,'model.onnx','fixtures.json','preprocessing.json','labels.json','report.json']}))
     write_json(out/'python-report.json',report)
     print(json.dumps({k:report[k] for k in ['status','test_samples','max_abs_error','argmax_disagreements','macro_f1_degradation','model_bytes']},indent=2))
 

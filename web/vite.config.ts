@@ -41,4 +41,20 @@ function localPhase2():Plugin{
   };
   return {name:'drawai-local-p2-only',configureServer:attach,configurePreviewServer:attach};
 }
-export default defineConfig({plugins:[localPhase2()]});
+function localPhase6():Plugin{
+  const root=resolve(dirname(fileURLToPath(import.meta.url)),'../models/exported/paint35-v1');
+  const allowed=new Set(['swin1d-image/fixtures.json','swin1d-image/drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx']);
+  const attach=(server:any)=>{server.middlewares.use('/__drawai_p6__',(req:any,res:any)=>{
+    if(process.env.DRAWAI_P6_LOCAL_SMOKE!=='1'){res.statusCode=404;res.end('P6 local verification disabled');return;}
+    const name=(req.url??'').split('?')[0].replace(/^\//,'');
+    if(req.method!=='GET'||!allowed.has(name)){res.statusCode=404;res.end('Not found');return;}
+    try{
+      const path=resolve(root,name),stat=statSync(path);
+      res.setHeader('Content-Type',name.endsWith('.json')?'application/json':'application/octet-stream');
+      res.setHeader('Content-Length',stat.size);res.setHeader('Cache-Control','no-store');
+      const stream=createReadStream(path);stream.on('error',()=>res.destroy());stream.pipe(res);
+    }catch{res.statusCode=404;res.end('Export P6 bundle first');}
+  });};
+  return {name:'drawai-local-p6-only',configureServer:attach,configurePreviewServer:attach};
+}
+export default defineConfig({plugins:[localPhase2(),localPhase6()]});

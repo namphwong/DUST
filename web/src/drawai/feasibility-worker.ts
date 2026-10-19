@@ -3,8 +3,10 @@ import wasmUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threa
 import wasmModuleUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
 import { preprocess, GEOMETRY_VERSION, type Stroke } from './preprocessing';
 
+import { LEGACY_MODEL_FILENAME } from './types';
+
 type Fixture = { name: string; input: number[]; expected: number[]; strokes?: Stroke[]; y_axis?: string };
-type Manifest = { version: string; trained: boolean; files: Record<string,{sha256:string;bytes:number}> };
+type Manifest = { version: string; trained: boolean; model_filename?: string; files: Record<string,{sha256:string;bytes:number}> };
 
 async function sha256(bytes: ArrayBuffer) {
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
@@ -24,7 +26,9 @@ async function run(length: number, trained = false) {
   if (!manifestResponse.ok) throw new Error('Thiếu release DrawAI. Hãy chạy verify_feasibility.');
   const manifest = await manifestResponse.json() as Manifest;
   if (manifest.version !== version || manifest.trained !== trained) throw new Error('Sai version hoặc trạng thái artifact kỹ thuật/release.');
-  const names = ['model.onnx','fixtures.json','preprocessing.json','report.json',...(trained ? ['labels.json'] : [])];
+  const modelName=trained ? LEGACY_MODEL_FILENAME : 'model.onnx';
+  if(trained && manifest.model_filename!==modelName) throw new Error('Sai tên model trained.');
+  const names = [modelName,'fixtures.json','preprocessing.json','report.json',...(trained ? ['labels.json'] : [])];
   const buffers = await Promise.all(names.map(async name=> {
     const response = await fetch(base+name);
     if (!response.ok) throw new Error(`Thiếu artifact DrawAI: ${name}. Có thể thử lại.`);
@@ -54,7 +58,7 @@ async function run(length: number, trained = false) {
       JSON.stringify(prep.channels) !== '["x","y","stroke_start"]' ||
       report.status !== 'passed' || report.trained !== trained || report.opset !== 17 ||
       report.input_name !== 'drawing' || report.output_name !== 'logits' ||
-      report.model_bytes !== buffers[0].byteLength || report.sha256 !== manifest.files['model.onnx'].sha256 ||
+      report.model_bytes !== buffers[0].byteLength || report.sha256 !== manifest.files[modelName].sha256 ||
       JSON.stringify(report.input_shape) !== JSON.stringify([1,3,length]) ||
       JSON.stringify(report.output_shape) !== '[1,10]' || report.fixture_count !== fixtures.cases.length ||
       fixtures.atol !== 1e-5 || fixtures.rtol !== 1e-4 || fixtures.cases.length !== 20) throw new Error('Metadata/fixture không đúng hợp đồng DrawAI D2.');
@@ -121,7 +125,7 @@ async function run(length: number, trained = false) {
             cases,invalidCases,loadMs,initMs,medianMs:(timings[49]+timings[50])/2,p95Ms:timings[94],
             modelBytes:buffers[0].byteLength,backend:'WASM worker / CPU 1 thread',
             benchmark:{warmup:5,iterations:100,input:'random',percentileMethod:'nearest rank'},
-            modelSha256:manifest.files['model.onnx'].sha256,preprocessingVersion:prep.version,
+            modelSha256:manifest.files[modelName].sha256,preprocessingVersion:prep.version,
             targetsMet:buffers[0].byteLength<=10*1024*1024 && timings[94]<=100};
   } finally { await session.release(); }
 }

@@ -1,0 +1,1 @@
+P6 PASS:128 Python,36 browser tests; verified ONNX Swin + TorchScript DINO. DINO ONNX remains diagnostic.

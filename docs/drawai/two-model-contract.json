@@ -35,7 +35,7 @@
   "legacy_stroke_contract": "Retained for existing browser Swin release; not used to invent trajectories from Paint images",
   "models": [
     {
-      "existing_filename": "web/public/models/drawai-swin-v1/model.onnx",
+      "existing_filename": "web/public/models/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx",
       "existing_release": "drawai-swin-v1",
       "id": "swin1d",
       "implementation_status": "existing trained PenDigits checkpoint and ONNX verified in P0",
@@ -84,7 +84,29 @@
         "test_macro_f1": 0.8428042486273298,
         "selection": "validation only; no test tuning",
         "main_cross_split_near_groups": 37
-      }
+      },
+      "private_export": {
+        "argmax_disagreements": 0,
+        "bytes": 2391351,
+        "filename": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+        "format": "onnx",
+        "max_abs_error": 8.359551429748535e-06,
+        "onnx_diagnostic": {
+          "approved_runtime": true,
+          "argmax_disagreements": 0,
+          "atol": 1e-05,
+          "failed_logit_rows": 0,
+          "max_abs_error": 8.359551429748535e-06,
+          "model_filename": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+          "numeric_parity_passed": true,
+          "rtol": 0.0001
+        },
+        "seed": 43,
+        "sha256": "9bb8bf5478cb2d8131936a79888505dcbc4f05e331027ca4e2117db7715df59d",
+        "test_accuracy": 0.844,
+        "test_macro_f1": 0.8428042486273298
+      },
+      "existing_compatibility_alias": "web/public/models/drawai-swin-v1/model.onnx"
     },
     {
       "backbone_parameters": 21596160,
@@ -171,6 +193,27 @@
         "test_macro_f1": 0.9880170042585895,
         "selection": "validation only; no test tuning",
         "main_cross_split_near_groups": 37
+      },
+      "private_export": {
+        "argmax_disagreements": 0,
+        "bytes": 86901987,
+        "filename": "drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt",
+        "format": "torchscript",
+        "max_abs_error": 0.0,
+        "onnx_diagnostic": {
+          "approved_runtime": false,
+          "argmax_disagreements": 0,
+          "atol": 0.0001,
+          "failed_logit_rows": 2,
+          "max_abs_error": 0.0005426406860351562,
+          "model_filename": "drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.onnx",
+          "numeric_parity_passed": false,
+          "rtol": 0.001
+        },
+        "seed": 42,
+        "sha256": "5846bd2331f546d1a97e617a0733f7cafd72a953ee8988dd7538940ff2cc6baa",
+        "test_accuracy": 0.988,
+        "test_macro_f1": 0.9880170042585895
       }
     }
   ],
@@ -185,7 +228,7 @@
       10
     ]
   },
-  "phase": "P5_TRAINED_AND_COMPARED_CPU",
+  "phase": "P6_VERIFIED_MIXED_RUNTIME_EXPORTS",
   "source_coordinates": "canvas-y-down",
   "source_limits": {
     "max_points": 8192,
@@ -200,7 +243,7 @@
     "both_models_available_via": "separate verification route or comparison script",
     "main_page_models": "one selected default",
     "no_new_model_selector_on_main_page": true,
-    "planned_image_model_integration": "P7 must render canvas to image contract before replacing default; main UI/legacy Swin unchanged through P5",
+    "planned_image_model_integration": "P7 must render canvas to image contract and connect selected CPU/browser artifacts; main design and legacy model unchanged through P6",
     "preserve_current_design": true,
     "route_change_phase": "P1",
     "target_routes": [
@@ -208,7 +251,7 @@
       "/drawai"
     ]
   },
-  "version": "drawai-two-model-contract-v6",
+  "version": "drawai-two-model-contract-v7",
   "private_dataset_lock": {
     "dataset": "paint35-main-v1",
     "path": "data/private/locked/paint35-main-v1",
@@ -230,5 +273,15 @@
     "augmentation_applied": false,
     "onnx_exported": false,
     "similarity_independence_verified": false
+  },
+  "phase6_exports": {
+    "bundle": "models/exported/paint35-v1",
+    "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+    "handoff": "artifacts/drawai/phase6-image64/handoff.json",
+    "all_onnx_parity_passed": false,
+    "dinov3_onnx_approved": false,
+    "no_tolerance_relaxation": true,
+    "product_default_changed": false,
+    "product_release_ready": false
   }
 }

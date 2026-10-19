@@ -19,19 +19,19 @@ test('full JSON/tensor/PyTorch/ORT/product WASM parity and measured 100-run benc
   const report=JSON.parse((await page.getByTestId('d6-report').textContent())!);
   expect(report.cases).toHaveLength(17);expect(report.invalid).toHaveLength(7);expect(report.timings).toHaveLength(100);
   expect(report.p95Ms).toBeLessThanOrEqual(100);expect(requests.every(r=>r.method==='GET'&&r.url.startsWith('http://127.0.0.1:4186/'))).toBe(true);
-  const release=await(await page.request.get('/models/drawai-swin-v1/release.json')).json();expect(release.files['model.onnx'].bytes).toBeLessThanOrEqual(10*1024*1024);
+  const release=await(await page.request.get('/models/drawai-swin-v1/release.json')).json();expect(release.files['drawai_swin1d_pendigits_l128_fp32_v1.onnx'].bytes).toBeLessThanOrEqual(10*1024*1024);
   await mkdir('../artifacts/drawai/verification',{recursive:true});await mkdir('../artifacts/drawai/benchmark',{recursive:true});
   const evidence={status:'passed',browser:info.project.name,browserVersion:browser.version(),userAgent:await page.evaluate(()=>navigator.userAgent),
     machine:{cpu:cpus()[0].model,logicalCores:cpus().length,totalMemoryBytes:totalmem()},report,requests,
     releaseSha256:createHash('sha256').update(await(await page.request.get('/models/drawai-swin-v1/release.json')).body()).digest('hex')};
   await writeFile(`../artifacts/drawai/verification/${info.project.name}-parity.json`,JSON.stringify(evidence,null,2));
-  await writeFile(`../artifacts/drawai/benchmark/${info.project.name}.json`,JSON.stringify({browser:info.project.name,version:browser.version(),modelBytes:release.files['model.onnx'].bytes,
+  await writeFile(`../artifacts/drawai/benchmark/${info.project.name}.json`,JSON.stringify({browser:info.project.name,version:browser.version(),modelBytes:release.files['drawai_swin1d_pendigits_l128_fp32_v1.onnx'].bytes,
     stages:report.stages,loadAndInitMs:report.loadAndInitMs,medianMs:report.medianMs,p95Ms:report.p95Ms,timings:report.timings,benchmark:report.benchmark},null,2));
 });
 
 for(const action of ['draw','undo','sample'] as const)test(`editing via ${action} during delayed load discards stale result`,async({page})=>{
   let release!:()=>void;const gate=new Promise<void>(r=>release=r);
-  await page.route('**/drawai-swin-v1/model.onnx',async r=>{await gate;try{await r.continue();}catch{}});
+  await page.route('**/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx',async r=>{await gate;try{await r.continue();}catch{}});
   await page.goto('/drawai');await sample(page,8);await page.getByRole('button',{name:'Nhận dạng →'}).click();
   await expect(page.getByTestId('drawai-app-status')).toContainText('Đang tải');
   if(action==='sample')await sample(page,9);
@@ -55,7 +55,7 @@ test('rapid clicks run once; worker crash resets and allows retry',async({page})
 
 test('60-second timeout with accelerated page clock resets hung worker and retries',async({page})=>{
   let release!:()=>void;let first=true;const gate=new Promise<void>(r=>release=r);
-  await page.route('**/drawai-swin-v1/model.onnx',async r=>{if(first){first=false;await gate;}try{await r.continue();}catch{}});
+  await page.route('**/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx',async r=>{if(first){first=false;await gate;}try{await r.continue();}catch{}});
   await page.goto('/drawai');await sample(page,0);await page.clock.install();await page.getByRole('button',{name:'Nhận dạng →'}).click();
   await expect(page.getByTestId('drawai-app-status')).toContainText('Đang tải');await page.clock.fastForward(60001);
   await expect(page.getByRole('alert')).toContainText('60 giây');release();

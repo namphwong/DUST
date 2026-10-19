@@ -8,6 +8,7 @@ from .prepare_data import ROOT, digest, write_json, parse_unipen
 from .preprocessing import preprocess, contract
 from .train import load_split, tensor_hash
 from .verify_training import independent_metrics
+from .legacy_release import LEGACY_FILENAME
 
 
 def verify():
@@ -15,7 +16,9 @@ def verify():
     experiment=ROOT/'artifacts/drawai/d3-local-v1'
     release=json.loads((target/'release.json').read_text())
     assert release['version']=='drawai-swin-v1' and release['trained'] is True
-    assert set(release['files'])=={'model.onnx','fixtures.json','preprocessing.json','labels.json','report.json'}
+    assert release['model_filename']==LEGACY_FILENAME and release['legacy_alias']=='model.onnx'
+    assert set(release['files'])=={LEGACY_FILENAME,'model.onnx','fixtures.json','preprocessing.json','labels.json','report.json'}
+    assert digest(target/LEGACY_FILENAME)==digest(target/'model.onnx')
     for name,metadata in release['files'].items():
         assert digest(target/name)==metadata['sha256'] and (target/name).stat().st_size==metadata['bytes']
     report=json.loads((target/'report.json').read_text())
@@ -157,6 +160,11 @@ Ngày 11/10/2026. Swin Transformer 1D cho một chữ số 0–9 từ chuỗi t�
 
 [Dataset/preprocessing](data-report.md) · [Protocol training](experiment-protocol.md) · [Export, parity và lệnh tái lập](artifact-report.md). Nguồn dataset, archive hashes và điều kiện nguồn nằm trong báo cáo D1; không bổ sung tuyên bố giấy phép khi chưa có xác minh.
 """,encoding='utf-8')
+    for filename in ['artifact-report.md','model-card.md']:
+        document=docs/filename
+        document.write_text(document.read_text(encoding='utf-8')+
+            f'\nP6 filename migration: canonical `{LEGACY_FILENAME}`; `model.onnx` remains a byte-identical compatibility alias. '
+            'Weights, PenDigits metrics and product design are unchanged. Paint35 exports are documented separately in phase6-report.md.\n',encoding='utf-8')
     verification['report_sha256']=digest(docs/'artifact-report.md')
     verification['model_card_sha256']=digest(docs/'model-card.md')
     verification['source_files']={str(p.relative_to(ROOT)):digest(p) for p in [

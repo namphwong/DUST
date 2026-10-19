@@ -58,7 +58,7 @@ def main():
                      init_ms=result['loadAndInitMs']-stages['initializing'],preprocess_median_ms=float(np.median([t['preprocessing'] for t in timings])),
                      inference_median_ms=result['medianMs'],inference_p95_ms=result['p95Ms'])
         summaries.append(summary)
-    model_bytes=(ROOT/'web/public/models/drawai-swin-v1/model.onnx').stat().st_size;assert model_bytes<=10*1024*1024
+    model_bytes=(ROOT/'web/public/models/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx').stat().st_size;assert model_bytes<=10*1024*1024
     tasks={'D6-01':'passed-local','D6-02':'passed-local','D6-03':'passed-local','D6-04':'passed-local',
            'D6-05':'desktop-passed; real-touch-not-run','D6-06':'not-run; no participants','D6-07':'not-run; no human data','D6-08':'local-report-complete; full-acceptance-pending'}
     review=dict(phase='D6',status='local-technical-passed; human-acceptance-pending',phase_complete=False,tasks=tasks,

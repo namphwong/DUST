@@ -2,7 +2,7 @@ import * as ort from 'onnxruntime-web/wasm';
 import wasmUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm?url';
 import wasmModuleUrl from '../../node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs?url';
 import { GEOMETRY_VERSION } from './preprocessing';
-import { RELEASE } from './types';
+import { RELEASE, LEGACY_MODEL_FILENAME } from './types';
 
 export async function sha256(bytes:ArrayBuffer) {
   return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
@@ -18,8 +18,8 @@ export async function loadRelease(progress:(stage:string)=>void) {
   };
   progress('fetching');
   const manifest=JSON.parse(new TextDecoder().decode(await fetchBytes('release.json')));
-  if(manifest.version!==RELEASE||manifest.trained!==true||!manifest.files) throw new Error('CONTRACT: Release chưa train hoặc sai version.');
-  const names=['model.onnx','preprocessing.json','labels.json','report.json'];
+  if(manifest.version!==RELEASE||manifest.trained!==true||manifest.model_filename!==LEGACY_MODEL_FILENAME||!manifest.files) throw new Error('CONTRACT: Release chưa train hoặc sai version.');
+  const names=[LEGACY_MODEL_FILENAME,'preprocessing.json','labels.json','report.json'];
   const bytes=await Promise.all(names.map(fetchBytes));progress('verifying');
   for(let i=0;i<names.length;i++) {
     const meta=manifest.files[names[i]];
@@ -34,7 +34,7 @@ export async function loadRelease(progress:(stage:string)=>void) {
     report.status!=='passed'||report.trained!==true||report.version!==RELEASE||report.opset!==17||
     report.checkpoint_sha256!=='a5ccb65dd4699b6451bf03ff23b6071382c29443213263f1fbc9ef6089fcf324'||
     report.input_name!=='drawing'||report.output_name!=='logits'||JSON.stringify(report.input_shape)!=='[1,3,128]'||JSON.stringify(report.output_shape)!=='[1,10]'||
-    report.sha256!==manifest.files['model.onnx'].sha256||report.model_bytes!==bytes[0].byteLength) throw new Error('CONTRACT: Nhãn, preprocessing hoặc model không khớp release.');
+    report.sha256!==manifest.files[LEGACY_MODEL_FILENAME].sha256||report.model_bytes!==bytes[0].byteLength) throw new Error('CONTRACT: Nhãn, preprocessing hoặc model không khớp release.');
   ort.env.wasm.numThreads=1;ort.env.wasm.wasmPaths={wasm:wasmUrl,mjs:wasmModuleUrl};
   progress('initializing');
   let session:ort.InferenceSession;

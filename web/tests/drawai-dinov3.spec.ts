@@ -57,7 +57,7 @@ test('raster metadata tamper is rejected even with matching manifest hash',async
 });
 
 test('technical artifacts are absent from public/dist; local route is allowlisted',async({request})=>{
-  expect(await stat('public/models/drawai-swin-v1/model.onnx')).toBeTruthy();
+  expect(await stat('public/models/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx')).toBeTruthy();
   await expect(stat('public/'+modelName)).rejects.toThrow();
   await expect(stat('dist/'+modelName)).rejects.toThrow();
   expect((await request.get(base+'not-allowed.json')).status()).toBe(404);

@@ -20,6 +20,8 @@ data/processed/
 data/canvas/
 data/private/
 models/pretrained/
+models/exported/**/*.onnx
+models/exported/**/*.pt
 artifacts/drawai/phase2/**/*.pth
 artifacts/drawai/phase2/**/*.onnx
 artifacts/drawai/**/runs/**/*.pth

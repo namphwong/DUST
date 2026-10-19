@@ -148,6 +148,16 @@ Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ đ
 - Full-model PyTorch CPU p95 gồm preprocessing: Swin **3,16 ms**, DINO **84,00 ms**; không phải latency ONNX/HTTP/browser. Checkpoint đầy đủ được lưu local, `trained=true`, `release_ready=false`; export ONNX ở P6.
 - [Báo cáo P5](docs/drawai/phase5-report.md) · [Hướng dẫn training/resume/evaluate](docs/drawai/paint-training-guide.md) · [Bảng CSV](artifacts/drawai/phase5-image64/comparison.csv) · [Handoff checkpoint P6](artifacts/drawai/phase5-image64/handoff.json).
 
+## P6 — artifact đã xuất và kiểm chứng (19/10/2026)
+
+- **Swin ảnh:** `drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx` (~2,28 MiB), seed43; đủ1.000 test khớp argmax/metrics với PyTorch, max logits error8,36e-6;9 fixture chạy được trong Chromium/WASM.
+- **DINOv3 artifact chạy chính:** `drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt` (~82,88 MiB), full backbone+head seed42; đủ1.000 test logits khớp hoàn toàn PyTorch trong lần kiểm chứng này.
+- **DINO ONNX là diagnostic, chưa duyệt chạy:** đã xuất full graph nhưng2/1.000 mẫu vượt tolerance P2; không nới ngưỡng/chọn lại seed. Không tuyên bố cả hai ONNX đã đạt parity hay DINO chạy browser.
+- Backend CPU local dùng ONNX Swin/TorchScript DINO; p95 HTTP end-to-end lần lượt16,65/133,03 ms; không cần timm/Transformers/pretrained snapshot, vẫn cần torch cho TorchScript.
+- **128 Python +36 browser tests**, build/final audit đạt; giữ design/model đang phục vụ. Swin PenDigits cũ dùng tên canonical `drawai_swin1d_pendigits_l128_fp32_v1.onnx`, alias `model.onnx` giữ nguyên bytes.
+- Gói model local: `models/exported/paint35-v1/`; lớn nên không commit weights mới. [Báo cáo P6](docs/drawai/phase6-report.md) · [Verify/runtime/export guide](docs/drawai/paint-export-guide.md) · [Handoff P7](artifacts/drawai/phase6-image64/handoff.json).
+- `trained=true`, `artifact_verified=true`, `release_ready=false` cho sản phẩm; P7 mới nối canvas với input ảnh. Giới hạn37 near-groups qua split vẫn được giữ khi báo metric.
+
 ## Đã cập nhật ở đâu
 
 | Phase / file | Thay đổi |
@@ -179,6 +189,9 @@ Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ đ
 | P4 ảnh: `paint_dataset.py`, `test_drawai_paint_lock.py`, `verify_phase4_image64.py` | Khóa main6.000 ảnh thực, review giữ cờ tương đồng, loaders/hash/test guards, báo cáo/evidence riêng |
 | P5: `paint_train.py`, `models.py`, `test_drawai_paint_train.py` | Factory Swin row64, train/resume sáu run, pretrained feature cache, validation selection, final-test guards và checkpoint đầy đủ |
 | P5: `benchmark_phase5.py`, `verify_phase5.py`, `docs/drawai/phase5-report.md` | Metrics replay, kiểm tra frozen weights, benchmark CPU fresh process, report và handoff riêng |
+| P6: `paint_export.py`, `paint_package.py`, `paint_runtime.py`, `native_runtime.py` | Full export, primary-format registry/anchor, full-test parity, mixed CPU runtime, giữ DINO ONNX diagnostic |
+| P6: legacy exporter/verifier/loaders/manifests/tests | Đổi canonical filename Swin PenDigits, giữ alias byte-identical và nghiệm thu model/design cũ |
+| P6: `verify_phase6*.py`, `drawai-p6*.spec.ts`, `phase6-report.md` | Browser WASM, localhost backend/errors/budgets, default-closed gate, migration ledger và báo cáo |
 
 ## Cấu trúc hiện hành
 

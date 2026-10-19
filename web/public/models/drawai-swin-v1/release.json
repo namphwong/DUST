@@ -21,6 +21,12 @@
     "report.json": {
       "sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35",
       "bytes": 8294
+    },
+    "drawai_swin1d_pendigits_l128_fp32_v1.onnx": {
+      "sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+      "bytes": 2384716
     }
-  }
+  },
+  "model_filename": "drawai_swin1d_pendigits_l128_fp32_v1.onnx",
+  "legacy_alias": "model.onnx"
 }

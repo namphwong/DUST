@@ -1,0 +1,1 @@
+P6 backend PASS:ONNX Swin and TorchScript DINO, HTTP parity/errors and CPU budgets; no timm/pretrained snapshot required.

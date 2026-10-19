@@ -1,4 +1,6 @@
 """Generate fixed D6 JSON-to-tensor-to-trained-logits references, not human handwriting data."""
+from .legacy_release import LEGACY_FILENAME
+
 import json
 import os
 import sys
@@ -24,7 +26,7 @@ def main():
     saved=torch.load(path,map_location='cpu',weights_only=True)
     model=build_model('swin',128).eval();model.load_state_dict(saved['model_state_dict'],strict=True);torch.set_num_threads(4)
     options=ort.SessionOptions();options.intra_op_num_threads=4
-    session=ort.InferenceSession(str(target/'model.onnx'),sess_options=options,providers=['CPUExecutionProvider'])
+    session=ort.InferenceSession(str(target/LEGACY_FILENAME),sess_options=options,providers=['CPUExecutionProvider'])
     cases=[]
     for fixture in geometry_cases(128):
         strokes=[[dict(x=p['x'],y=-p['y'] if fixture['y_axis']=='up' else p['y']) for p in s] for s in fixture['strokes']]
@@ -46,10 +48,10 @@ def main():
              dict(name='too-many-strokes',drawing=dict(**base,strokes=[[dict(x=0,y=0),dict(x=1,y=1)]]*17),code='SCHEMA')]
     out=ROOT/'web/public/verification/drawai/d6-fixtures.json'
     write_json(out,dict(version='drawai-d6-v1',release_sha256=digest(target/'release.json'),checkpoint_sha256=digest(path),
-                        model_sha256=digest(target/'model.onnx'),atol=1e-5,rtol=1e-4,cases=cases,invalid=invalid))
+                        model_sha256=digest(target/LEGACY_FILENAME),atol=1e-5,rtol=1e-4,cases=cases,invalid=invalid))
     write_json(ROOT/'artifacts/drawai/verification/fixture-provenance.json',dict(status='passed',
                fixture_sha256=digest(out),valid_cases=len(cases),invalid_cases=len(invalid),
-               human_data=False,checkpoint_sha256=digest(path),model_sha256=digest(target/'model.onnx')))
+               human_data=False,checkpoint_sha256=digest(path),model_sha256=digest(target/LEGACY_FILENAME)))
     print(f'Prepared {len(cases)} JSON/tensor/PyTorch/ORT fixtures and {len(invalid)} invalid cases.')
 
 

@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "releaseSha256": "dc4688d4c2f3c17f21e8c849d6cf27db5454e5c16f9a98a0f785b9d81246c021",
+  "releaseSha256": "e4ea18b77f08765802cff11582a807c3871f3a1f9e7c3e8ac781dc47cbe40355",
   "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
   "machine": {
     "cpu": "AMD Ryzen 7 H 255 w/ Radeon 780M Graphics",
@@ -433,10 +433,10 @@
         "passed": true
       }
     ],
-    "loadMs": 88,
-    "initMs": 487.7000000178814,
-    "medianMs": 2.1000000089406967,
-    "p95Ms": 3.2999999821186066,
+    "loadMs": 113.20000004768372,
+    "initMs": 388.89999997615814,
+    "medianMs": 1.5,
+    "p95Ms": 2.099999964237213,
     "modelBytes": 2384716,
     "backend": "WASM worker / CPU 1 thread",
     "benchmark": {

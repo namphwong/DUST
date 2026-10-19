@@ -1,0 +1,150 @@
+test_dataset_source_and_bad_timestamps_are_rejected (test_drawai_canvas.CanvasGateTests.test_dataset_source_and_bad_timestamps_are_rejected) ... ok
+test_empty_or_unattested_data_cannot_be_evaluated (test_drawai_canvas.CanvasGateTests.test_empty_or_unattested_data_cannot_be_evaluated) ... ok
+test_full_matrix_gate_and_missing_or_duplicate_repetition (test_drawai_canvas.CanvasGateTests.test_full_matrix_gate_and_missing_or_duplicate_repetition) ... ok
+test_paths_outside_root_are_rejected (test_drawai_canvas.CanvasGateTests.test_paths_outside_root_are_rejected) ... ok
+test_aspect_ratio_and_endpoints_are_preserved (test_drawai_data.GeometryTests.test_aspect_ratio_and_endpoints_are_preserved) ... ok
+test_duplicates_do_not_change_geometry (test_drawai_data.GeometryTests.test_duplicates_do_not_change_geometry) ... ok
+test_horizontal_line_matches_hand_calculation (test_drawai_data.GeometryTests.test_horizontal_line_matches_hand_calculation) ... ok
+test_input_is_not_mutated (test_drawai_data.GeometryTests.test_input_is_not_mutated) ... ok
+test_invalid_scalar_types_and_config (test_drawai_data.GeometryTests.test_invalid_scalar_types_and_config) ... ok
+test_largest_remainder_and_stable_tie (test_drawai_data.GeometryTests.test_largest_remainder_and_stable_tie) ... ok
+test_maximum_strokes_and_points_are_accepted (test_drawai_data.GeometryTests.test_maximum_strokes_and_points_are_accepted) ... ok
+test_point_limit_is_total_across_strokes (test_drawai_data.GeometryTests.test_point_limit_is_total_across_strokes) ... ok
+test_rejections (test_drawai_data.GeometryTests.test_rejections) ... ok
+test_singleton_preserved_not_repeated (test_drawai_data.GeometryTests.test_singleton_preserved_not_repeated) ... ok
+test_translation_and_scale_invariance (test_drawai_data.GeometryTests.test_translation_and_scale_invariance) ... ok
+test_two_strokes_are_not_connected (test_drawai_data.GeometryTests.test_two_strokes_are_not_connected) ... ok
+test_vertical_line_and_source_axis (test_drawai_data.GeometryTests.test_vertical_line_and_source_axis) ... ok
+test_invalid_split_configuration_is_rejected (test_drawai_data.ParserTests.test_invalid_split_configuration_is_rejected) ... ok
+test_malformed_data_is_not_silently_skipped (test_drawai_data.ParserTests.test_malformed_data_is_not_silently_skipped) ... ok
+test_split_has_no_lost_or_overlapping_sample (test_drawai_data.ParserTests.test_split_has_no_lost_or_overlapping_sample) ... ok
+test_two_strokes_not_two_samples (test_drawai_data.ParserTests.test_two_strokes_not_two_samples) ... ok
+test_config_tamper_is_rejected_before_loading_weights (test_drawai_dinov3.DinoTests.test_config_tamper_is_rejected_before_loading_weights) ... ok
+test_exact_full_architecture_freeze_gradient_and_register_pooling (test_drawai_dinov3.DinoTests.test_exact_full_architecture_freeze_gradient_and_register_pooling) ... ok
+test_missing_or_wrong_weights_never_fall_back (test_drawai_dinov3.DinoTests.test_missing_or_wrong_weights_never_fall_back) ... ok
+test_public_pretrained_config_tamper (test_drawai_dinov3.DinoTests.test_public_pretrained_config_tamper) ... ok
+test_public_pretrained_native_state_pooling_and_gradients (test_drawai_dinov3.DinoTests.test_public_pretrained_native_state_pooling_and_gradients) ... ok
+test_random_initialization_requires_explicit_smoke_choice (test_drawai_dinov3.DinoTests.test_random_initialization_requires_explicit_smoke_choice) ... ok
+test_config_file_matches_factory (test_drawai_model.DrawAIModelTests.test_config_file_matches_factory) ... ok
+test_eval_is_deterministic_and_batch_independent (test_drawai_model.DrawAIModelTests.test_eval_is_deterministic_and_batch_independent) ... ok
+test_original_initialization_learns_attention_gradients (test_drawai_model.DrawAIModelTests.test_original_initialization_learns_attention_gradients) ... ok
+test_wrong_input_shape_is_rejected (test_drawai_model.DrawAIModelTests.test_wrong_input_shape_is_rejected) ... ok
+test_audit_detects_composite_duplicates_blank_and_preserves_metadata (test_drawai_paint_data.PaintDataTests.test_audit_detects_composite_duplicates_blank_and_preserves_metadata) ... ok
+test_axis_and_normalization_are_spatial_rows_not_strokes (test_drawai_paint_data.PaintDataTests.test_axis_and_normalization_are_spatial_rows_not_strokes) ... ok
+test_both_image_inputs_keep_same_id_label_and_guard_test (test_drawai_paint_data.PaintDataTests.test_both_image_inputs_keep_same_id_label_and_guard_test) ... ok
+test_dino_rgb_resize_and_normalization (test_drawai_paint_data.PaintDataTests.test_dino_rgb_resize_and_normalization) ... ok
+test_new_plan_preserves_writer_disjoint_groups_and_quota (test_drawai_paint_data.PaintDataTests.test_new_plan_preserves_writer_disjoint_groups_and_quota) ... ok
+test_npz_strict_shape_labels_and_pickle_free_load (test_drawai_paint_data.PaintDataTests.test_npz_strict_shape_labels_and_pickle_free_load) ... ok
+test_prepared_manifest_and_png_tamper_rejected (test_drawai_paint_data.PaintDataTests.test_prepared_manifest_and_png_tamper_rejected) ... ok
+test_provenance_requires_exact_confirmed_scope (test_drawai_paint_data.PaintDataTests.test_provenance_requires_exact_confirmed_scope) ... ok
+test_source_fingerprint_and_unexpected_member_rejected (test_drawai_paint_data.PaintDataTests.test_source_fingerprint_and_unexpected_member_rejected) ... ok
+test_swin1d_image_row_input_can_forward_and_backpropagate (test_drawai_paint_data.PaintDataTests.test_swin1d_image_row_input_can_forward_and_backpropagate) ... ok
+test_argmax_change_rejected_inside_numeric_tolerance (test_drawai_paint_export.PaintExportTests.test_argmax_change_rejected_inside_numeric_tolerance) ... ok
+test_bad_logits_rejected (test_drawai_paint_export.PaintExportTests.test_bad_logits_rejected) ... ok
+test_changed_manifest_rejected (test_drawai_paint_export.PaintExportTests.test_changed_manifest_rejected) ... ok
+test_corrupt_png_rejected (test_drawai_paint_export.PaintExportTests.test_corrupt_png_rejected) ... ok
+test_exact_parity_and_metrics (test_drawai_paint_export.PaintExportTests.test_exact_parity_and_metrics) ... ok
+test_fixed_p2_tolerances (test_drawai_paint_export.PaintExportTests.test_fixed_p2_tolerances) ... ok
+test_fixtures_are_procedural_and_reproducible (test_drawai_paint_export.PaintExportTests.test_fixtures_are_procedural_and_reproducible) ... ok
+test_invalid_base64_and_magic_rejected (test_drawai_paint_export.PaintExportTests.test_invalid_base64_and_magic_rejected) ... ok
+test_missing_external_anchor_rejected (test_drawai_paint_export.PaintExportTests.test_missing_external_anchor_rejected) ... ok
+test_model_names_and_shapes_separate_from_legacy (test_drawai_paint_export.PaintExportTests.test_model_names_and_shapes_separate_from_legacy) ... ok
+test_png_roundtrip (test_drawai_paint_export.PaintExportTests.test_png_roundtrip) ... ok
+test_runtime_rejects_schema_and_invalid_output (test_drawai_paint_export.PaintExportTests.test_runtime_rejects_schema_and_invalid_output) ... ok
+test_runtime_uses_correct_preprocessing_both_families (test_drawai_paint_export.PaintExportTests.test_runtime_uses_correct_preprocessing_both_families) ... ok
+test_unknown_family_rejected (test_drawai_paint_export.PaintExportTests.test_unknown_family_rejected) ... ok
+test_wrong_png_mode_and_size_rejected (test_drawai_paint_export.PaintExportTests.test_wrong_png_mode_and_size_rejected) ... ok
+test_exact_copies_cannot_be_marked_retained (test_drawai_paint_lock.PaintLockTests.test_exact_copies_cannot_be_marked_retained) ... ok
+test_false_independence_rejected (test_drawai_paint_lock.PaintLockTests.test_false_independence_rejected) ... ok
+test_metadata_tamper_even_with_matching_claim (test_drawai_paint_lock.PaintLockTests.test_metadata_tamper_even_with_matching_claim) ... ok
+test_missing_group_rejected (test_drawai_paint_lock.PaintLockTests.test_missing_group_rejected) ... ok
+test_model_based_exclusion_rejected (test_drawai_paint_lock.PaintLockTests.test_model_based_exclusion_rejected) ... ok
+test_output_overlap_and_public_rejected (test_drawai_paint_lock.PaintLockTests.test_output_overlap_and_public_rejected) ... ok
+test_partial_production_quota_rejected (test_drawai_paint_lock.PaintLockTests.test_partial_production_quota_rejected) ... ok
+test_path_traversal (test_drawai_paint_lock.PaintLockTests.test_path_traversal) ... ok
+test_png_tampering (test_drawai_paint_lock.PaintLockTests.test_png_tampering) ... ok
+test_review_retains_disclosed_uncertainty (test_drawai_paint_lock.PaintLockTests.test_review_retains_disclosed_uncertainty) ... ok
+test_stale_review_rejected (test_drawai_paint_lock.PaintLockTests.test_stale_review_rejected) ... ok
+test_tensor_tampering (test_drawai_paint_lock.PaintLockTests.test_tensor_tampering) ... ok
+test_test_and_pilot_loader_rejected_before_read (test_drawai_paint_lock.PaintLockTests.test_test_and_pilot_loader_rejected_before_read) ... ok
+test_unknown_representation_rejected (test_drawai_paint_lock.PaintLockTests.test_unknown_representation_rejected) ... ok
+test_untrusted_lock_rejected (test_drawai_paint_lock.PaintLockTests.test_untrusted_lock_rejected) ... ok
+test_valid_image_both_representations (test_drawai_paint_lock.PaintLockTests.test_valid_image_both_representations) ... ok
+test_writer_split_drift (test_drawai_paint_lock.PaintLockTests.test_writer_split_drift) ... ok
+DINO development features 2/2
+test_cache_hash_and_order_binding (test_drawai_paint_train.PaintTrainingTests.test_cache_hash_and_order_binding) ... ok
+DINO development features 2/2
+test_corrupt_cache_rejected (test_drawai_paint_train.PaintTrainingTests.test_corrupt_cache_rejected) ... ok
+test_existing_public_output_rejected (test_drawai_paint_train.PaintTrainingTests.test_existing_public_output_rejected) ... ok
+test_fixed_plan_no_test_selection (test_drawai_paint_train.PaintTrainingTests.test_fixed_plan_no_test_selection) ... ok
+swin1d-image seed42 epoch1: val acc=0.0000 F1=0.0000 (0.1s)
+swin1d-image seed42 epoch2: val acc=0.0000 F1=0.0000 (0.1s)
+swin1d-image seed42 epoch1: val acc=0.0000 F1=0.0000 (0.1s)
+swin1d-image seed42 epoch2: val acc=0.0000 F1=0.0000 (0.0s)
+test_image_training_resume_replays_uninterrupted_weights (test_drawai_paint_train.PaintTrainingTests.test_image_training_resume_replays_uninterrupted_weights) ... ok
+test_invalid_logits_rejected (test_drawai_paint_train.PaintTrainingTests.test_invalid_logits_rejected) ... ok
+test_learning_rate_schedule_bounded (test_drawai_paint_train.PaintTrainingTests.test_learning_rate_schedule_bounded) ... ok
+test_names_separate_from_legacy (test_drawai_paint_train.PaintTrainingTests.test_names_separate_from_legacy) ... ok
+test_new_factory_preserves_legacy_input (test_drawai_paint_train.PaintTrainingTests.test_new_factory_preserves_legacy_input) ... ok
+test_new_factory_rejects_legacy_length_and_weights (test_drawai_paint_train.PaintTrainingTests.test_new_factory_rejects_legacy_length_and_weights) ... ok
+test_output_does_not_modify_locked_dataset (test_drawai_paint_train.PaintTrainingTests.test_output_does_not_modify_locked_dataset) ... ok
+test_plan_drift_rejected (test_drawai_paint_train.PaintTrainingTests.test_plan_drift_rejected) ... ok
+test_predict_metrics_recomputed_from_logits (test_drawai_paint_train.PaintTrainingTests.test_predict_metrics_recomputed_from_logits) ... ok
+swin1d-image seed42 epoch1: val acc=0.1000 F1=0.0182 (0.1s)
+swin1d-image seed42 epoch2: val acc=0.1000 F1=0.0182 (0.1s)
+test_real_optimizer_checkpoint_roundtrip (test_drawai_paint_train.PaintTrainingTests.test_real_optimizer_checkpoint_roundtrip) ... ok
+test_test_reader_needs_selection_before_zip (test_drawai_paint_train.PaintTrainingTests.test_test_reader_needs_selection_before_zip) ... ok
+test_training_function_has_no_test_reader_call (test_drawai_paint_train.PaintTrainingTests.test_training_function_has_no_test_reader_call) ... ok
+test_validation_ranking (test_drawai_paint_train.PaintTrainingTests.test_validation_ranking) ... ok
+test_writer_metrics_not_device_inference (test_drawai_paint_train.PaintTrainingTests.test_writer_metrics_not_device_inference) ... ok
+test_cross_writer_exact_duplicates_cannot_hide_in_other_split (test_drawai_private.PrivateDataTests.test_cross_writer_exact_duplicates_cannot_hide_in_other_split) ... ok
+test_duplicate_sample_strokes_and_snapshot_are_errors (test_drawai_private.PrivateDataTests.test_duplicate_sample_strokes_and_snapshot_are_errors) ... ok
+test_empty_inbox_no_fake_pilot_and_incomplete_build_rejected (test_drawai_private.PrivateDataTests.test_empty_inbox_no_fake_pilot_and_incomplete_build_rejected) ... ok
+test_near_duplicate_is_review_flag_not_model_based_exclusion (test_drawai_private.PrivateDataTests.test_near_duplicate_is_review_flag_not_model_based_exclusion) ... ok
+test_outputs_never_overwrite_or_enter_public (test_drawai_private.PrivateDataTests.test_outputs_never_overwrite_or_enter_public) ... ok
+test_pilot_main_not_mix_and_no_quota_reset (test_drawai_private.PrivateDataTests.test_pilot_main_not_mix_and_no_quota_reset) ... ok
+test_plan_writer_disjoint_quota_and_hash_guard (test_drawai_private.PrivateDataTests.test_plan_writer_disjoint_quota_and_hash_guard) ... ok
+test_schedule_all_digits_per_repetition_and_reproducible (test_drawai_private.PrivateDataTests.test_schedule_all_digits_per_repetition_and_reproducible) ... ok
+test_unknown_pii_consent_label_device_time_and_nonfinite_rejected (test_drawai_private.PrivateDataTests.test_unknown_pii_consent_label_device_time_and_nonfinite_rejected) ... ok
+test_valid_partial_build_has_same_sample_ids_and_hashes (test_drawai_private.PrivateDataTests.test_valid_partial_build_has_same_sample_ids_and_hashes) ... ok
+test_approval_tamper_unknown_review_fields_and_prediction_exclusion_rejected (test_drawai_private_lock.PrivateLockTests.test_approval_tamper_unknown_review_fields_and_prediction_exclusion_rejected) ... ok
+test_changed_payload_metadata_or_extra_file_invalidates_lock (test_drawai_private_lock.PrivateLockTests.test_changed_payload_metadata_or_extra_file_invalidates_lock) ... ok
+test_duplicate_json_keys_and_truncated_near_pairs_keep_complete_groups (test_drawai_private_lock.PrivateLockTests.test_duplicate_json_keys_and_truncated_near_pairs_keep_complete_groups) ... ok
+test_empty_inbox_generates_unsigned_review_and_cannot_lock (test_drawai_private_lock.PrivateLockTests.test_empty_inbox_generates_unsigned_review_and_cannot_lock) ... ok
+test_loader_reads_development_only_without_opening_test_zip (test_drawai_private_lock.PrivateLockTests.test_loader_reads_development_only_without_opening_test_zip) ... ok
+test_overlapping_or_existing_or_public_output_is_rejected (test_drawai_private_lock.PrivateLockTests.test_overlapping_or_existing_or_public_output_is_rejected) ... ok
+test_partial_quota_withdrawn_participant_or_no_pilot_rejected (test_drawai_private_lock.PrivateLockTests.test_partial_quota_withdrawn_participant_or_no_pilot_rejected) ... ok
+test_pilot_geometry_copied_into_main_rejected_after_metadata_changes (test_drawai_private_lock.PrivateLockTests.test_pilot_geometry_copied_into_main_rejected_after_metadata_changes) ... ok
+test_positive_lock_has_integrity_sealed_test_and_common_representations (test_drawai_private_lock.PrivateLockTests.test_positive_lock_has_integrity_sealed_test_and_common_representations) ... ok
+test_same_person_across_codes_or_pilot_cannot_enter_main (test_drawai_private_lock.PrivateLockTests.test_same_person_across_codes_or_pilot_cannot_enter_main) ... ok
+test_stale_source_snapshot_invalidates_review (test_drawai_private_lock.PrivateLockTests.test_stale_source_snapshot_invalidates_review) ... ok
+test_unsigned_review_missing_confirmations_and_unresolved_near_groups_rejected (test_drawai_private_lock.PrivateLockTests.test_unsigned_review_missing_confirmations_and_unresolved_near_groups_rejected) ... ok
+test_channel_order_and_known_normalization (test_drawai_raster.RasterTests.test_channel_order_and_known_normalization) ... ok
+test_horizontal_centerline_caps_and_padding (test_drawai_raster.RasterTests.test_horizontal_centerline_caps_and_padding) ... ok
+test_invalid_inputs (test_drawai_raster.RasterTests.test_invalid_inputs) ... ok
+test_keep_aspect_ratio_and_duplicate_points (test_drawai_raster.RasterTests.test_keep_aspect_ratio_and_duplicate_points) ... ok
+test_no_pen_up_connector_and_singleton_is_preserved (test_drawai_raster.RasterTests.test_no_pen_up_connector_and_singleton_is_preserved) ... ok
+test_translation_scale_axis_and_input_immutability (test_drawai_raster.RasterTests.test_translation_scale_axis_and_input_immutability) ... ok
+test_archived_family_cannot_enter_new_training (test_drawai_training.TrainingTests.test_archived_family_cannot_enter_new_training) ... ok
+test_augmentation_preserves_marker_and_input (test_drawai_training.TrainingTests.test_augmentation_preserves_marker_and_input) ... ok
+run epoch=1 loss=2.3133 val_f1=0.5000 best=0.5000 seconds=0.08
+run epoch=2 loss=2.3305 val_f1=0.5000 best=0.5000 seconds=0.09
+run epoch=3 loss=2.2960 val_f1=0.5000 best=0.5000 seconds=0.08
+test_early_stopping_keeps_first_tied_best_epoch (test_drawai_training.TrainingTests.test_early_stopping_keeps_first_tied_best_epoch) ... ok
+test_evaluation_cannot_open_test_without_three_locked_runs (test_drawai_training.TrainingTests.test_evaluation_cannot_open_test_without_three_locked_runs) ... ok
+test_metrics_match_hand_calculation (test_drawai_training.TrainingTests.test_metrics_match_hand_calculation) ... ok
+test_scheduler_and_selection_use_validation (test_drawai_training.TrainingTests.test_scheduler_and_selection_use_validation) ... ok
+test_selected_swin_audit_rejects_broken_chain_before_reading_weights (test_drawai_training.TrainingTests.test_selected_swin_audit_rejects_broken_chain_before_reading_weights) ... ok
+test_tampered_data_is_rejected (test_drawai_training.TrainingTests.test_tampered_data_is_rejected) ... ok
+full epoch=1 loss=2.4509 val_f1=0.0182 best=0.0182 seconds=0.15
+full epoch=2 loss=2.3674 val_f1=0.0182 best=0.0182 seconds=0.13
+full epoch=3 loss=2.3178 val_f1=0.0182 best=0.0182 seconds=0.15
+resumed epoch=1 loss=2.4509 val_f1=0.0182 best=0.0182 seconds=0.16
+resumed epoch=2 loss=2.3674 val_f1=0.0182 best=0.0182 seconds=0.14
+resumed epoch=3 loss=2.3178 val_f1=0.0182 best=0.0182 seconds=0.13
+test_train_never_reads_test_and_resume_matches_uninterrupted (test_drawai_training.TrainingTests.test_train_never_reads_test_and_resume_matches_uninterrupted) ... ok
+
+----------------------------------------------------------------------
+Ran 128 tests in 33.397s
+
+OK

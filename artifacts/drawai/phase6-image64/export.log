@@ -1,0 +1,23 @@
+D:\ChuyenDe\DUST\models\SwinTransformer_cls.py:386: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert L == Li, "input feature has wrong size"
+D:\ChuyenDe\DUST\models\SwinTransformer_cls.py:99: TracerWarning: Converting a tensor to a Python integer might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  B = int(windows.shape[0] / (L / window_size))
+swin1d-image full-test parity 200/1000
+swin1d-image full-test parity 400/1000
+swin1d-image full-test parity 600/1000
+swin1d-image full-test parity 800/1000
+swin1d-image full-test parity 1000/1000
+D:\ChuyenDe\DUST\.venv-phase1\Lib\site-packages\torch\__init__.py:2040: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert condition, message
+D:\ChuyenDe\DUST\.venv-dinov3\Lib\site-packages\timm\layers\pos_embed_sincos.py:935: TracerWarning: Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  h_denom = float(height)
+D:\ChuyenDe\DUST\.venv-dinov3\Lib\site-packages\timm\layers\pos_embed_sincos.py:936: TracerWarning: Converting a tensor to a Python float might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  w_denom = float(width)
+D:\ChuyenDe\DUST\.venv-dinov3\Lib\site-packages\timm\layers\pos_embed_sincos.py:1073: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert self.periods.numel() == dim
+dinov3-vits16 full-test parity 200/1000
+dinov3-vits16 full-test parity 400/1000
+dinov3-vits16 full-test parity 600/1000
+dinov3-vits16 full-test parity 800/1000
+dinov3-vits16 full-test parity 1000/1000
+P6 full ONNX bundle verified: 86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2
