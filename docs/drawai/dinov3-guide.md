@@ -1,6 +1,6 @@
 # DrawAI — DINOv3 P2: setup và tái tạo
 
-Cập nhật 18/10/2026. P2 hoàn thành local với pretrained weights công khai từ [timm](https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m). Không cần tài khoản/token cho nguồn đã chọn. Head chữ số trong artifact P2 chưa train đầy đủ; release Swin trên trang chính giữ nguyên.
+Hướng dẫn pretrained/feasibility P2 (mốc18/10/2026). Trạng thái hiện hành: hai model ảnh đã train P5, export P6 và tích hợp local P7; xem [training](paint-training-guide.md), [export](paint-export-guide.md), [chạy ứng dụng](paint-app-guide.md). Các mô tả “chưa train/giữ nguyên release” dưới đây chỉ nói artifact P2. P2 hoàn thành local với pretrained weights công khai từ [timm](https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m). Không cần tài khoản/token cho nguồn đã chọn. Head chữ số trong artifact P2 chưa train đầy đủ; release Swin trên trang chính giữ nguyên.
 
 ## 1. Môi trường
 

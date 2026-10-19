@@ -2,6 +2,7 @@ import {test,expect,type Page} from '@playwright/test';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {resolve} from 'node:path';
+const OUT=process.env.DRAWAI_EVIDENCE_DIR?`${process.env.DRAWAI_EVIDENCE_DIR}/collection`:'../artifacts/drawai/phase3';
 
 async function enroll(page:Page){
   await page.goto('/collect');await page.getByLabel('Mã người tham gia',{exact:true}).fill('P001');
@@ -35,8 +36,8 @@ test('actual canvas session exports valid Python schema and prompt order then re
   await enroll(page);await draw(page);await page.getByRole('button',{name:'Ghi mẫu và tiếp tục'}).click();
   await expect(page.getByTestId('collection-progress')).toHaveText('1/50');
   const value=await download(page);expect(value.samples).toHaveLength(1);expect(value.samples[0].actual_pointer_types).toEqual(['mouse']);
-  await mkdir('../artifacts/drawai/phase3/technical-only',{recursive:true});
-  const path=resolve('../artifacts/drawai/phase3/technical-only/browser-session-synthetic.json');
+  await mkdir(`${OUT}/technical-only`,{recursive:true});
+  const path=resolve(`${OUT}/technical-only/browser-session-synthetic.json`);
   await writeFile(path,JSON.stringify(value));
   const python=resolve('../.venv-dinov3/Scripts/python.exe');
   const code='import sys;from training.drawai.private_data import load,plan_content,validate_session,schedule;v=load(sys.argv[1]);validate_session(v,plan_content());print(schedule(v["participant_id"],v["stage"])[1]["label"])';
@@ -45,7 +46,7 @@ test('actual canvas session exports valid Python schema and prompt order then re
   await expect(page.getByTestId('collection-progress')).toHaveText('1/50');
   await expect(page.getByTestId('collection-prompt')).toHaveText('Viết chữ số '+next);
   const resumed=await download(page);expect(resumed).toEqual(value);
-  await page.screenshot({path:'../artifacts/drawai/phase3/collector-desktop.png',fullPage:true});
+  await page.screenshot({path:`${OUT}/collector-desktop.png`,fullPage:true});
 });
 
 test('tap is not a sample; incorrect real pointer type is blocked',async({page})=>{
@@ -58,7 +59,7 @@ test('tap is not a sample; incorrect real pointer type is blocked',async({page})
 });
 
 test('resume rejects metadata/PII tamper and cannot reset quota',async({page})=>{
-  const original=JSON.parse(await readFile('../artifacts/drawai/phase3/technical-only/browser-session-synthetic.json','utf8'));
+  const original=JSON.parse(await readFile(`${OUT}/technical-only/browser-session-synthetic.json`,'utf8'));
   for(const changed of [{...original,email:'private@example.test'},{...original,participant_id:'M001'},
     {...original,samples:[{...original.samples[0],label:(original.samples[0].label+1)%10}]}]){
     await page.goto('/collect');await page.getByLabel('Tiếp tục từ JSON đã tải').setInputFiles({name:'bad.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(changed))});
@@ -69,7 +70,7 @@ test('resume rejects metadata/PII tamper and cannot reset quota',async({page})=>
 test('mobile collector stays within viewport; protocol available',async({page,request})=>{
   await page.setViewportSize({width:390,height:844});await enroll(page);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await page.screenshot({path:'../artifacts/drawai/phase3/collector-mobile.png',fullPage:true});
+  await page.screenshot({path:`${OUT}/collector-mobile.png`,fullPage:true});
   expect((await request.get('/collection-protocol.md')).status()).toBe(200);
   const value=await download(page);expect(value.samples).toHaveLength(0);
 });

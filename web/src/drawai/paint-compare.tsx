@@ -9,18 +9,22 @@ import './drawai.css';
 export function PaintCompare(){
   const [strokes,setStrokes]=useState<Stroke[]>([]),[busy,setBusy]=useState(false),[drawing,setDrawing]=useState(false),[error,setError]=useState('');
   const [results,setResults]=useState<Prediction[]>([]),[imageHash,setImageHash]=useState('');
-  const revision=useRef(0),clients=useRef(Object.keys(PAINT_MODELS).map(id=>new PaintInferenceClient(id as PaintModel)));
-  useEffect(()=>()=>clients.current.forEach(c=>c.reset()),[]);
+  const revision=useRef(0),mounted=useRef(true);
+  const [clients]=useState(()=>Object.keys(PAINT_MODELS).map(id=>new PaintInferenceClient(id as PaintModel)));
+  useEffect(()=>{mounted.current=true;return()=>{mounted.current=false;clients.forEach(c=>c.reset());};},[clients]);
   function change(next:Stroke[]){revision.current++;setStrokes(next);setResults([]);setImageHash('');setError('');}
   async function compare(){
     const current=revision.current;setBusy(true);setError('');setResults([]);
     const value:Drawing={schema_version:'drawai-strokes-v1',coordinate_system:'canvas-y-down',canvas:{width:400,height:400},strokes:structuredClone(strokes),source:{kind:'user'}};
     try{
       const bytes=paintPixels(value),hash=await crypto.subtle.digest('SHA-256',bytes);
-      const results=[];for(const client of clients.current)results.push(await client.predict(value,current,()=>{}));
-      if(revision.current===current){setResults(results);setImageHash(Array.from(new Uint8Array(hash),v=>v.toString(16).padStart(2,'0')).join(''));}
-    }catch(e){if(revision.current===current)setError(e instanceof Error?e.message:String(e));}
-    finally{setBusy(false);}
+      const results=[];for(const client of clients){
+        if(!mounted.current||revision.current!==current)return;
+        results.push(await client.predict(value,current,()=>{}));
+      }
+      if(mounted.current&&revision.current===current){setResults(results);setImageHash(Array.from(new Uint8Array(hash),v=>v.toString(16).padStart(2,'0')).join(''));}
+    }catch(e){if(mounted.current&&revision.current===current)setError(e instanceof Error?e.message:String(e));}
+    finally{if(mounted.current)setBusy(false);}
   }
   return <main className="drawai-shell"><h1>Kiểm chứng hai model DrawAI</h1><p><a href="/drawai">Về DrawAI</a> · DINOv3 là mặc định, chọn từ validation P5. Không fusion.</p>
     <p>Cùng nét → cùng ảnh xám 64×64. Swin nhận hàng pixel; DINOv3 nhận RGB224. Cả hai chạy backend CPU local, không lưu ảnh.</p>

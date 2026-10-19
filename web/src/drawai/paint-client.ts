@@ -8,11 +8,14 @@ export class PaintInferenceClient {
     if(!this.worker){
       const worker=new Worker(new URL('./paint-worker.ts',import.meta.url),{type:'module'});this.worker=worker;
       worker.onmessage=({data})=>{
-        if(this.worker!==worker||!this.active||data.protocol_version!==PROTOCOL||data.request_id!==this.active.id)return;
+        if(this.worker!==worker||!this.active)return;
+        if(!data||typeof data!=='object'){this.reset('WORKER: Phản hồi không hợp lệ.');return;}
+        if(data.request_id!==this.active.id)return;
+        if(data.protocol_version!==PROTOCOL){this.reset('WORKER: Protocol không hợp lệ.');return;}
         if(data.type==='progress'){this.active.progress(data.stage);return;}
         const active=this.active;clearTimeout(active.timer);this.active=undefined;
         if(data.type==='result'&&data.model_version===this.model&&data.preprocessing_version===PAINT_PREPROCESSING&&data.drawing_revision===active.revision&&
-          data.logits?.length===10&&data.logits.every(Number.isFinite)&&data.scores?.length===10&&
+          Array.isArray(data.logits)&&data.logits.length===10&&data.logits.every(Number.isFinite)&&Array.isArray(data.scores)&&data.scores.length===10&&
           data.scores.every((n:number)=>Number.isFinite(n)&&n>=0&&n<=1)&&Math.abs(data.scores.reduce((a:number,b:number)=>a+b,0)-1)<1e-6&&
           data.predicted_id===data.logits.indexOf(Math.max(...data.logits))&&data.timing_ms&&
           ['preprocessing','inference','total'].every(k=>Number.isFinite(data.timing_ms[k])&&data.timing_ms[k]>=0))active.resolve(data);
@@ -24,7 +27,8 @@ export class PaintInferenceClient {
     return new Promise((resolve,reject)=>{
       const id=++this.next;
       this.active={id,revision,resolve,reject,progress,timer:setTimeout(()=>this.reset('WORKER: Quá thời gian 60 giây. Hãy thử lại.'),60000)};
-      this.worker!.postMessage({protocol_version:PROTOCOL,type:'predict',request_id:id,drawing_revision:revision,model_id:this.model,drawing:structuredClone(drawing)});
+      try{this.worker!.postMessage({protocol_version:PROTOCOL,type:'predict',request_id:id,drawing_revision:revision,model_id:this.model,drawing:structuredClone(drawing)});}
+      catch{this.reset('WORKER: Không gửi được bản vẽ. Hãy thử lại.');}
     });
   }
   reset(message='WORKER: Đã dừng phiên nhận dạng.') {

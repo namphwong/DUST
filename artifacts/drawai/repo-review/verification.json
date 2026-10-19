@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "base_commit": "8673f724cda03383f074286127f539c5f4af4089",
+  "python_tests_passed": 133,
+  "browser_tests_passed": 33,
+  "browser_new_regression_cases": 6,
+  "build_passed": true,
+  "npm_advisories_at_review": 0,
+  "tracked_files": 601,
+  "python_syntax_checked": 71,
+  "json_checked": 271,
+  "markdown_checked": 66,
+  "active_broken_local_links": 0,
+  "snapshot_links_kept_in_original_form": 86,
+  "local_only_log_links": 1,
+  "duplicate_groups_preserved": 41,
+  "removed_cache_directories": 5,
+  "first_cleanup_bytes": 1013423,
+  "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+  "model_bundle_unchanged": true,
+  "design_sources_equal_P0": {
+    "web/src/drawai/drawai.css": "af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2",
+    "web/src/drawai/drawing-canvas.tsx": "8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c"
+  },
+  "empty_design_pixel_identical": true,
+  "historical_phase_artifacts_unchanged": true,
+  "raw_data_deleted": false,
+  "retraining": false,
+  "private_test_reopened": false,
+  "product_release_ready": false,
+  "physical_touch_tested": false,
+  "clean_checkout_accepted": false,
+  "limitations": [
+    "P8 large-model distribution/clean checkout/dataset card still pending",
+    "DINO correct5/10 original PenDigits demos; no new-user canvas accuracy",
+    "37 retained similarity groups across main splits; provenance owner-attested"
+  ],
+  "evidence_sha256": {
+    "browser-tests.json": "baff09b6a464c235854e1f61b3107002ef8661ee95610fec934c515bbcb78717",
+    "npm-audit.json": "58c8579a5c26220f3f0308e8d9b654ad1c05c065c8a0a2cc74f6b58f8e4b2b53",
+    "cache-cleanup.json": "df6388d5901c600d8507aee3db8f6204348c29f28143afb5fd5aaf2dd944bc3a",
+    "browser/design-parity.json": "985b6c372590064c11872deba7488979271bbab03b21ea3e9ce4671d2e29cab8",
+    "browser/demo-observations.json": "7802937e14bbc69e8d7f1cc35a5d9ea30fe4e90174237f57fe09a68a962acccf"
+  },
+  "review_code_sha256": {
+    "tools/audit_repo.py": "f99e8a1fd93fd894620cc4036c8ac089c447001c30b862f538926a0e3f275a71",
+    "tools/clean_repo_cache.ps1": "afc5f491550eb5ade5b9347ee908e6e1f48a3fa1cb9e011faac9de8eb9127643",
+    "tools/verify_repo_review.py": "0601c479a0858e36c6e72591b5394e9d289dbf9c80bd05158f2a1c69047d57f8",
+    "web/src/drawai/paint-client.ts": "93ce63516b5948b941cb59848034df83bc8b442a8c9cdc68ad5904286824e57a",
+    "web/src/drawai/paint-worker.ts": "9b0dbba1ea27877ad8490b611e1c79fa102ece1becf89a42fa9167be1a66200f",
+    "web/src/drawai/paint-compare.tsx": "86a06fcc0c7869429235f2ab178eede52f655c60690bbf8c855b52c1f4f15405",
+    "training/drawai/paint_canvas.py": "7ae8b3afcf2cf2187363c0a0d9fa63fbbeed3354367f1d7efaa8019b86c7e67b",
+    "web/playwright.drawai-review.config.ts": "094d35fd5764ba6650a76bd102ab2fe5cd0caa586cef79ec7d61fd946754b34e",
+    "web/tests/drawai-review.spec.ts": "b0831e2dca8c7bdf0abedd2267c9f32684cb9589df3554a6200a1480409bc309"
+  }
+}

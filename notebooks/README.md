@@ -1,6 +1,6 @@
 # DrawAI notebooks
 
-Notebook hiện hành: [kaggle_train_drawai.ipynb](kaggle_train_drawai.ipynb), được sinh từ `training/drawai/build_notebook.py`.
+Notebook [kaggle_train_drawai.ipynb](kaggle_train_drawai.ipynb) thuộc pipeline **Swin/PenDigits lịch sử**, được sinh từ `training/drawai/build_notebook.py`. Notebook này không train hai model ảnh Paint hiện hành. Dùng [paint-training-guide](../docs/drawai/paint-training-guide.md) cho Swin ảnh và DINOv3; xem [hướng dẫn chạy ứng dụng](../docs/drawai/paint-app-guide.md).
 
 Sau P1 chỉ giữ Swin Transformer 1D: smoke 2 epoch không mở test; full 4 pilot + 3 official run trên PenDigits. DINOv3 được bổ sung ở P2. Không còn notebook HAR/MotionSense trong project.
 

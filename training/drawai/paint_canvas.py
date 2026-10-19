@@ -1,7 +1,6 @@
 """Independent Python reference for the P7 fixed-canvas grayscale coverage adapter."""
 import math
 import numpy as np
-from .paint_app_runtime import ADAPTER
 
 
 def pixels64(strokes):

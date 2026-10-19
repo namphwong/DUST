@@ -4,6 +4,8 @@ Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính d�
 
 **Cập nhật 19/10/2026:** P0–P6 hoàn thành local; **P7 hoàn thành tích hợp kỹ thuật local**, giữ design. Chưa nghiệm thu chất lượng trên người viết mới/cảm ứng thật; P8 và phân phối model lớn cho checkout mới còn chờ. [Báo cáo P7](docs/drawai/phase7-report.md) · [Hướng dẫn chạy](docs/drawai/paint-app-guide.md) · [Tiến độ](docs/drawai/status.md) · [Roadmap](docs/drawai/two-model-roadmap.md).
 
+**Rà soát repo:**133 Python +33 browser tests đạt; đã củng cố worker/retry và hủy inference cũ, dọn cache, tách kết quả kiểm tra khỏi snapshot lịch sử. [Báo cáo tổng hợp](docs/drawai/repo-review-report.md) · [Mục lục tài liệu](docs/drawai/README.md). Các báo cáo phase bên dưới vẫn giữ số đo theo thời điểm thực hiện phase đó.
+
 ## Hai model hiện hành
 
 | Model | Vai trò / input | Artifact đã xuất | Test Paint P5 |
@@ -17,7 +19,7 @@ Cả hai chạy **CPU trên backend local** trong P7. Swin ONNX đã kiểm ch�
 
 ## Chạy DrawAI local
 
-Cần Node/npm, Python3.11 và hai artifact P6 local trong `models/exported/paint35-v1/`. Model lớn **chưa có trong GitHub**; clone code chưa đủ để chạy default DINO. Nếu đã có môi trường `.venv-dinov3` và bundle P6 trên máy hiện tại:
+Cần Node/npm, Python3.11 và **bundle P6 đầy đủ** trong `models/exported/paint35-v1/` (hai artifact primary, DINO ONNX diagnostic và metadata để kiểm tra inventory/hash). Model lớn **chưa có trong GitHub**; clone code chưa đủ để chạy default DINO. Nếu đã có môi trường `.venv-dinov3` và bundle P6 trên máy hiện tại:
 
 ```powershell
 cd D:\ChuyenDe\DUST\web
@@ -105,6 +107,8 @@ Chạy tuần tự các kiểm tra dùng cùng port4197; dừng dịch vụ loca
 | P7: `paint_app_runtime.py`, `vite.config.ts`, `run_drawai.ps1` | Backend CPU local, proxy cùng origin, giới hạn input và lệnh chạy hai dịch vụ |
 | P7: `drawai-app.tsx`, `paint-compare.tsx`, `main.tsx` | DINO mặc định; trang so sánh riêng; giữ design, legacy chuyển sang route riêng |
 | P7: `test_drawai_paint_app.py`, `drawai-p7.spec.ts`, `verify_phase7*.py` | 133 Python +22 browser tests, parity, lỗi/retry, benchmark và kiểm tra giao diện |
+| Rà soát: `paint-client.ts`, `paint-worker.ts`, `paint-compare.tsx`, `drawai-review.spec.ts` | Chặn response sai dạng, reset khi postMessage lỗi, ngừng model thứ hai khi bản vẽ đã đổi;6 ca hồi quy mới |
+| Dọn repo: `audit_repo.py`, `clean_repo_cache.ps1`, tài liệu/index và review config | Audit cú pháp/link/duplicates, xóa cache theo allowlist, tách bằng chứng mới, sửa hướng dẫn lỗi thời |
 
 ## Cấu trúc hiện hành
 

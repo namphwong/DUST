@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {mkdir} from 'node:fs/promises';
+const OUT=`${process.env.DRAWAI_EVIDENCE_DIR??'../artifacts/drawai/phase7-image64'}/legacy-route-ui`;
 
 test('root, alias and trailing slash all open DrawAI',async({page})=>{
   for(const route of ['/','/drawai','/drawai/','/?phase=1','/?phase=4']){
@@ -19,11 +20,11 @@ test('legacy route retains real PenDigits inference and the original design',asy
   await expect(page.getByTestId('drawai-prediction')).toHaveAttribute('data-digit','6',{timeout:90000});
   expect(requests.some(url=>url.endsWith('/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx'))).toBe(true);
   expect(requests.some(url=>/uci-har|har-swin|motionsense|csv-pipeline/i.test(url))).toBe(false);
-  await mkdir('../artifacts/drawai/phase7-image64/legacy-route-ui',{recursive:true});
-  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-route-ui/root-desktop.png',fullPage:true});
+  await mkdir(`${OUT}`,{recursive:true});
+  await page.screenshot({path:`${OUT}/root-desktop.png`,fullPage:true});
   await page.setViewportSize({width:390,height:844});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-route-ui/root-mobile.png',fullPage:true});
+  await page.screenshot({path:`${OUT}/root-mobile.png`,fullPage:true});
 });
 
 test('unknown route has an explicit return to DrawAI',async({page})=>{

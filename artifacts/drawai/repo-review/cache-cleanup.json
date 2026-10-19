@@ -1,0 +1,42 @@
+{
+    "applied":  true,
+    "workspace":  "D:\\ChuyenDe\\DUST",
+    "directories":  [
+                        {
+                            "path":  "models\\__pycache__",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\models\\__pycache__",
+                            "files":  1,
+                            "bytes":  34157,
+                            "removed":  true
+                        },
+                        {
+                            "path":  "training\\drawai\\__pycache__",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\training\\drawai\\__pycache__",
+                            "files":  37,
+                            "bytes":  637493,
+                            "removed":  true
+                        },
+                        {
+                            "path":  "training\\tests\\__pycache__",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\training\\tests\\__pycache__",
+                            "files":  13,
+                            "bytes":  228550,
+                            "removed":  true
+                        },
+                        {
+                            "path":  "tools\\__pycache__",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\tools\\__pycache__",
+                            "files":  8,
+                            "bytes":  113178,
+                            "removed":  true
+                        },
+                        {
+                            "path":  "web\\test-results",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\web\\test-results",
+                            "files":  1,
+                            "bytes":  45,
+                            "removed":  true
+                        }
+                    ],
+    "total_bytes":  1013423
+}

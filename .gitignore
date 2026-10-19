@@ -12,6 +12,9 @@ __pycache__/
 node_modules/
 dist/
 web/test-results/
+web/playwright-report/
+web/blob-report/
+*.tsbuildinfo
 *.log
 # Private/raw data and large training products live outside Git.
 # Publish reviewed dataset metadata under docs/drawai or a Kaggle package.

@@ -1,0 +1,14 @@
+{
+    "applied":  true,
+    "workspace":  "D:\\ChuyenDe\\DUST",
+    "directories":  [
+                        {
+                            "path":  "training\\drawai\\__pycache__",
+                            "absolute_path":  "D:\\ChuyenDe\\DUST\\training\\drawai\\__pycache__",
+                            "files":  7,
+                            "bytes":  149745,
+                            "removed":  true
+                        }
+                    ],
+    "total_bytes":  149745
+}

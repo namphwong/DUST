@@ -3,9 +3,9 @@ import {paintPixels,pixelsBase64} from './paint-raster';
 import {CANVAS_ADAPTER,PAINT_BUNDLE_SHA256,PAINT_MODELS,PAINT_PREPROCESSING} from './paint-registry';
 import {PROTOCOL} from './types';
 self.onmessage=async({data})=>{
-  const send=(value:object)=>self.postMessage({protocol_version:PROTOCOL,request_id:data.request_id,...value});
+  const send=(value:object)=>self.postMessage({protocol_version:PROTOCOL,request_id:data?.request_id,...value});
   try{
-    if(data.protocol_version!==PROTOCOL||data.type!=='predict'||!Number.isSafeInteger(data.request_id)||data.request_id<0||!Number.isSafeInteger(data.drawing_revision)||data.drawing_revision<0||typeof data.model_id!=='string'||!Object.hasOwn(PAINT_MODELS,data.model_id))throw new Error('CONTRACT: Yêu cầu không hợp lệ.');
+    if(!data||typeof data!=='object'||data.protocol_version!==PROTOCOL||data.type!=='predict'||!Number.isSafeInteger(data.request_id)||data.request_id<0||!Number.isSafeInteger(data.drawing_revision)||data.drawing_revision<0||typeof data.model_id!=='string'||!Object.hasOwn(PAINT_MODELS,data.model_id))throw new Error('CONTRACT: Yêu cầu không hợp lệ.');
     send({type:'progress',stage:'preprocessing'});const start=performance.now(),pixels=paintPixels(data.drawing);
     const digest=await crypto.subtle.digest('SHA-256',pixels),pixelHash=Array.from(new Uint8Array(digest),v=>v.toString(16).padStart(2,'0')).join(''),pre=performance.now()-start;
     send({type:'progress',stage:'inference'});

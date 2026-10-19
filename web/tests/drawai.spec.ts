@@ -1,6 +1,7 @@
 import { test,expect,type Page } from '@playwright/test';
 import { mkdir,readFile,writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+const OUT=`${process.env.DRAWAI_EVIDENCE_DIR??'../artifacts/drawai/phase7-image64'}/legacy-ui`;
 
 test.beforeEach(async({page})=>{
   await page.addInitScript(()=>{
@@ -34,8 +35,8 @@ test('all ten legacy demos use real Swin, match D4 logits and reuse one worker/s
   }
   expect(modelRequests).toBe(1);expect(await page.evaluate(()=>(window as any).drawaiWorkers.length)).toBe(1);expect(errors).toEqual([]);
   expect(requests.every(r=>r.method==='GET'&&r.url.startsWith('http://127.0.0.1:4186/'))).toBe(true);
-  await mkdir('../artifacts/drawai/phase7-image64/legacy-ui',{recursive:true});
-  await writeFile('../artifacts/drawai/phase7-image64/legacy-ui/demo-parity.json',JSON.stringify({status:'passed',observations,modelRequests,workers:1,requests},null,2));
+  await mkdir(`${OUT}`,{recursive:true});
+  await writeFile(`${OUT}/demo-parity.json`,JSON.stringify({status:'passed',observations,modelRequests,workers:1,requests},null,2));
 });
 
 test('worker validates timestamp/schema and product rejects metadata tamper with consistent hashes',async({page})=>{
@@ -64,8 +65,8 @@ test('canvas inference, undo, clear and JSON keep reference independent of predi
   await expect(page.getByTestId('drawai-prediction')).toBeVisible();
   await page.locator('.da-label summary').click();await page.getByLabel('Chữ số bạn muốn viết').selectOption('7');
   const download=page.waitForEvent('download');await page.getByRole('button',{name:'Xuất JSON ↓'}).click();
-  const file=await download;await file.saveAs('../artifacts/drawai/phase7-image64/legacy-ui/user-strokes.json');
-  const exported=JSON.parse(await readFile('../artifacts/drawai/phase7-image64/legacy-ui/user-strokes.json','utf8'));
+  const file=await download;await file.saveAs(`${OUT}/user-strokes.json`);
+  const exported=JSON.parse(await readFile(`${OUT}/user-strokes.json`,'utf8'));
   expect(exported.reference_label).toBe(7);expect(exported.source.kind).toBe('user');expect(exported.strokes).toHaveLength(1);expect(exported.predicted_id).toBeUndefined();
   await draw(page);await expect(page.getByTestId('drawai-prediction')).toHaveCount(0);
   await page.getByRole('button',{name:'↶ Hoàn tác nét'}).click();await expect(page.locator('.da-count')).toHaveText('1 nét');
@@ -111,12 +112,12 @@ test('responsive resize retains drawing JSON; samples work by keyboard',async({p
   await page.goto('/drawai/legacy');await page.setViewportSize({width:1366,height:768});
   await page.getByRole('button',{name:'Thử mẫu 6',exact:true}).focus();await page.keyboard.press('Enter');
   await expect(page.getByTestId('drawai-reference')).toContainText('Nhãn mẫu: 6');await recognize(page);
-  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-ui/desktop.png',fullPage:true});
+  await page.screenshot({path:`${OUT}/desktop.png`,fullPage:true});
   async function exported(){if(!await page.locator('.da-label').evaluate((node:HTMLDetailsElement)=>node.open))await page.locator('.da-label summary').click();const p=page.waitForEvent('download');await page.getByRole('button',{name:'Xuất JSON ↓'}).click();const d=await p;return JSON.parse(await readFile((await d.path())!,'utf8'));}
   const before=await exported();await page.setViewportSize({width:390,height:844});const after=await exported();expect(after).toEqual(before);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await page.locator('.da-label summary').click();
-  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-ui/mobile.png',fullPage:true});
+  await page.screenshot({path:`${OUT}/mobile.png`,fullPage:true});
 });
 
 test('DPR 2 and competing pointer preserve coordinate scale and stroke boundary',async({browser})=>{

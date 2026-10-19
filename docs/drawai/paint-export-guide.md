@@ -6,7 +6,7 @@ Artifact chính: Swin1D ảnh **ONNX** và DINOv3 **TorchScript FP32**. DINO ONN
 
 `models/exported/paint35-v1/` gồm registry.json, bundle-manifest.json và hai thư mục `swin1d-image/`, `dinov3-vits16/`. Mỗi thư mục có `release.json`/`model-card.md`/`labels.json`/`preprocessing.json`/`fixtures.json`/`report.json` cùng artifact. DINO có thêm license/provenance pretrained và ONNX diagnostic. `spec.runtime_format` + `spec.model_filename` là pointer chạy chính; không tự thay bằng file khác có cùng stem.
 
-Các trường `opset`, `graph_nodes`, `initializer_elements` trong report mô tả graph ONNX đã xuất, kể cả DINO dùng runtime TorchScript. `parity` là kiểm tra artifact chính; key metric phân loại `onnx_metrics` giữ tên kỹ thuật cũ (argmax của cả hai format vẫn giống nhau). Xem `onnx_diagnostic.approved_runtime` để phân biệt numerical gate ONNX. Flags sản phẩm vẫn `release_ready=false`; P7 chưa tích hợp.
+Các trường `opset`, `graph_nodes`, `initializer_elements` trong report mô tả graph ONNX đã xuất, kể cả DINO dùng runtime TorchScript. `parity` là kiểm tra artifact chính; key metric phân loại `onnx_metrics` giữ tên kỹ thuật cũ (argmax của cả hai format vẫn giống nhau). Xem `onnx_diagnostic.approved_runtime` để phân biệt numerical gate ONNX. P7 đã tích hợp canvas/backend local; flags sản phẩm vẫn `release_ready=false` vì chưa nghiệm thu chất lượng canvas người mới và thiết bị cảm ứng thật. Xem [hướng dẫn ứng dụng](paint-app-guide.md).
 
 ## Verify
 
@@ -27,7 +27,7 @@ Anchor gốc nằm ngoài package tại `artifacts/drawai/phase6-image64/trusted
 
 Địa chỉ `http://127.0.0.1:4196`, GET `/health`, POST `/infer`. Dependencies inference pin riêng tại `training/drawai/requirements-paint-inference.txt`: torch cho TorchScript, ONNX Runtime cho Swin; không cần timm/Transformers/pretrained snapshot. Giữ preprocessing code và metadata cùng version. Bản ONNX package verification không cần model factory training; runtime không đọc NPZ/cache/checkpoint P5.
 
-Body chỉ có `model_id` (`swin1d-image` hoặc `dinov3-vits16`) và `png64_base64`. PNG phải grayscale modeL64×64, nền trắng/mực đen,≤16KiB; JSON body≤32KiB. Response có logits10 lớp0–9, predicted_id, model_id, artifact_format, checksum bundle và timing. Schema/dtype/shape/hash sai bị từ chối; không trả prediction giả. Không có CORS mở rộng hay logging request, server chỉ bind localhost; UI/proxy/public hosting thuộc P7.
+Body chỉ có `model_id` (`swin1d-image` hoặc `dinov3-vits16`) và `png64_base64`. PNG phải grayscale modeL64×64, nền trắng/mực đen,≤16KiB; JSON body≤32KiB. Response có logits10 lớp0–9, predicted_id, model_id, artifact_format, checksum bundle và timing. Schema/dtype/shape/hash sai bị từ chối; không trả prediction giả. Không có CORS mở rộng hay logging request, server chỉ bind localhost; P7 đã có UI/proxy local theo [app guide](paint-app-guide.md); public hosting chưa triển khai.
 
 Ví dụ dùng một ảnh train làm smoke input (không lấy test làm demo):
 

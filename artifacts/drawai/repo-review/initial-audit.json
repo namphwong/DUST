@@ -1,0 +1,838 @@
+{
+  "tracked_files": 565,
+  "by_top_level": {
+    ".gitattributes": 1,
+    ".gitignore": 1,
+    "LICENSE": 1,
+    "NOTICE.md": 1,
+    "README.md": 1,
+    "artifacts": 311,
+    "data": 1,
+    "docs": 56,
+    "examples": 4,
+    "models": 17,
+    "notebooks": 2,
+    "tools": 18,
+    "training": 59,
+    "web": 92
+  },
+  "python_syntax_checked": 69,
+  "json_checked": 254,
+  "markdown_checked": 63,
+  "syntax_errors": [],
+  "broken_local_links": [
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 5,
+      "href": "docs/drawai/two-model-roadmap.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/two-model-roadmap.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 5,
+      "href": "docs/drawai/phase0-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 7,
+      "href": "docs/drawai/phase1-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 8,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 8,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 9,
+      "href": "docs/drawai/two-model-contract.json",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/two-model-contract.json"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 9,
+      "href": "docs/drawai/status.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/status.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 47,
+      "href": "docs/drawai/training-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/training-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 62,
+      "href": "docs/drawai/model-card.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/model-card.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 94,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 105,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 114,
+      "href": "docs/drawai/collection/operator-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/collection/operator-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/protocol.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/collection/protocol.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/consent-template.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/collection/consent-template.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/session.schema.json",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/collection/session.schema.json"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 121,
+      "href": "docs/drawai/collection/split-policy.json",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/collection/split-policy.json"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 124,
+      "href": "docs/drawai/phase3-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase3-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 128,
+      "href": "docs/drawai/dataset/review-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/dataset/review-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 128,
+      "href": "docs/drawai/dataset/locking-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/dataset/locking-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 131,
+      "href": "docs/drawai/phase4-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/docs/drawai/phase4-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 163,
+      "href": "NOTICE.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/NOTICE.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/README.md",
+      "line": 164,
+      "href": "LICENSE",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/LICENSE"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/phase3-report.md",
+      "line": 93,
+      "href": "collection/operator-guide.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/collection/operator-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 7,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 7,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 8,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 10,
+      "href": "phase4-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase4-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 28,
+      "href": "canvas-protocol.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/canvas-protocol.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/status.md",
+      "line": 31,
+      "href": "acceptance-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/acceptance-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3-image64/pre-rerun/two-model-roadmap.md",
+      "line": 84,
+      "href": "phase4-report.md",
+      "target": "artifacts/drawai/phase3-image64/pre-rerun/phase4-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 5,
+      "href": "docs/drawai/two-model-roadmap.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/two-model-roadmap.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 5,
+      "href": "docs/drawai/phase0-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 7,
+      "href": "docs/drawai/phase1-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 8,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 8,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 9,
+      "href": "docs/drawai/two-model-contract.json",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/two-model-contract.json"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 9,
+      "href": "docs/drawai/status.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/status.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 47,
+      "href": "docs/drawai/training-guide.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/training-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 62,
+      "href": "docs/drawai/model-card.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/model-card.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 94,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 105,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase3/pre-p3/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 139,
+      "href": "NOTICE.md",
+      "target": "artifacts/drawai/phase3/pre-p3/NOTICE.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/README.md",
+      "line": 139,
+      "href": "LICENSE",
+      "target": "artifacts/drawai/phase3/pre-p3/LICENSE"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/status.md",
+      "line": 7,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/status.md",
+      "line": 7,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/status.md",
+      "line": 8,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/status.md",
+      "line": 26,
+      "href": "canvas-protocol.md",
+      "target": "artifacts/drawai/phase3/pre-p3/canvas-protocol.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/status.md",
+      "line": 29,
+      "href": "acceptance-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/acceptance-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase3/pre-p3/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase3/pre-p3/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4-image64/pre-rerun/phase4-report.md",
+      "line": 3,
+      "href": "phase3-report.md",
+      "target": "artifacts/drawai/phase4-image64/pre-rerun/phase3-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4-image64/pre-rerun/phase4-report.md",
+      "line": 104,
+      "href": "dataset/review-guide.md",
+      "target": "artifacts/drawai/phase4-image64/pre-rerun/dataset/review-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4-image64/pre-rerun/phase4-report.md",
+      "line": 104,
+      "href": "dataset/locking-guide.md",
+      "target": "artifacts/drawai/phase4-image64/pre-rerun/dataset/locking-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 5,
+      "href": "docs/drawai/two-model-roadmap.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/two-model-roadmap.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 5,
+      "href": "docs/drawai/phase0-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 7,
+      "href": "docs/drawai/phase1-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 8,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 8,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 9,
+      "href": "docs/drawai/two-model-contract.json",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/two-model-contract.json"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 9,
+      "href": "docs/drawai/status.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/status.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 47,
+      "href": "docs/drawai/training-guide.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/training-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 62,
+      "href": "docs/drawai/model-card.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/model-card.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 94,
+      "href": "docs/drawai/phase2-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 105,
+      "href": "docs/drawai/dinov3-guide.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/dinov3-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 114,
+      "href": "docs/drawai/collection/operator-guide.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/collection/operator-guide.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/protocol.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/collection/protocol.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/consent-template.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/collection/consent-template.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 117,
+      "href": "docs/drawai/collection/session.schema.json",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/collection/session.schema.json"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 121,
+      "href": "docs/drawai/collection/split-policy.json",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/collection/split-policy.json"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 124,
+      "href": "docs/drawai/phase3-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/docs/drawai/phase3-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 151,
+      "href": "NOTICE.md",
+      "target": "artifacts/drawai/phase4/pre-p4/NOTICE.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/README.md",
+      "line": 151,
+      "href": "LICENSE",
+      "target": "artifacts/drawai/phase4/pre-p4/LICENSE"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 7,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 7,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 8,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 10,
+      "href": "phase3-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase3-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 27,
+      "href": "canvas-protocol.md",
+      "target": "artifacts/drawai/phase4/pre-p4/canvas-protocol.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/status.md",
+      "line": 30,
+      "href": "acceptance-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/acceptance-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase0-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase0-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase1-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase1-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/two-model-roadmap.md",
+      "line": 3,
+      "href": "phase2-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase2-report.md"
+    },
+    {
+      "source": "artifacts/drawai/phase4/pre-p4/two-model-roadmap.md",
+      "line": 63,
+      "href": "phase3-report.md",
+      "target": "artifacts/drawai/phase4/pre-p4/phase3-report.md"
+    }
+  ],
+  "local_only_link_targets": [
+    {
+      "source": "docs/drawai/phase1-report.md",
+      "line": 117,
+      "href": "../../artifacts/drawai/phase1/verification.log",
+      "target": "artifacts/drawai/phase1/verification.log"
+    }
+  ],
+  "duplicate_groups": [
+    {
+      "sha256": "6d80435d8b7c1b5d4e48bfc29c45e3ed27054812ca912d08d97cd9d53de3a73a",
+      "paths": [
+        "artifacts/drawai/data/l128-samples.png",
+        "artifacts/drawai/data/l64-samples.png"
+      ]
+    },
+    {
+      "sha256": "8fa6804ec7838ae8967fd4da932b669d1f74c51e04da2bb4ee10f984f7da6597",
+      "paths": [
+        "artifacts/drawai/export/browser-proof.png",
+        "artifacts/drawai/phase6-image64/legacy-browser-proof.png"
+      ]
+    },
+    {
+      "sha256": "2809bfa67c30ea2dd06d73824e56e6fd1466bc11b745d4851c125f5bc36e2f3d",
+      "paths": [
+        "artifacts/drawai/export/d4-review.json",
+        "artifacts/drawai/phase6-image64/legacy-d4-review.json"
+      ]
+    },
+    {
+      "sha256": "7771d108f24d59dd4c1260e188cc5f77944c9ccad5f9d082fa07d623a97e7c35",
+      "paths": [
+        "artifacts/drawai/export/python-report.json",
+        "web/public/models/drawai-swin-v1/report.json"
+      ]
+    },
+    {
+      "sha256": "76b7fcb571e0ccae86fa7930af180485ed1c874137baa571880c6093231fd164",
+      "paths": [
+        "artifacts/drawai/export/verification.json",
+        "artifacts/drawai/phase6-image64/legacy-verification.json"
+      ]
+    },
+    {
+      "sha256": "98ef6bf82384a96fa28b97ba75af0f24d099badbf5957e043d608fc0f6fed67f",
+      "paths": [
+        "artifacts/drawai/phase0/ui/desktop.png",
+        "artifacts/drawai/phase1/ui/desktop.png",
+        "artifacts/drawai/phase1/ui/root-desktop.png",
+        "artifacts/drawai/phase2/ui/desktop.png",
+        "artifacts/drawai/phase2/ui/root-desktop.png",
+        "artifacts/drawai/phase3-image64/ui/desktop.png",
+        "artifacts/drawai/phase3-image64/ui/root-desktop.png",
+        "artifacts/drawai/phase3/ui/desktop.png",
+        "artifacts/drawai/phase3/ui/root-desktop.png",
+        "artifacts/drawai/phase4-image64/ui/desktop.png",
+        "artifacts/drawai/phase4-image64/ui/root-desktop.png",
+        "artifacts/drawai/phase4/ui/desktop.png",
+        "artifacts/drawai/phase4/ui/root-desktop.png",
+        "artifacts/drawai/phase5-image64/ui/desktop.png",
+        "artifacts/drawai/phase5-image64/ui/root-desktop.png",
+        "artifacts/drawai/phase6-image64/ui/desktop.png",
+        "artifacts/drawai/phase6-image64/ui/root-desktop.png",
+        "artifacts/drawai/phase7-image64/legacy-route-ui/root-desktop.png",
+        "artifacts/drawai/phase7-image64/legacy-ui/desktop.png",
+        "artifacts/drawai/ui/desktop.png"
+      ]
+    },
+    {
+      "sha256": "8c2ef7bc2710dd388b87cd2df55a0e6b52048da93bf1e9369205f07d4d651ca4",
+      "paths": [
+        "artifacts/drawai/phase0/ui/mobile.png",
+        "artifacts/drawai/phase1/ui/mobile.png",
+        "artifacts/drawai/phase1/ui/root-mobile.png",
+        "artifacts/drawai/phase2/ui/mobile.png",
+        "artifacts/drawai/phase2/ui/root-mobile.png",
+        "artifacts/drawai/phase3-image64/ui/mobile.png",
+        "artifacts/drawai/phase3-image64/ui/root-mobile.png",
+        "artifacts/drawai/phase3/ui/mobile.png",
+        "artifacts/drawai/phase3/ui/root-mobile.png",
+        "artifacts/drawai/phase4-image64/ui/mobile.png",
+        "artifacts/drawai/phase4-image64/ui/root-mobile.png",
+        "artifacts/drawai/phase4/ui/mobile.png",
+        "artifacts/drawai/phase4/ui/root-mobile.png",
+        "artifacts/drawai/phase5-image64/ui/mobile.png",
+        "artifacts/drawai/phase5-image64/ui/root-mobile.png",
+        "artifacts/drawai/phase6-image64/ui/mobile.png",
+        "artifacts/drawai/phase6-image64/ui/root-mobile.png",
+        "artifacts/drawai/phase7-image64/legacy-route-ui/root-mobile.png",
+        "artifacts/drawai/phase7-image64/legacy-ui/mobile.png",
+        "artifacts/drawai/ui/mobile.png"
+      ]
+    },
+    {
+      "sha256": "24a1170b861c485834d6137766af37dc411ad3b3b199245182e6446472f67dbe",
+      "paths": [
+        "artifacts/drawai/phase0/ui/user-strokes.json",
+        "artifacts/drawai/phase1/ui/user-strokes.json",
+        "artifacts/drawai/phase7-image64/legacy-ui/user-strokes.json",
+        "artifacts/drawai/phase7-image64/user-strokes.json",
+        "artifacts/drawai/ui/user-strokes.json"
+      ]
+    },
+    {
+      "sha256": "f9f3fe6809d7fb67fc2a6820bc9c5aa4c6f712bbca2321851afadce0d4bae363",
+      "paths": [
+        "artifacts/drawai/phase1/export-audit/python-report.json",
+        "artifacts/drawai/phase1/export-candidate/report.json"
+      ]
+    },
+    {
+      "sha256": "1d2e3713d68f3fc3aae18b5476a52218bbebafe74859f818cd6e4c1e936caa2b",
+      "paths": [
+        "artifacts/drawai/phase1/export-candidate/fixtures.json",
+        "web/public/models/drawai-swin-v1/fixtures.json"
+      ]
+    },
+    {
+      "sha256": "2143dac5a63fc2543b8bd60bafc3d026bdc24dff0643e812f43523147e7708c1",
+      "paths": [
+        "artifacts/drawai/phase1/export-candidate/labels.json",
+        "web/public/models/drawai-swin-v1/labels.json"
+      ]
+    },
+    {
+      "sha256": "28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366",
+      "paths": [
+        "artifacts/drawai/phase1/export-candidate/model.onnx",
+        "web/public/models/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx",
+        "web/public/models/drawai-swin-v1/model.onnx"
+      ]
+    },
+    {
+      "sha256": "d433a599b6ec0efac2f5cdc660296f79cf4187d708041d1cb2b4681e0c788898",
+      "paths": [
+        "artifacts/drawai/phase1/export-candidate/preprocessing.json",
+        "web/public/models/drawai-feasibility-l128/preprocessing.json",
+        "web/public/models/drawai-swin-v1/preprocessing.json"
+      ]
+    },
+    {
+      "sha256": "30acf2dc51260fd7ab4dce8e92b3092d2db8cbe838e224eff69604ad78e9d6f0",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-0.json",
+        "web/public/samples/drawai/digit-0.json"
+      ]
+    },
+    {
+      "sha256": "fcd2fc8494367e1428616a3b99c0384ecde48a85c4da24f29546bd3440b357be",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-1.json",
+        "web/public/samples/drawai/digit-1.json"
+      ]
+    },
+    {
+      "sha256": "eeb3079a196bcb3b314e8fd4e10b56cd8d4f3e14c83f611754b5e8b813718c17",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-2.json",
+        "web/public/samples/drawai/digit-2.json"
+      ]
+    },
+    {
+      "sha256": "929a553b47d0261a08074d22c0a8227316ff9989ce6d40561b49664d07b678fb",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-3.json",
+        "web/public/samples/drawai/digit-3.json"
+      ]
+    },
+    {
+      "sha256": "ba1878ff6e68f6c2e9991e7711dae36312e17d286fbad03f5f57cedbd8127e9e",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-4.json",
+        "web/public/samples/drawai/digit-4.json"
+      ]
+    },
+    {
+      "sha256": "5af4379d6cf2f041ee92aedacfc0f8d05506c7be390fb65615e61a7d52ec11ab",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-5.json",
+        "web/public/samples/drawai/digit-5.json"
+      ]
+    },
+    {
+      "sha256": "a1254492dcd39827939fe9c0d31f7683207904daf683baa22e28c48934d554f4",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-6.json",
+        "web/public/samples/drawai/digit-6.json"
+      ]
+    },
+    {
+      "sha256": "3c7d0fa771b264ab44a31401e350ce20e993f093d4863324ca8bc29f69b6d40f",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-7.json",
+        "web/public/samples/drawai/digit-7.json"
+      ]
+    },
+    {
+      "sha256": "7f71451b2721cc394ccdb42354f064696ff479a1059bfaf49e4e57ecef08ead3",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-8.json",
+        "web/public/samples/drawai/digit-8.json"
+      ]
+    },
+    {
+      "sha256": "f7bd1de27821de9cb91adbb8aac7e85f69dceb6071be7ba5f6cd60d102b7fd62",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/digit-9.json",
+        "web/public/samples/drawai/digit-9.json"
+      ]
+    },
+    {
+      "sha256": "8d18bf8a292f4ea744f3c90b83cba2febe6e3fcfe89f40bfdea930b7326c7611",
+      "paths": [
+        "artifacts/drawai/phase1/export-samples/manifest.json",
+        "web/public/samples/drawai/manifest.json"
+      ]
+    },
+    {
+      "sha256": "2ac61330376776c64499090d710d3973706e92017cbcc1744e3f538504bc7f50",
+      "paths": [
+        "artifacts/drawai/phase1/ui/playwright-report.json",
+        "artifacts/drawai/ui/playwright-report.json"
+      ]
+    },
+    {
+      "sha256": "a7e27901910feb590393aca7454831ff9b3f963ff5c6e3c662b966d9b68ce1df",
+      "paths": [
+        "artifacts/drawai/phase2/technical/preprocessing.json",
+        "docs/drawai/raster-contract.json"
+      ]
+    },
+    {
+      "sha256": "1dfbc4bd641bae310727afcfc1fbed53b76a88ed5d76c4d5ceb5bd93f2dfb365",
+      "paths": [
+        "artifacts/drawai/phase3/pre-p3-protected.json",
+        "artifacts/drawai/phase4/protected-files.json"
+      ]
+    },
+    {
+      "sha256": "2ed914b04e9f10811e3fc5307af4f8e0a73583eaad2faca82a6df36f1abdc8cf",
+      "paths": [
+        "artifacts/drawai/phase6-image64/export-dinov3-vits16.json",
+        "models/exported/paint35-v1/dinov3-vits16/report.json"
+      ]
+    },
+    {
+      "sha256": "5273012af96fe23c9c527e4991b37a129cff863ac5ed0b85d095e39449a51e5c",
+      "paths": [
+        "artifacts/drawai/phase6-image64/export-swin1d-image.json",
+        "models/exported/paint35-v1/swin1d-image/report.json"
+      ]
+    },
+    {
+      "sha256": "321ab18a6b8db45ae556536715605013e452da22ae1c00c5182727136402319c",
+      "paths": [
+        "artifacts/drawai/phase7-image64/ui/empty-desktop.png",
+        "artifacts/drawai/phase7-image64/ui/legacy-empty-desktop.png"
+      ]
+    },
+    {
+      "sha256": "e200ac222a72289e032f1e18a55ebd4d4244b89b1240826595aa7cbdd1e0f3f6",
+      "paths": [
+        "artifacts/drawai/phase7-image64/ui/empty-mobile.png",
+        "artifacts/drawai/phase7-image64/ui/legacy-empty-mobile.png"
+      ]
+    },
+    {
+      "sha256": "b6c642911fac11deb71841a9d73123a4822659103af0370c544f5869e639dd27",
+      "paths": [
+        "artifacts/drawai/ui/d5-review.json",
+        "artifacts/drawai/ui/verification.json"
+      ]
+    },
+    {
+      "sha256": "7f74ab77f3fb9539d45dfe7c34ea654fd5328fa4d1b02d84a8b0a819812e8b55",
+      "paths": [
+        "docs/drawai/collection/protocol.md",
+        "web/public/collection-protocol.md"
+      ]
+    },
+    {
+      "sha256": "bf80ec950aedc6bda0ad9f89b828511b6d77f3ac3ee986135c99c36f8845f6ee",
+      "paths": [
+        "models/exported/paint35-v1/dinov3-vits16/labels.json",
+        "models/exported/paint35-v1/swin1d-image/labels.json"
+      ]
+    },
+    {
+      "sha256": "ebef7ed2b9f4c20abb00dc11ce42b8b1ef71aa32c2ba0f902e88222a5dd03e8b",
+      "paths": [
+        "models/exported/paint35-v1/dinov3-vits16/preprocessing.json",
+        "models/exported/paint35-v1/swin1d-image/preprocessing.json"
+      ]
+    }
+  ],
+  "retired_project_code": []
+}

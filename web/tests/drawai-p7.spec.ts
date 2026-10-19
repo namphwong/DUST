@@ -1,7 +1,7 @@
 import {test,expect,type Page} from '@playwright/test';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-const OUT='../artifacts/drawai/phase7-image64';
+const OUT=process.env.DRAWAI_EVIDENCE_DIR??'../artifacts/drawai/phase7-image64';
 test.beforeEach(async({page})=>{
   await mkdir(OUT+'/ui',{recursive:true});
   await page.addInitScript(()=>{

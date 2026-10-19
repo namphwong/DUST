@@ -1,0 +1,1245 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\ChuyenDe\\DUST\\web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "playwright.drawai-review.config.ts"
+    ],
+    "configFile": "D:\\ChuyenDe\\DUST\\web\\playwright.drawai-review.config.ts",
+    "rootDir": "D:/ChuyenDe/DUST/web/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/ChuyenDe/DUST/web/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/ChuyenDe/DUST/web/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "drawai-p7.spec.ts",
+          "drawai-phase1.spec.ts",
+          "drawai.spec.ts",
+          "drawai-review.spec.ts",
+          "drawai-collection.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../artifacts/drawai/repo-review/browser-tests.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "drawai-collection.spec.ts",
+      "file": "drawai-collection.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "consent and reserved participant codes gate collection; no inference or upload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 503,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:30.226Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b08d0ddd40b622c6f0a6-12d1796840fa74da306c",
+          "file": "drawai-collection.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "actual canvas session exports valid Python schema and prompt order then resumes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1635,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:30.886Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b08d0ddd40b622c6f0a6-f079b5efd8b76578d8d8",
+          "file": "drawai-collection.spec.ts",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "tap is not a sample; incorrect real pointer type is blocked",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:32.534Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b08d0ddd40b622c6f0a6-fe598d9052317cc269b1",
+          "file": "drawai-collection.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "resume rejects metadata/PII tamper and cannot reset quota",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 362,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:33.435Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b08d0ddd40b622c6f0a6-6c252263ff346ffb05a7",
+          "file": "drawai-collection.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "mobile collector stays within viewport; protocol available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 751,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:33.819Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b08d0ddd40b622c6f0a6-9638299b079535ebc098",
+          "file": "drawai-collection.spec.ts",
+          "line": 70,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "drawai-p7.spec.ts",
+      "file": "drawai-p7.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "default DINO runs all ten original train demos; records domain gap without changing examples",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4073,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:34.617Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-3a4b614b090fc24ed34b",
+          "file": "drawai-p7.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "Python/worker raster byte parity and both real model contracts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1264,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:38.709Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-133315958d24ffc6dc45",
+          "file": "drawai-p7.spec.ts",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "comparison sends identical pixels to both real models",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 756,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:39.991Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-b78f98a4b050894fa5a3",
+          "file": "drawai-p7.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "backend missing preserves strokes, retry succeeds, undo clear and JSON remain usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1514,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:40.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-9e6f5135646a4f09581e",
+          "file": "drawai-p7.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "late response is discarded after clear and next prediction succeeds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 947,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:42.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-4c1e838bda46ce8e34a4",
+          "file": "drawai-p7.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "model identity, revision, hash and nonfinite response corruption block prediction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2267,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:43.267Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-f81c4c060ea1dd8c4f1d",
+          "file": "drawai-p7.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "worker crash is recoverable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 577,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:45.554Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-183cbe76f7dd624e71e0",
+          "file": "drawai-p7.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "desktop and mobile initial design matches legacy P0 layout; touch DPR2 uses logical viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1342,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:46.151Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-f5e35c0f9a4cbcf6be26",
+          "file": "drawai-p7.spec.ts",
+          "line": 80,
+          "column": 1
+        },
+        {
+          "title": "API rejects malformed contract, size, cross origin and unknown model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 106,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:47.513Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-92d51078d9e00198648e",
+          "file": "drawai-p7.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "warm browser worker to backend benchmark includes raster, proxy and inference",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4954,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:47.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1d94872596fee1fb46e-d09b29da761689cf0a29",
+          "file": "drawai-p7.spec.ts",
+          "line": 102,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "drawai-phase1.spec.ts",
+      "file": "drawai-phase1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "root, alias and trailing slash all open DrawAI",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 434,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:52.627Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e35f0c37f8dcbecd9ef-9341e5441decf5e983df",
+          "file": "drawai-phase1.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "legacy route retains real PenDigits inference and the original design",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1377,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:53.076Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e35f0c37f8dcbecd9ef-ab16444d625bc2c8c6a9",
+          "file": "drawai-phase1.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "unknown route has an explicit return to DrawAI",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 331,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:54.470Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5e35f0c37f8dcbecd9ef-a0569f0296e951c612cc",
+          "file": "drawai-phase1.spec.ts",
+          "line": 30,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "drawai-review.spec.ts",
+      "file": "drawai-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "malformed worker null rejects immediately and retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:54.837Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-008e8574eb09d04fff2e",
+          "file": "drawai-review.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "malformed worker logits-object rejects immediately and retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:55.439Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-652d054f54350d8538d9",
+          "file": "drawai-review.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "malformed worker scores-object rejects immediately and retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 585,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:56.059Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-71dbdc9219bb5f23ecb0",
+          "file": "drawai-review.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "malformed worker post-throw rejects immediately and retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 627,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:56.658Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-ad2c8137f66320c677c8",
+          "file": "drawai-review.spec.ts",
+          "line": 4,
+          "column": 3
+        },
+        {
+          "title": "worker rejects null request without crashing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 535,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:57.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-a8138bb3d0209c1a3c54",
+          "file": "drawai-review.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "clear during comparison prevents second stale inference and allows a fresh comparison",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 929,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:57.848Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ab96d60cfc85d2c22145-08d5dd119f159228babb",
+          "file": "drawai-review.spec.ts",
+          "line": 37,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "drawai.spec.ts",
+      "file": "drawai.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "all ten legacy demos use real Swin, match D4 logits and reuse one worker/session",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:30:58.812Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-45363c4de63c4b58a750",
+          "file": "drawai.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "worker validates timestamp/schema and product rejects metadata tamper with consistent hashes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1707,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:01.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-e0cb16528b96a22d6b94",
+          "file": "drawai.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "canvas inference, undo, clear and JSON keep reference independent of prediction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1959,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:03.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-977ffc2bac8fcea0929d",
+          "file": "drawai.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "clear during delayed model load discards stale result and allows a new request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1351,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:05.211Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-ec0bd04d4f55e18a385c",
+          "file": "drawai.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "load failure preserves strokes and retry runs real model",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1225,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:06.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-a2af36f5d7d67b458f25",
+          "file": "drawai.spec.ts",
+          "line": 87,
+          "column": 1
+        },
+        {
+          "title": "hash mismatch blocks product inference",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 558,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:07.818Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-4989ac4d32610e681e8a",
+          "file": "drawai.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "single tap cannot trigger recognition; pointer cancel discards incomplete stroke",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 358,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:08.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-f9f5ecfc00d57334e44f",
+          "file": "drawai.spec.ts",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "responsive resize retains drawing JSON; samples work by keyboard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1710,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:08.762Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-95234ceeb440e8a47c4d",
+          "file": "drawai.spec.ts",
+          "line": 111,
+          "column": 1
+        },
+        {
+          "title": "DPR 2 and competing pointer preserve coordinate scale and stroke boundary",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:31:10.491Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ae2aebee23bae50d6a4-a123cb1782eb34d223ab",
+          "file": "drawai.spec.ts",
+          "line": 123,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:30:25.552Z",
+    "duration": 46303.598999999995,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

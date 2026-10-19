@@ -16,6 +16,8 @@
 
 P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch sử bên dưới.
 
+Đã [rà soát/dọn repo](repo-review-report.md) sau P7:133 Python+33 browser tests đạt, giữ model/split/design; P8 và nghiệm thu người viết mới/thiết bị thật vẫn còn chờ. Các số test trong bảng phase là bằng chứng lịch sử, không bị ghi đè bởi lần rà soát.
+
 ## Lịch sử DrawAI PenDigits
 
 Cập nhật 11/10/2026. **D0–D5 đã hoàn thành local; D6 đạt kiểm chứng kỹ thuật local, còn chờ người/thiết bị thật; D7 chưa triển khai.** D3 chạy CPU, Kaggle GPU chưa chạy.

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "models": [
+    "swin1d-image",
+    "dinov3-vits16"
+  ],
+  "pixels_sha256": "cc11389abcc3012784708cff3a91f8662b9dc636e785cf7cf52237cd36b7d4d6"
+}
