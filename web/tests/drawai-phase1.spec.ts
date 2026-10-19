@@ -10,20 +10,20 @@ test('root, alias and trailing slash all open DrawAI',async({page})=>{
   }
 });
 
-test('root performs real inference with the existing design',async({page})=>{
+test('legacy route retains real PenDigits inference and the original design',async({page})=>{
   const requests:string[]=[];page.on('request',r=>requests.push(r.url()));
-  await page.setViewportSize({width:1366,height:768});await page.goto('/');
+  await page.setViewportSize({width:1366,height:768});await page.goto('/drawai/legacy');
   await page.getByRole('button',{name:'Thử mẫu 6',exact:true}).click();
   await expect(page.getByTestId('drawai-reference')).toContainText('Nhãn mẫu: 6');
   await page.getByRole('button',{name:'Nhận dạng →',exact:true}).click();
   await expect(page.getByTestId('drawai-prediction')).toHaveAttribute('data-digit','6',{timeout:90000});
   expect(requests.some(url=>url.endsWith('/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx'))).toBe(true);
   expect(requests.some(url=>/uci-har|har-swin|motionsense|csv-pipeline/i.test(url))).toBe(false);
-  await mkdir('../artifacts/drawai/phase1/ui',{recursive:true});
-  await page.screenshot({path:'../artifacts/drawai/phase1/ui/root-desktop.png',fullPage:true});
+  await mkdir('../artifacts/drawai/phase7-image64/legacy-route-ui',{recursive:true});
+  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-route-ui/root-desktop.png',fullPage:true});
   await page.setViewportSize({width:390,height:844});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  await page.screenshot({path:'../artifacts/drawai/phase1/ui/root-mobile.png',fullPage:true});
+  await page.screenshot({path:'../artifacts/drawai/phase7-image64/legacy-route-ui/root-mobile.png',fullPage:true});
 });
 
 test('unknown route has an explicit return to DrawAI',async({page})=>{

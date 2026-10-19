@@ -1,0 +1,154 @@
+{
+  "source": "procedural; no human dataset samples",
+  "cases": [
+    {
+      "name": "diagonal",
+      "drawing": {
+        "schema_version": "drawai-strokes-v1",
+        "coordinate_system": "canvas-y-down",
+        "canvas": {
+          "width": 400,
+          "height": 400
+        },
+        "strokes": [
+          [
+            {
+              "x": 80,
+              "y": 80
+            },
+            {
+              "x": 320,
+              "y": 320
+            }
+          ]
+        ],
+        "source": {
+          "kind": "synthetic"
+        }
+      },
+      "pixels_sha256": "58790b32238591389e796345698889e64c0fc44570046be3b811fbc16cb50eec"
+    },
+    {
+      "name": "edge",
+      "drawing": {
+        "schema_version": "drawai-strokes-v1",
+        "coordinate_system": "canvas-y-down",
+        "canvas": {
+          "width": 400,
+          "height": 400
+        },
+        "strokes": [
+          [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 400,
+              "y": 0
+            },
+            {
+              "x": 400,
+              "y": 400
+            }
+          ]
+        ],
+        "source": {
+          "kind": "synthetic"
+        }
+      },
+      "pixels_sha256": "9f6eb5ab3d48b0181eafb0aa4fdeb630d8924ec83ae30e455c4ed556ff196559"
+    },
+    {
+      "name": "two-strokes",
+      "drawing": {
+        "schema_version": "drawai-strokes-v1",
+        "coordinate_system": "canvas-y-down",
+        "canvas": {
+          "width": 400,
+          "height": 400
+        },
+        "strokes": [
+          [
+            {
+              "x": 51.25,
+              "y": 63.5
+            },
+            {
+              "x": 100.75,
+              "y": 275.125
+            }
+          ],
+          [
+            {
+              "x": 300,
+              "y": 35
+            },
+            {
+              "x": 310,
+              "y": 340
+            }
+          ]
+        ],
+        "source": {
+          "kind": "synthetic"
+        }
+      },
+      "pixels_sha256": "55c99f6ef3a3610ef1fccf026eb3ef68213b888e47ccd657fe838dca331fef8d"
+    },
+    {
+      "name": "round-dot",
+      "drawing": {
+        "schema_version": "drawai-strokes-v1",
+        "coordinate_system": "canvas-y-down",
+        "canvas": {
+          "width": 400,
+          "height": 400
+        },
+        "strokes": [
+          [
+            {
+              "x": 200,
+              "y": 200
+            }
+          ]
+        ],
+        "source": {
+          "kind": "synthetic"
+        }
+      },
+      "pixels_sha256": "234b042003308038ca07ec8be383b80e989dbe6cd2336059f8223a61e779b3b3"
+    },
+    {
+      "name": "duplicate",
+      "drawing": {
+        "schema_version": "drawai-strokes-v1",
+        "coordinate_system": "canvas-y-down",
+        "canvas": {
+          "width": 400,
+          "height": 400
+        },
+        "strokes": [
+          [
+            {
+              "x": 125.5,
+              "y": 78.125
+            },
+            {
+              "x": 125.5,
+              "y": 78.125
+            },
+            {
+              "x": 270.25,
+              "y": 301.75
+            }
+          ]
+        ],
+        "source": {
+          "kind": "synthetic"
+        }
+      },
+      "pixels_sha256": "b8870a6d57e5197dcd583e4bd183aecef1f63e27139db2fc7bb5abce4513d7c8"
+    }
+  ]
+}

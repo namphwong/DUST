@@ -5,9 +5,12 @@ import { DrawAIFeasibility } from './drawai/feasibility-app';
 import { IntegrationCheck } from './drawai/integration-check';
 import { DinoV3Check } from './drawai/dinov3-check';
 import { CollectApp } from './drawai/collect-app';
+import { PaintCompare } from './drawai/paint-compare';
 
 const path = location.pathname.replace(/\/$/, '') || '/';
 const page = path === '/collect' ? <CollectApp/>
+  : path === '/drawai/compare' ? <PaintCompare/>
+  : path === '/drawai/legacy' ? <DrawAIApp legacy/>
   : path === '/drawai/dinov3-check' ? <DinoV3Check/>
   : path === '/drawai/integration-check' ? <IntegrationCheck/>
   : path === '/drawai/release-check' ? <DrawAIFeasibility trained/>

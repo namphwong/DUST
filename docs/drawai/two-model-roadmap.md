@@ -1,6 +1,6 @@
 # DrawAI — Kế hoạch chuyển sang hai mô hình
 
-Ngày lập17/10/2026; cập nhật18/10/2026. **P0–P6 đã thực hiện local; P6 hoàn thành hai artifact chạy đã kiểm chứng theo phương án mixed runtime**. [P6](phase6-report.md): Swin ONNX, DINO TorchScript. DINO ONNX vẫn diagnostic do2 mẫu vượt strict tolerance; không nới ngưỡng. P5 metric/cảnh báo37 near-groups giữ nguyên. P7–P8 chưa hoàn tất.
+Ngày lập17/10/2026; cập nhật19/10/2026. **P0–P6 hoàn thành local; P7 hoàn thành tích hợp kỹ thuật local**, còn nghiệm thu người viết mới/thiết bị thật. [P7](phase7-report.md): DINO TorchScript CPU mặc định, Swin ONNX CPU đối chứng, cùng ảnh canvas64, giữ design. DINO ONNX vẫn diagnostic; không nới tolerance. Giới hạn37 near-groups và quan sát5/10 demo PenDigits được giữ. **P8 chưa hoàn tất.**
 
 ## Điều chỉnh P3 theo dữ liệu thực (18/10/2026)
 

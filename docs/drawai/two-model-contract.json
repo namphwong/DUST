@@ -240,10 +240,10 @@
   "training_partition": "Retrospective by person ID before model selection; pilot250,reserved750,train4000,val1000,test1000",
   "training_source": "Owner-confirmed Paint images,7000x64x64; 35 distinct person IDs and scopes confirmed in chat",
   "ui": {
-    "both_models_available_via": "separate verification route or comparison script",
+    "both_models_available_via": "/drawai/compare",
     "main_page_models": "one selected default",
     "no_new_model_selector_on_main_page": true,
-    "planned_image_model_integration": "P7 must render canvas to image contract and connect selected CPU/browser artifacts; main design and legacy model unchanged through P6",
+    "planned_image_model_integration": "Implemented P7: canvas400 gray64 adapter, DINO TorchScript CPU default, Swin ONNX CPU comparison; same visual design; legacy on /drawai/legacy",
     "preserve_current_design": true,
     "route_change_phase": "P1",
     "target_routes": [
@@ -251,7 +251,7 @@
       "/drawai"
     ]
   },
-  "version": "drawai-two-model-contract-v7",
+  "version": "drawai-two-model-contract-v8",
   "private_dataset_lock": {
     "dataset": "paint35-main-v1",
     "path": "data/private/locked/paint35-main-v1",
@@ -283,5 +283,24 @@
     "no_tolerance_relaxation": true,
     "product_default_changed": false,
     "product_release_ready": false
+  },
+  "phase7_integration": {
+    "status": "DONE_LOCAL_TECHNICAL_ACCEPTANCE_PENDING",
+    "default_model": "dinov3-vits16",
+    "selection_source": "P5 validation-locked checkpoint; adoption P7, no test-based reselection",
+    "canvas_adapter": "drawai-canvas400-gray64-v1",
+    "api_protocol": "drawai-paint-api-v1",
+    "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+    "runtimes": {
+      "swin1d-image": "ONNX CPU",
+      "dinov3-vits16": "TorchScript CPU"
+    },
+    "product_default_changed": true,
+    "product_release_ready": false,
+    "physical_touch_tested": false,
+    "new_user_canvas_accuracy_measured": false,
+    "legacy_route": "/drawai/legacy",
+    "comparison_route": "/drawai/compare",
+    "design_preserved": true
   }
 }

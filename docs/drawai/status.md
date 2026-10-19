@@ -1,6 +1,6 @@
 # DrawAI — Tiến độ
 
-## Kế hoạch hai mô hình (cập nhật 18/10/2026)
+## Kế hoạch hai mô hình (cập nhật 19/10/2026)
 
 | Phase | Trạng thái | Bằng chứng |
 |---|---|---|
@@ -11,7 +11,8 @@
 | P4 — review/khóa ảnh | DONE local, có giới hạn tương đồng | [Báo cáo P4](phase4-report.md): khóa6.000 ảnh,95 Python+12 browser tests; giữ534 cờ tương đồng,37 nhóm qua split main; chưa chứng minh độc lập hình dạng |
 | P5 — train/so sánh ảnh | DONE local CPU | [P5](phase5-report.md): sáu run/ba seed,113 Python+12 browser tests; checkpoint chọn Swin43 test84,40%, DINO42 test98,80%; selection bằng validation, giữ giới hạn tương đồng |
 | P6 — export/runtime | DONE local, mixed formats | [P6](phase6-report.md): Swin ONNX + DINO TorchScript đạt1.000 test parity,128 Python+36 browser tests. DINO ONNX diagnostic chưa đạt strict logits ở2 mẫu; không coi là hai ONNX approved |
-| P7–P8 | TODO | Tích hợp canvas/input ảnh, UX/domain-gap và hoàn thiện gói nộp; NPZ nguồn đã public Kaggle |
+| P7 — tích hợp/UX | DONE local kỹ thuật; nghiệm thu người thật còn chờ | [P7](phase7-report.md): DINO mặc định, Swin đối chứng, cùng ảnh gray64;133 Python+22 browser tests; giữ design. DINO đúng5/10 demo PenDigits; chưa có benchmark canvas người mới |
+| P8 — gói nộp | TODO | Clean checkout, phân phối weights lớn, dataset card/license và gói nộp; NPZ nguồn đã public Kaggle |
 
 P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch sử bên dưới.
 

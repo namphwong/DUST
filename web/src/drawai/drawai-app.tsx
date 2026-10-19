@@ -1,18 +1,19 @@
 import { useEffect,useRef,useState } from 'react';
 import { DrawingCanvas } from './drawing-canvas';
 import { InferenceClient } from './inference-client';
+import { PaintInferenceClient } from './paint-client';
 import { preprocess, type Stroke } from './preprocessing';
 import { sha256 } from './release-loader';
 import { validateDrawing, type Drawing, type Prediction } from './types';
 import './drawai.css';
 
 const stages:Record<string,string>={fetching:'Đang tải bộ nhận dạng…',verifying:'Đang chuẩn bị…',initializing:'Đang khởi động…',preprocessing:'Đang đọc nét…',inference:'Đang nhận dạng…'};
-export function DrawAIApp(){
+export function DrawAIApp({legacy=false}:{legacy?:boolean}){
   const [strokes,setStrokes]=useState<Stroke[]>([]),[drawing,setDrawing]=useState(false),[busy,setBusy]=useState(false),[loadingSample,setLoadingSample]=useState(false);
   const [result,setResult]=useState<Prediction>(),[status,setStatus]=useState('Vẽ một chữ số hoặc chọn mẫu để bắt đầu.'),[error,setError]=useState('');
   const [reference,setReference]=useState<number>(),[userLabel,setUserLabel]=useState(''),[source,setSource]=useState<Drawing['source']>({kind:'user'});
   const [modelReady,setModelReady]=useState(false);
-  const revision=useRef(0),client=useRef(new InferenceClient()),sampleRequest=useRef(0),mounted=useRef(true);
+  const revision=useRef(0),client=useRef(legacy?new InferenceClient():new PaintInferenceClient()),sampleRequest=useRef(0),mounted=useRef(true);
   useEffect(()=>{document.title='DrawAI · Nhận dạng chữ số';mounted.current=true;return()=>{mounted.current=false;client.current.reset();};},[]);
   function changed(next:Stroke[],ref?:number,origin:Drawing['source']={kind:'user'}){
     revision.current++;sampleRequest.current++;setLoadingSample(false);setStrokes(next);setResult(undefined);setError('');setReference(ref);setSource(origin);setUserLabel('');
@@ -78,7 +79,7 @@ export function DrawAIApp(){
           <div className="da-samples"><h3>Hoặc thử một mẫu</h3><div>{Array.from({length:10},(_,i)=><button key={i} aria-label={`Thử mẫu ${i}`} disabled={drawing} onClick={()=>sample(i)}>{i}</button>)}</div>{reference!==undefined&&<small data-testid="drawai-reference">Nhãn mẫu: {reference} · nguồn: PenDigits train</small>}</div>
         </section>
       </div>
-      <footer className="da-footer"><p>Viết lớn, rõ và đủ nét. Bạn có thể xóa để thử lại.</p><details><summary>Về DrawAI</summary><p>Nhận dạng một chữ số bằng Swin Transformer 1D. Mẫu có sẵn từ PenDigits. Chất lượng nét người dùng thực chưa được đánh giá.</p><a href="/drawai/release-check">Thông tin kiểm chứng</a></details></footer>
+      <footer className="da-footer"><p>Viết lớn, rõ và đủ nét. Bạn có thể xóa để thử lại.</p><details><summary>Về DrawAI</summary><p>{legacy?'Nhận dạng một chữ số bằng Swin Transformer 1D. Mẫu có sẵn từ PenDigits. Chất lượng nét người dùng thực chưa được đánh giá.':'Nhận dạng bằng DINOv3 qua backend local trên máy của bạn. Mẫu có sẵn từ PenDigits train, khác dữ liệu ảnh Paint dùng huấn luyện. Chưa đánh giá chất lượng nét người dùng mới.'}</p><a href={legacy?'/drawai/release-check':'/drawai/compare'}>Thông tin kiểm chứng</a></details></footer>
     </main>
   </div>;
 }

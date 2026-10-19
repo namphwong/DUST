@@ -1,162 +1,71 @@
 # DrawAI
 
-Nhận dạng **một chữ số viết tay 0–9 từ nét vẽ trên canvas**. DrawAI đang chạy bằng Swin Transformer 1D đã train trên PenDigits; DINOv3 đã load pretrained weights công khai từ timm, export full ONNX và kiểm chứng backend CPU local.
+Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính dùng **DINOv3 ViT-S/16 làm backbone + head 10 lớp**, chọn checkpoint bằng validation P5. **Swin Transformer 1D** là mô hình đối chứng. Hai model nhận cùng ảnh xám 64×64 được tạo từ nét vẽ, không fusion.
 
-**Tiến độ 18/10/2026:** **P0–P3 hoàn thành local theo protocol ảnh Paint**; đã chuẩn bị7.000 ảnh theo xác nhận người dùng, chưa khóa dataset ở P4/chưa train hai model mới ở P5. MotionSense/HAR và video/fusion đã được chuyển ra khỏi project. Giữ nguyên design DrawAI.
+**Cập nhật 19/10/2026:** P0–P6 hoàn thành local; **P7 hoàn thành tích hợp kỹ thuật local**, giữ design. Chưa nghiệm thu chất lượng trên người viết mới/cảm ứng thật; P8 và phân phối model lớn cho checkout mới còn chờ. [Báo cáo P7](docs/drawai/phase7-report.md) · [Hướng dẫn chạy](docs/drawai/paint-app-guide.md) · [Tiến độ](docs/drawai/status.md) · [Roadmap](docs/drawai/two-model-roadmap.md).
 
-- [Roadmap P0–P8](docs/drawai/two-model-roadmap.md)
-- [Báo cáo P0](docs/drawai/phase0-report.md) · [Báo cáo P1](docs/drawai/phase1-report.md)
-- [Báo cáo P2](docs/drawai/phase2-report.md) · [Setup DINOv3 và hướng dẫn weights](docs/drawai/dinov3-guide.md)
-- [Contract hai model](docs/drawai/two-model-contract.json) · [Tiến độ](docs/drawai/status.md)
+## Hai model hiện hành
 
-## Hai mô hình
-
-| Model | Vai trò | Input | Trạng thái |
+| Model | Vai trò / input | Artifact đã xuất | Test Paint P5 |
 |---|---|---|---|
-| Swin Transformer 1D | Đối chứng | float32 [1,3,128], x/y/stroke_start | Đã train và export ONNX, chạy browser WASM |
-| DINOv3 ViT-S/16 + classifier | Backbone ảnh + head 10 lớp | float32 [1,3,224,224] RGB từ cùng nét | Pretrained timm đã load; full ONNX/backend CPU đạt; head chữ số chưa train đầy đủ |
+| Swin Transformer 1D seed43 | Đối chứng; float32 [1,64,64], 64 vị trí hàng, 64 đặc trưng cột; không phải thời gian nét bút | `drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx` | Accuracy84,40%; macro-F184,28% |
+| DINOv3 ViT-S/16 seed42 + linear head | Backbone pretrained đóng băng; float32 [1,3,224,224] | `drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt` | Accuracy98,80%; macro-F198,80% |
 
-Hai model ảnh mới dùng cùng sample ID và split theo người theo protocol Paint; Swin đang phục vụ vẫn là bản chuỗi nét bút cũ. Không fusion. Trang chính giữ design hiện tại, dùng một model mặc định; so sánh hai model qua công cụ/trang kiểm chứng riêng.
+Cả hai chạy **CPU trên backend local** trong P7. Swin ONNX đã kiểm chứng thêm WASM ở P6. DINO ONNX chỉ diagnostic:2/1.000 mẫu vượt ngưỡng logits, nên dùng TorchScript đạt parity; không nới tolerance. [P5](docs/drawai/phase5-report.md) · [P6](docs/drawai/phase6-report.md).
 
-## Chạy giao diện
+**Giới hạn dữ liệu/chất lượng:**37 nhóm ảnh tương đồng qua split main chưa giải quyết; nguồn/người/đồng ý theo xác nhận chủ dữ liệu, chưa xác minh độc lập. Metric Paint không đại diện canvas. Giữ10 mẫu PenDigits train hiện có; DINO nhận đúng5/10 qua adapter mới. Đây là quan sát demo khác miền, không phải benchmark. Không sửa mẫu/adapter/checkpoint để tăng số đúng và không đánh giá lại private test trong P7.
 
-Cần Node.js/npm; môi trường đã kiểm chứng là Node 24.18.0. Từ thư mục `web`:
+## Chạy DrawAI local
+
+Cần Node/npm, Python3.11 và hai artifact P6 local trong `models/exported/paint35-v1/`. Model lớn **chưa có trong GitHub**; clone code chưa đủ để chạy default DINO. Nếu đã có môi trường `.venv-dinov3` và bundle P6 trên máy hiện tại:
 
 ```powershell
+cd D:\ChuyenDe\DUST\web
 npm ci
-npm run dev -- --port 4183 --strictPort
+cd ..
+powershell -ExecutionPolicy Bypass -File tools/run_drawai.ps1
 ```
 
-Mở `http://127.0.0.1:4183/` hoặc `/drawai`. Các trang kỹ thuật:
+Mở `http://127.0.0.1:4186/`. Lệnh trên khởi động backend loopback4197, kiểm tra bundle trước khi mở Vite4186; Ctrl+C dừng phiên. Backend không lưu ảnh/nét và không cần timm/Transformers khi suy luận. Cần torch cho TorchScript. Giao diện và proxy chỉ local, chưa triển khai production.
 
-- `/drawai/release-check`: kiểm chứng Swin đã train.
-- `/drawai/check`: phép thử kỹ thuật artifact chưa train, không dùng để đo chất lượng nhận dạng.
-- `/drawai/integration-check`: kiểm chứng pipeline/benchmark.
+- `/`, `/drawai`: DINOv3 mặc định; canvas, undo/clear, top3, retry và export JSON giữ nguyên.
+- `/drawai/compare`: cùng nét/ảnh chạy Swin và DINO; trang riêng, không thêm selector trên trang chính.
+- `/drawai/legacy`: Swin PenDigits cũ chạy WASM, không cần backend; nhãn nguồn demo vẫn PenDigits train.
+- `/drawai/release-check`, `/drawai/integration-check`: kiểm chứng release PenDigits lịch sử.
+- `/collect`: công cụ thu nét mới, không phải nguồn trajectory của NPZ Paint.
 
-Không cần Python để chạy demo browser. Model được tải và chạy trên thiết bị bằng ONNX Runtime Web; không gửi nét tới server suy luận trong P1.
+Backend tắt/weights thiếu hoặc sai hash thì hiển thị lỗi, giữ nét để retry; không đổi ngầm sang model cũ. Static `dist/` đơn lẻ không cung cấp API DINO. [Cài dependency/chạy hai terminal/tái tạo bundle](docs/drawai/paint-app-guide.md).
 
-## Python, dữ liệu và training
+## Dữ liệu, training và export
 
-Cần Python 3.11; có thể tạo môi trường riêng:
+[Dataset Kaggle public](https://www.kaggle.com/datasets/namphwong/drawai-handwritten-digits-placeholder) đã có `So_viet_tay_35_nguoi.npz`:7.000 ảnh64×64,35 mã người theo xác nhận chủ dữ liệu; **không có trajectory**. Slug vẫn giữ tên cũ để không đổi link. Dòng Synthetic trong NPZ giữ nguyên bytes; [provenance/attestation](docs/drawai/collection/paint-image64-provenance.json) giải thích xác nhận của chủ dữ liệu. Không tự gán license mới.
+
+Split khóa: pilot250 +reserved750 (người1–5, loại khỏi main), train4.000 (6–25), validation1.000 (26–30), test1.000 (31–35). Test nguồn đã public, custody chỉ bảo vệ quy trình/integrity. [P3](docs/drawai/phase3-report.md) · [P4](docs/drawai/phase4-report.md).
+
+- [Train hai model, chọn checkpoint và giới hạn](docs/drawai/paint-training-guide.md).
+- [Export/verify bundle, filenames/checksum và mixed runtime](docs/drawai/paint-export-guide.md).
+- [Pretrained DINOv3/provenance/license](docs/drawai/dinov3-guide.md). DINOv3 dùng license riêng, không mặc định coi weights là OSI open source.
+- [Contract hai model](docs/drawai/two-model-contract.json), [registry bundle](models/exported/paint35-v1/registry.json).
+
+Dữ liệu/checkpoint/weights mới bị ignore; metadata và bằng chứng kiểm chứng có trong Git. Model PenDigits lịch sử vẫn có sẵn tại `web/public/models/drawai-swin-v1/drawai_swin1d_pendigits_l128_fp32_v1.onnx`, alias `model.onnx` byte-identical.
+
+## Kiểm chứng P7
+
+Từ root, dùng Python đã cài [requirements inference](training/drawai/requirements-paint-inference.txt):
 
 ```powershell
-py -3.11 -m venv .venv-drawai
-./.venv-drawai/Scripts/python.exe -m pip install -r training/drawai/requirements.txt
-./.venv-drawai/Scripts/python.exe -m pip install -r training/drawai/requirements-verification.txt
-./.venv-drawai/Scripts/python.exe -m training.drawai.prepare_data --download --length 64
-./.venv-drawai/Scripts/python.exe -m training.drawai.prepare_data --length 128
-```
-
-Chọn wheel PyTorch CPU/CUDA phù hợp thiết bị. Môi trường local hiện hữu `.venv-phase1` dùng Torch 2.5.1+cpu và không có pip; không cần thay môi trường đó để chạy các lệnh kiểm chứng đã có. P1 chưa kiểm chứng clean install trên máy mới.
-
-[Training guide](docs/drawai/training-guide.md) có lệnh smoke, thí nghiệm Swin-only, evaluate, export và notebook Kaggle. P1 không train lại checkpoint release. Pipeline DINOv3 pretrained đã kiểm chứng ở P2; chưa train classifier đầy đủ hoặc thu dữ liệu riêng.
-
-## Model đang có
-
-| Artifact | Input → output | Nguồn | Tình trạng |
-|---|---|---|---|
-| `web/public/models/drawai-swin-v1/model.onnx` | [1,3,128] → [1,10] logits | Swin seed44, PenDigits | Trained; 2.27 MiB |
-
-SHA-256 ONNX: `28100de69dec82303a954af5c18936788e7c3dee623d70ec7a89ad9f7ef02366`.
-
-Checkpoint nguồn local: `artifacts/drawai/d3-local-v1/runs/official-swin-l128-aug1-seed44/best.pth`. Checkpoint/raw data lớn bị ignore; artifact ONNX và metadata nằm trong web/public. Chưa có link public tải checkpoint nguồn; clone GitHub chưa tự có checkpoint local. Có thể chạy demo bằng ONNX hoặc tái tạo dữ liệu/train theo hướng dẫn.
-
-Tên model rõ nghĩa sẽ được áp dụng đồng bộ ở P6:
-
-```text
-drawai_swin1d_pendigits_l128_fp32_v1.onnx
-drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx
-drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.onnx
-```
-
-Các tên trên là đích kế hoạch, không phải ba model đã tồn tại. [Model card](docs/drawai/model-card.md) và release.json ghi preprocessing, labels, hashes và giới hạn.
-
-Metric lịch sử PenDigits: accuracy 98,77%, macro-F1 98,79% trên 3.498 mẫu test. Không phải metric trên dữ liệu tự thu hoặc bảo đảm chất lượng nét người dùng. File NPZ đã có trên Kaggle; ảnh người thật theo xác nhận của chủ dữ liệu. P4 review/lock và P8 hoàn thiện dataset card/license còn cần thực hiện.
-
-## Kiểm chứng
-
-Build trước khi chạy browser tests, từ `web`:
-
-```powershell
+./.venv-dinov3/Scripts/python.exe -m unittest discover -s training/tests -p "test_drawai*.py" -v
+./.venv-dinov3/Scripts/python.exe tools/prepare_phase7_fixtures.py
+./.venv-dinov3/Scripts/python.exe tools/verify_phase7_backend.py
+cd web
 npm run build
 npm test
-npm run test:release
-npm run test:integration
-npx playwright test --config playwright.drawai-phase1.config.ts
+npm run test:legacy
+cd ..
+./.venv-dinov3/Scripts/python.exe tools/verify_phase7.py
 ```
 
-`npm test` chạy 9 tests DrawAI; release suite gồm 13 tests; integration dùng Chrome/Edge cài local. P1 route suite kiểm tra trang gốc, alias, inference thật và ảnh design. Cài Chromium của Playwright nếu môi trường mới chưa có browser.
-
-Từ root, dùng interpreter đã cài dependencies:
-
-```powershell
-./.venv-phase1/Scripts/python.exe -m unittest discover -s training/tests -p "test_drawai*.py" -v
-./.venv-phase1/Scripts/python.exe -m training.drawai.verify_training
-```
-
-Lệnh verify mặc định chỉ audit Swin được chọn trong thí nghiệm lịch sử, không cần checkpoint CNN đã lưu ngoài project. Không gọi kết quả đó là audit lại toàn bộ thí nghiệm CNN cũ.
-
-## DINOv3 P2 — hoàn thành local
-
-- Nguồn đã chọn: [timm DINOv3 ViT-S/16 QKV-bias](https://huggingface.co/timm/vit_small_patch16_dinov3_qkvb.lvd1689m), tải công khai không cần token; pin revision/hash, strict-load đủ 186 tensors và so sánh từng tensor với checkpoint.
-- Code timm là open source; **weights dùng DINOv3 custom license**. Hai nguồn khác và lý do chọn nằm trong [báo cáo P2](docs/drawai/phase2-report.md).
-- Backbone đóng băng + CLS/mean-patch pooling + head 10 lớp: **21.603.850 tham số**, 7.690 trainable. Raster Python/TypeScript khớp 19 fixtures.
-- Artifact full graph: `artifacts/drawai/phase2/technical/drawai_dinov3-vits16-timm-qkvb_pretrained-backbone_rgb224_fp32_p2.onnx`, **86,634,209 bytes** (~82,62 MiB).
-- **46 Python + 21 browser tests đạt**; build và audit đạt. WASM p95 661.6 ms vượt ngưỡng 500 ms; backend CPU local end-to-end p95 **90.2 ms** đạt. Chốt phương án backend DINOv3 cho tích hợp sau; Swin vẫn chạy browser.
-- `pretrained_loaded=true`, `trained=false`, `release_ready=false`: backbone pretrained thật, head export chưa train chữ số. Tiny overfit chỉ kiểm tra tối ưu; chưa phải model DINOv3 nhận dạng để nộp cuối kỳ.
-- Giữ nguyên design và model Swin trên trang chính. Trang kỹ thuật riêng `/drawai/dinov3-check` chỉ truy cập artifact/backend khi bật `DRAWAI_P2_LOCAL_SMOKE=1`; ONNX không nằm trong public/dist.
-
-Từ root:
-
-```powershell
-./.venv-dinov3/Scripts/python.exe -m training.drawai.dinov3_weights
-./.venv-dinov3/Scripts/python.exe -m training.drawai.dinov3_feasibility
-./.venv-dinov3/Scripts/python.exe tools/verify_phase2.py
-```
-
-[Hướng dẫn tái tạo, backend và kiểm thử](docs/drawai/dinov3-guide.md). Audit cần các suite đã chạy; bộ bằng chứng ở `artifacts/drawai/phase2/verification.json`.
-
-## P3 làm lại với dữ liệu Paint (18/10/2026)
-
-**Đã chuẩn bị7.000 ảnh64×64 từ NPZ người dùng cung cấp**:35 mã người×10 lớp×20 lần. Người dùng xác nhận ảnh do35 người thật viết trong Paint, đồng ý training/evaluation/Kaggle và dòng “Synthetic” trong metadata gốc là lỗi đóng gói. Giữ nguyên file gốc và lưu xác nhận nguồn riêng; không tự suy ra danh tính từ mã.
-
-- Chia mới theo người trước training: người1–5 cho250 ảnh pilot QC và750 ảnh reserved; người6–25 train4.000;26–30 validation1.000;31–35 test1.000. Đây là chia sau thu thập, không phải kế hoạch nét bút v1 đã áp trước thu.
-- Chỉ có ảnh: Swin1D mới đọc chuỗi64 hàng×64 đặc trưng cột, cần train từ đầu; DINOv3 đọc RGB224 từ cùng ảnh. Không tương thích input x/y/stroke_start của Swin PenDigits cũ.
-- Code `training/drawai/paint_data.py`: safe NPZ loader, provenance/hash/shape/quota audit, PNG64+manifest, shared-ID input iterators; original NPZ/arrays/PNG/tensor hashes khớp7.000 dòng.
-- Dữ liệu staging: `data/private/prepared/paint-image64-v1/` bị Git ignore. Chưa có dataset lock, chưa augmentation/train; không đọc test để chọn model.
-- **78 Python+12 browser regression tests đạt**; main DrawAI/design/Swin release giữ nguyên. Đã xem250 ảnh pilot; không trùng hoàn toàn/ảnh trống;534 nhóm gần trùng cần review P4, không tự loại.
-- [Báo cáo P3 hiện tại](docs/drawai/phase3-report.md) · [Protocol ảnh Paint](docs/drawai/collection/paint-image64-guide.md) · [Dataset card](docs/drawai/collection/paint-image64-dataset-card.md).
-- [Kaggle có file nguồn](https://www.kaggle.com/datasets/namphwong/drawai-handwritten-digits-placeholder). File gốc còn metadata “Synthetic”; xác nhận đính chính được lưu trong provenance, không sửa ngầm bytes gốc.
-
-Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ để thu nét bút mới nếu cần; không biến ảnh NPZ thành JSON nét bút. [Báo cáo P3 cũ](artifacts/drawai/phase3-image64/pre-rerun/phase3-report.md) chỉ là lịch sử trước khi có file NPZ.
-
-## P4 — đã khóa snapshot ảnh Paint35
-
-- Đã khóa **6.000 ảnh**: train4.000/validation1.000/test1.000; 30 mã người main tách theo plan, 1.000 pilot/reserved nằm ngoài main.
-- Code mới `training/drawai/paint_dataset.py`: source-bound review, khóa qua staging, external trusted hash, development loader hai input dùng chung ID; test ZIP riêng.
-- **534 nhóm kiểm tra pixel;98 nhóm qua split đã xem ảnh.** Giữ nguyên dữ liệu và cờ chưa xác minh độc lập; trong main có37 nhóm qua split (34 train–test,3 train–validation). Chưa chứng minh benchmark sạch rò rỉ; báo cáo metric phải nêu giới hạn này.
-- **95 Python +12 browser tests đạt**, build đạt;58 file bảo vệ và4 screenshot giống mốc P0. Giữ nguyên design và model đang chạy; chưa train classifier mới.
-- [Báo cáo P4](docs/drawai/phase4-report.md) · [Lệnh verify/rebuild và loader P5](docs/drawai/dataset/paint-image64-locking-guide.md) · [Bằng chứng](artifacts/drawai/phase4-image64/verification.json).
-- Dataset local: `data/private/locked/paint35-main-v1/` bị Git ignore. [External anchor](artifacts/drawai/phase4-image64/trusted-lock.json) lưu riêng; ZIP không mã hóa và nguồn đã public Kaggle nên test isolation là quy trình.
-
-## P5 — đã train và so sánh hai mô hình (CPU)
-
-- **Sáu run thật, seeds42/43/44** trên snapshot P4: Swin1D ảnh train từ đầu30 epoch; DINOv3 pretrained backbone đóng băng + linear head100 epoch. Không augmentation/PenDigits bổ trợ.
-- Checkpoint chọn theo validation trước test: **Swin seed43** test accuracy **84,40%**, macro-F1 **84,28%**; **DINOv3 seed42** test accuracy **98,80%**, macro-F1 **98,80%**.
-- Accuracy test trung bình ba seed: Swin **86,53% ±1,59 điểm phần trăm**; DINOv3 **98,80% ±0,00**.37 near-groups qua split vẫn còn; kết quả trên snapshot này chưa chứng minh benchmark sạch rò rỉ hay tổng quát hóa tới người viết mới hoàn toàn.
-- **113 Python +12 browser tests**, build và audit đạt. Replay logits validation sáu checkpoint; DINO backbone khớp từng tensor pretrained. Giữ nguyên design/model đang chạy.
-- Full-model PyTorch CPU p95 gồm preprocessing: Swin **3,16 ms**, DINO **84,00 ms**; không phải latency ONNX/HTTP/browser. Checkpoint đầy đủ được lưu local, `trained=true`, `release_ready=false`; export ONNX ở P6.
-- [Báo cáo P5](docs/drawai/phase5-report.md) · [Hướng dẫn training/resume/evaluate](docs/drawai/paint-training-guide.md) · [Bảng CSV](artifacts/drawai/phase5-image64/comparison.csv) · [Handoff checkpoint P6](artifacts/drawai/phase5-image64/handoff.json).
-
-## P6 — artifact đã xuất và kiểm chứng (19/10/2026)
-
-- **Swin ảnh:** `drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx` (~2,28 MiB), seed43; đủ1.000 test khớp argmax/metrics với PyTorch, max logits error8,36e-6;9 fixture chạy được trong Chromium/WASM.
-- **DINOv3 artifact chạy chính:** `drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt` (~82,88 MiB), full backbone+head seed42; đủ1.000 test logits khớp hoàn toàn PyTorch trong lần kiểm chứng này.
-- **DINO ONNX là diagnostic, chưa duyệt chạy:** đã xuất full graph nhưng2/1.000 mẫu vượt tolerance P2; không nới ngưỡng/chọn lại seed. Không tuyên bố cả hai ONNX đã đạt parity hay DINO chạy browser.
-- Backend CPU local dùng ONNX Swin/TorchScript DINO; p95 HTTP end-to-end lần lượt16,65/133,03 ms; không cần timm/Transformers/pretrained snapshot, vẫn cần torch cho TorchScript.
-- **128 Python +36 browser tests**, build/final audit đạt; giữ design/model đang phục vụ. Swin PenDigits cũ dùng tên canonical `drawai_swin1d_pendigits_l128_fp32_v1.onnx`, alias `model.onnx` giữ nguyên bytes.
-- Gói model local: `models/exported/paint35-v1/`; lớn nên không commit weights mới. [Báo cáo P6](docs/drawai/phase6-report.md) · [Verify/runtime/export guide](docs/drawai/paint-export-guide.md) · [Handoff P7](artifacts/drawai/phase6-image64/handoff.json).
-- `trained=true`, `artifact_verified=true`, `release_ready=false` cho sản phẩm; P7 mới nối canvas với input ảnh. Giới hạn37 near-groups qua split vẫn được giữ khi báo metric.
+Chạy tuần tự các kiểm tra dùng cùng port4197; dừng dịch vụ local cũ trước. `npm test`/`test:app` chạy13 tests (10P7 +3route); `test:legacy` chạy9 tests. Tổng133 Python +22 browser tests đạt; bộ Python cần dữ liệu/artifact local của các phase trước. Browser cần Chromium Playwright. Thời gian đo chi tiết và phần chưa chạy nằm trong báo cáo P7.
 
 ## Đã cập nhật ở đâu
 
@@ -192,6 +101,10 @@ Trang `/collect`, protocol/stroke schema và `private_data.py` v1 vẫn giữ đ
 | P6: `paint_export.py`, `paint_package.py`, `paint_runtime.py`, `native_runtime.py` | Full export, primary-format registry/anchor, full-test parity, mixed CPU runtime, giữ DINO ONNX diagnostic |
 | P6: legacy exporter/verifier/loaders/manifests/tests | Đổi canonical filename Swin PenDigits, giữ alias byte-identical và nghiệm thu model/design cũ |
 | P6: `verify_phase6*.py`, `drawai-p6*.spec.ts`, `phase6-report.md` | Browser WASM, localhost backend/errors/budgets, default-closed gate, migration ledger và báo cáo |
+| P7: `paint-registry.ts`, `paint-raster.ts`, `paint-worker.ts`, `paint-client.ts` | Registry khóa bundle, canvas400 → gray64, worker/API và kiểm tra hash/revision/softmax |
+| P7: `paint_app_runtime.py`, `vite.config.ts`, `run_drawai.ps1` | Backend CPU local, proxy cùng origin, giới hạn input và lệnh chạy hai dịch vụ |
+| P7: `drawai-app.tsx`, `paint-compare.tsx`, `main.tsx` | DINO mặc định; trang so sánh riêng; giữ design, legacy chuyển sang route riêng |
+| P7: `test_drawai_paint_app.py`, `drawai-p7.spec.ts`, `verify_phase7*.py` | 133 Python +22 browser tests, parity, lỗi/retry, benchmark và kiểm tra giao diện |
 
 ## Cấu trúc hiện hành
 

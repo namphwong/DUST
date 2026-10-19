@@ -57,4 +57,22 @@ function localPhase6():Plugin{
   });};
   return {name:'drawai-local-p6-only',configureServer:attach,configurePreviewServer:attach};
 }
-export default defineConfig({plugins:[localPhase2(),localPhase6()]});
+/** Same-origin loopback application proxy. No permissive CORS, arbitrary upstream or model file serving. */
+function localPaintApp():Plugin{
+  const attach=(server:any)=>{server.middlewares.use('/api/drawai',(req:any,res:any)=>{
+    const fail=(code:number,error:string)=>{res.writeHead(code,{'Content-Type':'application/json','Cache-Control':'no-store'});res.end(JSON.stringify({error}));};
+    if(!((req.method==='GET'&&req.url==='/health')||(req.method==='POST'&&req.url==='/predict'))){fail(404,'NOT_FOUND');return;}
+    const origin=req.headers.origin,host=req.headers.host;
+    if(origin&&(!/^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?$/.test(origin)||new URL(origin).host!==host)){fail(403,'ORIGIN');return;}
+    if(req.method==='POST'&&(req.headers['content-type']!=='application/json'||!/^\d+$/.test(req.headers['content-length']??'')||Number(req.headers['content-length'])>8192)){req.resume();fail(413,'SIZE_OR_TYPE');return;}
+    const upstream=httpRequest({hostname:'127.0.0.1',port:4197,path:req.url,method:req.method,
+      headers:{'Content-Type':'application/json',...(req.headers['content-length']?{'Content-Length':req.headers['content-length']}:{})}},response=>{
+      res.writeHead(response.statusCode??502,{'Content-Type':'application/json','Cache-Control':'no-store'});response.pipe(res);
+    });
+    upstream.setTimeout(15000,()=>upstream.destroy());
+    upstream.on('error',()=>{if(!res.headersSent)fail(503,'DrawAI local backend unavailable');else res.destroy();});
+    req.on('aborted',()=>upstream.destroy());req.pipe(upstream);
+  });};
+  return {name:'drawai-local-paint-app',configureServer:attach,configurePreviewServer:attach};
+}
+export default defineConfig({plugins:[localPhase2(),localPhase6(),localPaintApp()]});
