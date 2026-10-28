@@ -1,0 +1,8 @@
+{
+  "version": "drawai-vr0-anchor-v1",
+  "contract_path": "deployment/vr0/public-contract.json",
+  "contract_sha256": "82142d9a61ee765ace27a7c15982ed8faf0ed2cd394d8727977e1f065c67e793",
+  "purpose": "External integrity anchor for this version; not a digital signature",
+  "public_contract_file_sha256": "c2ed3f6459edeff9d87fc511fb6ad1cf551f37e3c6946a90e19117c84e33fd95",
+  "acceptance_checklist_file_sha256": "2ca9753fb9cc4158b630014c84ea47807bf0cb9732dd6a3cc3fd32345f15d77e"
+}

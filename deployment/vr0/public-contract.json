@@ -1,0 +1,312 @@
+{
+  "version": "drawai-public-deployment-contract-v1",
+  "phase": "VR0",
+  "locked_date": "2026-10-28",
+  "baseline_commit": "23c52f6ed871f179e393b03592253b64477ef4d7",
+  "state": "SPEC_LOCKED_NOT_DEPLOYED",
+  "architecture": {
+    "frontend": "Vercel Hobby static React/Vite",
+    "backend": "Render Free DINO-only Python API",
+    "model_storage": "GitHub Releases, pinned tag/archive hash; not published at VR0",
+    "default_model": "dinov3-vits16",
+    "baseline_model": "swin1d-image",
+    "silent_fallback": false,
+    "model_fusion": false,
+    "backend_model_ids": [
+      "dinov3-vits16"
+    ],
+    "public_inference_ready": false
+  },
+  "source_anchors": {
+    "dataset_lock_sha256": "2c3a86c5be2b2e0f952a9c3390d56785473a82634338cec805903cbb1b3ef47a",
+    "selection_sha256": "827f063bb6fc814d94406204f2c45ac91668988c0273329a59c3f5aaeccbec51",
+    "experiment_plan_sha256": "69529c069b832c8f6acb1e9f4912254daf85b8242c6a81e957b710dfb71f3a9e",
+    "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+    "dataset": "paint35-main-v1",
+    "original_npz_sha256": "c594927b59509bb62cb185cf5e64034ee641b046798f0f192d6155fd91f71a64"
+  },
+  "models": {
+    "dinov3-vits16": {
+      "role": "default",
+      "seed": 42,
+      "checkpoint": {
+        "path": "artifacts/drawai/phase5-image64/runs/dinov3-vits16-seed42/drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_seed42_best.pth",
+        "sha256": "1b14dc81786010d10f4bb3c1d77c8ef3e1af44f52a2186881e616dd19906c4f3"
+      },
+      "artifact": {
+        "path": "models/exported/paint35-v1/dinov3-vits16/drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt",
+        "bytes": 86901987,
+        "sha256": "5846bd2331f546d1a97e617a0733f7cafd72a953ee8988dd7538940ff2cc6baa"
+      },
+      "spec": {
+        "diagnostic_onnx_filename": "drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.onnx",
+        "dtype": "float32",
+        "family": "dinov3-vits16",
+        "input_name": "pixel_values",
+        "input_shape": [
+          1,
+          3,
+          224,
+          224
+        ],
+        "model_filename": "drawai_dinov3-vits16_paint35-main-v1_rgb224_fp32_v1.torchscript.pt",
+        "output_name": "logits",
+        "output_shape": [
+          1,
+          10
+        ],
+        "runtime_format": "torchscript"
+      },
+      "target_runtime": "TorchScript CPU on Render",
+      "tolerance": {
+        "atol": 0.0001,
+        "rtol": 0.001
+      }
+    },
+    "swin1d-image": {
+      "role": "baseline",
+      "seed": 43,
+      "checkpoint": {
+        "path": "artifacts/drawai/phase5-image64/runs/swin1d-image-seed43/drawai_swin1d-image_paint35-main-v1_rows64_fp32_seed43_best.pth",
+        "sha256": "3daa475f97e34c00d10380ea16157c9543de6495799ca3ee66cac642f2864619"
+      },
+      "artifact": {
+        "path": "models/exported/paint35-v1/swin1d-image/drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+        "bytes": 2391351,
+        "sha256": "9bb8bf5478cb2d8131936a79888505dcbc4f05e331027ca4e2117db7715df59d"
+      },
+      "spec": {
+        "diagnostic_onnx_filename": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+        "dtype": "float32",
+        "family": "swin1d-image",
+        "input_name": "row_pixels",
+        "input_shape": [
+          1,
+          64,
+          64
+        ],
+        "model_filename": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+        "output_name": "logits",
+        "output_shape": [
+          1,
+          10
+        ],
+        "runtime_format": "onnx"
+      },
+      "target_runtime": "ONNX Runtime Web WASM on client",
+      "tolerance": {
+        "atol": 1e-05,
+        "rtol": 0.0001
+      }
+    }
+  },
+  "profiles": {
+    "local_research": {
+      "implemented": true,
+      "vite_base": "/",
+      "runtime": "existing loopback API with both models; legacy/collection/technical routes retained",
+      "runtime_modified_in_VR0": false
+    },
+    "public_target": {
+      "implemented": false,
+      "vite_base": "/",
+      "frontend_env": "VITE_API_BASE_URL",
+      "browser_model_ids": [
+        "swin1d-image"
+      ],
+      "backend_model_ids": [
+        "dinov3-vits16"
+      ],
+      "public_routes": [
+        "/",
+        "/drawai",
+        "/drawai/compare"
+      ],
+      "research_only_routes": [
+        "/collect",
+        "/drawai/legacy",
+        "/drawai/check",
+        "/drawai/release-check",
+        "/drawai/integration-check",
+        "/drawai/dinov3-check"
+      ],
+      "production_urls": {
+        "frontend": null,
+        "backend": null
+      },
+      "direct_https_api": true,
+      "proxy_via_vercel_functions": false
+    }
+  },
+  "input_contract": {
+    "canvas_adapter": "drawai-canvas400-gray64-v1",
+    "logical_canvas": [
+      400,
+      400
+    ],
+    "logical_stroke_width": 6,
+    "grayscale_shape": [
+      64,
+      64
+    ],
+    "coverage_supersampling": 4,
+    "background": 255,
+    "ink": 0,
+    "no_bbox_crop": true,
+    "no_pen_up_connector": true,
+    "preprocessing_version": "drawai-paint-image64-v1",
+    "preprocessing_sha256": "ebef7ed2b9f4c20abb00dc11ce42b8b1ef71aa32c2ba0f902e88222a5dd03e8b",
+    "api_protocol": "drawai-paint-api-v1",
+    "api_routes": {
+      "health": "/health",
+      "predict": "/predict"
+    },
+    "request_fields": [
+      "protocol",
+      "request_id",
+      "drawing_revision",
+      "model_id",
+      "canvas_adapter",
+      "pixels64_base64"
+    ],
+    "max_json_body_bytes": 8192,
+    "pixels_bytes": 4096,
+    "base64_characters": 5464
+  },
+  "security_privacy": {
+    "cors": "exact production Vercel origins only; no wildcard *.vercel.app; explicit preview origins if tested",
+    "production_origins": [],
+    "origins_pending": true,
+    "credentials_in_frontend": false,
+    "request_body_logged": false,
+    "image_persistence": false,
+    "host_bind": "0.0.0.0",
+    "port_env": "PORT",
+    "worker_processes": 1,
+    "initial_torch_threads": 1,
+    "max_concurrent_inferences": 1,
+    "unbounded_queue": false,
+    "busy_status": 429,
+    "dino_pixels_sent_to_backend": true,
+    "swin_pixels_leave_browser": false
+  },
+  "ui_contract": {
+    "preserve_layout": true,
+    "preserve_colors_typography": true,
+    "preserve_canvas_undo_clear_top3": true,
+    "no_main_model_selector": true,
+    "allowed_copy_changes": [
+      "loading/cold-start/error statuses",
+      "accurate cloud/local model and privacy wording in existing layout"
+    ],
+    "public_health_trigger": "user requests recognition; bounded readiness checks, no always-on keepalive cron",
+    "initial_empty_screenshots": {
+      "desktop": "artifacts/drawai/repo-review/browser/ui/empty-desktop.png",
+      "mobile": "artifacts/drawai/repo-review/browser/ui/empty-mobile.png"
+    }
+  },
+  "targets": {
+    "desktop": [
+      {
+        "browser": "Chromium/Chrome",
+        "viewport": [
+          1366,
+          768
+        ],
+        "required": true
+      },
+      {
+        "browser": "Edge",
+        "viewport": [
+          1366,
+          768
+        ],
+        "required": true
+      }
+    ],
+    "mobile": [
+      {
+        "browser": "Chrome Android",
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 2,
+        "physical_touch_required": true
+      },
+      {
+        "browser": "Safari iOS",
+        "viewport": [
+          390,
+          844
+        ],
+        "dpr": 2,
+        "physical_touch_required": true
+      }
+    ],
+    "baseline_browser_provider": "WASM single thread",
+    "webgpu_required": false
+  },
+  "budgets": {
+    "status": "LOCKED_TARGETS_NOT_MEASURED_ON_CLOUD",
+    "scope": "new deployment budgets; does not replace historical local P2/P6 measurements",
+    "backend": {
+      "container_memory_limit_bytes": 536870912,
+      "container_cpus": 0.1,
+      "peak_cgroup_memory_max_bytes": 450000000,
+      "no_oom_required": true,
+      "memory_source": "container/cgroup peak, not Windows RSS",
+      "warmup": 5,
+      "iterations": 30,
+      "p95_method": "nearest-rank",
+      "warm_http_p95_max_ms": 5000,
+      "container_cold_ready_max_ms": 90000,
+      "cloud_wake_to_ready_max_ms": 120000,
+      "inference_timeout_ms": 30000,
+      "readiness_wait_max_ms": 120000
+    },
+    "browser_swin": {
+      "warmup": 5,
+      "iterations": 30,
+      "warm_worker_roundtrip_p95_max_ms": 200,
+      "scope": "raster+hash+tensor+WASM+softmax+postMessage; no download/user drawing time",
+      "failed_download_retry_required": true
+    },
+    "performance_input": "procedural/validation only, no model/adapter tuning on private final test"
+  },
+  "protected_files_sha256": {
+    "web/src/drawai/drawai.css": "af9aaeceac8322ebf576acb5db3bebd6716ef138ff0851350e2c98203eeae5a2",
+    "web/src/drawai/base.css": "f2225b56ecba87bb5163cf4af3b44dd010463913d6a9cdf423e1a2c973e0c30e",
+    "web/src/drawai/drawing-canvas.tsx": "8b566af994b34d824780c5136698a0b51c5cfb5f11dfb099d16354844b585c4c",
+    "web/src/drawai/paint-raster.ts": "5ffcf95905450efac18985c78393f7f99962085b17cddbbb89a2b1550c3bb5fd",
+    "training/drawai/paint_canvas.py": "7ae8b3afcf2cf2187363c0a0d9fa63fbbeed3354367f1d7efaa8019b86c7e67b",
+    "training/drawai/paint_data.py": "ef5fc05e55d90c775dbdc0b62e7116bf0d7d869f7cf7756884f8734323b0eff5",
+    "training/drawai/raster.py": "33ead9b1fd4f182a112da120eea065bdb15e8f738bb2f040c3c08fa4323acb7b"
+  },
+  "reference_files_sha256": {
+    "artifacts/drawai/phase4-image64/trusted-lock.json": "8083af214cb3b42d2384e3aef2e17a8aaca573b6947e4321f6fedae1109e69be",
+    "artifacts/drawai/phase5-image64/selection.json": "b85ab7aab06ec2c69171e534780342d985ff98308168ddcb47a026465f140d5e",
+    "artifacts/drawai/phase5-image64/experiment-plan.json": "69529c069b832c8f6acb1e9f4912254daf85b8242c6a81e957b710dfb71f3a9e",
+    "artifacts/drawai/phase6-image64/trusted-bundle.json": "b85e59bb4a90e396a1861ced0447affc60130e61158c9bfe344012fb0b650910",
+    "models/exported/paint35-v1/registry.json": "8d2b0ae606786017ae3a81a7ac972ab16e02108263610c7263b58269fa79a6dc",
+    "models/exported/paint35-v1/swin1d-image/preprocessing.json": "ebef7ed2b9f4c20abb00dc11ce42b8b1ef71aa32c2ba0f902e88222a5dd03e8b",
+    "models/exported/paint35-v1/dinov3-vits16/preprocessing.json": "ebef7ed2b9f4c20abb00dc11ce42b8b1ef71aa32c2ba0f902e88222a5dd03e8b"
+  },
+  "claims": {
+    "onnx_dinov3_approved": false,
+    "product_release_ready": false,
+    "new_user_canvas_accuracy_measured": false,
+    "physical_touch_tested": false,
+    "cloud_memory_tested": false,
+    "cloud_latency_tested": false,
+    "clean_checkout_verified": false,
+    "model_download_public": false,
+    "prior_demo_correct": 5,
+    "prior_demo_total": 10,
+    "prior_demo_source": "PenDigits train; not an accuracy benchmark",
+    "retained_main_cross_split_similarity_groups": 37,
+    "provenance": "owner-attested; no independent identity verification"
+  },
+  "change_control": "Preserve P4/P5/P6 artifacts. New model/input/runtime policy changes require a new versioned public contract and verification evidence; no silent mutation of this lock.",
+  "contract_sha256": "82142d9a61ee765ace27a7c15982ed8faf0ed2cd394d8727977e1f065c67e793"
+}

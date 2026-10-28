@@ -18,6 +18,20 @@ P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch s
 
 Đã [rà soát/dọn repo](repo-review-report.md) sau P7:133 Python+33 browser tests đạt, giữ model/split/design; P8 và nghiệm thu người viết mới/thiết bị thật vẫn còn chờ. Các số test trong bảng phase là bằng chứng lịch sử, không bị ghi đè bởi lần rà soát.
 
+## Triển khai Vercel + Render — cập nhật28/10/2026
+
+| Phase | Trạng thái | Bằng chứng / đầu ra tiếp theo |
+|---|---|---|
+| VR0 — khóa phạm vi/nghiệm thu | DONE scope/spec local | [Báo cáo](vr0-report.md), contract/anchor/checklist;10 gate tests PASS; hai checkpoint và toàn bundle khớp hash; chưa triển khai runtime public |
+| VR1 — model release | TODO | Bundle ZIP/tag/checksum/link public và script download/verify |
+| VR2 — DINO-only production | TODO | API/container CPU512MiB/0,1CPU, numerical/memory/latency gate |
+| VR3 — frontend public | TODO | Swin WASM, API URL, cold start/retry, profile Vercel |
+| VR4 — deploy tài khoản | TODO | Vercel/Render HTTPS/CORS/health trên hostname thật |
+| VR5 — nghiệm thu public | TODO | Browser/device/cloud thực; chưa có nghiệm thu cảm ứng/người viết mới |
+| VR6 — bàn giao | TODO | README/link/model/gói nộp/rollback |
+
+Theo [kế hoạch VR0–VR6](vercel-render-plan.md), VR0 chỉ khóa đặc tả và kiểm tra baseline;5 checklist PASS thuộc VR0 không đồng nghĩa14 kiểm tra public còn lại đã chạy. Gate cloud chưa đo, không lấy kết quả Windows local để tuyên bố phù hợp Render Free.
+
 ## Lịch sử DrawAI PenDigits
 
 Cập nhật 11/10/2026. **D0–D5 đã hoàn thành local; D6 đạt kiểm chứng kỹ thuật local, còn chờ người/thiết bị thật; D7 chưa triển khai.** D3 chạy CPU, Kaggle GPU chưa chạy.

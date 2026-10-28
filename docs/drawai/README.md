@@ -4,6 +4,7 @@
 
 - [Trạng thái và phần chưa hoàn thành](status.md), [kế hoạch P0–P8](two-model-roadmap.md).
 - [Kế hoạch ưu tiên: Vercel frontend + Render backend VR0–VR6](vercel-render-plan.md) — chưa triển khai; kiểm tra tài nguyên Free trước khi public.
+- [VR0: contract/phạm vi và gate đã khóa](vr0-report.md), [checklist](../../deployment/vr0/acceptance-checklist.json) —5 PASS thuộc VR0,14 NOT_RUN thuộc phase sau.
 - [Phương án tham khảo GitHub Pages W0–W6](github-pages-plan.md), đã được thay hướng ưu tiên theo lựa chọn mới.
 - [Chạy ứng dụng DINO mặc định / so sánh hai model](paint-app-guide.md).
 - [Nguồn/chuẩn bị ảnh NPZ](collection/paint-image64-guide.md), [provenance theo xác nhận chủ dữ liệu](collection/paint-image64-provenance.json).

@@ -2,6 +2,8 @@
 
 Ngày28/10/2026. **Đây là hướng triển khai ưu tiên mới**, thay kế hoạch GitHub Pages làm hướng chính. Chưa thay code runtime hoặc deploy tài khoản nào trong bước lập kế hoạch.
 
+**Tiến độ:** [VR0 đã hoàn thành khóa phạm vi/contract/checklist](vr0-report.md); VR1–VR6 chưa thực hiện. Profile public/API production và các kiểm tra cloud vẫn chưa triển khai.
+
 ## 1. Kiến trúc được chọn
 
 ```text

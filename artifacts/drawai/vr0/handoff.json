@@ -1,0 +1,35 @@
+{
+  "phase": "VR0",
+  "status": "DONE_SCOPE_AND_ACCEPTANCE_LOCKED",
+  "next_phase": "VR1",
+  "can_start_vr1": true,
+  "contract_sha256": "82142d9a61ee765ace27a7c15982ed8faf0ed2cd394d8727977e1f065c67e793",
+  "report": "docs/drawai/vr0-report.md",
+  "contract": "deployment/vr0/public-contract.json",
+  "checklist": "deployment/vr0/acceptance-checklist.json",
+  "default_model": "dinov3-vits16",
+  "baseline_model": "swin1d-image",
+  "bundle_path": "models/exported/paint35-v1",
+  "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+  "next_outputs": [
+    "Pinned full bundle archive and archive SHA-256",
+    "Public GitHub Release tag/assets with license and checksum",
+    "Browser Swin derivative release with source provenance",
+    "Clean-download/extract/verify script and smoke evidence"
+  ],
+  "do_not_ship": [
+    "Raw NPZ/private data",
+    "Training checkpoints and feature caches",
+    "Local environments/node_modules",
+    "Tokens/credentials or participant identities"
+  ],
+  "do_not_change": [
+    "P4 splits/lock",
+    "P5 checkpoint selection",
+    "P6 primary artifacts/tolerances",
+    "Canvas adapter and design without versioned review"
+  ],
+  "cloud_deployed": false,
+  "model_release_published": false,
+  "credentials_required_for_vr0": false
+}

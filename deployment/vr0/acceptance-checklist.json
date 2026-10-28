@@ -1,0 +1,144 @@
+{
+  "version": "drawai-public-acceptance-v1",
+  "date": "2026-10-28",
+  "contract_sha256": "82142d9a61ee765ace27a7c15982ed8faf0ed2cd394d8727977e1f065c67e793",
+  "status_meaning": {
+    "PASS": "VR0 evidence actually checked; scope indicated in evidence",
+    "NOT_RUN": "No public implementation/measurement asserted"
+  },
+  "checks": [
+    {
+      "id": "VR0-01",
+      "gate": "VR0",
+      "status": "PASS",
+      "requirement": "P4/P5/P6 anchors and selected checkpoint hashes",
+      "evidence_or_future_acceptance": "Actual metadata + two checkpoint files + full P6 bundle verified locally"
+    },
+    {
+      "id": "VR0-02",
+      "gate": "VR0",
+      "status": "PASS",
+      "requirement": "Default, baseline, artifact formats and strict numerical tolerances locked",
+      "evidence_or_future_acceptance": "Canonical contract and tamper rejection tests"
+    },
+    {
+      "id": "VR0-03",
+      "gate": "VR0",
+      "status": "PASS",
+      "requirement": "Design/canvas/preprocessing baseline preserved",
+      "evidence_or_future_acceptance": "Protected source SHA and stored initial desktop/mobile screenshot comparison; no fresh browser execution"
+    },
+    {
+      "id": "VR0-04",
+      "gate": "VR0",
+      "status": "PASS",
+      "requirement": "Local/research versus public profile and route scope separated",
+      "evidence_or_future_acceptance": "Specification only; public profile explicitly not implemented"
+    },
+    {
+      "id": "VR0-05",
+      "gate": "VR0",
+      "status": "PASS",
+      "requirement": "Acceptance budgets, hardware targets, privacy and future-state claims recorded",
+      "evidence_or_future_acceptance": "Contract frozen before cloud/browser deployment measurements"
+    },
+    {
+      "id": "VR1-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Public model release/ZIP checksum and clean download",
+      "evidence_or_future_acceptance": "Publish pinned bundle + web Swin release; verify on clean checkout"
+    },
+    {
+      "id": "VR2-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "DINO-only Linux startup within512MiB/0.1CPU",
+      "evidence_or_future_acceptance": "No OOM; cgroup peak<=450000000 bytes; container ready<=90000ms"
+    },
+    {
+      "id": "VR2-02",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Production DINO preprocessing and exported logits parity",
+      "evidence_or_future_acceptance": "Use fixed procedural/validation fixtures and locked P6 tolerances; no checkpoint/tolerance changes"
+    },
+    {
+      "id": "VR2-03",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Bounded concurrency/body/schema and error/recovery",
+      "evidence_or_future_acceptance": "Single process/inference;429 when busy; reject duplicate/nonfinite/unknown/oversized input"
+    },
+    {
+      "id": "VR3-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Swin browser image pipeline parity and session reuse",
+      "evidence_or_future_acceptance": "[1,64,64], WASM1 thread; no accidental use of PenDigits artifact"
+    },
+    {
+      "id": "VR3-02",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Browser model download/cache corruption/quota fallback",
+      "evidence_or_future_acceptance": "Hash verification; explicit error/retry; no bogus predictions"
+    },
+    {
+      "id": "VR3-03",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "SPA routes/assets and no localhost request in public build",
+      "evidence_or_future_acceptance": "Vercel base /; root/direct/refresh /drawai and /drawai/compare"
+    },
+    {
+      "id": "VR4-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Real Vercel/Render HTTPS and exact-origin CORS",
+      "evidence_or_future_acceptance": "Production domains pending; OPTIONS/POST tested; forbidden origins rejected"
+    },
+    {
+      "id": "VR5-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Cloud and browser latency budgets",
+      "evidence_or_future_acceptance": "Backend warm HTTP p95<=5000ms; Swin worker roundtrip p95<=200ms;5warmup+30calls nearest-rank"
+    },
+    {
+      "id": "VR5-02",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Provider sleep/wake and bounded client recovery",
+      "evidence_or_future_acceptance": "Wake-to-ready<=120000ms target; finite readiness/retry; no keepalive cron"
+    },
+    {
+      "id": "VR5-03",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Undo/clear/revision/top3/export and no silent model switch",
+      "evidence_or_future_acceptance": "Preserve design; stale responses rejected; model identity/remote pixel wording truthful"
+    },
+    {
+      "id": "VR5-04",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Target desktop browsers and Android/iOS real touch",
+      "evidence_or_future_acceptance": "Record exact versions/devices; viewport/DPR simulations alone do not satisfy physical touch"
+    },
+    {
+      "id": "VR5-05",
+      "gate": "PRODUCT_QUALITY",
+      "status": "NOT_RUN",
+      "requirement": "Independent new-user canvas quality",
+      "evidence_or_future_acceptance": "Report actual quality; keep5/10 PenDigits demo and37 cross-split similarity-group limitations"
+    },
+    {
+      "id": "VR6-01",
+      "gate": "PUBLIC_TECHNICAL",
+      "status": "NOT_RUN",
+      "requirement": "Clean-checkout instructions, public URLs and rollback",
+      "evidence_or_future_acceptance": "Verified URLs/downloads/commit and rollback target; local computer off during external test"
+    }
+  ]
+}

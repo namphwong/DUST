@@ -8,6 +8,8 @@ Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính d�
 
 **Kế hoạch web public ưu tiên (28/10/2026, chưa triển khai):** [Vercel frontend + Render backend](docs/drawai/vercel-render-plan.md), chia VR0–VR6; DINO mặc định qua Render, Swin chạy browser, kiểm tra512MB trước khi deploy Free. [Phương án GitHub Pages](docs/drawai/github-pages-plan.md) giữ để tham khảo.
 
+**VR0 đã hoàn thành:** [khóa scope/model/input/design và tiêu chí nghiệm thu](docs/drawai/vr0-report.md);10 gate tests mới PASS,5 checklist PASS/14 NOT_RUN. Chưa thay runtime hoặc deploy; bước tiếp theo VR1 là đóng gói/phân phối model.
+
 ## Hai model hiện hành
 
 | Model | Vai trò / input | Artifact đã xuất | Test Paint P5 |
