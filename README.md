@@ -6,6 +6,8 @@ Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính d�
 
 **Rà soát repo:**133 Python +33 browser tests đạt; đã củng cố worker/retry và hủy inference cũ, dọn cache, tách kết quả kiểm tra khỏi snapshot lịch sử. [Báo cáo tổng hợp](docs/drawai/repo-review-report.md) · [Mục lục tài liệu](docs/drawai/README.md). Các báo cáo phase bên dưới vẫn giữ số đo theo thời điểm thực hiện phase đó.
 
+**Kế hoạch web public (28/10/2026, chưa triển khai):** [Tối ưu và deploy GitHub Pages](docs/drawai/github-pages-plan.md), chia W0–W6; giữ DINO mặc định qua API ở bản đầu, Swin chạy browser; chỉ bỏ backend DINO khi ONNX/Web đạt kiểm chứng.
+
 ## Hai model hiện hành
 
 | Model | Vai trò / input | Artifact đã xuất | Test Paint P5 |

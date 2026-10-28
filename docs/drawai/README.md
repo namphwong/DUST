@@ -3,6 +3,7 @@
 ## Pipeline hiện hành: ảnh Paint → Swin1D / DINOv3
 
 - [Trạng thái và phần chưa hoàn thành](status.md), [kế hoạch P0–P8](two-model-roadmap.md).
+- [Kế hoạch tối ưu/deploy GitHub Pages W0–W6](github-pages-plan.md) — chưa triển khai; phân biệt Pages-only và frontend Pages + API.
 - [Chạy ứng dụng DINO mặc định / so sánh hai model](paint-app-guide.md).
 - [Nguồn/chuẩn bị ảnh NPZ](collection/paint-image64-guide.md), [provenance theo xác nhận chủ dữ liệu](collection/paint-image64-provenance.json).
 - [P3 dữ liệu](phase3-report.md), [P4 khóa split/review](phase4-report.md).
