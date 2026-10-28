@@ -2,6 +2,8 @@
 
 Ngày28/10/2026. Đây là kế hoạch mới, chưa triển khai. Giữ design DrawAI, hai model Swin1D ảnh/DINOv3, dữ liệu và checkpoint đã khóa. Không đổi model mặc định ngầm để làm một bản deploy trông như đã chạy DINO.
 
+**Đã thay hướng ưu tiên:** theo lựa chọn mới của người dùng, dùng [Vercel frontend + Render backend](vercel-render-plan.md). Tài liệu Pages này giữ làm phương án tham khảo, không phải kế hoạch triển khai đang ưu tiên.
+
 ## Kết luận lựa chọn kiến trúc
 
 GitHub Pages phù hợp phục vụ HTML/CSS/JavaScript, workers, WASM và model ONNX. Pages không chạy backend Python/TorchScript hiện tại. Với repo DUST, URL dự kiến là `https://namphwong.github.io/DUST/`, chưa phải URL đã deploy.
