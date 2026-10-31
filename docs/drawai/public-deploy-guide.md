@@ -41,6 +41,14 @@ Sau khi nhận hostname Vercel, cập nhật `ALLOWED_ORIGINS` Render bằng ori
 4. Chạy `tools/smoke_public_api.py --url <Render origin> --expected-revision <source SHA của image> --bundle models/exported/paint35-v1 --readiness-timeout 600 --output artifacts/drawai/public-deployment/cloud-smoke.json` với dependency numpy/Pillow/jsonschema. Script chờ đúng revision rồi kiểm tra logits trên fixture công khai; không dùng private test.
 5. Cloud run41183564442 đo p95 khoảng1,30s, readiness63,79s, peak435.429.376bytes, OOM0. Không dùng bot giữ service luôn thức. Nghiệm thu cảm ứng vật lý/người viết mới còn riêng.
 
+Kiểm thử lại giao diện production:
+
+```powershell
+cd web
+$env:DRAWAI_CLOUD_URL='https://drawai-pied.vercel.app'
+npm run test:cloud
+```
+
 ## 4. Nối CD backend
 
 Trong Settings của service Render, lấy Deploy Hook; lưu vào **GitHub Secret** `RENDER_DEPLOY_HOOK_URL`. Lưu origin Render vào **GitHub Variable** `RENDER_API_URL`. Không commit hook.
