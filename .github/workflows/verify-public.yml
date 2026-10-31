@@ -1,0 +1,63 @@
+name: Verify public image on clean anonymous runner
+on:
+  workflow_dispatch:
+    inputs:
+      image_digest:
+        required: true
+        description: namphwong/drawai-dinov3-api@sha256:...
+      source_revision:
+        required: true
+        description: Full code revision embedded in the image
+  workflow_call:
+    inputs:
+      image_digest:
+        required: true
+        type: string
+      source_revision:
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  anonymous-pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy==1.26.4 Pillow==12.3.0
+      - name: Pull without any registry credentials or cached image
+        env:
+          DIGEST: ${{ inputs.image_digest }}
+          REVISION: ${{ inputs.source_revision }}
+        run: |
+          [[ "$DIGEST" =~ ^namphwong/drawai-dinov3-api@sha256:[a-f0-9]{64}$ ]]
+          [[ "$REVISION" =~ ^[a-f0-9]{40}$ ]]
+          echo "DOCKER_CONFIG=$(mktemp -d)" >> "$GITHUB_ENV"
+          mkdir -p artifacts/drawai/cicd
+          echo "$DIGEST" > artifacts/drawai/cicd/verified-public-digest.txt
+      - name: Download published layers and start immutable image
+        env:
+          DIGEST: ${{ inputs.image_digest }}
+        run: |
+          docker pull "$DIGEST"
+          docker run -d --name drawai-clean-public --memory=512m --cpus=0.1 -p 127.0.0.1:10000:10000 "$DIGEST"
+      - name: Verify public image real model and resource budget
+        env:
+          REVISION: ${{ inputs.source_revision }}
+        run: python tools/smoke_public_api.py --url http://127.0.0.1:10000 --bundle models/exported/paint35-v1 --expected-revision "$REVISION" --enforce-container-budget --output artifacts/drawai/cicd/clean-public-smoke.json
+      - name: Capture container evidence
+        if: always()
+        run: |
+          mkdir -p artifacts/drawai/cicd
+          docker logs drawai-clean-public > artifacts/drawai/cicd/clean-public-container.log 2>&1 || true
+          docker inspect drawai-clean-public --format '{{json .State}}' > artifacts/drawai/cicd/clean-public-state.json || true
+          docker rm -f drawai-clean-public || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: clean-public-image-evidence
+          path: artifacts/drawai/cicd/
+          retention-days: 30

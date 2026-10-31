@@ -54,6 +54,7 @@ jobs:
         run: |
           set -euo pipefail
           IMAGE="$USERNAME/drawai-dinov3-api"
+          if docker manifest inspect "$IMAGE:$VERSION" >/dev/null 2>&1; then echo 'Version tag exists; choose a new version instead of overwriting'; exit 1; fi
           docker build -f deployment/docker/Dockerfile --build-arg VCS_REF="$GITHUB_SHA" -t "$IMAGE:$VERSION" -t "$IMAGE:sha-$GITHUB_SHA" .
           docker run -d --name drawai-release --memory=512m --cpus=0.1 -p 127.0.0.1:10000:10000 "$IMAGE:$VERSION"
           python tools/smoke_public_api.py --url http://127.0.0.1:10000 --expected-revision "$GITHUB_SHA" --enforce-container-budget --output artifacts/drawai/cicd/release-smoke.json
@@ -79,9 +80,15 @@ jobs:
           name: ai-publish-evidence
           path: artifacts/drawai/cicd/
           retention-days: 30
+  public_check:
+    needs: publish
+    uses: ./.github/workflows/verify-public.yml
+    with:
+      image_digest: ${{ needs.publish.outputs.digest }}
+      source_revision: ${{ github.sha }}
   render:
     if: inputs.deploy_render
-    needs: publish
+    needs: [publish, public_check]
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
