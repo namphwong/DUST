@@ -1,5 +1,7 @@
 # Tài liệu DrawAI
 
+- [CI/CD, Docker Hub public và bằng chứng thực thi31/10/2026](cicd-docker-report.md). Model bundle đã có GitHub Release; Render/Vercel vẫn chưa deploy.
+
 ## Pipeline hiện hành: ảnh Paint → Swin1D / DINOv3
 
 - [Trạng thái và phần chưa hoàn thành](status.md), [kế hoạch P0–P8](two-model-roadmap.md).
@@ -14,7 +16,7 @@
 - [Tích hợp, kiểm tra UX và khoảng cách Paint/canvas P7](phase7-report.md).
 - [Contract hai model](two-model-contract.json), [rà soát và dọn repo](repo-review-report.md).
 
-`trained`/`artifact_verified` không đồng nghĩa `release_ready`: hiện chưa nghiệm thu chất lượng canvas người viết mới/cảm ứng thật; model lớn chưa phân phối cho clean checkout. Giữ cảnh báo37 nhóm tương đồng qua split và kết quả5/10 demo PenDigits.
+`trained`/`artifact_verified` không đồng nghĩa `release_ready`: hiện chưa nghiệm thu chất lượng canvas người viết mới/cảm ứng thật; bundle model đã phân phối bằng release public có checksum. Giữ cảnh báo37 nhóm tương đồng qua split và kết quả5/10 demo PenDigits.
 
 ## Các tài liệu theo mốc cũ
 

@@ -1,0 +1,9 @@
+{
+  "repository": "namphwong/drawai-dinov3-api",
+  "is_private": false,
+  "url": "https://hub.docker.com/r/namphwong/drawai-dinov3-api",
+  "tag": "v1.0.0",
+  "digest": "sha256:a4b131893b49a200de1440831806d3d80cd2eed414712ac620001e9c0d30fe52",
+  "compressed_bytes": 461460145,
+  "last_updated": "2026-10-31T03:20:10.134181Z"
+}

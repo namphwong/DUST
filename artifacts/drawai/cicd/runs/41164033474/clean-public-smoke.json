@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "health": {
+    "status": "ready",
+    "models": [
+      "dinov3-vits16"
+    ],
+    "default_model": "dinov3-vits16",
+    "artifact_format": "torchscript",
+    "threads": 1,
+    "trained": true,
+    "artifact_verified": true,
+    "release_ready": false,
+    "technical_only": true,
+    "data_persisted": false,
+    "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+    "model_sha256": "5846bd2331f546d1a97e617a0733f7cafd72a953ee8988dd7538940ff2cc6baa",
+    "protocol": "drawai-paint-api-v1",
+    "canvas_adapter": "drawai-canvas400-gray64-v1",
+    "preprocessing_version": "drawai-paint-image64-v1",
+    "code_revision": "26011c9dd74f26fc83879509cf7e497b40b9e340",
+    "runtime_cold_ms": 23001.007717999983,
+    "resources": {
+      "memory_peak_bytes": 425177088,
+      "memory_limit_bytes": 536870912,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0,
+        "sock_throttled": 0
+      }
+    }
+  },
+  "procedural_cases": [
+    {
+      "name": "black",
+      "max_abs_error": 8.106231689453125e-06,
+      "predicted_id": 0
+    },
+    {
+      "name": "single-pixel",
+      "max_abs_error": 1.0251998901367188e-05,
+      "predicted_id": 0
+    },
+    {
+      "name": "vertical",
+      "max_abs_error": 1.1444091796875e-05,
+      "predicted_id": 1
+    },
+    {
+      "name": "horizontal",
+      "max_abs_error": 1.1444091796875e-05,
+      "predicted_id": 7
+    },
+    {
+      "name": "diagonal",
+      "max_abs_error": 1.0013580322265625e-05,
+      "predicted_id": 0
+    },
+    {
+      "name": "border",
+      "max_abs_error": 7.62939453125e-06,
+      "predicted_id": 0
+    },
+    {
+      "name": "checker",
+      "max_abs_error": 6.198883056640625e-06,
+      "predicted_id": 0
+    },
+    {
+      "name": "noise",
+      "max_abs_error": 5.7220458984375e-06,
+      "predicted_id": 3
+    }
+  ],
+  "source": "public P6 procedural fixtures; no private test",
+  "warmup": 5,
+  "iterations": 30,
+  "warm_http_p95_ms": 2501.0260210000015,
+  "readiness_ms": 35034.867017,
+  "container_budget_enforced": true
+}

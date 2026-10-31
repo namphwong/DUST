@@ -10,6 +10,8 @@ Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính d�
 
 **VR0 đã hoàn thành:** [khóa scope/model/input/design và tiêu chí nghiệm thu](docs/drawai/vr0-report.md);10 gate tests mới PASS,5 checklist PASS/14 NOT_RUN. Chưa thay runtime hoặc deploy; bước tiếp theo VR1 là đóng gói/phân phối model.
 
+**CI/CD và Docker đã thực thi (31/10/2026):** [Báo cáo từng bước/chỗ cập nhật](docs/drawai/cicd-docker-report.md) · [CI PASS](https://github.com/namphwong/DUST/actions/runs/41164031905) · [Docker Hub public v1.0.0](https://hub.docker.com/r/namphwong/drawai-dinov3-api) · [Model Release public](https://github.com/namphwong/DUST/releases/tag/drawai-models-paint35-v1). Build/test inference dưới giới hạn512MiB/0,1CPU, pull digest trên runner mới không login đã PASS. Continuous delivery tới registry hoàn thành; **Render/Vercel cloud chưa deploy**. Các đoạn VR0/P7 phía trên là mốc lịch sử.
+
 ## Hai model hiện hành
 
 | Model | Vai trò / input | Artifact đã xuất | Test Paint P5 |
@@ -23,7 +25,7 @@ Cả hai chạy **CPU trên backend local** trong P7. Swin ONNX đã kiểm ch�
 
 ## Chạy DrawAI local
 
-Cần Node/npm, Python3.11 và **bundle P6 đầy đủ** trong `models/exported/paint35-v1/` (hai artifact primary, DINO ONNX diagnostic và metadata để kiểm tra inventory/hash). Model lớn **chưa có trong GitHub**; clone code chưa đủ để chạy default DINO. Nếu đã có môi trường `.venv-dinov3` và bundle P6 trên máy hiện tại:
+Cần Node/npm, Python3.11 và **bundle P6 đầy đủ** trong `models/exported/paint35-v1/` (hai artifact primary, DINO ONNX diagnostic và metadata để kiểm tra inventory/hash). Model lớn có tại [GitHub Release](https://github.com/namphwong/DUST/releases/tag/drawai-models-paint35-v1); clone code cần tải thêm bundle để chạy default DINO. `python tools/prepare_public_models.py fetch` tải/verify vào `deployment/docker/model-bundle/` để build container; runtime local P7 vẫn dùng đường dẫn `models/exported/paint35-v1/`. Nếu đã có môi trường `.venv-dinov3` và bundle P6 trên máy hiện tại:
 
 ```powershell
 cd D:\ChuyenDe\DUST\web

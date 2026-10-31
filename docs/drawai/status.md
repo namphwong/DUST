@@ -1,5 +1,9 @@
 # DrawAI — Tiến độ
 
+## CI/CD và Docker - cập nhật31/10/2026
+
+CI41 tests + frontend build + image/resource/parity gates PASS. Public image `namphwong/drawai-dinov3-api:v1.0.0` đã phát hành, pull ẩn danh và inference trên runner mới PASS. Bundle P6 đã có release public. [Báo cáo/bằng chứng](cicd-docker-report.md). Continuous delivery tới registry hoàn thành; Render/Vercel và nghiệm thu cloud/người viết mới còn chờ. Bảng phase cũ dưới đây là snapshot trước đợt cập nhật này.
+
 ## Kế hoạch hai mô hình (cập nhật 19/10/2026)
 
 | Phase | Trạng thái | Bằng chứng |
