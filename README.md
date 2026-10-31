@@ -2,6 +2,10 @@
 
 Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính dùng **DINOv3 ViT-S/16 làm backbone + head 10 lớp**, chọn checkpoint bằng validation P5. **Swin Transformer 1D** là mô hình đối chứng. Hai model nhận cùng ảnh xám 64×64 được tạo từ nét vẽ, không fusion.
 
+**Đối chiếu 6 yêu cầu nộp bài (31/10/2026):** [Bảng kết quả/bằng chứng](docs/drawai/submission-audit.md). DINO backbone, dữ liệu Kaggle public, design/model export, CI và Docker Hub public đã có. **Deploy Vercel/Render và CD cloud còn chờ kết nối tài khoản.** [Code/cách deploy đã chuẩn bị](docs/drawai/public-deploy-guide.md): public frontend dùng HTTPS API, Swin browser WASM, xử lý backend ngủ/429/clear;44 Python +7 public browser +13 local regression tests PASS local. [CI mới](https://github.com/namphwong/DUST/actions/runs/41165630051). Các mốc P7/VR0 phía dưới là lịch sử.
+
+Chỗ thay DINO: [`DinoDigitClassifier`/`TimmDinoBackbone`](training/drawai/dinov3_model.py) dùng backbone pretrained DINOv3, ghép CLS + mean patch token vào head10lớp; xem [DINO guide](docs/drawai/dinov3-guide.md). Cấu hình deploy: [`render.yaml`](render.yaml), [`web/vercel.json`](web/vercel.json); không tự tạo cloud service khi chỉ clone/push file.
+
 **Cập nhật 19/10/2026:** P0–P6 hoàn thành local; **P7 hoàn thành tích hợp kỹ thuật local**, giữ design. Chưa nghiệm thu chất lượng trên người viết mới/cảm ứng thật; P8 và phân phối model lớn cho checkout mới còn chờ. [Báo cáo P7](docs/drawai/phase7-report.md) · [Hướng dẫn chạy](docs/drawai/paint-app-guide.md) · [Tiến độ](docs/drawai/status.md) · [Roadmap](docs/drawai/two-model-roadmap.md).
 
 **Rà soát repo:**133 Python +33 browser tests đạt; đã củng cố worker/retry và hủy inference cũ, dọn cache, tách kết quả kiểm tra khỏi snapshot lịch sử. [Báo cáo tổng hợp](docs/drawai/repo-review-report.md) · [Mục lục tài liệu](docs/drawai/README.md). Các báo cáo phase bên dưới vẫn giữ số đo theo thời điểm thực hiện phase đó.

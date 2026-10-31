@@ -2,7 +2,7 @@
 
 ## CI/CD và Docker - cập nhật31/10/2026
 
-CI41 tests + frontend build + image/resource/parity gates PASS. Public image `namphwong/drawai-dinov3-api:v1.0.0` đã phát hành, pull ẩn danh và inference trên runner mới PASS. Bundle P6 đã có release public. [Báo cáo/bằng chứng](cicd-docker-report.md). Continuous delivery tới registry hoàn thành; Render/Vercel và nghiệm thu cloud/người viết mới còn chờ. Bảng phase cũ dưới đây là snapshot trước đợt cập nhật này.
+CI ban đầu41 tests + frontend build + image/resource/parity gates PASS; CI mở rộng44 Python +7 public browser tests và image gate cũng PASS. Public image `namphwong/drawai-dinov3-api:v1.0.0` đã phát hành, pull ẩn danh và inference trên runner mới PASS. Bundle P6 đã có release public. [Báo cáo/bằng chứng](cicd-docker-report.md). Continuous delivery tới registry hoàn thành; Render/Vercel và nghiệm thu cloud/người viết mới còn chờ. Bảng phase P0–P8 bên dưới là snapshot trước đợt cập nhật này; bảng VR đã cập nhật.
 
 ## Kế hoạch hai mô hình (cập nhật 19/10/2026)
 
@@ -22,19 +22,21 @@ P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch s
 
 Đã [rà soát/dọn repo](repo-review-report.md) sau P7:133 Python+33 browser tests đạt, giữ model/split/design; P8 và nghiệm thu người viết mới/thiết bị thật vẫn còn chờ. Các số test trong bảng phase là bằng chứng lịch sử, không bị ghi đè bởi lần rà soát.
 
-## Triển khai Vercel + Render — cập nhật28/10/2026
+## Triển khai Vercel + Render — cập nhật31/10/2026
 
 | Phase | Trạng thái | Bằng chứng / đầu ra tiếp theo |
 |---|---|---|
 | VR0 — khóa phạm vi/nghiệm thu | DONE scope/spec local | [Báo cáo](vr0-report.md), contract/anchor/checklist;10 gate tests PASS; hai checkpoint và toàn bundle khớp hash; chưa triển khai runtime public |
-| VR1 — model release | TODO | Bundle ZIP/tag/checksum/link public và script download/verify |
-| VR2 — DINO-only production | TODO | API/container CPU512MiB/0,1CPU, numerical/memory/latency gate |
-| VR3 — frontend public | TODO | Swin WASM, API URL, cold start/retry, profile Vercel |
-| VR4 — deploy tài khoản | TODO | Vercel/Render HTTPS/CORS/health trên hostname thật |
+| VR1 — model release | DONE public | Bundle ZIP/tag/checksum, script download/verify; Swin asset derivative public và build verify |
+| VR2 — DINO-only production | DONE container gate | API/Docker Hub public; CPU512MiB/0,1CPU, numerical/memory/latency gate PASS trên GitHub runner; chưa đo Render |
+| VR3 — frontend public | DONE local integration | Swin WASM, HTTPS API URL, cold start/retry/clear;7 browser tests PASS;44 Python và13 local regression PASS |
+| VR4 — deploy tài khoản | WAITING authentication | render.yaml/web/vercel.json instance-validation PASS; chưa tạo service/cloud URL; chờ chủ tài khoản kết nối |
 | VR5 — nghiệm thu public | TODO | Browser/device/cloud thực; chưa có nghiệm thu cảm ứng/người viết mới |
-| VR6 — bàn giao | TODO | README/link/model/gói nộp/rollback |
+| VR6 — bàn giao | PARTIAL | README, model links, PDF CI/Docker, hướng dẫn deploy/rollback đã có; thiếu URL cloud/nghiệm thu |
 
 Theo [kế hoạch VR0–VR6](vercel-render-plan.md), VR0 chỉ khóa đặc tả và kiểm tra baseline;5 checklist PASS thuộc VR0 không đồng nghĩa14 kiểm tra public còn lại đã chạy. Gate cloud chưa đo, không lấy kết quả Windows local để tuyên bố phù hợp Render Free.
+
+[Đối chiếu nộp bài hiện tại](submission-audit.md) · [Deploy guide](public-deploy-guide.md). VR0 JSON/anchor/checklist giữ nguyên snapshot, không sửa source hash lịch sử để che thay đổi runtime VR3; kiểm chứng bổ sung lưu riêng tại artifacts/drawai/public-deployment/.
 
 ## Lịch sử DrawAI PenDigits
 

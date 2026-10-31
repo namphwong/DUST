@@ -2,7 +2,7 @@
 
 Ngày28/10/2026. **Đây là hướng triển khai ưu tiên mới**, thay kế hoạch GitHub Pages làm hướng chính. Chưa thay code runtime hoặc deploy tài khoản nào trong bước lập kế hoạch.
 
-**Tiến độ:** [VR0 đã hoàn thành khóa phạm vi/contract/checklist](vr0-report.md); VR1–VR6 chưa thực hiện. Profile public/API production và các kiểm tra cloud vẫn chưa triển khai.
+**Cập nhật31/10/2026:** VR0 giữ snapshot; VR1 bundle/Swin release public, VR2 container API và VR3 frontend integration đã thực hiện. VR4/VR5 cloud còn chờ đăng nhập/kết nối tài khoản; VR6 bàn giao một phần. [Trạng thái hiện tại](status.md), [hướng dẫn deploy](public-deploy-guide.md), [đối chiếu6 yêu cầu](submission-audit.md). Phần dưới giữ nội dung kế hoạch ban đầu.
 
 ## 1. Kiến trúc được chọn
 

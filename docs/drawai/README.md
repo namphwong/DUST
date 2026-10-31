@@ -1,5 +1,7 @@
 # Tài liệu DrawAI
 
+- [Đối chiếu 6 yêu cầu nộp bài](submission-audit.md), [deploy Vercel/Render đã chuẩn bị](public-deploy-guide.md) - cloud còn chờ kết nối tài khoản.
+
 - [CI/CD, Docker Hub public và bằng chứng thực thi31/10/2026](cicd-docker-report.md). Model bundle đã có GitHub Release; Render/Vercel vẫn chưa deploy.
 
 ## Pipeline hiện hành: ảnh Paint → Swin1D / DINOv3

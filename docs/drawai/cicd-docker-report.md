@@ -1,6 +1,8 @@
 # CI/CD và Docker AI - thực thi 31/10/2026
 
-CI và continuous delivery đã chạy thật trên GitHub Actions. Image DINOv3 đã public trên Docker Hub, được kéo ẩn danh và kiểm tra inference trên runner mới. **Render chưa triển khai**: chưa có thông tin xác thực/hook; không có URL backend cloud đã nghiệm thu. Frontend/design và checkpoint P5/P6 được giữ nguyên.
+CI và continuous delivery đã chạy thật trên GitHub Actions. Image DINOv3 đã public trên Docker Hub, được kéo ẩn danh và kiểm tra inference trên runner mới. **Render chưa triển khai**: chưa có thông tin xác thực/hook; không có URL backend cloud đã nghiệm thu. Bố cục design và checkpoint P5/P6 được giữ nguyên; frontend được bổ sung profile public riêng.
+
+**Bổ sung cùng ngày:** [profile frontend public/cấu hình Vercel-Render](public-deploy-guide.md) đã code;44 Python +7 public browser +13 local regression PASS local; [CI mở rộng41165630051 SUCCESS](https://github.com/namphwong/DUST/actions/runs/41165630051), cả3 job code/public_frontend/image PASS. Smoke CD đã sửa để đợi đúng revision thay vì chấm nhầm phiên bản cũ sau khi gọi hook. Các run41tests/v1.0.0 dưới đây là bằng chứng phát hành ban đầu; không ghi đè bằng số test mới.
 
 ## Kết quả và bằng chứng
 
