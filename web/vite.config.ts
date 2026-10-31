@@ -75,4 +75,4 @@ function localPaintApp():Plugin{
   });};
   return {name:'drawai-local-paint-app',configureServer:attach,configurePreviewServer:attach};
 }
-export default defineConfig({plugins:[localPhase2(),localPhase6(),localPaintApp()]});
+export default defineConfig({worker:{format:'es'},plugins:[localPhase2(),localPhase6(),localPaintApp()]});

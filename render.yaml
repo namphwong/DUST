@@ -1,0 +1,17 @@
+# Pinned public image already verified on a clean anonymous GitHub runner.
+# Import this Blueprint in Render; no resource is created by this file alone.
+services:
+  - type: web
+    name: drawai-dinov3-api
+    runtime: image
+    plan: free
+    region: singapore
+    autoDeployTrigger: 'off'
+    image:
+      url: docker.io/namphwong/drawai-dinov3-api@sha256:a4b131893b49a200de1440831806d3d80cd2eed414712ac620001e9c0d30fe52
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: '10000'
+      - key: ALLOWED_ORIGINS
+        sync: false

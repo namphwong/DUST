@@ -6,13 +6,14 @@ import {paintPixels} from './paint-raster';
 import {type Stroke} from './preprocessing';
 import {type Drawing,type Prediction} from './types';
 import './drawai.css';
+import {PUBLIC_PAINT} from './paint-deployment';
 export function PaintCompare(){
   const [strokes,setStrokes]=useState<Stroke[]>([]),[busy,setBusy]=useState(false),[drawing,setDrawing]=useState(false),[error,setError]=useState('');
   const [results,setResults]=useState<Prediction[]>([]),[imageHash,setImageHash]=useState('');
   const revision=useRef(0),mounted=useRef(true);
   const [clients]=useState(()=>Object.keys(PAINT_MODELS).map(id=>new PaintInferenceClient(id as PaintModel)));
   useEffect(()=>{mounted.current=true;return()=>{mounted.current=false;clients.forEach(c=>c.reset());};},[clients]);
-  function change(next:Stroke[]){revision.current++;setStrokes(next);setResults([]);setImageHash('');setError('');}
+  function change(next:Stroke[]){revision.current++;clients.forEach(c=>c.reset());setBusy(false);setStrokes(next);setResults([]);setImageHash('');setError('');}
   async function compare(){
     const current=revision.current;setBusy(true);setError('');setResults([]);
     const value:Drawing={schema_version:'drawai-strokes-v1',coordinate_system:'canvas-y-down',canvas:{width:400,height:400},strokes:structuredClone(strokes),source:{kind:'user'}};
@@ -24,10 +25,10 @@ export function PaintCompare(){
       }
       if(mounted.current&&revision.current===current){setResults(results);setImageHash(Array.from(new Uint8Array(hash),v=>v.toString(16).padStart(2,'0')).join(''));}
     }catch(e){if(mounted.current&&revision.current===current)setError(e instanceof Error?e.message:String(e));}
-    finally{if(mounted.current)setBusy(false);}
+    finally{if(mounted.current&&revision.current===current)setBusy(false);}
   }
   return <main className="drawai-shell"><h1>Kiểm chứng hai model DrawAI</h1><p><a href="/drawai">Về DrawAI</a> · DINOv3 là mặc định, chọn từ validation P5. Không fusion.</p>
-    <p>Cùng nét → cùng ảnh xám 64×64. Swin nhận hàng pixel; DINOv3 nhận RGB224. Cả hai chạy backend CPU local, không lưu ảnh.</p>
+    <p>Cùng nét → cùng ảnh xám 64×64. Swin nhận hàng pixel; DINOv3 nhận RGB224. {PUBLIC_PAINT?'Swin chạy trong trình duyệt; DINOv3 nhận ảnh qua máy chủ, không lưu ảnh.':'Cả hai chạy backend CPU local, không lưu ảnh.'}</p>
     <div className="da-canvas-wrap" style={{maxWidth:400}}><DrawingCanvas strokes={strokes} onChange={change} onDrawing={setDrawing}/></div>
     <button disabled={!strokes.length||drawing||busy} onClick={compare}>So sánh hai model</button> <button disabled={drawing} onClick={()=>change([])}>Xóa hết</button>
     <p role="status">{busy?'Đang chạy hai model…':results.length?'Đã chạy cùng ảnh qua hai model.':'Vẽ một chữ số để kiểm chứng.'}</p>{error&&<p role="alert">{error}</p>}

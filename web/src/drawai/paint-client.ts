@@ -1,5 +1,6 @@
 import { PROTOCOL, type Drawing, type Prediction } from './types';
 import {DEFAULT_PAINT_MODEL,PAINT_PREPROCESSING,type PaintModel} from './paint-registry';
+import {PUBLIC_PAINT} from './paint-deployment';
 export class PaintInferenceClient {
   constructor(private model:PaintModel=DEFAULT_PAINT_MODEL){}
   private worker?:Worker;private next=0;private active?:{id:number;revision:number;resolve:(r:Prediction)=>void;reject:(e:Error)=>void;progress:(s:string)=>void;timer:ReturnType<typeof setTimeout>};
@@ -26,7 +27,7 @@ export class PaintInferenceClient {
     }
     return new Promise((resolve,reject)=>{
       const id=++this.next;
-      this.active={id,revision,resolve,reject,progress,timer:setTimeout(()=>this.reset('WORKER: Quá thời gian 60 giây. Hãy thử lại.'),60000)};
+      this.active={id,revision,resolve,reject,progress,timer:setTimeout(()=>this.reset('WORKER: Quá thời gian chờ. Nét vẫn được giữ; hãy thử lại.'),PUBLIC_PAINT?150000:60000)};
       try{this.worker!.postMessage({protocol_version:PROTOCOL,type:'predict',request_id:id,drawing_revision:revision,model_id:this.model,drawing:structuredClone(drawing)});}
       catch{this.reset('WORKER: Không gửi được bản vẽ. Hãy thử lại.');}
     });

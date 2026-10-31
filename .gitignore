@@ -39,3 +39,8 @@ artifacts/drawai/**/*.partial
 deployment/docker/model-bundle/
 artifacts/drawai/cicd/packages/
 artifacts/drawai/cicd/work/
+web/public/models/drawai-paint35-swin-v1/*.onnx
+web/public/models/drawai-paint35-swin-v1/*.partial
+web/.env.local
+web/.env.*.local
+.vercel/

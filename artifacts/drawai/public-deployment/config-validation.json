@@ -1,0 +1,12 @@
+{
+  "render": {
+    "schema": "https://render.com/schema/render.yaml.json",
+    "passed": true,
+    "scope": "instance validation against published vendor schema; not account deployment"
+  },
+  "vercel": {
+    "schema": "https://openapi.vercel.sh/vercel.json",
+    "passed": true,
+    "scope": "instance validation against published vendor schema; not account deployment"
+  }
+}

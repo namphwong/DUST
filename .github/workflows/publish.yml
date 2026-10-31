@@ -106,7 +106,7 @@ jobs:
         run: |
           test -n "$HOOK" && test -n "$API_URL"
           curl --fail --silent --show-error --get --data-urlencode "imgURL=docker.io/$DIGEST" "$HOOK" > /dev/null
-          python tools/smoke_public_api.py --url "$API_URL" --expected-revision "$GITHUB_SHA" --output artifacts/drawai/cicd/render-smoke.json
+          python tools/smoke_public_api.py --url "$API_URL" --expected-revision "$GITHUB_SHA" --readiness-timeout 600 --output artifacts/drawai/cicd/render-smoke.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:

@@ -1,0 +1,17 @@
+{
+  "version": "drawai-paint35-swin-web-v1",
+  "source": "https://github.com/namphwong/DUST/releases/tag/drawai-models-paint35-v1",
+  "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
+  "preprocessing_version": "drawai-paint-image64-v1",
+  "model_filename": "drawai_swin1d-image_paint35-main-v1_rows64_fp32_v1.onnx",
+  "sha256": "9bb8bf5478cb2d8131936a79888505dcbc4f05e331027ca4e2117db7715df59d",
+  "bytes": 2391351,
+  "input_name": "row_pixels",
+  "input_shape": [1, 64, 64],
+  "output_name": "logits",
+  "output_shape": [1, 10],
+  "runtime": "ONNX Runtime Web WASM, one thread",
+  "trained": true,
+  "technical_only": true,
+  "release_ready": false
+}

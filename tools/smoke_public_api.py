@@ -19,15 +19,25 @@ def request(url,value=None,timeout=30):
     with urllib.request.urlopen(req,timeout=timeout) as r:return json.load(r)
 
 
-def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--url',required=True);parser.add_argument('--bundle',type=Path,default=Path('deployment/docker/model-bundle'))
-    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--expected-revision');parser.add_argument('--enforce-container-budget',action='store_true');args=parser.parse_args()
+def wait_ready(url,expected_revision=None,timeout=120):
     start=time.perf_counter()
     while True:
-        try:health=request(args.url+'/health');break
-        except (OSError,ValueError):
-            if time.perf_counter()-start>120:raise RuntimeError('Readiness timed out')
-            time.sleep(1)
+        remaining=timeout-(time.perf_counter()-start)
+        if remaining<=0:raise RuntimeError('Readiness/revision timed out')
+        try:
+            health=request(url+'/health',timeout=min(30,remaining))
+            if health.get('status')=='ready' and (not expected_revision or health.get('code_revision')==expected_revision):return health
+        except (OSError,ValueError):pass
+        time.sleep(min(1,max(0,timeout-(time.perf_counter()-start))))
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--url',required=True);parser.add_argument('--bundle',type=Path,default=Path('deployment/docker/model-bundle'))
+    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--expected-revision');parser.add_argument('--enforce-container-budget',action='store_true')
+    parser.add_argument('--readiness-timeout',type=float,default=120);args=parser.parse_args()
+    if not 0<args.readiness_timeout<=600:parser.error('readiness-timeout must be >0 and <=600 seconds')
+    start=time.perf_counter()
+    health=wait_ready(args.url,args.expected_revision,args.readiness_timeout)
     readiness_ms=(time.perf_counter()-start)*1000
     assert health['models']==['dinov3-vits16'] and health['bundle_sha256']==BUNDLE_HASH
     if args.expected_revision:assert health['code_revision']==args.expected_revision

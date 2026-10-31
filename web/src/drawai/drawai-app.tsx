@@ -6,8 +6,9 @@ import { preprocess, type Stroke } from './preprocessing';
 import { sha256 } from './release-loader';
 import { validateDrawing, type Drawing, type Prediction } from './types';
 import './drawai.css';
+import {PUBLIC_PAINT} from './paint-deployment';
 
-const stages:Record<string,string>={fetching:'Đang tải bộ nhận dạng…',verifying:'Đang chuẩn bị…',initializing:'Đang khởi động…',preprocessing:'Đang đọc nét…',inference:'Đang nhận dạng…'};
+const stages:Record<string,string>={fetching:'Đang tải bộ nhận dạng…',verifying:'Đang chuẩn bị…',initializing:'Đang khởi động…',preprocessing:'Đang đọc nét…',waking:'Đang đánh thức máy chủ; lần đầu có thể mất khoảng một phút…',inference:'Đang nhận dạng…'};
 export function DrawAIApp({legacy=false}:{legacy?:boolean}){
   const [strokes,setStrokes]=useState<Stroke[]>([]),[drawing,setDrawing]=useState(false),[busy,setBusy]=useState(false),[loadingSample,setLoadingSample]=useState(false);
   const [result,setResult]=useState<Prediction>(),[status,setStatus]=useState('Vẽ một chữ số hoặc chọn mẫu để bắt đầu.'),[error,setError]=useState('');
@@ -16,6 +17,7 @@ export function DrawAIApp({legacy=false}:{legacy?:boolean}){
   const revision=useRef(0),client=useRef(legacy?new InferenceClient():new PaintInferenceClient()),sampleRequest=useRef(0),mounted=useRef(true);
   useEffect(()=>{document.title='DrawAI · Nhận dạng chữ số';mounted.current=true;return()=>{mounted.current=false;client.current.reset();};},[]);
   function changed(next:Stroke[],ref?:number,origin:Drawing['source']={kind:'user'}){
+    if(busy){client.current.reset();setBusy(false);}
     revision.current++;sampleRequest.current++;setLoadingSample(false);setStrokes(next);setResult(undefined);setError('');setReference(ref);setSource(origin);setUserLabel('');
     setStatus(next.length?'Nét đã thay đổi. Bấm Nhận dạng để xem kết quả.':'Vẽ một chữ số hoặc chọn mẫu để bắt đầu.');
   }
@@ -33,8 +35,8 @@ export function DrawAIApp({legacy=false}:{legacy?:boolean}){
       });
       if(!mounted.current)return;setModelReady(true);
       if(revision.current===current){setResult(prediction);setStatus(`Đã nhận dạng: ${prediction.predicted_id}.`);}
-    }catch(e){if(mounted.current){setModelReady(false);if(revision.current===current){setError(e instanceof Error?e.message:String(e));setStatus('Không thể nhận dạng. Nét vẽ được giữ lại; hãy thử lại.');}}}
-    finally{if(mounted.current)setBusy(false);}
+    }catch(e){if(mounted.current&&revision.current===current){setModelReady(false);setError(e instanceof Error?e.message:String(e));setStatus('Không thể nhận dạng. Nét vẽ được giữ lại; hãy thử lại.');}}
+    finally{if(mounted.current&&revision.current===current)setBusy(false);}
   }
   async function sample(label:number){
     const token=++sampleRequest.current;setLoadingSample(true);setError('');setStatus('Đang tải mẫu PenDigits…');
@@ -61,7 +63,7 @@ export function DrawAIApp({legacy=false}:{legacy?:boolean}){
   const top=result?result.scores.map((score,id)=>({score,id})).sort((a,b)=>b.score-a.score||a.id-b.id).slice(0,3):[];
   const state=error?'error':busy?(modelReady?'predicting':'loading'):drawing?'drawing':result?'result':valid?'ready':'empty';
   return <div className="drawai-shell" data-state={state}>
-    <header className="da-header"><a href="/drawai" className="da-brand" aria-label="DrawAI trang chủ"><span className="da-logo">d.</span>DrawAI</a><span className="da-local"><i/> Chạy trên thiết bị của bạn</span></header>
+    <header className="da-header"><a href="/drawai" className="da-brand" aria-label="DrawAI trang chủ"><span className="da-logo">d.</span>DrawAI</a><span className="da-local"><i/> {PUBLIC_PAINT&&!legacy?'DINOv3 · nhận dạng trực tuyến':'Chạy trên thiết bị của bạn'}</span></header>
     <main className="da-main">
       <section className="da-heading"><h1>Vẽ một chữ số.</h1><p>Viết từ 0 đến 9 vào ô bên dưới, rồi bấm Nhận dạng.</p></section>
       <div className="da-workspace">
@@ -79,7 +81,7 @@ export function DrawAIApp({legacy=false}:{legacy?:boolean}){
           <div className="da-samples"><h3>Hoặc thử một mẫu</h3><div>{Array.from({length:10},(_,i)=><button key={i} aria-label={`Thử mẫu ${i}`} disabled={drawing} onClick={()=>sample(i)}>{i}</button>)}</div>{reference!==undefined&&<small data-testid="drawai-reference">Nhãn mẫu: {reference} · nguồn: PenDigits train</small>}</div>
         </section>
       </div>
-      <footer className="da-footer"><p>Viết lớn, rõ và đủ nét. Bạn có thể xóa để thử lại.</p><details><summary>Về DrawAI</summary><p>{legacy?'Nhận dạng một chữ số bằng Swin Transformer 1D. Mẫu có sẵn từ PenDigits. Chất lượng nét người dùng thực chưa được đánh giá.':'Nhận dạng bằng DINOv3 qua backend local trên máy của bạn. Mẫu có sẵn từ PenDigits train, khác dữ liệu ảnh Paint dùng huấn luyện. Chưa đánh giá chất lượng nét người dùng mới.'}</p><a href={legacy?'/drawai/release-check':'/drawai/compare'}>Thông tin kiểm chứng</a></details></footer>
+      <footer className="da-footer"><p>Viết lớn, rõ và đủ nét. Bạn có thể xóa để thử lại.</p><details><summary>Về DrawAI</summary><p>{legacy?'Nhận dạng một chữ số bằng Swin Transformer 1D. Mẫu có sẵn từ PenDigits. Chất lượng nét người dùng thực chưa được đánh giá.':PUBLIC_PAINT?'Ảnh xám 64×64 từ nét vẽ được gửi tới máy chủ DINOv3 để nhận dạng, không lưu ảnh. Swin đối chứng chạy trong trình duyệt. Mẫu PenDigits khác dữ liệu Paint huấn luyện; chưa đánh giá chất lượng người viết mới.':'Nhận dạng bằng DINOv3 qua backend local trên máy của bạn. Mẫu có sẵn từ PenDigits train, khác dữ liệu ảnh Paint dùng huấn luyện. Chưa đánh giá chất lượng nét người dùng mới.'}</p><a href={legacy?'/drawai/release-check':'/drawai/compare'}>Thông tin kiểm chứng</a></details></footer>
     </main>
   </div>;
 }

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "states": "initial empty desktop/mobile only; result text changes with selected model",
+  "design": [
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "main_sha256": "321ab18a6b8db45ae556536715605013e452da22ae1c00c5182727136402319c",
+      "legacy_sha256": "321ab18a6b8db45ae556536715605013e452da22ae1c00c5182727136402319c",
+      "pixel_identical": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "main_sha256": "e200ac222a72289e032f1e18a55ebd4d4244b89b1240826595aa7cbdd1e0f3f6",
+      "legacy_sha256": "e200ac222a72289e032f1e18a55ebd4d4244b89b1240826595aa7cbdd1e0f3f6",
+      "pixel_identical": true
+    }
+  ]
+}
