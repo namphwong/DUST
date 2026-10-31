@@ -1,0 +1,12 @@
+**
+!deployment/
+!deployment/docker/
+!deployment/docker/requirements.txt
+!deployment/docker/Dockerfile
+!deployment/docker/model-bundle/
+!deployment/docker/model-bundle/**
+!training/
+!training/drawai/
+!training/drawai/*.py
+!LICENSE
+!NOTICE.md

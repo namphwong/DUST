@@ -1,0 +1,67 @@
+name: AI CI - code, model parity and Docker
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: deployment/docker/requirements.txt
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install code test dependencies
+        run: pip install -r deployment/docker/requirements.txt httpx==0.28.1 unlzw3==0.2.3
+      - name: Test geometry, raster, locked contract and API errors
+        run: python -m unittest training.tests.test_drawai_data training.tests.test_drawai_raster training.tests.test_drawai_deployment_contract training.tests.test_drawai_public_api -v
+      - name: Install and build frontend
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+  image:
+    needs: code
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Install bundle verification dependencies
+        run: pip install numpy==1.26.4 Pillow==12.3.0 jsonschema==4.26.0
+      - name: Download and verify public model archive
+        run: python tools/prepare_public_models.py fetch
+      - name: Build real model image
+        run: docker build --platform linux/amd64 -f deployment/docker/Dockerfile --build-arg VCS_REF=${{ github.sha }} -t drawai-api:ci .
+      - name: Start with Render-like resource limits
+        run: docker run -d --name drawai-ci --memory=512m --cpus=0.1 -p 127.0.0.1:10000:10000 drawai-api:ci
+      - name: Real model parity and resource gate
+        run: python tools/smoke_public_api.py --url http://127.0.0.1:10000 --expected-revision ${{ github.sha }} --enforce-container-budget --output artifacts/drawai/cicd/container-smoke.json
+      - name: Capture image and container evidence
+        if: always()
+        run: |
+          mkdir -p artifacts/drawai/cicd
+          docker logs drawai-ci > artifacts/drawai/cicd/container.log 2>&1 || true
+          docker inspect drawai-ci --format '{{json .State}}' > artifacts/drawai/cicd/container-state.json || true
+          docker image inspect drawai-api:ci --format '{{json .Id}}' > artifacts/drawai/cicd/image-id.json || true
+          docker rm -f drawai-ci || true
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: ai-ci-evidence
+          path: artifacts/drawai/cicd/
+          retention-days: 7

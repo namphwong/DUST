@@ -1,0 +1,12 @@
+{
+  "version": "drawai-model-release-v1",
+  "tag": "drawai-models-paint35-v1",
+  "source_commit": "fbb91402f5590b8e081f04dd668c67ee23f49ee9",
+  "archive": {
+    "filename": "drawai-paint35-v1-bundle.zip",
+    "url": "https://github.com/namphwong/DUST/releases/download/drawai-models-paint35-v1/drawai-paint35-v1-bundle.zip",
+    "sha256": "ae10369600455e343f58c3939c235a5cc3ecd825ee2bf8e06eedce5fcbb2aa0a",
+    "bytes": 162990474,
+    "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2"
+  }
+}

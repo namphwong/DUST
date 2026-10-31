@@ -36,3 +36,6 @@ artifacts/drawai/kaggle/*.zip
 artifacts/drawai/swin-notebook-smoke-v2/
 artifacts/drawai/notebook-smoke/kernels/
 artifacts/drawai/**/*.partial
+deployment/docker/model-bundle/
+artifacts/drawai/cicd/packages/
+artifacts/drawai/cicd/work/
