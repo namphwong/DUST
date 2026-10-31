@@ -1,0 +1,49 @@
+name: AI CD - deploy verified existing image to Render
+on:
+  workflow_dispatch:
+    inputs:
+      image_digest:
+        description: Public image reference pinned by sha256 (also supports rollback)
+        required: true
+        default: namphwong/drawai-dinov3-api@sha256:a4b131893b49a200de1440831806d3d80cd2eed414712ac620001e9c0d30fe52
+      source_revision:
+        description: Full source commit embedded in this image
+        required: true
+        default: 26011c9dd74f26fc83879509cf7e497b40b9e340
+permissions:
+  contents: read
+concurrency:
+  group: drawai-render-production
+  cancel-in-progress: false
+jobs:
+  verify_public_image:
+    uses: ./.github/workflows/verify-public.yml
+    with:
+      image_digest: ${{ inputs.image_digest }}
+      source_revision: ${{ inputs.source_revision }}
+  deploy:
+    needs: verify_public_image
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy==1.26.4 Pillow==12.3.0 jsonschema==4.26.0
+      - name: Deploy pinned image and verify real cloud inference
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          API_URL: ${{ vars.RENDER_API_URL }}
+          DIGEST: ${{ inputs.image_digest }}
+          REVISION: ${{ inputs.source_revision }}
+        run: |
+          test -n "$HOOK" && test -n "$API_URL"
+          curl --fail --silent --show-error --get --data-urlencode "imgURL=docker.io/$DIGEST" "$HOOK" > /dev/null
+          python tools/smoke_public_api.py --url "$API_URL" --expected-revision "$REVISION" --bundle models/exported/paint35-v1 --readiness-timeout 600 --output artifacts/drawai/public-deployment/cd-cloud-smoke.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: render-existing-image-evidence
+          path: artifacts/drawai/public-deployment/cd-cloud-smoke.json
+          retention-days: 30
