@@ -2,7 +2,7 @@
 
 Ngày28/10/2026. **Đây là hướng triển khai ưu tiên mới**, thay kế hoạch GitHub Pages làm hướng chính. Chưa thay code runtime hoặc deploy tài khoản nào trong bước lập kế hoạch.
 
-**Cập nhật31/10/2026:** VR0 giữ snapshot; VR1 bundle/Swin release public, VR2 container API và VR3 frontend integration đã thực hiện. VR4/VR5 cloud còn chờ đăng nhập/kết nối tài khoản; VR6 bàn giao một phần. [Trạng thái hiện tại](status.md), [hướng dẫn deploy](public-deploy-guide.md), [đối chiếu6 yêu cầu](submission-audit.md). Phần dưới giữ nội dung kế hoạch ban đầu.
+**Cập nhật31/10/2026:** VR0–VR6 đã hoàn thành ở mức kỹ thuật. [Vercel](https://drawai-pied.vercel.app) và [Render](https://drawai-dinov3-api.onrender.com/health) đang public; [CD cloud](https://github.com/namphwong/DUST/actions/runs/41183564442) cùng3 browser tests PASS. Nghiệm thu người viết mới/cảm ứng thật vẫn nằm ngoài deployment smoke. [Trạng thái](status.md), [hướng dẫn](public-deploy-guide.md), [đối chiếu6 yêu cầu](submission-audit.md). Phần dưới giữ kế hoạch/tiêu chí ban đầu.
 
 ## 1. Kiến trúc được chọn
 

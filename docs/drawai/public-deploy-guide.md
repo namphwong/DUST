@@ -1,6 +1,6 @@
 # Deploy DrawAI: Vercel Hobby + Render Free
 
-Ngày31/10/2026. **Code đã chuẩn bị và kiểm tra local; chưa có deployment cloud được nghiệm thu.** Đăng nhập/kết nối tài khoản là điều kiện còn thiếu. File cấu hình không tự tạo service.
+Ngày31/10/2026. Deployment cloud đã nghiệm thu kỹ thuật: [frontend Vercel](https://drawai-pied.vercel.app), [backend Render](https://drawai-dinov3-api.onrender.com/health), [CD SUCCESS](https://github.com/namphwong/DUST/actions/runs/41183564442). Phần dưới vừa ghi cấu hình thực tế vừa là hướng dẫn tái tạo/rollback.
 
 ## 1. Render: dùng image AI đã public
 
@@ -13,7 +13,7 @@ docker.io/namphwong/drawai-dinov3-api@sha256:a4b131893b49a200de1440831806d3d80cd
 - Name `drawai-dinov3-api`; region Singapore; **plan Free**. Không tạo database/disk hoặc nâng gói trả phí.
 - Port `10000`; Health Check Path `/health`; giữ CMD của image, một worker CPU.
 - `ALLOWED_ORIGINS`: origin Vercel thực, ví dụ scheme+hostname không có path hoặc dấu `/` cuối. Không dùng wildcard. Nếu tạo backend trước frontend, tạm đặt origin đã dự định rồi cập nhật thành hostname thực trước nghiệm thu.
-- Chờ deploy thành công, mở URL service thực + `/health`: model DINO, bundle/model hash khớp, revision `26011c9dd74f26fc83879509cf7e497b40b9e340` cho image v1.0.0. Không đoán hostname từ tên service.
+- Deployment hiện hành dùng digest `sha256:bf43b3f…aede4c`, revision `c9593cac…c629`. Mở `/health` để kiểm tra model/bundle/model hash/revision; không chỉ dựa vào trạng thái UI Render.
 
 ## 2. Vercel: import frontend từ GitHub
 
@@ -39,7 +39,7 @@ Sau khi nhận hostname Vercel, cập nhật `ALLOWED_ORIGINS` Render bằng ori
 2. DINO mặc định gửi ảnh64 tới API HTTPS; không lưu ảnh. Swin đối chứng chạy WASM trong browser, chỉ DINO gửi request server. Hai model phải nhận cùng hash pixel.
 3. Thử vẽ/undo/clear/sample/export, chờ backend ngủ/thức,429, tắt mạng, retry, clear lúc đang chờ. Không đổi model âm thầm. Giữ bố cục/màu/font/canvas hiện tại; chỉ nội dung trạng thái/quyền riêng tư đổi cho đúng môi trường.
 4. Chạy `tools/smoke_public_api.py --url <Render origin> --expected-revision <source SHA của image> --bundle models/exported/paint35-v1 --readiness-timeout 600 --output artifacts/drawai/public-deployment/cloud-smoke.json` với dependency numpy/Pillow/jsonschema. Script chờ đúng revision rồi kiểm tra logits trên fixture công khai; không dùng private test.
-5. Đo thật trên cloud và kiểm tra usage Free/Hobby. Số đo container GitHub512MiB/0,1CPU chỉ là gate kỹ thuật trước deploy, không thay thế số đo Render. Không dùng bot giữ service luôn thức. Nghiệm thu cảm ứng vật lý/người viết mới còn riêng.
+5. Cloud run41183564442 đo p95 khoảng1,30s, readiness63,79s, peak435.429.376bytes, OOM0. Không dùng bot giữ service luôn thức. Nghiệm thu cảm ứng vật lý/người viết mới còn riêng.
 
 ## 4. Nối CD backend
 
@@ -49,7 +49,7 @@ Actions > **AI CD - publish verified Docker Hub image** > Run workflow trên mai
 
 Nếu dùng Blueprint, khi đổi digest bằng CD cũng cập nhật `render.yaml` theo digest đã kiểm chứng để lần sync Blueprint sau không kéo lại image cũ. Rollback cũng dùng digest cũ đã biết; không ghi đè tag version.
 
-Vercel Git integration có thể tự build/deploy khi main thay đổi sau khi project được nối tài khoản. Backend phát hành qua workflow có bước kích hoạt thủ công; hiện không khẳng định tự deploy mỗi push. Nếu chưa tạo được backend, giữ `deploy_render=false`.
+Vercel Git integration tự build/deploy frontend khi main thay đổi. Backend phát hành qua workflow có gate và bước kích hoạt thủ công để tránh vô tình đẩy image chưa chọn; workflow `deploy-render.yml` cũng cho phép deploy lại một digest đã kiểm chứng.
 
 `RENDER_API_KEY` chỉ cần khi muốn tự tạo/quản lý service bằng API; không bắt buộc cho cách Deploy Blueprint hoặc Existing Image. Có thể kết nối ứng dụng Vercel/Render trong Codex để tiếp tục triển khai mà không gửi key qua chat.
 

@@ -1,42 +1,41 @@
 {
   "date": "2026-10-31",
-  "checked_at_utc": "2026-10-31T03:48:16.926849+00:00",
-  "ci_run": "https://github.com/namphwong/DUST/actions/runs/41165630051",
-  "code_commit": "8edc2c1ecfc7c68e1e2c5289ecd486c953d58720",
+  "checked_at_utc": "2026-10-31T08:15:00Z",
+  "ci_run": "https://github.com/namphwong/DUST/actions/runs/41166886046",
+  "cd_run": "https://github.com/namphwong/DUST/actions/runs/41183564442",
+  "code_commit": "c9593cac3fe0a23a6f997596edec1e9bd0a0c629",
   "ci_conclusion": "success",
-  "local_tests": {
-    "python": 44,
-    "public_browser": 7,
-    "local_regression_browser": 13
-  },
+  "cd_conclusion": "success",
+  "local_tests": {"python": 44, "public_browser": 7, "local_regression_browser": 13},
+  "cloud_tests": {"browser": 3, "procedural_api_fixtures": 8, "warm_http_iterations": 30},
   "kaggle": {
     "ref": "namphwong/drawai-handwritten-digits-placeholder",
     "is_private": false,
     "files": [
-      {
-        "name": "README.md",
-        "bytes": 539
-      },
-      {
-        "name": "So_viet_tay_35_nguoi.npz",
-        "bytes": 2828016
-      }
+      {"name": "README.md", "bytes": 539},
+      {"name": "So_viet_tay_35_nguoi.npz", "bytes": 2828016}
     ]
   },
   "dockerhub": {
     "repository": "namphwong/drawai-dinov3-api",
     "is_private": false,
-    "tag": "v1.0.0",
-    "source_revision": "26011c9dd74f26fc83879509cf7e497b40b9e340",
-    "digest": "sha256:a4b131893b49a200de1440831806d3d80cd2eed414712ac620001e9c0d30fe52"
+    "tag": "v1.0.1",
+    "source_revision": "c9593cac3fe0a23a6f997596edec1e9bd0a0c629",
+    "digest": "sha256:bf43b3f739ca7ea250eaa217d1b0ef922f879745a2f5aa206bc5494922aede4c"
+  },
+  "deployment": {
+    "frontend": "https://drawai-pied.vercel.app",
+    "backend": "https://drawai-dinov3-api.onrender.com",
+    "cloud_inference_verified": true,
+    "warm_http_p95_ms": 1299.824803000007,
+    "readiness_ms": 63790.039958,
+    "memory_peak_bytes": 435429376,
+    "oom_kill": 0
   },
   "bundle_sha256": "86121e4def30d53f52b4e21126efceca3fff66b4d24a591c915c312a7db5eae2",
   "bundle_verified": true,
-  "cloud_deployed": false,
-  "cloud_inference_verified": false,
+  "cloud_deployed": true,
+  "cloud_inference_verified": true,
   "physical_touch_new_writer_verified": false,
-  "authentication_pending": [
-    "Vercel",
-    "Render"
-  ]
+  "authentication_pending": []
 }

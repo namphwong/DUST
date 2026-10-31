@@ -2,7 +2,7 @@
 
 ## CI/CD và Docker - cập nhật31/10/2026
 
-CI ban đầu41 tests + frontend build + image/resource/parity gates PASS; CI mở rộng44 Python +7 public browser tests và image gate cũng PASS. Public image `namphwong/drawai-dinov3-api:v1.0.0` đã phát hành, pull ẩn danh và inference trên runner mới PASS. Bundle P6 đã có release public. [Báo cáo/bằng chứng](cicd-docker-report.md). Continuous delivery tới registry hoàn thành; Render/Vercel và nghiệm thu cloud/người viết mới còn chờ. Bảng phase P0–P8 bên dưới là snapshot trước đợt cập nhật này; bảng VR đã cập nhật.
+CI ban đầu và CI mở rộng đều PASS. Public image `namphwong/drawai-dinov3-api:v1.0.1` đã phát hành; fresh anonymous pull/resource gate và CD Render đều SUCCESS. Frontend Vercel và backend Render đang public,3 browser tests cloud PASS. [Báo cáo/bằng chứng](cicd-docker-report.md). Nghiệm thu người viết mới/cảm ứng thật còn chờ; bảng phase P0–P8 bên dưới là snapshot lịch sử, bảng VR đã cập nhật.
 
 ## Kế hoạch hai mô hình (cập nhật 19/10/2026)
 
@@ -30,11 +30,11 @@ P0–P8 là kế hoạch mới Swin 1D/DINOv3, khác các phase D0–D7 lịch s
 | VR1 — model release | DONE public | Bundle ZIP/tag/checksum, script download/verify; Swin asset derivative public và build verify |
 | VR2 — DINO-only production | DONE container gate | API/Docker Hub public; CPU512MiB/0,1CPU, numerical/memory/latency gate PASS trên GitHub runner; chưa đo Render |
 | VR3 — frontend public | DONE local integration | Swin WASM, HTTPS API URL, cold start/retry/clear;7 browser tests PASS;44 Python và13 local regression PASS |
-| VR4 — deploy tài khoản | WAITING authentication | render.yaml/web/vercel.json instance-validation PASS; chưa tạo service/cloud URL; chờ chủ tài khoản kết nối |
-| VR5 — nghiệm thu public | TODO | Browser/device/cloud thực; chưa có nghiệm thu cảm ứng/người viết mới |
-| VR6 — bàn giao | PARTIAL | README, model links, PDF CI/Docker, hướng dẫn deploy/rollback đã có; thiếu URL cloud/nghiệm thu |
+| VR4 — deploy tài khoản | DONE cloud | [Vercel](https://drawai-pied.vercel.app) + [Render](https://drawai-dinov3-api.onrender.com/health), Hobby/Free; exact-origin CORS |
+| VR5 — nghiệm thu public | DONE kỹ thuật cloud |8 fixture +30 request API và3 browser tests cloud PASS; cảm ứng/người viết mới vẫn NOT RUN |
+| VR6 — bàn giao | DONE kỹ thuật | README, model links, Docker Hub, PDF CI/Docker, deploy/rollback guide và URL cloud đã có |
 
-Theo [kế hoạch VR0–VR6](vercel-render-plan.md), VR0 chỉ khóa đặc tả và kiểm tra baseline;5 checklist PASS thuộc VR0 không đồng nghĩa14 kiểm tra public còn lại đã chạy. Gate cloud chưa đo, không lấy kết quả Windows local để tuyên bố phù hợp Render Free.
+Theo [kế hoạch VR0–VR6](vercel-render-plan.md), VR0 chỉ khóa đặc tả và kiểm tra baseline. Gate cloud nay đã đo riêng trên Render; không lấy kết quả Windows local để thay thế số đo cloud.
 
 [Đối chiếu nộp bài hiện tại](submission-audit.md) · [Deploy guide](public-deploy-guide.md). VR0 JSON/anchor/checklist giữ nguyên snapshot, không sửa source hash lịch sử để che thay đổi runtime VR3; kiểm chứng bổ sung lưu riêng tại artifacts/drawai/public-deployment/.
 

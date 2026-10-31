@@ -13,7 +13,8 @@
     "test:legacy": "playwright test --config playwright.drawai-app.config.ts",
     "test:review": "playwright test --config playwright.drawai-review.config.ts",
     "test:release": "playwright test --config playwright.drawai-release.config.ts",
-    "test:integration": "playwright test --config playwright.drawai-integration.config.ts"
+    "test:integration": "playwright test --config playwright.drawai-integration.config.ts",
+    "test:cloud": "playwright test --config playwright.drawai-cloud.config.ts"
   },
   "dependencies": {
     "onnxruntime-web": "1.20.1",

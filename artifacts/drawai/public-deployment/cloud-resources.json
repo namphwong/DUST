@@ -1,0 +1,18 @@
+{
+  "frontend_url": "https://drawai-pied.vercel.app",
+  "vercel_project": "drawai",
+  "backend_url": "https://drawai-dinov3-api.onrender.com",
+  "render_service_id": "srv-dbimcbh42hec73atfsg0",
+  "render_initial_deploy_id": "dep-dbimcc142hec73atfu20",
+  "plan": "free",
+  "region": "singapore",
+  "image": "docker.io/namphwong/drawai-dinov3-api@sha256:bf43b3f739ca7ea250eaa217d1b0ef922f879745a2f5aa206bc5494922aede4c",
+  "image_tag": "v1.0.1",
+  "source_revision": "c9593cac3fe0a23a6f997596edec1e9bd0a0c629",
+  "allowed_origins": ["https://drawai-pied.vercel.app"],
+  "backend_inference_smoke_passed": true,
+  "frontend_deployed": true,
+  "cloud_browser_tests_passed": 3,
+  "cd_cloud_workflow_passed": true,
+  "cd_run": "https://github.com/namphwong/DUST/actions/runs/41183564442"
+}

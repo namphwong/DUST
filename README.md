@@ -2,7 +2,7 @@
 
 Nhận dạng **một chữ số viết tay 0–9 từ canvas**. Trang chính dùng **DINOv3 ViT-S/16 làm backbone + head 10 lớp**, chọn checkpoint bằng validation P5. **Swin Transformer 1D** là mô hình đối chứng. Hai model nhận cùng ảnh xám 64×64 được tạo từ nét vẽ, không fusion.
 
-**Đối chiếu 6 yêu cầu nộp bài (31/10/2026):** [Bảng kết quả/bằng chứng](docs/drawai/submission-audit.md). DINO backbone, dữ liệu Kaggle public, design/model export, CI và Docker Hub public đã có. **Deploy Vercel/Render và CD cloud còn chờ kết nối tài khoản.** [Code/cách deploy đã chuẩn bị](docs/drawai/public-deploy-guide.md): public frontend dùng HTTPS API, Swin browser WASM, xử lý backend ngủ/429/clear;44 Python +7 public browser +13 local regression tests PASS local. [CI mới](https://github.com/namphwong/DUST/actions/runs/41165630051). Các mốc P7/VR0 phía dưới là lịch sử.
+**Đối chiếu 6 yêu cầu nộp bài (31/10/2026):** [Bảng kết quả/bằng chứng](docs/drawai/submission-audit.md). Cả sáu hạng mục kỹ thuật đã có bằng chứng: DINO backbone, Kaggle public, design/model export, deploy, CI/CD cloud và Docker Hub public. Demo: [frontend Vercel](https://drawai-pied.vercel.app) · [backend health Render](https://drawai-dinov3-api.onrender.com/health). [CD cloud SUCCESS](https://github.com/namphwong/DUST/actions/runs/41183564442) kiểm tra đúng image digest/revision,8 fixture,30 request;3 kiểm thử trình duyệt cloud cũng PASS. Nghiệm thu người viết mới/cảm ứng thật vẫn là giới hạn riêng, không được suy diễn từ deploy.
 
 Chỗ thay DINO: [`DinoDigitClassifier`/`TimmDinoBackbone`](training/drawai/dinov3_model.py) dùng backbone pretrained DINOv3, ghép CLS + mean patch token vào head10lớp; xem [DINO guide](docs/drawai/dinov3-guide.md). Cấu hình deploy: [`render.yaml`](render.yaml), [`web/vercel.json`](web/vercel.json); không tự tạo cloud service khi chỉ clone/push file.
 
@@ -10,11 +10,11 @@ Chỗ thay DINO: [`DinoDigitClassifier`/`TimmDinoBackbone`](training/drawai/dino
 
 **Rà soát repo:**133 Python +33 browser tests đạt; đã củng cố worker/retry và hủy inference cũ, dọn cache, tách kết quả kiểm tra khỏi snapshot lịch sử. [Báo cáo tổng hợp](docs/drawai/repo-review-report.md) · [Mục lục tài liệu](docs/drawai/README.md). Các báo cáo phase bên dưới vẫn giữ số đo theo thời điểm thực hiện phase đó.
 
-**Kế hoạch web public ưu tiên (28/10/2026, chưa triển khai):** [Vercel frontend + Render backend](docs/drawai/vercel-render-plan.md), chia VR0–VR6; DINO mặc định qua Render, Swin chạy browser, kiểm tra512MB trước khi deploy Free. [Phương án GitHub Pages](docs/drawai/github-pages-plan.md) giữ để tham khảo.
+**Web public đã triển khai:** [Vercel frontend + Render backend](docs/drawai/vercel-render-plan.md); DINO mặc định qua Render, Swin chạy WASM trong browser. Render Free có thể ngủ khi không dùng nên lần gọi đầu có thể chờ đánh thức. [Phương án GitHub Pages](docs/drawai/github-pages-plan.md) chỉ giữ để tham khảo.
 
 **VR0 đã hoàn thành:** [khóa scope/model/input/design và tiêu chí nghiệm thu](docs/drawai/vr0-report.md);10 gate tests mới PASS,5 checklist PASS/14 NOT_RUN. Chưa thay runtime hoặc deploy; bước tiếp theo VR1 là đóng gói/phân phối model.
 
-**CI/CD và Docker đã thực thi (31/10/2026):** [Báo cáo từng bước/chỗ cập nhật](docs/drawai/cicd-docker-report.md) · [CI PASS](https://github.com/namphwong/DUST/actions/runs/41164031905) · [Docker Hub public v1.0.0](https://hub.docker.com/r/namphwong/drawai-dinov3-api) · [Model Release public](https://github.com/namphwong/DUST/releases/tag/drawai-models-paint35-v1). Build/test inference dưới giới hạn512MiB/0,1CPU, pull digest trên runner mới không login đã PASS. Continuous delivery tới registry hoàn thành; **Render/Vercel cloud chưa deploy**. Các đoạn VR0/P7 phía trên là mốc lịch sử.
+**CI/CD và Docker đã thực thi (31/10/2026):** [Báo cáo từng bước/chỗ cập nhật](docs/drawai/cicd-docker-report.md) · [publish v1.0.1 PASS](https://github.com/namphwong/DUST/actions/runs/41166886046) · [CD Render PASS](https://github.com/namphwong/DUST/actions/runs/41183564442) · [Docker Hub public](https://hub.docker.com/r/namphwong/drawai-dinov3-api) · [Model Release public](https://github.com/namphwong/DUST/releases/tag/drawai-models-paint35-v1). Digest `sha256:bf43b3f…aede4c` được pull ẩn danh và kiểm tra trước deploy; cloud smoke đạt p95 khoảng1,30s, peak435.429.376bytes, OOM0. Các đoạn VR0/P7 phía dưới là mốc lịch sử.
 
 ## Hai model hiện hành
 

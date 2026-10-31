@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "scope": "public Vercel frontend and public Render backend; procedural UI strokes only",
+  "frontend": "https://drawai-pied.vercel.app",
+  "backend": "https://drawai-dinov3-api.onrender.com",
+  "cases": [
+    {
+      "name": "dinov3-cloud-inference",
+      "passed": true,
+      "responses": [
+        {
+          "url": "https://drawai-dinov3-api.onrender.com/health",
+          "status": 200
+        },
+        {
+          "url": "https://drawai-dinov3-api.onrender.com/predict",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "swin-browser-dino-render-comparison",
+      "passed": true,
+      "apiRequests": [
+        "dinov3-vits16"
+      ]
+    },
+    {
+      "name": "routes-and-mobile-layout",
+      "passed": true
+    }
+  ]
+}
